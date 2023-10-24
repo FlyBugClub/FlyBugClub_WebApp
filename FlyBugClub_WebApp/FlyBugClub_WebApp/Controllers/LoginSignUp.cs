@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace FlyBugClub_WebApp.Controllers
 {
     public class LoginSignUp : Controller
     {
         private FlyBugClubWebApplicationContext _ctx;
+        private static readonly Random random = new Random();
+        private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
 
         public LoginSignUp(FlyBugClubWebApplicationContext ctx)
         {
             _ctx = ctx;
+            
         }
 
         public IActionResult VerifyAccount()
@@ -24,6 +29,9 @@ namespace FlyBugClub_WebApp.Controllers
             
             string otp = HttpContext.Request.Query["otp"];
             string usersJson = HttpContext.Request.Query["user"];
+            
+
+
             if (otp != null)
             {
                 HttpContext.Session.SetString("otp", otp);
@@ -42,20 +50,25 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = HttpContext.Session.GetString("otp");
             string user_json = HttpContext.Session.GetString("user_json");
             string validate_otp = otp0 + otp1 + otp2 + otp3 + otp4 + otp5;
-            List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
-            HttpContext.Session.SetString("email", Data_User);
+            
+ 
 
             //var query = _ctx.Users.FromSqlRaw("SELECT Email FROM Users WHERE Email = {0}", email);
             //var userWithEmail = query.FirstOrDefault();
 
             if (otp == validate_otp)
             {
-                    // Phân tách chuỗi JSON thành danh sách
-                    var user = new ApplicationUser { UserName = Data_User[5], Email = Data_User[5] };
+                
+                string uid = GenerateUID(20);
+
+                // Phân tách chuỗi JSON thành danh sách
+                List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
+                var user = new ApplicationUser { UserName = Data_User[5], Email = Data_User[5] };
                     user.FullName = Data_User[0];
                     user.UID = Data_User[1];
                     user.PhoneNumber = Data_User[3];
                     user.Address = Data_User[4];
+                   
                     User usr = new User()
                     {
                         Name = Data_User[0],
@@ -64,27 +77,23 @@ namespace FlyBugClub_WebApp.Controllers
                         Phone = Data_User[3],
                         Address = Data_User[4],
                         Email = Data_User[5],
-                        Account = Data_User[5]
+                        
+                        
                     };
-
+                AspNetUser net_usr = new AspNetUser() 
+                {
+                    Id = uid,
+                    FullName = Data_User[0],
+                    Uid = Data_User[1],
+                    PositionId = Data_User[2],
+                    Phone = Data_User[3],
+                    Address = Data_User[4],
+                    Email = Data_User[5],   
+                    PasswordHash = Data_User[6]
+                };
+                _ctx.AspNetUsers.Add(net_usr);
                 _ctx.Users.Add(usr);
-                try
-                {
-                    _ctx.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    var innerException = ex.InnerException;
-                    while (innerException != null)
-                    {
-                        // In thông báo lỗi trong inner exception
-                        Console.WriteLine("=========================================================");
-                        Console.WriteLine(innerException.Message);
-                        innerException = innerException.InnerException;
-                        Console.WriteLine("=========================================================");
-                    }
-                    // Xử lý lỗi hoặc đưa ra thông báo phù hợp
-                }
+                _ctx.SaveChanges();
                 return LocalRedirect("~/Identity/Account/LoginCustomer");
 
             }
@@ -101,9 +110,10 @@ namespace FlyBugClub_WebApp.Controllers
         [HttpPost]
         public IActionResult ResendEmail()
         {
-
+            string user_json = HttpContext.Session.GetString("user_json");
+            List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
             string otp = GenerateOTP();
-            SendEmail(otp);
+            SendEmail(otp,Data_User[5]);
             HttpContext.Session.SetString("otp", otp);
             return LocalRedirect($"/LoginSignUp/VerifyAccount");
         }
@@ -132,6 +142,15 @@ namespace FlyBugClub_WebApp.Controllers
 
             }
 
+        }
+        public string GenerateUID(int length)
+        {
+            StringBuilder result = new StringBuilder(length);
+            for (int i = 0; i < length; i++)
+            {
+                result.Append(validChars[random.Next(validChars.Length)]);
+            }
+            return result.ToString();
         }
 
         public string GenerateOTP()

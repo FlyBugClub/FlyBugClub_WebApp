@@ -168,7 +168,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 {
                     position = "TC";
                 }
-                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email};
+                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email,Input.Password};
                 var User_Json = JsonConvert.SerializeObject(data_user);
 
                 return LocalRedirect($"/LoginSignUp/VerifyAccount?otp={otp}&user={User_Json}");
