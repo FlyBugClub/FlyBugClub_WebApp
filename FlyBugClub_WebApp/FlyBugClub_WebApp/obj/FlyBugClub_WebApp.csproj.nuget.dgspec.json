@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {}
+    "D:\\Github\\gitlab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {
+    "D:\\Github\\gitlab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+        "projectUniqueName": "D:\\Github\\gitlab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
         "projectName": "FlyBugClub_WebApp",
-        "projectPath": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+        "projectPath": "D:\\Github\\gitlab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
+        "outputPath": "D:\\Github\\gitlab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

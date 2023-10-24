@@ -9,173 +9,173 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FlyBugClub_WebApp
 build_property.RootNamespace = FlyBugClub_WebApp
-build_property.ProjectDir = E:\Projects\FlyBugClub_WebApp\FlyBugClub_WebApp\FlyBugClub_WebApp\
+build_property.ProjectDir = D:\Github\gitlab\FlyBugClub_WebApp\FlyBugClub_WebApp\FlyBugClub_WebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Projects\FlyBugClub_WebApp\FlyBugClub_WebApp\FlyBugClub_WebApp
+build_property.MSBuildProjectDirectory = D:\Github\gitlab\FlyBugClub_WebApp\FlyBugClub_WebApp\FlyBugClub_WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/CategoryDevice.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/CategoryDevice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlEZXZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/CreateCategory.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/CreateCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/EditCategory.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Category/EditCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcRWRpdENhdGVnb3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Dashboard/Dashboard.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Dashboard/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Member/Member.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Member/Member.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyXE1lbWJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/Bill.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/Bill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJQcm9jZXNzaW5nXEJpbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/EditBill.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/EditBill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJQcm9jZXNzaW5nXEVkaXRCaWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/EditBillDetail.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/OrderProcessing/EditBillDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJQcm9jZXNzaW5nXEVkaXRCaWxsRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/CreateDevice.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/CreateDevice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxDcmVhdGVEZXZpY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/Devices.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/Devices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxEZXZpY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/EditDevice.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Shop/EditDevice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hvcFxFZGl0RGV2aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/LoginCustomer.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/LoginCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbkN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ChangePassword.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ResetPassword.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/VerifyAccount.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/VerifyAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Home/Home.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/Error.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LoginPartial.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/DetailCard.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/DetailCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcRGV0YWlsQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/FillProduct.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/FillProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcRmlsbFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Payment.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Search.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/SortProduct.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/SortProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcU29ydFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Store.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Store/Store.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcU3RvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/_ViewImports.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/_ViewStart.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_Layout.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9ejiqdc91p
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LayoutAdmin.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-f0t47r9typ
 
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LayoutCusLogin.cshtml]
+[D:/Github/gitlab/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/_LayoutCusLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDdXNMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-5dsxe6e1b9

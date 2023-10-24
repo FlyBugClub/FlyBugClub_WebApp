@@ -161,10 +161,11 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
                 string otp = GenerateOTP();
                 SendEmail(otp, Input.Email);
-                var passwordHasher = new PasswordHasher<IdentityUser>();
+                //var passwordHasher = new PasswordHasher<ApplicationUser>();
 
-                string hashedPassword = passwordHasher.HashPassword(null, Input.Password);
-
+                //string hashedPassword = passwordHasher.HashPassword(null, Input.Password);
+                //string SecurityStamp = Guid.NewGuid().ToString();
+                //string ConcurrencyStamp = Guid.NewGuid().ToString();
                 var position = "";
                 if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
 {
@@ -174,7 +175,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 {
                     position = "TC";
                 }
-                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email, hashedPassword };
+                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email, Input.Password };
                 var User_Json = JsonConvert.SerializeObject(data_user);
 
                 return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={User_Json}");

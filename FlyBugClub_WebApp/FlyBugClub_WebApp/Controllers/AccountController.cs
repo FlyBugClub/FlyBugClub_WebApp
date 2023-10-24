@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using Newtonsoft.Json;
+using System.Security;
 using System.Text;
 
 namespace FlyBugClub_WebApp.Controllers
@@ -14,14 +15,15 @@ namespace FlyBugClub_WebApp.Controllers
     public class AccountController : Controller
     {
         private FlyBugClubWebApplicationContext _ctx;
+        private readonly UserManager<ApplicationUser> _userManager;
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 
-        public AccountController(FlyBugClubWebApplicationContext ctx)
+        public AccountController(FlyBugClubWebApplicationContext ctx, UserManager<ApplicationUser> userManager)
         {
             _ctx = ctx;
-            
+            _userManager = userManager;
         }
 
         public IActionResult VerifyAccount()
@@ -43,7 +45,7 @@ namespace FlyBugClub_WebApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult cuong(string otp0, string otp1, string otp2, string otp3, string otp4, string otp5)
+        public async Task<IActionResult> cuongAsync(string otp0, string otp1, string otp2, string otp3, string otp4, string otp5)
         {
             //var email = "cuong.dq12897@sinhvien.hoasen.edu.vn";
             //var usersWithEmail = _ctx.Users.Where(u => u.Email == "cuong.dq12897@sinhvien.hoasen.edu.vn").ToList();
@@ -68,8 +70,10 @@ namespace FlyBugClub_WebApp.Controllers
                     user.UID = Data_User[1];
                     user.PhoneNumber = Data_User[3];
                     user.Address = Data_User[4];
-                   
-                    User usr = new User()
+                
+
+                var result = await _userManager.CreateAsync(user, Data_User[6]);
+                User usr = new User()
                     {
                         Name = Data_User[0],
                         StudentId = Data_User[1],
@@ -80,18 +84,20 @@ namespace FlyBugClub_WebApp.Controllers
                         
                         
                     };
-                AspNetUser net_usr = new AspNetUser() 
-                {
-                    Id = uid,
-                    FullName = Data_User[0],
-                    Uid = Data_User[1],
-                    PositionId = Data_User[2],
-                    Phone = Data_User[3],
-                    Address = Data_User[4],
-                    Email = Data_User[5],   
-                    PasswordHash = Data_User[6]
-                };
-                _ctx.AspNetUsers.Add(net_usr);
+                //AspNetUser net_usr = new AspNetUser() 
+                //{
+                //    Id = uid,
+                //    FullName = Data_User[0],
+                //    Uid = Data_User[1],
+                //    PositionId = Data_User[2],
+                //    Phone = Data_User[3],
+                //    Address = Data_User[4],
+                //    Email = Data_User[5],   
+                //    PasswordHash = Data_User[6],
+                //    SecurityStamp = Data_User[7],
+                //    ConcurrencyStamp = Data_User[8]
+                //};
+                //_ctx.AspNetUsers.Add(net_usr);
                 _ctx.Users.Add(usr);
                 _ctx.SaveChanges();
                 return LocalRedirect("~/Identity/Account/LoginCustomer");
