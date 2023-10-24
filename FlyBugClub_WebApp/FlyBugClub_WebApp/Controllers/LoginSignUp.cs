@@ -189,5 +189,10 @@ namespace FlyBugClub_WebApp.Controllers
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
+    
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
     }
 }
