@@ -1,0 +1,220 @@
+/* ============================= */
+/* ======== HOME PART 1 ======== */
+/* ============================= */ 
+
+.home-part1{
+    width: 100%;
+    height: fit-content;
+    background-color: #333;
+    display: flex;
+    /* float: left; */
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.home-part1 .part1-content{
+    width: 950px;
+    height: 300px;
+    background-image: linear-gradient(70deg, white 81%, transparent 20px);
+    z-index: 999;
+}
+
+.home-part1 .part1-content .content{
+    width: 750px;
+}
+
+.home-part1 .part1-content h2{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.home-part1 .part1-content p{
+    width: 705px;
+    margin-top: 20px;
+    margin-left: 40px;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.home-part1 img{
+    width: 705px;
+    height: 300px;
+    position: absolute;
+    left: 51.1%;
+    z-index: 0;
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ============================= */
+/* ======== HOME PART 2 ======== */
+/* ============================= */ 
+
+.home-part2{
+    margin-bottom: 20px ;
+}
+
+.home-part2 h2.a{
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+
+.home-part2 p{
+    width: 1160px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+/* ============================= */
+/* ======== HOME PART 3 ======== */
+/* ============================= */ 
+
+.home-part3{
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+}
+
+.home-part3 img{
+    width: 620px;
+    height: 785px;
+    border-radius: 10px;
+    border: none;
+    margin: 35px 50px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.home-part3 h2{
+    width: 100%;
+    text-align: center;
+    color: #012a4a;    
+    margin-top: 35px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.home-part3 p{
+    font-size: 20px;
+}
+
+.home-part3 .paragraph1{
+    margin-top: 30px;
+}
+
+.home-part3 .paragraph2{
+    margin-top: 35px;
+}
+
+/* ============================= */
+/* ======== HOME PART 4 ======== */
+/* ============================= */
+
+.home-part4{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+.home-part4 h2{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+}
+
+.home-part4 p{
+    width: 600px;
+    margin-top: 20px;
+    color: white;
+}
+
+.home-part4 video{
+    width: 500px;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+/* ============================= */
+/* ======== HOME PART 5 ======== */
+/* ============================= */
+
+.home-part5{
+    margin-top: 50px;
+}
+
+.home-part5 h2{
+    width: fit-content;
+    margin-bottom: 80px;
+    padding: 5px 15px;
+    text-align: center;
+    color: #333;
+    font-size: 40px;
+    font-weight: 400;
+    border-radius: 20px;
+    background-color: white;
+    /* border:  4px white dashed; */
+}
+
+.home-part5 .top-cards, .bottom-card{
+    margin: 20px 0;
+}
+
+.home-part5 .card{
+    /* width: 300px; */
+    background-color: #4b4b4b;
+    border: none;
+    border-radius: 20px;
+    margin: 20px 50px;
+}
+
+.home-part5 .card img{
+    width: 150px;
+    height: 150px;
+    margin: 40px 73px 30px 73px;
+    border-radius: 50%;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.home-part5 .card h3,h4{
+    text-align: center;
+    color: white;
+}
+
+.home-part5 .position{
+    width: 200px;
+    background-color: #012a4a;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.home-part5 .card p{
+    width: 300px;
+    padding: 0 20px;
+    color: white;
+}
+
+.home-part5 .card p.first{
+    margin-top: 20px;
+}
+

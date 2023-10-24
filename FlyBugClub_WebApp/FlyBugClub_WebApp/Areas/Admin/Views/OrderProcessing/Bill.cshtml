@@ -1,0 +1,196 @@
+﻿@model List<FlyBugClub_WebApp.Models.BillBorrow>
+
+<div class="mw1440">
+    <div class="row w93">
+        <div class="col-lg-10 col-md-12">
+            <div class="function function-bill">
+                <table border="1" class="bill-table">
+                    <thead>
+                        <tr>
+                            <th class="bid">BID</th>
+                            <th>User name</th>
+                            <th>UID</th>
+                            <th class="date">Borrow date</th>
+                            <th class="date">Return date</th>
+                            <th class="note">Note</th>
+                            <th class="status">Status</th>
+                            <th class="money">Money</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody class="parent-body">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="parent-tr" onclick="toggleRow('expandable-row-@item.Bid')">
+                                <td class="outsite-info">@item.Bid</td>
+                                <td class="outsite-info">@item.SidNavigation.Name</td>
+                                <td class="outsite-info">@item.Sid</td>
+                                <td class="outsite-info">@item.BorrowDate.ToShortDateString()</td>
+                                @if(@item.ReturnDate == null){
+                                    <td class="outsite-info">//</td>
+                                }
+                                else{
+                                    if (item.ReturnDate.HasValue)
+                                    {
+                                        <td class="outsite-info">@item.ReturnDate.Value.ToShortDateString()</td>
+                                    }
+                                }
+
+                                <td class="max-word outsite-info note">@item.Note</td>
+
+                                @if (@item.Status == 1)
+                                {
+                                    <td class="borrowing outsite-info"><span>Borrowing</span></td>
+                                    
+                                }
+                                else if (@item.Status == 0)
+                                {
+                                    <td class="waiting outsite-info "><span>Waiting</span></td>
+                                }
+                                else if (@item.Status == 2)
+                                {
+                                    <td class="done outsite-info "><span>Done</span></td>
+                                }
+                                <td class="outsite-info">@item.Total</td>
+                                <td class="outsite-info">
+                                    @if(@item.Status == 0){
+                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
+                                        <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
+                                    }
+                                    else if(@item.Status == 1){
+                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    }
+                                    else if(@item.Status == 2){
+                                        @*<a asp-action="" asp-route-id=""><i class="fa-solid fa-pen-to-square"></i></a> *@  
+                                    }
+                                </td>
+                            </tr>
+                            <tr class="expandable-row detail-info detail" id="expandable-row-@item.Bid">
+                                <td colspan="9" class="child">
+                                    <table class="child-table">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Device</th>
+                                                <th >Quantity</th>
+                                                <th>Re-Qty</th>
+                                                <th>Price</th>
+                                                <th>Sub total</th>
+                                                @if (@item.Status == 0)
+                                                {
+                                                    <th>Status</th>
+                                                    <th>Qty damage</th>
+                                                    <th>#</th>
+                                                }
+                                                else if (@item.Status == 0 || @item.Status == 1){
+                                                    <th>Status</th>
+                                                    <th>Qty damage</th>
+                                                    <th colspan="1">#</th>
+                                                }
+                                                else
+                                                {
+                                                    <th>Status</th>
+                                                    <th>Qty damange</th>
+                                                }
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var detail in item.BorrowDetails)
+                                            {
+                                                <tr>
+                                                    <td colspan="2">@detail.DeviceId</td>
+                                                    <td>@detail.Quantity</td>
+                                                    <td>@detail.ReturnQuantity</td>
+                                                    <td>@detail.Price</td>
+                                                    <td>@detail.SubTotal.ToString("0.000")</td>
+                                                    @if(@item.Status == 0){
+                                                        <td>//</td>
+                                                        <td>//</td>
+                                                        <td>
+                                                            <a asp-action="EditBillDetail" asp-route-id="@detail.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
+                                                            <a asp-action="" asp-route-id=""><i class="fa-solid fa-trash"></i></a>
+                                                        </td>
+                                                    }
+                                                    else if(@item.Status == 1)
+                                                    {
+                                                        @if (detail.ReturnQuantity == 0)
+                                                        {
+                                                            <td>Not yet</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                        }
+                                                        else if (detail.ReturnQuantity < detail.Quantity)
+                                                        {
+                                                            <td>Not enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                        }
+                                                        else if (detail.ReturnQuantity > 0 && detail.ReturnQuantity < detail.Quantity)
+                                                        {
+                                                            <td>Not enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                        }
+                                                        else if (detail.ReturnQuantity == detail.Quantity)
+                                                        {
+                                                            <td>Enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                        }
+                                                        else if (detail.ReturnQuantity == detail.Quantity)
+                                                        {
+                                                            <td>Not enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                        }
+
+                                                    }
+                                                    else if (@item.Status == 2)
+                                                    {
+                                                        if(detail.ReturnQuantity < detail.Quantity)
+                                                        {
+                                                            <td>Not enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                        }
+                                                        else if (detail.ReturnQuantity == detail.Quantity)
+                                                        {
+                                                            <td>Enough</td>
+                                                            <td>@detail.QtyDamage</td>
+                                                        }
+                                                    }
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <div class="row">
+                <div class="function QtyofStatus">
+                    <div class="wrap-number">
+                        <h4>Waiting</h4>
+                        <h3 class="waiting">@ViewBag.countWaiting</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="function QtyofStatus">
+                    <div class="wrap-number">
+                        <h4>Borrowing</h4>
+                        <h3 class="borrowing">@ViewBag.countBorrowing</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="function QtyofStatus">
+                    <div class="wrap-number">
+                        <h4>Done</h4>
+                    <h3 class="done">@ViewBag.countDone</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,172 @@
+section.dashboard{
+    max-width: 1440px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.body{
+    max-width: 1230px;
+    width: 100%;
+}
+
+.dashboard .tagtop{
+    width: 100%;
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+}
+
+.dashboard .tagtop .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
+}
+
+.dashboard .tagtop .title .title-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .tagtop .title .icon-title{
+    display: flex;
+}
+
+
+/* .dashboard .tagtop .link{
+    /* position: relative; */
+    /* top: 2px; */
+    /*display: flex;
+    float: right;
+    font-size: 14px;
+    left: 220;
+    padding: 5px;
+    color: #333;
+} */
+
+.dashboard .tagtop img{
+    width: 40px;
+    height: 40px;
+}
+
+.dashboard .tagtop span{
+    margin: auto 8px;
+    font-size: 18px;
+}
+
+.dashboard .income .title{
+    font-size: 17px;
+}
+
+.dashboard .income .unit{
+    font-size: 25px;
+    color: rgb(179, 179, 179);
+    margin-left: 10px;
+}
+
+.dashboard .income span.money{
+    position: relative;
+    top: 10px;
+    right: 14;
+    font-size: 28px;
+}
+
+.dashboard .income .note{
+    margin: 10px;
+}
+
+.dashboard .income .note p{
+    font-size: 13px;
+}
+
+.dashboard .income .note span{
+    color: rgb(148, 185, 93);
+    font-size: 13px;
+}
+
+.dashboard .income .note span i{
+    position: relative;
+    top: 3px;
+    padding-left: 12px;
+}
+
+/* ============================= */
+/* =========== Income ========== */
+/* ============================= */
+
+.dashboard .info-sales{
+    width: 100%;
+    height: fit-content;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+.dashboard .info-sales h5{
+    padding: 10px;
+}
+
+.dashboard .income-form{
+    width: 100%;
+    padding: 10px 0;
+}
+
+.dashboard .income-form .table-container {
+    height: 250px;
+    overflow-y: auto; 
+    position: relative; 
+}
+
+.dashboard .income-form .table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.dashboard .income-form .table-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Màu nền cho thanh cuộn */
+    border-radius: 6px; /* Độ cong góc của thanh cuộn */
+}
+
+.dashboard .income-form table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard .income-form table thead{
+    position: sticky; 
+    top: 0;
+    background-color: #fff; 
+    z-index: 1; 
+    padding: 5px 0;
+}
+
+.dashboard .income-form table tbody{
+    overflow-y: auto;
+}
+
+.dashboard .income-form table tr{
+    cursor: default;
+}
+
+.dashboard .income-form table tr:hover{
+    background-color: #f2f2f2;
+}
+
+.dashboard .income-form table th, td{
+    text-align: center;
+}
+
+
+.dashboard .income-form table th{
+    font-size: 16px;
+}
+
+.dashboard .income-form table td{
+    padding: 10px 0;
+}
+
+/* ============================= */
+/* ========= Calender ========== */
+/* ============================= */

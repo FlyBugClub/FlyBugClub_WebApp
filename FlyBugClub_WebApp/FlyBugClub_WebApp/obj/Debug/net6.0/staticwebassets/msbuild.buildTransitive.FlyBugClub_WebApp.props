@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\FlyBugClub_WebApp.props" />
+</Project>

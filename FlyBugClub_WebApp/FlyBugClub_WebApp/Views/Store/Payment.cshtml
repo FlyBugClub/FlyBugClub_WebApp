@@ -1,0 +1,177 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using FlyBugClub_WebApp.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@model MenuCard
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var UserId = user.UID;
+    var fullName = user.FullName;
+    var phonenumber = user.PhoneNumber;
+    var address = user.Address;
+}
+
+<section class="body payment">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xxl-8 col-xl-9 col-lg-8 col-md-7 col-sm-6">
+                @*<h1>@ViewBag.sessionId</h1>*@
+                @if(Model.Card.GetCountItem() == 0)
+                {
+                    <div class="title-box">
+                        <div class="title-childbox">
+                            <h2 class="title-emptycard">Hiện đang không có sản phảm nào trong giở hàng</h2>
+                            <div class="center">
+                                <button class="shop-emptycard"><a asp-controller="Store" asp-action="Store">Cửa hàng</a></button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="shopping-table">
+                        <table class="payment">
+                            <thead>
+                                <tr>
+                                    <th class="first remove">#</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Sản phẩm</th>
+                                    <th class="qty">Số lượng</th>
+                                    <th>Đơn giá</th>
+                                    <th class="last">Tổng tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model.Card.getAllItem())
+                                {
+                                    <tr>
+                                        <td class="remove"><a asp-controller="Store" asp-action="RemoveItem" asp-route-id="@item.Id"><i class="fa-solid fa-xmark"></i></a></td>
+                                        <td class="image"><img src="~/img/img_products/@item.ImagePath" alt="Item"></td>
+                                        <td class="item-name"><a asp-controller="Store" asp-action="DetailCard" asp-route-id="@item.Id">@item.Name</a></td>
+                                        <td class="qty">
+                                            <div class="center">
+                                                @using (Html.BeginForm("UpdateQuantity", "store", FormMethod.Post))
+                                                {
+                                                    <div class="qty">
+                                                        @Html.HiddenFor(m=>item.Id)
+
+                                                        <button type="submit" class="minus" value="-" name="btnUpdateQuantity">
+                                                            <i class="fa-solid fa-minus"></i>
+                                                        </button>
+
+                                                        <p>x @item.Quantity</p>
+
+                                                        <button type="submit" class="plus" value="+" name="btnUpdateQuantity">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </td>
+                                        <td>@item.Price.ToString("0.000") VND</td>
+                                        <td class="subtotal">@item.lineTotla.ToString("0.000") VND</td>
+                                    </tr>
+                                }
+                                <tr class="total-bill">
+                                    <th colspan="5">Tổng đơn hàng</th>
+                                    <td>@Model.Card.getTotal().ToString("0.000") VND</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                
+            </div>
+            <div class="col-xxl-4 col-xl-4">
+                <form class="get-info-form" asp-controller="store" asp-action="CheckOut" method="post">
+                    <h5>Thông tin khách hàng</h5>
+                    <table>
+                        <tr>
+                            <th>Họ tên</th> 
+                            <th><input type="text" name="fullName" value="@fullName"></th>
+                        </tr>
+                        <tr>
+                            <th>MSSV/MSNV</th>
+                            <th><input type="text" name="userId" value="@UserId"></th>
+                        </tr>
+                        <tr>
+                            <th>Số điện thoại</th>
+                            <th><input type="text" name="phonenumber" value="@phonenumber"></th>
+                        </tr>
+                        <tr>
+                            <th>Địa chỉ</th>
+                            <th><input type="text" name="address" value="@address"></th>
+                        </tr>
+                        <tr>
+                            <th>Ngày nhận</th>
+                            <th><input type="datetime-local" id="myDatetimeInput" name="myDatetimeInput" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")"></th>
+                        </tr>
+                        <tr>
+                            <th>Ghi chú</th>
+                            <th class="note"><textarea name="note" id="note"></textarea></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th class="btn-order">
+                                <div class="center">
+                                    <button type="submit">Đặt hàng</button>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="best-seller">
+    <div class="center title">
+        <h2>sản phẩm bán chạy</h2>
+    </div>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach(var top in Model.Top10Bestdevicces)
+                {
+                    <div class="item-card swiper-slide">
+                        <div>
+                            <img src="~/img/img_products/@top.ImagePath" alt="Photo item store">
+                            <h3>@top.Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
+                        </div>
+                        <div class="center icon-card">
+                            <button class="icon icon-share">
+                                <a href="#">
+                                    <i class="fa-solid fa-share"></i>
+                                </a>
+                            </button>
+                            <button class="icon icon-love">
+                                <a href="#">
+                                    <i class="fa-regular fa-heart"></i>
+                                </a>
+                            </button>
+                            <button class="icon icon-share">
+                                <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@top.DeviceId">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </a>
+                            </button>
+                        </div>
+                        <div class="center item-price">
+                            <h2>@top.Price.ToString("0.000") VNĐ</h2>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="swiper-button-next swiper-btn"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+@*<script src="~/js/slidebestseller.js"></script>
+<script src="~/js/swiper-bundle.min.js"></script>*@

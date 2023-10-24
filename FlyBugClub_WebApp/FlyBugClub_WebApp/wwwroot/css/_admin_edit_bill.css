@@ -1,0 +1,42 @@
+/* =============================== */
+/* ============= BILL ============ */
+/* =============================== */
+
+.whole-bill{
+    justify-content:space-between;
+}
+
+.bill-area {
+    width: fit-content !important;
+    margin-bottom: 20px;
+}
+
+/* =============================== */
+/* ========= BILL DETAIL ========= */
+/* =============================== */
+
+.bill-detail-area {
+    width: 57% !important;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.bill-detail-area table{
+    width: 100%;
+}
+
+.bill-detail-area table th,td{
+    text-align: center;
+}
+
+.bill-detail-area table th{
+    height: 30px;
+}
+
+.bill-detail-area table td{
+    height: 30px;
+}
+
+    .bill-detail-area table tr:hover td {
+        background-color: rgba(250, 200, 152,0.7);
+    }

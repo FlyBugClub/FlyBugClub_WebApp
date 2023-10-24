@@ -1,0 +1,39 @@
+﻿@model List<FlyBugClub_WebApp.Models.CategoryDevice>
+
+<div class="mw1440">
+    <div class="Category-area">
+        <div class="btn-newDevice">
+            <h3>Category</h3>
+            <button>
+                <a class="newDevice" asp-area="Admin" asp-controller="Category" asp-action="CreateCategory">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    New category
+                </a>
+            </button>
+        </div>
+        <form>
+            <table class="table-category">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Category name</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="first image-device">@item.CategoryId</td>
+                            <td>@item.CategoryName</td>
+                            <td class="last">
+                                <a asp-action="EditCategory" asp-route-id="@item.CategoryId"><i class="fa-solid fa-pen-to-square"></i></a> ||
+                                <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

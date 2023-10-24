@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/img/img_logo/Bug(Đen).png" type="image/x-icon"/>
+    <title>@ViewData["Title"]FlyBug Club</title>
+
+    <!-- Bootrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="~/css/default_setting.css">
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/css/store.css">
+    <link rel="stylesheet" href="~/css/payment.css">
+
+
+    <!-- JetBrains Mono font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="backgrounf-loding">
+        <img id="preloader" src="~/img/img_logo/FlyBugBLue1.png" alt="loading..."></img>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
+
+
+    <!-- ======================== -->
+    <!-- ========= BODY ========= -->
+    <!-- =========================-->
+    <div class="body">
+        @RenderBody()
+    </div>
+
+    <!-- ======================== -->
+    <!-- ======== FOOTER ======== -->
+    <!-- =========================-->
+    <div class="body">
+        <!-- ================================ -->
+        <!-- =========== FOOTER ============= -->
+        <!-- =================================-->
+        <footer class="footer">
+            <div class="footer-leftside">
+                <div class="left">
+                    <div class="footer-left">
+                        <iframe class="ggmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15678.190787267133!2d106.64595238715819!3d10.769299600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f7c8bf050ff%3A0x4fa87595d124cc0c!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBIb2EgU2VuIC0gQ8ahIHPhu58gVGjDoG5oIFRow6Fp!5e0!3m2!1svi!2s!4v1691345035899!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="footer-info">
+                        <div class="center">
+                            <ul class="footer-center">
+                                <h3>Website</h3>
+                                <li><a asp-controller="Home" asp-action="Home">Trang chủ</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Đồ án</a></li>
+                                <li><a asp-controller="Store" asp-action="Store">cửa hàng</a></li>
+                            </ul>
+                        </div>
+                        <div class="center">
+                            <ul class="footer-center">
+                                <h3>Hoạt động</h3>
+                                <li><a href="#">Chiêu mộ</a></li>
+                                <li><a href="#">Đồ án</a></li>
+                                <li><a href="#">Hình ảnh</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="footer-rightside">
+                <div class="footer-right">
+                    <div class="img-logo">
+                        <img src="~/img/img_logo/flybug.png" alt="">
+                    </div>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/flybugclub.hsu"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://discord.gg/WXUxRBtBzq"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>CopyRight &copy; 2023 FLYBUGCLUB</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ======== JavaScript ======== -->
+    @*JS*@
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="~/js/swiper-bundle.min.js"></script>
+    
+    @*Main Function*@
+    <script src="~/js/reloader.js"></script>
+    <script src="~/js/GoToTop.js"></script>
+
+    @*Store*@
+    <script src="~/js/pagination.js"></script>
+
+    @*Payment*@
+    <script src="~/js/slidebestseller.js"></script>
+    <script src="~/js/qty.js"></script>
+
+
+
+    
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+</body>
+</html>

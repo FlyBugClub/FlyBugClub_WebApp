@@ -1,0 +1,45 @@
+﻿@model List<FlyBugClub_WebApp.Models.Device>
+
+<div class="device-area">
+    <div class="btn-newDevice">
+        <h3>Devices</h3>
+        <button>
+            <a class="newDevice" asp-area="Admin" asp-controller="Shop" asp-action="CreateDevice">
+                <i class="fa-solid fa-pen-to-square"></i>
+                New device
+            </a>
+        </button>
+    </div>
+    <form>
+        <table class="table-device">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>inventory</th>
+                    <th>Rented</th>
+                    <th>Borrow rate</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td class="first image-device"><img src="~/img/img_products/@item.ImagePath" /></td>
+                        <td>@item.Name</td>
+                        <td>@item.Price.ToString("0.000") đ</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.QtyBorrowed</td>
+                        <td>@item.BorrowRate </td>
+                        <td class="last">
+                            <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> ||
+                            <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>

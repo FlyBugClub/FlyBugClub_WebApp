@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body{
+    background: #f9f9f9
+}
+
+.center{
+    display: flex;
+    justify-content:center;
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap-login {
+    background: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+img{
+    width: 100px;
+    margin: 20px 0;
+}
+
+/*===========================*/
+/*========== Login ==========*/
+/*===========================*/
+
+label.form-label{
+    padding-top: 10px !important;
+}
+
+input.form-control {
+    height: 45px !important;
+    width: 300px !important;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.forgot-password{
+    display:flex;
+    float:right;
+}
+
+.forgot-password a{
+    margin-top: -10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    transition: all .25s ease;
+}
+
+.forgot-password a:hover{
+    color: #2fc6de;
+    transition: all .25s ease;
+}
+
+label.remember{
+    font-size: 15px !important;
+}
+
+button.submit{
+    height:fit-content;
+    width: 200px !important;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: #333;
+    color: white;
+}
+
+p{
+    color: #000;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.regs .register{
+    text-decoration: none;
+    color: #0455b9;
+    font-size: 13px;
+}
+
+/*===========================*/
+/*======== Register =========*/
+/*===========================*/
+.registerForm select.select-pos {
+    width: 300px !important;
+    height: 45px !important;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: .55rem;
+    border: 1px solid #ced4da;
+}
+
+.registerForm label.select-pos{
+    margin-top:10px;
+    font-size: 13px;
+    opacity: 0.65;
+}

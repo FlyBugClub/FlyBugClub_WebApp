@@ -1,0 +1,405 @@
+/* ================================ */
+/* ============= BODY ============= */
+/* ================================ */
+
+section.payment *{
+    color: white;
+}
+
+section.payment {
+    width: 1440px;
+}
+
+/*  @############ TABLE ############@ */
+
+/*form.shopping-table {
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    margin-bottom: 30px;
+}*/
+
+.payment .title-box {
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+}
+
+.payment .title-childbox {
+    width: 640px;
+    height: fit-content;
+    margin: 18% auto;
+}
+
+.payment h2.title-emptycard {
+    width: 640px;
+    color: rgba(255, 255, 255, 0.60);
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0.3px;
+}
+
+.payment .shop-emptycard {
+    width: 220px;
+    height: 45px;
+    margin: 20px auto;
+    background-color: #012a4a;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    color: #FFF;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.3px;
+}
+
+.payment .shop-emptycard a{
+    font-size: 23px;
+    margin: auto;
+}
+
+.payment .shopping-table {
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    margin-bottom: 30px;
+}
+
+table.payment{
+    width: 100%;
+    border-radius: 20px;
+    background: #3D3D3D;
+}
+
+table.payment thead tr{
+    height: 60px;
+}
+
+table.payment thead tr th{
+    border-bottom: 2px solid white;
+    background-color: #666666;
+    text-align: center;
+    border-right: 2px solid white;
+}
+
+table.payment thead tr th.first{
+    border-top-left-radius: 20px;
+    border-right: 2px solid white;
+}
+
+table.payment thead tr th.last{
+    border-top-right-radius: 20px;
+    border: none;
+}
+
+table.payment thead tr th.remove{
+    width:40px;
+}
+
+table.payment tbody tr{
+    height: 150px;
+    /* background-color: #565656; */
+    border-top: 2px solid white;
+}
+
+    table.payment tbody tr th.qty,
+    table.payment tbody tr td.qty {
+        width: 150px;
+    }
+
+table.payment tbody tr td{
+    text-align: center;
+    border-right: 2px solid white;
+}
+
+table.payment tbody td.image{
+    border-right: 1px solid white;
+}
+
+table.payment tbody tr td.remove a i{
+    margin: 6px;
+    transition: all .25s ease-in;
+}
+
+table.payment tbody tr td.remove a i:hover{
+    rotate: 180deg; 
+    color: crimson;
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px 5px;
+    transition: all .25s ease-in;
+}
+
+table.payment tbody td.item-name{
+    max-width: 230px;
+}
+
+table.payment tbody td.subtotal{
+    border-right: none;
+}
+
+table.payment tbody td.image img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+table.payment tbody tr td .qty{
+    width: 120px;
+    height: 30px;
+    margin: 0 20px;
+    background-color: #565656;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+table.payment tbody tr td .qty button{
+    background-color: transparent;
+    border: none;
+}
+
+table.payment tbody tr td .qty button.plus{
+    margin-right: 10px;
+}
+
+table.payment tbody tr td .qty button.minus{
+    margin-left: 10px;
+}
+
+table.payment tbody tr td .qty p{
+    margin: auto 0;
+    padding: 0 5px;
+}
+
+table.payment tbody tr.total-bill{
+    height: 40px;
+}
+
+table.payment tbody tr.total-bill th{
+    text-align: center;
+    border-right: 2px solid white;
+}
+
+table.payment tbody tr.total-bill td{
+    border-right: none;
+}
+
+/*  @############ INFO TABLE ############@ */
+
+form.get-info-form{
+    width: 450px;
+    background-color: #565656;
+    border-radius: 20px;
+    padding-bottom: 0.2%;
+}
+
+form.get-info-form h5{
+    padding: 20px 0 0 20px;
+    text-align: center;
+}
+
+form.get-info-form table{
+    height: 370px; 
+    margin: 20px;
+}
+
+form.get-info-form table th{
+    width: 150px;
+}
+
+form.get-info-form table th.note{
+    width: 264px;
+    height: 100px;
+}
+
+form.get-info-form input{
+    width: 100%;
+    color: #012a4a;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.80);
+    display: flex;
+    float: right;
+}
+
+form.get-info-form textarea{
+    height: 100%;
+    width: 100%;
+    margin-top: 11px;
+    padding: 8px 10px;
+    resize: none;
+    color: #012A4A;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.80);
+    cursor: auto;
+    font-weight: 400;
+}
+
+form.get-info-form th.btn-order button{
+    color: white;
+    background-color: #012a4a;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    padding: 7px 20px;
+    transition: all 0.25s ease;
+}
+
+/*form.get-info-form button a{
+    font-size: 22px;
+    font-weight: 500;
+    padding: 5px 20px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+}*/
+
+/*  @############ BEST SELLER CARD ############@ */
+
+section.best-seller .title{
+    margin-bottom: 25px;
+}
+
+section.best-seller .title h2{
+    width: fit-content;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    margin: 80px 0 0 0;
+    border: 4px solid white;
+    border-radius: 30px;
+    padding: 5px 100px;
+}
+
+.item-card{
+    width: 296px;
+    height: fit-content !important;
+    background-color: #565656;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.item-card img{
+    width: fit-content;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 20px 20px 0 0;
+}
+
+.item-card h3{
+    margin: 23px 0;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.item-card p{
+    color: white;
+    text-align: justify;
+    padding: 0 20px;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.item-card .icon-card{
+    margin: 10px 0;
+}
+
+.item-card .icon-card .icon{
+    width: 48px;
+    height: 48px;
+    border: none;
+    margin: 15px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+}
+
+.item-card .icon-card .icon i{
+    color: #012A4A;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all .25s ease-in;
+}
+
+.item-card .icon-card .icon:hover i{
+    rotate: 360deg;
+    transition: all .25s ease-in;
+}
+
+.item-card .item-price{
+    margin-bottom: 20px;
+}
+
+.item-card .item-price h2{
+    width: 270px;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    margin: 0 15px;
+    font-size: 24px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 290px){
+    .item-card .icon-card{
+        display: block !important;
+    }
+}
+
+/*  @############ SWIPER CARDS ############@ */
+
+section.best-seller{
+    margin-bottom: 20px;
+}
+
+.card-wrapper{
+    height: fit-content !important;
+}
+
+.slide-container{
+    max-width: 1440px;
+    width: 100%;
+    height: fit-content !important;
+    /* background: gray; */
+    padding: 40px 0;
+}
+
+.slide-content{
+    margin: 0 40px;
+    /* background-color: #696969ed; */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.swiper-btn{
+    background-color: #a1a1a1;
+    padding: 30px;
+    border-radius: 50%;
+    opacity: 70%;
+    transition: all 0.25s ease-in;
+}
+
+.swiper-btn:hover{
+    background-color: #b9b9b9;
+    color: #0c58fd;
+    border-radius: 50%;
+    opacity: 70%;
+    transition: all 0.25s ease-in;
+}
+
+@media screen and (max-width: 1000px){
+    .swiper-btn{
+        display: none;
+    }
+}

@@ -1,0 +1,153 @@
+html {
+  margin: auto;
+	line-height: 1.5;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+  }
+
+.body{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  * {
+	margin: 0;
+	padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+  }
+  *,
+  *:before,
+  *:after {
+	box-sizing: border-box;
+  }
+  input,
+  textarea,
+  select,
+  button {
+	outline: none;
+	font: inherit;
+  }
+  input {
+	line-height: normal;
+  }
+  label,
+  button {
+	cursor: pointer;
+	user-select: none !important;
+  }
+  ul {
+	list-style: none;
+  }
+  a {
+	text-decoration: none;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+	display: block;
+	max-width: 100%;
+	user-select: none !important;
+  }
+  
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  td,
+  th {
+	overflow-wrap: break-word;
+  cursor: default;
+  }
+  
+  /* Mobie: width < 740px */
+  @media only screen and (max-width: 46.1875em) {
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="month"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    input[type="week"],
+    select:focus,
+    textarea {
+      font-size: 16px;
+    }
+  }
+
+li, a, button {
+    list-style: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    text-decoration: none;
+    /*color: #fff;*/
+    /* cursor: url(../img/bug-icon.png) 5 5, auto !important; */
+}
+/* body {
+    cursor: url(../img/bug-icon.png) 5 5, auto !important;
+}
+a {
+    cursor: url(../img/bug-icon.png) 5 5, auto;
+} */
+body {
+    background-color: #3d3d3d;
+}
+
+  .center{
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ============= Custom ScrollBar ============= */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background: #555;
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #888;
+  }
+
+/* --------------------------------------------- */
+/* ---------------- Button go to --------------- */
+/* --------------------------------------------- */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 23px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: all .25s ease-in;
+}
+
+#myBtn i{
+    font-size: 40px;
+}
+
+    #myBtn:hover {
+        color: #DE9E48;
+        transition: all .25s ease-in;
+    }

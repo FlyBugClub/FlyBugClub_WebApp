@@ -1,0 +1,94 @@
+﻿@model FlyBugClub_WebApp.Models.Device
+@inject IProductRepository ProductRepository
+
+<div class="wraper-card">
+    <div class="row row-wrap-card">
+        <div class="col col-md-4">
+            <img src="~/img/img_products/@Model.ImagePath" alt="Item">
+        </div>
+        <div class="col col-md-8">
+            @{
+                //decimal rentPrice = Model.Price - (Model.Price * 0.6m);
+
+                //decimal oldPrice = Model.Price + (Model.Price * 0.09m);
+
+                decimal RentPrice = Model.Price - (Model.Price * 0.6m);
+                int rentPrice = (int)Math.Round(RentPrice);
+
+                decimal OldPrice = Model.Price + (Model.Price * 0.09m);
+                int oldPrice = (int)Math.Round(OldPrice);
+            }
+            <h2>@Model.Name</h2>
+            <p class="discription">@Model.Describe</p>
+            <label>Giá thuê:</label>
+            <p class="price">@rentPrice.ToString("0.000")đ</p>
+            <label>Giá cọc:</label>
+            @if (@Model.Price != @oldPrice)
+            {
+                <p class="price"> @Model.Price.ToString("0.000")đ<del>@oldPrice.ToString("0.000")đ</del></p>
+            }
+            else
+            {
+                <p class="price"> @Model.Price.ToString("0.000")đ</p>
+            }
+            <p class="qty">Sản phẩm còn lại: @Model.Quantity</p>
+            <p class="discription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived 
+                not only five centuries, but also the leap into</p>
+            @if (@Model.Quantity > 0 && @Model.Status == 1)
+            {
+                <button class="btn-active"><a asp-controller="Store" asp-action="AddToCard" asp-route-id="@Model.DeviceId">Đặt ngay</a></button>
+            }
+            else if (@Model.Quantity <= 0 && @Model.Status == 0)
+            {
+                <button class="btn-disable"><a>Đặt ngay</a></button>
+            }
+        </div>"
+    </div>
+</div>
+
+<section class="best-seller">
+    <div class="center title">
+        <h2>sản phẩm bán chạy</h2>
+    </div>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach (var top in ProductRepository.Top10BestSeller())
+                {
+                    <div class="item-card swiper-slide">
+                        <div>
+                            <img src="~/img/img_products/@top.ImagePath" alt="Photo item store">
+                            <h3>@top.Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
+                        </div>
+                        <div class="center icon-card">
+                            <button class="icon icon-share">
+                                <a href="#">
+                                    <i class="fa-solid fa-share"></i>
+                                </a>
+                            </button>
+                            <button class="icon icon-love">
+                                <a href="#">
+                                    <i class="fa-regular fa-heart"></i>
+                                </a>
+                            </button>
+                            <button class="icon icon-share">
+                                <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@top.DeviceId">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </a>
+                            </button>
+                        </div>
+                        <div class="center item-price">
+                            <h2>@top.Price.ToString("0.000") VNĐ</h2>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="swiper-button-next swiper-btn"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>

@@ -1,0 +1,142 @@
+﻿@model FlyBugClub_WebApp.Models.Device
+
+<div class="mw1440">
+    <div class="row w80">
+        <div class="col-md-9">
+            <div class="function">
+                <form asp-action="saveDevice" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="DeviceId" class="control-label"></label>
+                                <input asp-for="DeviceId" class="form-control" />
+                                <span asp-validation-for="DeviceId" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Quantity" class="control-label"></label>
+                                <input asp-for="Quantity" class="form-control" />
+                                <span asp-validation-for="Quantity" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Describe" class="control-label"></label>
+                                <input asp-for="Describe" class="form-control" />
+                                <span asp-validation-for="Describe" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="ImagePath" class="control-label"></label>
+                                <input asp-for="ImagePath" class="form-control myinput" />
+                                <span asp-validation-for="ImagePath" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Status" class="control-label"></label>
+                                <input asp-for="Status" class="form-control" />
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="CategoryId" class="control-label"></label>
+                                <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.GenreId"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="QtyBorrowed" class="control-label"></label>
+                                <input asp-for="QtyBorrowed" class="form-control" />
+                                <span asp-validation-for="QtyBorrowed" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="BorrowRate" class="control-label"></label>
+                                <input asp-for="BorrowRate" class="form-control" />
+                                <span asp-validation-for="BorrowRate" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="function">
+                    <h4>Category</h4>
+                    <table class="category-area">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Cảm biến</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Phần cứng</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Kết nối</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="function mt12">
+                    <h4>Status</h4>
+                    <table class="status-area">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Ngừng hoạt động</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>hoạt động</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Bán chạy</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Giảm giá</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,86 @@
+﻿@page
+@model LoginCustomerModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/img/img_logo/Bug(Đen).png" type="image/x-icon" />
+    <title>@ViewData["Title"]FlyBug Club</title>
+
+    <!-- Bootrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="~/css/_admin_login.css">
+
+    <!-- JetBrains Mono font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="screen">
+        <div class="wrap-login">
+            <section>
+                <div class="center">
+                    <img src="~/img/img_logo/Bug(Đen).png" />
+                </div>
+                <form id="account" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-floating">
+                        <input asp-for="Input.Email" class="form-control" />
+                        <label asp-for="Input.Email" class="form-label"></label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating">
+                        <input asp-for="Input.Password" class="form-control" />
+                        <label asp-for="Input.Password" class="form-label"></label>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <div class="checkbox">
+                            <div class="forgot-password">
+                                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                            </div>
+                            <label asp-for="Input.RememberMe" class="form-label remember">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <button type="submit" class="submit">Login</button>
+                    </div>
+                    <div class="center">
+                        <p class="regs">
+                            Don't have an account?
+                            <a class="register" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register now</a>
+                        </p>
+                        @*<p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                        </p>*@
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

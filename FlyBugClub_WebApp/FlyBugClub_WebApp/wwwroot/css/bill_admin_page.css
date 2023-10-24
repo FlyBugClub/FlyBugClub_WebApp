@@ -1,0 +1,131 @@
+﻿/* =============================== */
+/* ====== BUTTON NEW DEVICE ====== */
+/* =============================== */
+
+.w93 {
+    width: 93% !important;
+}
+
+.expandable-row {
+    display: none;
+}
+
+.function-bill{
+    margin-bottom: 12px;
+}
+
+.bill-table {
+    width: 100%;
+}
+
+.bill-table th,td{
+    text-align:center;
+}
+
+.bill-table tbody.parent-body tr:hover td.outsite-info{
+    background: #e5e5e5;
+}
+
+.bill-table th{
+    padding-bottom: 5px;
+}
+
+.bill-table td{
+    height: 45px;
+    border-top: 1px solid ;
+    /*border: 2px solid #ffd800;*/
+}
+
+.bill-table th.date{
+    max-width: 200px;
+}
+
+.bill-table tbody.parent-body td.note{
+    max-width: 90px;
+}
+
+
+.waiting {
+    color: #c7ac2f;
+    font-weight: 700;
+    border-top: 1px solid #000 !important;
+}
+
+.borrowing {
+    color: #8734d0;
+    font-weight: 700;
+    border-top: 1px solid #000 !important;
+}
+
+.done{
+    color: #39b230;
+    font-weight: 700;
+    border-top: 1px solid #000 !important;
+}
+
+
+.max-word {
+    max-width: 100%;
+    white-space: nowrap; /* Ngăn ngừng xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá độ rộng */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." cho nội dung bị ẩn */
+}
+
+.bill-table tbody .detail .child{
+    border: none;
+}
+
+    .bill-table tbody .detail .child-table {
+        width: 100% !important;
+        background: #ebebeb;
+        border-radius: 12px;
+    }
+
+.bill-table tbody .detail .child-table td,th{
+    border: none !important;
+}
+
+.bill-table tbody .detail .child-table th{
+    padding-top: 5px;
+}
+
+.bill-table .detail-info .child-table tbody tr:hover td{
+    background: #dbdbbd;
+}
+
+/* =============================== */
+/* ======== QTY OF STATUS ======== */
+/* =============================== */
+
+.wrap-number{
+    background: #012a4a;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 24px;
+
+}
+
+.QtyofStatus{
+    margin-bottom: 12px;
+}
+
+.QtyofStatus h3, h4 {
+    text-align: center;
+}
+
+.QtyofStatus h4 {
+    color: #fff;
+}
+
+.QtyofStatus h3{
+    margin-top: 15px;
+    font-size: 92px;
+}
+
+.QtyofStatus h3.waiting{
+    color:#e8ce57;
+}
+
+.QtyofStatus h3.borrowing {
+    color: #8734d0;
+}

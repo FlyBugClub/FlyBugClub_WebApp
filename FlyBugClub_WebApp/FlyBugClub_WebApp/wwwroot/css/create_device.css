@@ -1,0 +1,51 @@
+/* =============================== */
+/* ========= TABLE CREATE ======== */
+/* =============================== */
+
+.function .form-group {
+    margin: 10px 0;
+}
+
+/* =============================== */
+/* ======== TABLE CATEGORY ======= */
+/* =============================== */
+
+table.category-area{
+    width: 100%;
+}
+
+table.category-area th,td{
+    text-align:center;
+}
+
+table.category-area th {
+    height:40px;
+}
+
+table.category-area tr:hover td {
+    background: #f2f2f2;
+}
+
+/* ================================ */
+/* ========= TABLE STATUS ========= */
+/* ================================ */
+
+table.status-area {
+    width: 100%;
+}
+
+.mt12{
+    margin-top: 12px;
+}
+
+table.status-area th, td {
+    text-align: center;
+}
+
+    table.status-area th {
+        height: 40px;
+    }
+
+    table.status-area tr:hover td {
+        background: #f2f2f2;
+    }
