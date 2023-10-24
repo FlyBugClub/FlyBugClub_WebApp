@@ -1,12 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "kd/o1noqBqLpWS4PL1J2+PrlPU3PnMOcdvZHhoCkG9Uh2DPirLNYtKagxluEzgOoR8r/85oDTSITLvCP+goKKw==",
-=======
-  "dgSpecHash": "/mecuii1W8926auKYuwQ0ab9UqPWjQow32bhdDJ2TQRbAZyCa2DnWrvEN24+EiRyZswusHrEkKI2mNW/JEgC3A==",
->>>>>>> fbcf1544c9c1f6d4d62702688f8cad2b1ebf6382
+  "dgSpecHash": "6SX3yInp33V1eLX8YT+OrMsbu1yJs3+cRVezqcxbs22hRnxQC3cfFuuS361kpnLgbXeOvJLMc7qhVkiTyisKAQ==",
   "success": true,
-  "projectFilePath": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+  "projectFilePath": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

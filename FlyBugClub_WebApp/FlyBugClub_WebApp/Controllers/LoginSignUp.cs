@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Migrations;
 using FlyBugClub_WebApp.Models;
@@ -7,35 +6,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using Newtonsoft.Json;
-=======
-﻿using Microsoft.AspNetCore.Mvc;
->>>>>>> fbcf1544c9c1f6d4d62702688f8cad2b1ebf6382
 
 namespace FlyBugClub_WebApp.Controllers
 {
     public class LoginSignUp : Controller
     {
-<<<<<<< HEAD
         private FlyBugClubWebApplicationContext _ctx;
 
         public LoginSignUp(FlyBugClubWebApplicationContext ctx)
         {
             _ctx = ctx;
         }
-        /
+
         public IActionResult VerifyAccount()
         {
-
+            
             string otp = HttpContext.Request.Query["otp"];
             string usersJson = HttpContext.Request.Query["user"];
             if (otp != null)
             {
                 HttpContext.Session.SetString("otp", otp);
-            }
+            }    
             if (usersJson != null)
             {
                 HttpContext.Session.SetString("user_json", usersJson);
-            }
+            }    
             return View();
         }
         [HttpPost]
@@ -46,43 +41,59 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = HttpContext.Session.GetString("otp");
             string user_json = HttpContext.Session.GetString("user_json");
             string validate_otp = otp0 + otp1 + otp2 + otp3 + otp4 + otp5;
-
-
+            
+           
             //var query = _ctx.Users.FromSqlRaw("SELECT Email FROM Users WHERE Email = {0}", email);
             //var userWithEmail = query.FirstOrDefault();
 
             if (otp == validate_otp)
             {
-                // Phân tách chuỗi JSON thành danh sách
-                List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
-                var user = new ApplicationUser { UserName = Data_User[5], Email = Data_User[5] };
-                user.FullName = Data_User[0];
-                user.UID = Data_User[1];
-                user.PhoneNumber = Data_User[3];
-                user.Address = Data_User[4];
-                User usr = new User()
-                {
-                    Name = Data_User[0],
-                    StudentId = Data_User[1],
-                    PositionId = Data_User[2],
-                    Phone = Data_User[3],
-                    Address = Data_User[4],
-                    Email = Data_User[5],
-                    Account = Data_User[5]
-                };
+                    // Phân tách chuỗi JSON thành danh sách
+                    List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
+                    var user = new ApplicationUser { UserName = Data_User[5], Email = Data_User[5] };
+                    user.FullName = Data_User[0];
+                    user.UID = Data_User[1];
+                    user.PhoneNumber = Data_User[3];
+                    user.Address = Data_User[4];
+                    User usr = new User()
+                    {
+                        Name = Data_User[0],
+                        StudentId = Data_User[1],
+                        PositionId = Data_User[2],
+                        Phone = Data_User[3],
+                        Address = Data_User[4],
+                        Email = Data_User[5],
+                        Account = Data_User[5]
+                    };
 
-                //_ctx.Users.Add(usr);
-                //_ctx.SaveChanges();
+                _ctx.Users.Add(usr);
+                try
+                {
+                    _ctx.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    var innerException = ex.InnerException;
+                    while (innerException != null)
+                    {
+                        // In thông báo lỗi trong inner exception
+                        Console.WriteLine("=========================================================");
+                        Console.WriteLine(innerException.Message);
+                        innerException = innerException.InnerException;
+                        Console.WriteLine("=========================================================");
+                    }
+                    // Xử lý lỗi hoặc đưa ra thông báo phù hợp
+                }
                 return LocalRedirect("~/Identity/Account/LoginCustomer");
 
             }
             else
             {
-
+               
                 return View("~/Views/LoginSignUp/VerifyAccount.cshtml");
 
             }
-
+            
             // Xử lý yêu cầu POST ở đây
 
         }
@@ -158,11 +169,5 @@ namespace FlyBugClub_WebApp.Controllers
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-=======
-        public IActionResult VerifyAccount()
-        {
-            return View();
-        }
->>>>>>> fbcf1544c9c1f6d4d62702688f8cad2b1ebf6382
     }
 }

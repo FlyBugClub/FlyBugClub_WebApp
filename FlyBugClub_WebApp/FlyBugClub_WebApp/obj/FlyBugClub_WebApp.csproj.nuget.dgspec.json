@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {}
+    "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {}
   },
   "projects": {
-    "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {
+    "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+        "projectUniqueName": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
         "projectName": "FlyBugClub_WebApp",
-        "projectPath": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+        "projectPath": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
+        "outputPath": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

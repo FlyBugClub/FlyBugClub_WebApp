@@ -14,18 +14,23 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using FlyBugClub_WebApp.Models;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
     public class ForgotPasswordModel : PageModel
     {
+        private FlyBugClubWebApplicationContext _ctx;
+     
+        
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
 
-        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender)
+        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender, FlyBugClubWebApplicationContext ctx)
         {
             _userManager = userManager;
             _emailSender = emailSender;
+            _ctx = ctx;
         }
 
         /// <summary>
@@ -54,29 +59,44 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(Input.Email);
-                if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+                var email = Input.Email;
+                var usersWithEmail = _ctx.Users.Where(u => u.Email == email).ToList();
+                
+                foreach (var user in usersWithEmail)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
+                    if (user.Email == email)
+                    {
+                        string name = "hehe";
+                    }
+                    else
+                    {
+                        string name = "hehe";
+                    }
                 }
 
-                // For more information on how to enable account confirmation and password reset please
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
-                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                var callbackUrl = Url.Page(
-                    "/Account/ResetPassword",
-                    pageHandler: null,
-                    values: new { area = "Identity", code },
-                    protocol: Request.Scheme);
+                //var user = await _userManager.FindByEmailAsync(Input.Email);
+                //if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+                //{
+                //    // Don't reveal that the user does not exist or is not confirmed
+                //    return RedirectToPage("./ForgotPasswordConfirmation");
+                //}
 
-                await _emailSender.SendEmailAsync(
-                    Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                //// For more information on how to enable account confirmation and password reset please
+                //// visit https://go.microsoft.com/fwlink/?LinkID=532713
+                //var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                //code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                //var callbackUrl = Url.Page(
+                //    "/Account/ResetPassword",
+                //    pageHandler: null,
+                //    values: new { area = "Identity", code },
+                //    protocol: Request.Scheme);
 
-                return RedirectToPage("./ForgotPasswordConfirmation");
+                //await _emailSender.SendEmailAsync(
+                //    Input.Email,
+                //    "Reset Password",
+                //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                //return RedirectToPage("./ForgotPasswordConfirmation");
             }
 
             return Page();

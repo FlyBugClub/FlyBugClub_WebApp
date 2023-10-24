@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "+OK7CC8BGLLEjuIxu2MwgZZE6gz3BS/71OBpL8Qh8Io=",
-=======
-  "Hash": "oJ6YOw9MYg+fcy9Y+QXk+8J3Zzj/Xz6u0u81+jEcDIg=",
->>>>>>> fbcf1544c9c1f6d4d62702688f8cad2b1ebf6382
+  "Hash": "C+NmPFHK1sCrUeyWlppe03THzixia2XGkxufXVOkyBQ=",
   "Source": "FlyBugClub_WebApp",
   "BasePath": "_content/FlyBugClub_WebApp",
   "Mode": "Default",
@@ -14,7 +10,7 @@
     {
       "Name": "FlyBugClub_WebApp\\wwwroot",
       "Source": "FlyBugClub_WebApp",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "Pattern": "**"
     }
@@ -1041,10 +1037,10 @@
       "OriginalItemSpec": "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.23\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FlyBugClub_WebApp.styles.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FlyBugClub_WebApp.styles.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "FlyBugClub_WebApp.styles.css",
       "AssetKind": "All",
@@ -1055,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FlyBugClub_WebApp.styles.css"
+      "OriginalItemSpec": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\FlyBugClub_WebApp.styles.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "FlyBugClub_WebApp.bundle.scp.css",
       "AssetKind": "All",
@@ -1072,13 +1068,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.Development.json",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.Development.json",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "appsettings.Development.json",
       "AssetKind": "All",
@@ -1092,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\appsettings.Development.json"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.json",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.json",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "appsettings.json",
       "AssetKind": "All",
@@ -1109,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\appsettings.json"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_edit_bill.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_edit_bill.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/_admin_edit_bill.css",
       "AssetKind": "All",
@@ -1126,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\css\\_admin_edit_bill.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_login.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_login.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/_admin_login.css",
       "AssetKind": "All",
@@ -1143,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\css\\_admin_login.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\bill_admin_page.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\bill_admin_page.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/bill_admin_page.css",
       "AssetKind": "All",
@@ -1160,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bill_admin_page.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\category_admin_page.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\category_admin_page.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/category_admin_page.css",
       "AssetKind": "All",
@@ -1177,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\css\\category_admin_page.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\create_device.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\create_device.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/create_device.css",
       "AssetKind": "All",
@@ -1194,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\css\\create_device.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\cuslogin.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\cuslogin.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/cuslogin.css",
       "AssetKind": "All",
@@ -1211,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\css\\cuslogin.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\dashboard.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\dashboard.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/dashboard.css",
       "AssetKind": "All",
@@ -1228,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\default_setting.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\default_setting.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/default_setting.css",
       "AssetKind": "All",
@@ -1245,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\css\\default_setting.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\detail_card_device.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\detail_card_device.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/detail_card_device.css",
       "AssetKind": "All",
@@ -1262,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\css\\detail_card_device.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\device_admin_page.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\device_admin_page.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/device_admin_page.css",
       "AssetKind": "All",
@@ -1279,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\css\\device_admin_page.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\header.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\header.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/header.css",
       "AssetKind": "All",
@@ -1296,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\css\\header.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\headeradmin.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\headeradmin.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/headeradmin.css",
       "AssetKind": "All",
@@ -1313,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\css\\headeradmin.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\home.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\home.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/home.css",
       "AssetKind": "All",
@@ -1330,48 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\css\\home.css"
     },
     {
-<<<<<<< HEAD
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\login_signup.css",
-=======
-      "Identity": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\login_signup.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\payment.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
-      "BasePath": "_content/FlyBugClub_WebApp",
-      "RelativePath": "css/login_signup.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\login_signup.css"
-    },
-    {
-      "Identity": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\payment.css",
->>>>>>> fbcf1544c9c1f6d4d62702688f8cad2b1ebf6382
-      "SourceId": "FlyBugClub_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
-      "BasePath": "_content/FlyBugClub_WebApp",
-      "RelativePath": "css/login_signup.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\login_signup.css"
-    },
-    {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\payment.css",
-      "SourceId": "FlyBugClub_WebApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/payment.css",
       "AssetKind": "All",
@@ -1385,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\css\\payment.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\site.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1402,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\store.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\store.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/store.css",
       "AssetKind": "All",
@@ -1419,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\css\\store.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\swiper-bundle.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\swiper-bundle.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "css/swiper-bundle.min.css",
       "AssetKind": "All",
@@ -1436,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\css\\swiper-bundle.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\favicon.ico",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -1453,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8796.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8796.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF8796.jpg",
       "AssetKind": "All",
@@ -1470,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF8796.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8830.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8830.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF8830.jpg",
       "AssetKind": "All",
@@ -1487,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF8830.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9444.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9444.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF9444.jpg",
       "AssetKind": "All",
@@ -1504,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF9444.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9451.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9451.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF9451.jpg",
       "AssetKind": "All",
@@ -1521,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF9451.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9470.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9470.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF9470.jpg",
       "AssetKind": "All",
@@ -1538,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF9470.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9475.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9475.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/DSCF9475.jpg",
       "AssetKind": "All",
@@ -1555,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\DSCF9475.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\IMG_0042.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\IMG_0042.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/core_team/IMG_0042.jpg",
       "AssetKind": "All",
@@ -1572,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\img\\core_team\\IMG_0042.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\avatar.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\avatar.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/avatar.png",
       "AssetKind": "All",
@@ -1589,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\avatar.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\bug-icon.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\bug-icon.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/bug-icon.png",
       "AssetKind": "All",
@@ -1606,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\bug-icon.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\income.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\income.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/income.png",
       "AssetKind": "All",
@@ -1623,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\income.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\sales.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\sales.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/sales.png",
       "AssetKind": "All",
@@ -1640,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\sales.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\user.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\user.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/user.png",
       "AssetKind": "All",
@@ -1657,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\user.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\web-visit.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\web-visit.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_icon/web-visit.png",
       "AssetKind": "All",
@@ -1674,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_icon\\web-visit.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen).png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen).png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/Bug(Đen).png",
       "AssetKind": "All",
@@ -1691,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\Bug(Đen).png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen)1.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen)1.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/Bug(Đen)1.png",
       "AssetKind": "All",
@@ -1708,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\Bug(Đen)1.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FLYBUG CLUB.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FLYBUG CLUB.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/FLYBUG CLUB.png",
       "AssetKind": "All",
@@ -1725,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\FLYBUG CLUB.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\flybug.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\flybug.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/flybug.png",
       "AssetKind": "All",
@@ -1742,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\flybug.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/FlyBugBLue.png",
       "AssetKind": "All",
@@ -1759,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\FlyBugBLue.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue1.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue1.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/FlyBugBLue1.png",
       "AssetKind": "All",
@@ -1776,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\FlyBugBLue1.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\logo.png",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\logo.png",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_logo/logo.png",
       "AssetKind": "All",
@@ -1793,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_logo\\logo.png"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\8ICG.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\8ICG.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/8ICG.jpg",
       "AssetKind": "All",
@@ -1810,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\8ICG.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\ArduinoUnoR3.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\ArduinoUnoR3.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/ArduinoUnoR3.jpg",
       "AssetKind": "All",
@@ -1827,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\ArduinoUnoR3.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\bluth.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\bluth.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/bluth.jpg",
       "AssetKind": "All",
@@ -1844,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\bluth.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\breadboard.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\breadboard.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/breadboard.jpg",
       "AssetKind": "All",
@@ -1861,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\breadboard.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\buzzer.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\buzzer.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/buzzer.jpg",
       "AssetKind": "All",
@@ -1878,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\buzzer.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-anh-sang.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-anh-sang.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/cam-bien-anh-sang.jpg",
       "AssetKind": "All",
@@ -1895,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\cam-bien-anh-sang.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-mua-5jdk.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-mua-5jdk.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/cam-bien-mua-5jdk.jpg",
       "AssetKind": "All",
@@ -1912,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\cam-bien-mua-5jdk.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-cai-cai.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-cai-cai.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/cap-cai-cai.jpg",
       "AssetKind": "All",
@@ -1929,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\cap-cai-cai.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-cai.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-cai.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/cap-duc-cai.jpg",
       "AssetKind": "All",
@@ -1946,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\cap-duc-cai.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-duc.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-duc.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/cap-duc-duc.jpg",
       "AssetKind": "All",
@@ -1963,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\cap-duc-duc.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht11.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht11.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/dht11.jpg",
       "AssetKind": "All",
@@ -1980,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\dht11.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht22.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht22.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/dht22.jpg",
       "AssetKind": "All",
@@ -1997,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\dht22.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dientro220.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dientro220.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/dientro220.jpg",
       "AssetKind": "All",
@@ -2014,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\dientro220.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\do-line.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\do-line.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/do-line.jpg",
       "AssetKind": "All",
@@ -2031,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\do-line.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\fm52.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\fm52.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/fm52.jpg",
       "AssetKind": "All",
@@ -2048,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\fm52.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\HC-SR04.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\HC-SR04.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/HC-SR04.jpg",
       "AssetKind": "All",
@@ -2065,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\HC-SR04.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\LCD-1602-I2C.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\LCD-1602-I2C.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/LCD-1602-I2C.jpg",
       "AssetKind": "All",
@@ -2082,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\LCD-1602-I2C.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\lcd-tft.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\lcd-tft.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/lcd-tft.jpg",
       "AssetKind": "All",
@@ -2099,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\lcd-tft.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/led.jpg",
       "AssetKind": "All",
@@ -2116,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\led.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led7doan.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led7doan.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/led7doan.jpg",
       "AssetKind": "All",
@@ -2133,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\led7doan.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\m9bi.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\m9bi.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/m9bi.jpg",
       "AssetKind": "All",
@@ -2150,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\m9bi.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\may-bom-nuoc-mini.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\may-bom-nuoc-mini.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/may-bom-nuoc-mini.jpg",
       "AssetKind": "All",
@@ -2167,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\may-bom-nuoc-mini.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mega-arduino.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mega-arduino.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/mega-arduino.jpg",
       "AssetKind": "All",
@@ -2184,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\mega-arduino.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mq-2.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mq-2.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/mq-2.jpg",
       "AssetKind": "All",
@@ -2201,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\mq-2.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\nutnhan4chan.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\nutnhan4chan.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/nutnhan4chan.jpg",
       "AssetKind": "All",
@@ -2218,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\nutnhan4chan.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\pir.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\pir.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/pir.jpg",
       "AssetKind": "All",
@@ -2235,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\pir.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\Raspery_Pi_4.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\Raspery_Pi_4.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/Raspery_Pi_4.jpg",
       "AssetKind": "All",
@@ -2252,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\Raspery_Pi_4.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\rfid.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\rfid.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/rfid.jpg",
       "AssetKind": "All",
@@ -2269,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\rfid.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo20kg.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo20kg.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/servo20kg.jpg",
       "AssetKind": "All",
@@ -2286,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\servo20kg.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-mg90.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-mg90.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/servo-mg90.jpg",
       "AssetKind": "All",
@@ -2303,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\servo-mg90.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-sg90.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-sg90.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/servo-sg90.jpg",
       "AssetKind": "All",
@@ -2320,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\servo-sg90.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\wemosD1R2.jpg",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\wemosD1R2.jpg",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/img_products/wemosD1R2.jpg",
       "AssetKind": "All",
@@ -2337,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\img\\img_products\\wemosD1R2.jpg"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\Video\\Sequence 03.mp4",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\Video\\Sequence 03.mp4",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "img/Video/Sequence 03.mp4",
       "AssetKind": "All",
@@ -2354,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Video\\Sequence 03.mp4"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\GoToTop.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\GoToTop.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/GoToTop.js",
       "AssetKind": "All",
@@ -2371,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\js\\GoToTop.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\pagination.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\pagination.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/pagination.js",
       "AssetKind": "All",
@@ -2388,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\js\\pagination.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\reloader.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\reloader.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/reloader.js",
       "AssetKind": "All",
@@ -2405,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\js\\reloader.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\site.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\site.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -2422,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\slidebestseller.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\slidebestseller.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/slidebestseller.js",
       "AssetKind": "All",
@@ -2439,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\js\\slidebestseller.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\swiper-bundle.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\swiper-bundle.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "js/swiper-bundle.min.js",
       "AssetKind": "All",
@@ -2456,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\js\\swiper-bundle.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2473,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2490,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2507,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2524,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2541,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2558,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2575,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2592,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2609,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2626,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2643,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2660,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2677,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2694,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2711,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2728,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2745,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2762,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2779,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -2796,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -2813,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -2830,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -2847,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -2864,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -2881,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -2898,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -2915,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -2932,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -2949,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -2966,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -2983,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -3000,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -3017,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -3034,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -3051,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -3068,10 +3026,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -3085,10 +3043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -3102,10 +3060,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -3119,10 +3077,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -3136,10 +3094,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -3153,10 +3111,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -3170,10 +3128,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -3187,10 +3145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -3204,10 +3162,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3221,10 +3179,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -3238,10 +3196,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -3255,10 +3213,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -3272,10 +3230,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -3289,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -3306,10 +3264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -3323,10 +3281,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -3340,10 +3298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -3357,10 +3315,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -3374,10 +3332,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -3391,10 +3349,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -3408,10 +3366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "FlyBugClub_WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\gitlab\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
+      "ContentRoot": "D:\\Project\\WebClb\\DoAnLapTrinhA\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\",
       "BasePath": "_content/FlyBugClub_WebApp",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

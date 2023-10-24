@@ -107,7 +107,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-
+            
 
 
             [Required]
@@ -134,7 +134,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             // Lấy danh sách chức vụ và chia sẻ với Razor View
             var positions = _ctx.Positions.ToList();
             var usse = _ctx.Users.ToList();
-
+            
             // Chuyển danh sách chức vụ thành danh sách SelectListItem
             var positionList = positions.Select(position => new SelectListItem
             {
@@ -145,7 +145,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             // Chia sẻ danh sách chức vụ với trang Razor
             ViewData["PositionList"] = positionList;
         }
-
+  
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
@@ -159,7 +159,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
                 string otp = GenerateOTP();
                 SendEmail(otp);
-                List<string> data_user = new List<string> { Input.FullName, Input.UID, "Member", Input.PhoneNumber, Input.Address, Input.Email };
+                List<string> data_user = new List<string> {Input.FullName , Input.UID , "Member", Input.PhoneNumber, Input.Address, Input.Email};
                 var User_Json = JsonConvert.SerializeObject(data_user);
 
                 return LocalRedirect($"/LoginSignUp/VerifyAccount?otp={otp}&user={User_Json}");
@@ -196,9 +196,9 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 client.Disconnect(true);
 
             }
-
+          
         }
-
+       
         public string GenerateOTP()
         {
             // Độ dài của mã OTP (6 số)

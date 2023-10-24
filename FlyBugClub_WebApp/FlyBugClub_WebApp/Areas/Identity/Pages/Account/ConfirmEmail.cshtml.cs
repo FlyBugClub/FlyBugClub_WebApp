@@ -15,11 +15,11 @@ using Microsoft.AspNetCore.WebUtilities;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
-    public class OTP : PageModel
+    public class ConfirmEmailModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public OTP(UserManager<ApplicationUser> userManager)
+        public ConfirmEmailModel(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
@@ -32,10 +32,10 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
         public string StatusMessage { get; set; }
         public async Task<IActionResult> OnGetAsync(string userId, string code)
         {
-            /*if (userId == null || code == null)
+            if (userId == null || code == null)
             {
                 return RedirectToPage("/Index");
-            }*/
+            }
 
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)

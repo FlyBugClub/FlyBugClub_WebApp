@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
+
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
     public class LoginCustomerModel : PageModel
@@ -96,6 +97,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+         
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -108,7 +110,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect("/Store/Store");
+                    return LocalRedirect("/LoginSignUp/VerifyAccount");
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -129,5 +131,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+   
+    
     }
 }
