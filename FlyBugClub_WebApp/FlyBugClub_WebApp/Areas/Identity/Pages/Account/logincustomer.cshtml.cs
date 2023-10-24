@@ -110,7 +110,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect("/LoginSignUp/VerifyAccount");
+                    return LocalRedirect("/");
                 }
                 if (result.RequiresTwoFactor)
                 {

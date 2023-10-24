@@ -158,8 +158,17 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
                 string otp = GenerateOTP();
-                SendEmail(otp);
-                List<string> data_user = new List<string> {Input.FullName , Input.UID , "Member", Input.PhoneNumber, Input.Address, Input.Email};
+                SendEmail(otp, Input.Email);
+                var position = "";
+                if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
+{
+                    position = "STU";
+                }
+                else if (Input.Email.EndsWith("hoasen.edu.vn"))
+                {
+                    position = "TC";
+                }
+                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email};
                 var User_Json = JsonConvert.SerializeObject(data_user);
 
                 return LocalRedirect($"/LoginSignUp/VerifyAccount?otp={otp}&user={User_Json}");
@@ -172,7 +181,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             return Page();
         }
 
-        public void SendEmail(string otp)
+        public void SendEmail(string otp, string email)
         {
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
@@ -190,7 +199,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 };
                 //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
                 message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
-                message.To.Add(new MailboxAddress("Test", "tr6r20@gmail.com"));
+                message.To.Add(new MailboxAddress("Test", email));
                 message.Subject = "FlyBug thông báo nhẹ";
                 client.Send(message);
                 client.Disconnect(true);

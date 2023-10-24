@@ -1,6 +1,7 @@
 ﻿using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Migrations;
 using FlyBugClub_WebApp.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,15 +42,15 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = HttpContext.Session.GetString("otp");
             string user_json = HttpContext.Session.GetString("user_json");
             string validate_otp = otp0 + otp1 + otp2 + otp3 + otp4 + otp5;
-            
-           
+            List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
+            HttpContext.Session.SetString("email", Data_User);
+
             //var query = _ctx.Users.FromSqlRaw("SELECT Email FROM Users WHERE Email = {0}", email);
             //var userWithEmail = query.FirstOrDefault();
 
             if (otp == validate_otp)
             {
                     // Phân tách chuỗi JSON thành danh sách
-                    List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
                     var user = new ApplicationUser { UserName = Data_User[5], Email = Data_User[5] };
                     user.FullName = Data_User[0];
                     user.UID = Data_User[1];
@@ -106,7 +107,7 @@ namespace FlyBugClub_WebApp.Controllers
             HttpContext.Session.SetString("otp", otp);
             return LocalRedirect($"/LoginSignUp/VerifyAccount");
         }
-        public void SendEmail(string otp)
+        public void SendEmail(string otp, string email)
         {
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
@@ -124,7 +125,7 @@ namespace FlyBugClub_WebApp.Controllers
                 };
                 //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
                 message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
-                message.To.Add(new MailboxAddress("Test", "tr6r20@gmail.com"));
+                message.To.Add(new MailboxAddress("Test", email));
                 message.Subject = "FlyBug thông báo nhẹ";
                 client.Send(message);
                 client.Disconnect(true);
