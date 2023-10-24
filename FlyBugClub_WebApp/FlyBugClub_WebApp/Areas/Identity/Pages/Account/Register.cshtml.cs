@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
+
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -26,6 +27,7 @@ using MailKit.Net.Smtp;
 using MimeKit;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static FlyBugClub_WebApp.Areas.Identity.Pages.Account.RegisterModel;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
@@ -159,6 +161,10 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
                 string otp = GenerateOTP();
                 SendEmail(otp, Input.Email);
+                var passwordHasher = new PasswordHasher<IdentityUser>();
+
+                string hashedPassword = passwordHasher.HashPassword(null, Input.Password);
+
                 var position = "";
                 if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
 {
@@ -168,10 +174,10 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 {
                     position = "TC";
                 }
-                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email,Input.Password};
+                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email, hashedPassword };
                 var User_Json = JsonConvert.SerializeObject(data_user);
 
-                return LocalRedirect($"/LoginSignUp/VerifyAccount?otp={otp}&user={User_Json}");
+                return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={User_Json}");
 
 
 
@@ -244,7 +250,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-
+       
         private IUserEmailStore<ApplicationUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)

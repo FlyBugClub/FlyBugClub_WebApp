@@ -11,14 +11,14 @@ using System.Text;
 
 namespace FlyBugClub_WebApp.Controllers
 {
-    public class LoginSignUp : Controller
+    public class AccountController : Controller
     {
         private FlyBugClubWebApplicationContext _ctx;
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 
-        public LoginSignUp(FlyBugClubWebApplicationContext ctx)
+        public AccountController(FlyBugClubWebApplicationContext ctx)
         {
             _ctx = ctx;
             
@@ -100,7 +100,7 @@ namespace FlyBugClub_WebApp.Controllers
             else
             {
                
-                return View("~/Views/LoginSignUp/VerifyAccount.cshtml");
+                return View("~/Views/Account/VerifyAccount.cshtml");
 
             }
             
@@ -115,7 +115,7 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = GenerateOTP();
             SendEmail(otp,Data_User[5]);
             HttpContext.Session.SetString("otp", otp);
-            return LocalRedirect($"/LoginSignUp/VerifyAccount");
+            return LocalRedirect($"/Account/VerifyAccount");
         }
         public void SendEmail(string otp, string email)
         {
@@ -190,6 +190,11 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
     
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
         public IActionResult ResetPassword()
         {
             return View();

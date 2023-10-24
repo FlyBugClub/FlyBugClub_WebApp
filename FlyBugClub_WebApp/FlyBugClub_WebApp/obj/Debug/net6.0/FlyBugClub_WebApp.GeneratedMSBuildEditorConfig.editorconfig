@@ -108,16 +108,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Account/VerifyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWZXJpZnlBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/LoginSignUp/ResetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5TaWduVXBcUmVzZXRQYXNzd29yZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/LoginSignUp/VerifyAccount.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5TaWduVXBcVmVyaWZ5QWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Views/Shared/Error.cshtml]

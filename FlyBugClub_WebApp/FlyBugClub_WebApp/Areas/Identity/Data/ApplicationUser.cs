@@ -20,10 +20,6 @@ public class ApplicationUser : IdentityUser
     public string? FullName { get; set; }
 
     [PersonalData]
-    [Column(TypeName = "nvarchar(5)")]
-    public string? Gender { get; set; }
-
-    [PersonalData]
     [Column(TypeName = "varchar(11)")]
     public string? Phone { get; set; }
 
@@ -34,14 +30,6 @@ public class ApplicationUser : IdentityUser
     [PersonalData]
     [Column(TypeName = "varchar(50)")]
     public string? Email { get; set; }
-
-    [PersonalData]
-    [Column(TypeName = "nvarchar(100)")]
-    public string? Major { get; set; }
-
-    [PersonalData]
-    [Column(TypeName = "nvarchar(50)")]
-    public string? Faculty { get; set; }
 
     [PersonalData]
     [Column(TypeName = "varchar(10)")]
