@@ -55,7 +55,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             Done = 2
         }
 
-        public IActionResult EditBill(int id)
+        public IActionResult EditBill(string id)
         {
             /*var supplierList = _orderProcessingRepository.GetAllSuppliers();
             ViewBag.SupplierId = new SelectList(supplierList, "SupplierID", "SupplierName");*/
@@ -79,7 +79,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             return View("EditBill", _orderProcessingRepository.findById(id));
         }
 
-        public IActionResult EditBillDetail(int billId, int detailId)
+        public IActionResult EditBillDetail(string billId, string detailId)
         {
             return View("EditBillDetail", _orderProcessingRepository.findBillDetailById(billId, detailId));
         }
@@ -91,7 +91,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             return RedirectToAction("Bill", "OrderProcessing");
         }
 
-        public IActionResult DeleteBill(int id)
+        public IActionResult DeleteBill(string id)
         {
             _orderProcessingRepository.Delete(id);
             return RedirectToAction("Bill", "OrderProcessing");

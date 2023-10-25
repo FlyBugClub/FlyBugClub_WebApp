@@ -5,15 +5,15 @@ namespace FlyBugClub_WebApp.Models;
 
 public partial class BorrowDetail
 {
-    public int BorrowDetailId { get; set; }
+    public string BorrowDetailId { get; set; } = null!;
 
-    public int Bid { get; set; }
+    public string Bid { get; set; } = null!;
 
     public string DeviceId { get; set; } = null!;
 
     public int Quantity { get; set; }
 
-    public decimal? Price { get; set; }
+    public decimal Price { get; set; }
 
     public decimal SubTotal { get; set; }
 
@@ -21,7 +21,7 @@ public partial class BorrowDetail
 
     public int? QtyDamage { get; set; }
 
-    public decimal? DepositPrice { get; set; }
+    public decimal DepositPrice { get; set; }
 
     public virtual BillBorrow BidNavigation { get; set; } = null!;
 

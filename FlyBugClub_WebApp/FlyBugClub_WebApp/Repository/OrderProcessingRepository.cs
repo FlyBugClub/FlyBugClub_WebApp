@@ -7,16 +7,16 @@ namespace FlyBugClub_WebApp.Repository
     {
         public bool Create(BillBorrow billBorrow);
         public bool Update(BillBorrow billBorrow);
-        public bool Delete(int bill);
+        public bool Delete(string bill);
         public List<BillBorrow> GetAllBill();
         public List<BillBorrow> GetAllBillsWithDetails();
-        public List<BorrowDetail> GetDetailBillByBID(int bid);
-        public List<BorrowDetail> GetBorrowDetailsByBillBorrowId(int billBorrowId);
+        public List<BorrowDetail> GetDetailBillByBID(string bid);
+        public List<BorrowDetail> GetBorrowDetailsByBillBorrowId(string billBorrowId);
         public List<Supplier> GetAllSuppliers();
         string GetDeviceName(string deviceId);
         string GetUserName(string Sid);
-        public BillBorrow findById(int id);
-        public BorrowDetail findBillDetailById(int billId, int detailId);
+        public BillBorrow findById(string id);
+        public BorrowDetail findBillDetailById(string billId, string detailId);
     }
     public class OrderProcessingRepository : IOrderProcessingRepository
     {
@@ -65,7 +65,7 @@ namespace FlyBugClub_WebApp.Repository
             return true;
         }
 
-        public bool Delete(int bill)
+        public bool Delete(string bill)
         {
             // Lấy hóa đơn cùng với chi tiết hóa đơn
             BillBorrow b = _ctx.BillBorrows.Include(x => x.BorrowDetails).FirstOrDefault(x => x.Bid == bill);
@@ -90,12 +90,12 @@ namespace FlyBugClub_WebApp.Repository
             return false; // Trả về false nếu không tìm thấy hóa đơn
         }
 
-        public BillBorrow findById(int id)
+        public BillBorrow findById(string id)
         {
             return _ctx.BillBorrows.FirstOrDefault(x => x.Bid == id);
         }
 
-        public List<BorrowDetail> GetDetailBillByBID(int bid)
+        public List<BorrowDetail> GetDetailBillByBID(string bid)
         {
             return _ctx.BorrowDetails.Where(x => x.Bid == bid).ToList();
         }
@@ -105,7 +105,7 @@ namespace FlyBugClub_WebApp.Repository
             return _ctx.Suppliers.ToList();
         }
 
-        public List<BorrowDetail> GetBorrowDetailsByBillBorrowId(int billBorrowId)
+        public List<BorrowDetail> GetBorrowDetailsByBillBorrowId(string billBorrowId)
         {
             return _ctx.BillBorrows
                 .Where(bill => bill.Bid == billBorrowId)
@@ -114,7 +114,7 @@ namespace FlyBugClub_WebApp.Repository
                 .ToList();
                 }
 
-        public BorrowDetail findBillDetailById(int billId, int detailId)
+        public BorrowDetail findBillDetailById(string billId, string detailId)
         {
             return _ctx.BorrowDetails.FirstOrDefault(x => x.Bid == billId && x.BorrowDetailId == detailId);
         }

@@ -59,39 +59,25 @@ public partial class FlyBugClubWebApplicationContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=sql.bsite.net\\MSSQL2016;uid=ngunemay123_web_clb;password=conchongu0123;database=ngunemay123_web_clb;Encrypt=true;TrustServerCertificate=true");
-    /*
-            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-            => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
-    */
+        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AspNetRole>(entity =>
         {
-            entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
-                .IsUnique()
-                .HasFilter("([NormalizedName] IS NOT NULL)");
-
             entity.Property(e => e.Name).HasMaxLength(256);
             entity.Property(e => e.NormalizedName).HasMaxLength(256);
         });
 
         modelBuilder.Entity<AspNetRoleClaim>(entity =>
         {
-            entity.HasIndex(e => e.RoleId, "IX_AspNetRoleClaims_RoleId");
+            entity.Property(e => e.RoleId).HasMaxLength(450);
 
             entity.HasOne(d => d.Role).WithMany(p => p.AspNetRoleClaims).HasForeignKey(d => d.RoleId);
         });
 
         modelBuilder.Entity<AspNetUser>(entity =>
         {
-            entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
-
-            entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
-                .IsUnique()
-                .HasFilter("([NormalizedUserName] IS NOT NULL)");
-
             entity.Property(e => e.Address).HasMaxLength(100);
             entity.Property(e => e.Email)
                 .HasMaxLength(256)
@@ -124,13 +110,12 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                     {
                         j.HasKey("UserId", "RoleId");
                         j.ToTable("AspNetUserRoles");
-                        j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
                     });
         });
 
         modelBuilder.Entity<AspNetUserClaim>(entity =>
         {
-            entity.HasIndex(e => e.UserId, "IX_AspNetUserClaims_UserId");
+            entity.Property(e => e.UserId).HasMaxLength(450);
 
             entity.HasOne(d => d.User).WithMany(p => p.AspNetUserClaims).HasForeignKey(d => d.UserId);
         });
@@ -139,10 +124,9 @@ public partial class FlyBugClubWebApplicationContext : DbContext
         {
             entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
 
-            entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
-
             entity.Property(e => e.LoginProvider).HasMaxLength(128);
             entity.Property(e => e.ProviderKey).HasMaxLength(128);
+            entity.Property(e => e.UserId).HasMaxLength(450);
 
             entity.HasOne(d => d.User).WithMany(p => p.AspNetUserLogins).HasForeignKey(d => d.UserId);
         });
@@ -163,7 +147,10 @@ public partial class FlyBugClubWebApplicationContext : DbContext
 
             entity.ToTable("BillBorrow");
 
-            entity.Property(e => e.Bid).HasColumnName("BID");
+            entity.Property(e => e.Bid)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("BID");
             entity.Property(e => e.BorrowDate).HasColumnType("datetime");
             entity.Property(e => e.DepositPriceOnBill).HasColumnType("money");
             entity.Property(e => e.Note).HasMaxLength(200);
@@ -191,8 +178,14 @@ public partial class FlyBugClubWebApplicationContext : DbContext
         {
             entity.ToTable("BorrowDetail");
 
-            entity.Property(e => e.BorrowDetailId).HasColumnName("BorrowDetailID");
-            entity.Property(e => e.Bid).HasColumnName("BID");
+            entity.Property(e => e.BorrowDetailId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("BorrowDetailID");
+            entity.Property(e => e.Bid)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("BID");
             entity.Property(e => e.DepositPrice).HasColumnType("money");
             entity.Property(e => e.DeviceId)
                 .HasMaxLength(50)
@@ -329,7 +322,10 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .ToTable("HistoryUpdate");
 
             entity.Property(e => e.Bid).HasColumnName("BID");
-            entity.Property(e => e.BorrowDetailId).HasColumnName("BorrowDetailID");
+            entity.Property(e => e.BorrowDetailId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("BorrowDetailID");
             entity.Property(e => e.Uid)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -462,6 +458,11 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .HasMaxLength(5)
                 .IsUnicode(false)
                 .HasColumnName("PositionID");
+
+            entity.HasOne(d => d.Position).WithMany(p => p.Users)
+                .HasForeignKey(d => d.PositionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_User_Position");
         });
 
         modelBuilder.Entity<YeuCauUngTuyen>(entity =>

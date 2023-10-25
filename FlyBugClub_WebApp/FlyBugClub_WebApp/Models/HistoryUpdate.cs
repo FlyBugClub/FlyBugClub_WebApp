@@ -7,7 +7,7 @@ public partial class HistoryUpdate
 {
     public int? Bid { get; set; }
 
-    public int? BorrowDetailId { get; set; }
+    public string? BorrowDetailId { get; set; }
 
     public string? Uid { get; set; }
 

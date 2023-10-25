@@ -28,4 +28,6 @@ public partial class User
     public virtual ICollection<BillBorrow> BillBorrows { get; set; } = new List<BillBorrow>();
 
     public virtual ICollection<BorrowRate> BorrowRates { get; set; } = new List<BorrowRate>();
+
+    public virtual Position Position { get; set; } = null!;
 }
