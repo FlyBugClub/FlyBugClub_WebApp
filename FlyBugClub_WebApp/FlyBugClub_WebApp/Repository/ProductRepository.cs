@@ -103,7 +103,7 @@ namespace FlyBugClub_WebApp.Repository
 
         public bool Update(Device device)
         {
-            Device d = _ctx.Devices.FirstOrDefault(x=>x.DeviceId== device.DeviceId);
+            Device d = _ctx.Devices.FirstOrDefault(x=>x.DeviceId == device.DeviceId);
             if (d!=null)
             {
                 _ctx.Entry(d).CurrentValues.SetValues(device);

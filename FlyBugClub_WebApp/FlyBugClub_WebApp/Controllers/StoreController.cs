@@ -314,6 +314,11 @@ namespace FlyBugClub_WebApp.Controllers
             User u = _ctx.Users.OrderByDescending(x => x.Email == userEmail).Take(1).SingleOrDefault();
             if (DateTime.TryParseExact(receiptDateStr, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out receiptDate))
             {
+                int lastTwoDigitsOfYear = DateTime.Now.Year % 100;
+                int currentMonth = DateTime.Now.Month;
+                int nextBillNumber = _ctx.BillBorrows.Count() + 1;
+
+                bill.Bid = $"{u.PositionId}{lastTwoDigitsOfYear:00}{currentMonth:00}{nextBillNumber:000}";
                 bill.Sid = u.StudentId;
                 bill.BorrowDate = DateTime.Now;
                 bill.ReturnDate = null;
@@ -336,11 +341,15 @@ namespace FlyBugClub_WebApp.Controllers
             decimal TotalBill = 0m;
             decimal TotalBillDeposit = 0m;
 
-            foreach(var item in items)
+            List<string> existingIds = _ctx.BorrowDetails.Select(bd => bd.BorrowDetailId).ToList();
+            foreach (var item in items)
             {
                 var device = _ctx.Devices.FirstOrDefault(x => x.DeviceId == item.Id);
 
+                string newBorrowDetailId = GenerateUniqueBorrowDetailId(existingIds);
+                /*int nextBillNumber = _ctx.BillBorrows.Count() + 1;*/
                 BorrowDetail bd= new BorrowDetail();
+                bd.BorrowDetailId = newBorrowDetailId;
                 bd.Bid = BillId;
                 bd.DeviceId= item.Id;
                 bd.Price = item.Price;
@@ -377,6 +386,9 @@ namespace FlyBugClub_WebApp.Controllers
 
                 _ctx.Entry(device).State = EntityState.Modified;
                 _ctx.BorrowDetails.Add(bd);
+
+                // Thêm mã mới vào danh sách mã tồn tại
+                existingIds.Add(newBorrowDetailId);
             }
             bill.Total = TotalBill;
             bill.DepositPriceOnBill = TotalBillDeposit;
@@ -385,6 +397,21 @@ namespace FlyBugClub_WebApp.Controllers
             ClearAllCartItem();
             return RedirectToAction("Payment", "store");
         }  //Xử lý đơn hàng
+
+        string GenerateUniqueBorrowDetailId(List<string> existingBorrowDetailIds)
+        {
+            int number = 1;
+            string newId;
+
+            // Tạo mã mới cho đến khi nó không tồn tại trong danh sách hiện có
+            do
+            {
+                newId = "BD" + number.ToString("0000"); // Ví dụ: BD0001
+                number++;
+            } while (existingBorrowDetailIds.Contains(newId));
+
+            return newId;
+        }
 
         public IActionResult AddToCard(string id)
         {

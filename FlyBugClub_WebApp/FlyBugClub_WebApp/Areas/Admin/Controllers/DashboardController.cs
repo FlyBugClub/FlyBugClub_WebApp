@@ -1,5 +1,6 @@
 ﻿using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Models;
+using FlyBugClub_WebApp.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,15 +14,18 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
     public class DashboardController : Controller
     {
         private FlyBugClubWebApplicationContext _ctx;
+        private IDashboardRepository _dashboard;
         private readonly SignInManager<ApplicationUser> _signInManager;
         public DashboardController(FlyBugClubWebApplicationContext ctx,
-                                    SignInManager<ApplicationUser> signInManager)
+                                    SignInManager<ApplicationUser> signInManager,
+                                    IDashboardRepository dashboard)
         {
             _ctx = ctx;
             _signInManager = signInManager;
+            _dashboard = dashboard;
         }
 
-        public IActionResult Dashboard()
+        public IActionResult Dashboard()  //Trang Dashboard chính của admin
         {
             int currentYear = DateTime.Now.Year;
 
@@ -37,11 +41,10 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             int countTrue = _ctx.BillBorrows.Count(b => b.Status == 1);
             ViewBag.countTrue = countTrue;
 
-
             return View();
         }
 
-        public IActionResult Logout()
+        public IActionResult Logout() // Trả về trang đăng nhập khi đăng xuất
         {
             _signInManager.SignOutAsync();
             return LocalRedirect("/identity/account/login");

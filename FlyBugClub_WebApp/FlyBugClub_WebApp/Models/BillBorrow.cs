@@ -21,11 +21,11 @@ public partial class BillBorrow
 
     public double? FeeShip { get; set; }
 
-    public decimal Total { get; set; }
+    public decimal? Total { get; set; }
 
     public int? Status { get; set; }
 
-    public decimal DepositPriceOnBill { get; set; }
+    public decimal? DepositPriceOnBill { get; set; }
 
     public virtual ICollection<BorrowDetail> BorrowDetails { get; set; } = new List<BorrowDetail>();
 

@@ -1,9 +1,17 @@
 ﻿/* =============================== */
-/* ====== BUTTON NEW DEVICE ====== */
+/* ========= BILL BORROW ========= */
 /* =============================== */
 
 .w93 {
     width: 93% !important;
+}
+
+.word-left{
+    text-align:left;
+}
+
+.word-right {
+    text-align: right;
 }
 
 .expandable-row {
@@ -40,10 +48,31 @@
     max-width: 200px;
 }
 
+.bill-table tbody.parent-body td.bid{
+    width: 60px;
+}
+
+.bill-table tbody.parent-body td.name{
+    width: 230px;
+    padding: 0 20px;
+}
+
+.bill-table tbody.parent-body td.sid{
+    padding: 0 10px;
+}
+
 .bill-table tbody.parent-body td.note{
     max-width: 90px;
 }
 
+.bill-table tbody.parent-body td.status-bill{
+    width: 100px;
+    padding: 0 20px;
+}
+
+.bill-table tbody.parent-body td.money-total{
+    text-align:right;
+}
 
 .waiting {
     color: #c7ac2f;

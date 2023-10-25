@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
-
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -23,11 +22,6 @@ using Microsoft.Extensions.Logging;
 using FlyBugClub_WebApp.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.Mail;
-using MailKit.Net.Smtp;
-using MimeKit;
-using Newtonsoft.Json;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using static FlyBugClub_WebApp.Areas.Identity.Pages.Account.RegisterModel;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
@@ -105,11 +99,13 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
             [Required]
             [EmailAddress]
-            //[RegularExpression(@"^[\w-]+(\.[\w-]+)*@hoasen\.edu\.vn$|^[\w-]+(\.[\w-]+)*@sinhvien\.hoasen\.edu\.vn$", ErrorMessage = "Invalid email domain.")]
+            /*[RegularExpression(@"^[\w-]+(\.[\w-]+)*@hoasen\.edu\.vn$|^[\w-]+(\.[\w-]+)*@sinhvien\.hoasen\.edu\.vn$", ErrorMessage = "Invalid email domain.")]*/
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            
+            [Required]
+            [Display(Name = "PositionID")]
+            public string PositionID { get; set; }
 
 
             [Required]
@@ -118,15 +114,15 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             [Display(Name = "Password")]
             public string Password { get; set; }
 
-
+            
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
 
-        //Thêm danh sách chức vụ
-        //public SelectList PositionList { get; set; }
+        // Thêm danh sách chức vụ
+        public SelectList PositionList { get; set; }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
@@ -135,8 +131,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
             // Lấy danh sách chức vụ và chia sẻ với Razor View
             var positions = _ctx.Positions.ToList();
-            var usse = _ctx.Users.ToList();
-            
+
             // Chuyển danh sách chức vụ thành danh sách SelectListItem
             var positionList = positions.Select(position => new SelectListItem
             {
@@ -147,95 +142,85 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             // Chia sẻ danh sách chức vụ với trang Razor
             ViewData["PositionList"] = positionList;
         }
-  
+
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
             if (ModelState.IsValid)
             {
                 /*var user = CreateUser();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
-                string otp = GenerateOTP();
-                SendEmail(otp, Input.Email);
-                //var passwordHasher = new PasswordHasher<ApplicationUser>();
 
-                //string hashedPassword = passwordHasher.HashPassword(null, Input.Password);
-                //string SecurityStamp = Guid.NewGuid().ToString();
-                //string ConcurrencyStamp = Guid.NewGuid().ToString();
-                var position = "";
-                if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
-{
-                    position = "STU";
-                }
-                else if (Input.Email.EndsWith("hoasen.edu.vn"))
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+                user.FullName = Input.FullName;
+                user.UID = Input.UID;
+                user.PhoneNumber = Input.PhoneNumber;
+                user.Address = Input.Address;
+
+                var result = await _userManager.CreateAsync(user, Input.Password);
+
+                User usr = new User()
                 {
-                    position = "TC";
+                    Name = Input.FullName,
+                    StudentId = Input.UID,
+                    PositionId = Input.PositionID,
+                    Phone = Input.PhoneNumber,
+                    Address = Input.Address,
+                    Email = Input.Email,
+                    Account = Input.Email
+                };
+
+                _ctx.Users.Add(usr);
+                _ctx.SaveChanges();
+
+                if (result.Succeeded)
+                {
+                    _logger.LogInformation("User created a new account with password.");
+
+                    bool exists = await _roleManager.RoleExistsAsync("Customer");
+                    if (!exists)
+                    {
+                        // First we are creating Admin role
+                        var role = new IdentityRole();
+                        role.Name = "Customer";
+                        await _roleManager.CreateAsync(role);
+                    }
+
+                    await _userManager.AddToRoleAsync(user, "Customer");
+
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    var callbackUrl = Url.Page(
+                        "/Account/ConfirmEmail",
+                        pageHandler: null,
+                        values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                        protocol: Request.Scheme);
+
+                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    {
+                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                    }
+                    else
+                    {
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return LocalRedirect(returnUrl);
+                    }
                 }
-                List<string> data_user = new List<string> {Input.FullName , Input.UID , position, Input.PhoneNumber, Input.Address, Input.Email, Input.Password };
-                var User_Json = JsonConvert.SerializeObject(data_user);
-
-                return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={User_Json}");
-
-
-
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
             }
 
             // If we got this far, something failed, redisplay form
             return Page();
-        }
-
-        public void SendEmail(string otp, string email)
-        {
-            using (var client = new MailKit.Net.Smtp.SmtpClient())
-            {
-                client.Connect("smtp.gmail.com", 465, true);
-                //client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
-                client.Authenticate("cuong.dq12897@sinhvien.hoasen.edu.vn", "75R22UYT");
-                var bodyBuilder = new BodyBuilder
-                {
-                    HtmlBody = $"<p>hello anh, otp: {otp}</p>",
-                    TextBody = "Xin chao"
-                };
-                var message = new MimeMessage
-                {
-                    Body = bodyBuilder.ToMessageBody()
-                };
-                //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
-                message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
-                message.To.Add(new MailboxAddress("Test", email));
-                message.Subject = "FlyBug thông báo nhẹ";
-                client.Send(message);
-                client.Disconnect(true);
-
-            }
-          
-        }
-       
-        public string GenerateOTP()
-        {
-            // Độ dài của mã OTP (6 số)
-            int otpLength = 6;
-
-            // Dãy số từ 0 đến 9
-            string numbers = "0123456789";
-
-            // Random số ngẫu nhiên để tạo OTP
-            Random random = new Random();
-
-            // Tạo chuỗi OTP bằng cách lựa chọn ngẫu nhiên các số từ dãy numbers
-            char[] otpChars = new char[otpLength];
-            for (int i = 0; i < otpLength; i++)
-            {
-                otpChars[i] = numbers[random.Next(0, numbers.Length)];
-            }
-
-            // Chuyển mảng thành chuỗi và trả về OTP
-            string otp = new string(otpChars);
-            return otp;
         }
 
         private ApplicationUser CreateUser()
@@ -251,7 +236,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-       
+
         private IUserEmailStore<ApplicationUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
