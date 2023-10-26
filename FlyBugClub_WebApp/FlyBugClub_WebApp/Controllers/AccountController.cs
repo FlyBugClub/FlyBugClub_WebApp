@@ -295,6 +295,7 @@ namespace FlyBugClub_WebApp.Controllers
                 }    
                 ViewBag.OldPassword = "";
             }
+
             if (newPassword == null)
             {
                 ViewBag.NewPassword = "Chưa nhập mật khẩu mới";
@@ -302,6 +303,11 @@ namespace FlyBugClub_WebApp.Controllers
             }
             else 
             {
+                var NewPassword = HttpContext.Session.GetString("newpassword");
+                if (NewPassword != null)
+                {
+                    ViewBag.valueNewPassword = NewPassword;
+                }
                 ViewBag.NewPassword = "";
             } 
             
@@ -312,6 +318,11 @@ namespace FlyBugClub_WebApp.Controllers
             }
             else
             {
+                var ConformPassword = HttpContext.Session.GetString("conformpassword");
+                if (ConformPassword != null)
+                {
+                    ViewBag.valueConformPassword = ConformPassword;
+                }
                 ViewBag.ConformPassword = "";
             } 
             
