@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
+@model List<FlyBugClub_WebApp.Models.BillBorrow>
 
-
-=======
-﻿
->>>>>>> Stashed changes
 <div class="center">
     
 </div>
@@ -83,40 +79,36 @@
                     <div class="info-sales">
                         <div class="head-income">
                             <h5>Fanacial</h5>
-                            <input type="month" class="fill-income" />
+                            
                         </div>
                         <form action="" class="income-form">
                             <div class="table-container">
-                                <table>
+                               
+                                      
+                                   <table>
                                     <thead>
                                         <tr>
                                             <th class="date">Date</th>
-                                            <th class="income">Salary</th>
-                                            <th>Payment</th>
+                                           
                                             <th>Income</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-<<<<<<< Updated upstream
-
-                                        <tr>
-                                            <td>10/07/2023</td>
-                                            <td>1.490.000 đ</td>
-                                            <td>100.000 đ</td>
-                                            <td>1.390.000 đ</td>
-                                        </tr>
-
+                                    <tbody>   
                                         
-                                           @(await Component.InvokeAsync("_BillBorrow"))
-                                           
+                                           @foreach(var item in Model){
+                                               <tr>
+                                                    <td>@item.BorrowDate</td>
+                                                    <td>@item.Total</td>
+                                                    @*<td>0</td>
+                                                    <td>0</td>*@
+                                               </tr>
 
-=======
-                                        
-                                           @(await Component.InvokeAsync("_BillBorrow"))
-                                           
->>>>>>> Stashed changes
+                                           }
+
                                     </tbody>
                                 </table>
+                                <h1>Tổng tháng: @ViewBag.TotalAmount1 </h1>
+                                
                             </div>
                         </form>
                     </div>
@@ -124,21 +116,28 @@
                 <div class="col col-md-4">
 
 
-                     <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
-                    <div class="form-group">
-                        <label for="dayInput">Ngày</label>
-                        <input type="text" class="form-control" id="dayInput" name="day">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthInput">Tháng</label>
-                        <input type="text" class="form-control" id="monthInput"name="month">
-                    </div>
-                    <div class="form-group">
-                        <label for="yearInput">Năm</label>
-                        <input type="text" class="form-control" id="yearInput" name="year">
-                    </div>
+                    <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
+                        @*<div class="form-group">
+                            <label for="dayInput">Ngày</label>
+                            <input type="text" class="form-control" id="dayInput" name="day" placeholder="Nhập ngày" value="@ViewBag.Day">
+                        </div>*@
+                        <div class="form-group">
+                            <label for="monthInput">Tháng</label>
+                            <input type="text" class="form-control" id="monthInput" name="month" placeholder="Nhập tháng" value="@ViewBag.Month">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearInput">Năm</label>
+                            <input type="text" class="form-control" id="yearInput" name="year" placeholder="Nhập năm" value="@ViewBag.Year">
+                        </div>
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"></button>
-                </form>
+                    </form>
+
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
                     <!-- Modal for Month and Year Input -->
                     <!-- The Modal -->
                     <div class="modal" id="myModal">
