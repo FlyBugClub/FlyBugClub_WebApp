@@ -24,7 +24,7 @@
                                 <td class="outsite-info bid">@item.Bid</td>
                                 <td class="outsite-info name word-left">@item.SidNavigation.Name</td>
                                 <td class="outsite-info word-right sid">@item.Sid</td>
-                                <td class="outsite-info">@item.BorrowDate.ToShortDateString()</td>
+                                <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
                                 <td class="max-word outsite-info note word-left">@item.Note</td>
 
                                 @if (@item.Status == 1)
@@ -40,14 +40,14 @@
                                 {
                                     <td class="done outsite-info word-left status-bill"><span>Done</span></td>
                                 }
-                                <td class="word-right">
+                                <td class="outsite-info word-right">
                                     @if (@item.Total != null)
                                     {
                                         // Biến kiểu Nullable có giá trị, bạn có thể truy cập giá trị bằng .Value
                                         @item.Total.Value.ToString("0.00");
                                     }
                                 </td>
-                                <td class="outsite-info">
+                                <td class="outsite-info active-function">
                                     @if(@item.Status == 0){
                                         <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
                                         <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
@@ -56,7 +56,7 @@
                                         <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a>
                                     }
                                     else if(@item.Status == 2){
-                                        @*<a asp-action="" asp-route-id=""><i class="fa-solid fa-pen-to-square"></i></a> *@  
+                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-eye"></i></a>
                                     }
                                 </td>
                             </tr>
@@ -92,15 +92,15 @@
                                             @foreach (var detail in item.BorrowDetails)
                                             {
                                                 <tr>
-                                                    <td colspan="2">@detail.DeviceId</td>
+                                                    <td class="word-left" colspan="2">@detail.DeviceId</td>
                                                     <td>@detail.Quantity</td>
                                                     <td>@detail.ReturnQuantity</td>
-                                                    <td>
+                                                    <td class="word-right">
                                                         @if(@detail.Price != null){
                                                             @detail.Price.ToString("0.00");
                                                         }
                                                     </td>
-                                                    <td>@detail.SubTotal.ToString("0.00")</td>
+                                                    <td class="word-right">@detail.SubTotal.ToString("0.00")</td>
                                                     @if(@item.Status == 0){
                                                         <td>//</td>
                                                         <td>//</td>
@@ -113,19 +113,19 @@
                                                     {
                                                         @if (detail.ReturnQuantity == 0)
                                                         {
-                                                            <td>Not yet</td>
+                                                            <td class="word-left">Not yet</td>
                                                             <td>@detail.QtyDamage</td>
                                                             <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                                         }
                                                         else if (detail.ReturnQuantity < detail.Quantity)
                                                         {
-                                                            <td>Not enough</td>
+                                                            <td class="word-left">Not enough</td>
                                                             <td>@detail.QtyDamage</td>
                                                             <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                                         }
                                                         else if (detail.ReturnQuantity > 0 && detail.ReturnQuantity < detail.Quantity)
                                                         {
-                                                            <td>Not enough</td>
+                                                            <td class="word-left">Not enough</td>
                                                             <td>@detail.QtyDamage</td>
                                                         }
                                                         else if (detail.ReturnQuantity == detail.Quantity)

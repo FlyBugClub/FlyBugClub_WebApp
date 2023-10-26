@@ -29,7 +29,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             return View("Devices", lst);
         }
-
+         
         [HttpPost]
         public IActionResult saveDevice(Device device)
         {

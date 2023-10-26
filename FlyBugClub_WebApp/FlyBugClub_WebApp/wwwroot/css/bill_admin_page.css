@@ -53,7 +53,8 @@
 }
 
 .bill-table tbody.parent-body td.name{
-    width: 230px;
+    max-width: 230px;
+    width:fit-content;
     padding: 0 20px;
 }
 
@@ -72,6 +73,10 @@
 
 .bill-table tbody.parent-body td.money-total{
     text-align:right;
+}
+
+.bill-table tbody.parent-body td.active-function{
+    padding: 0 5px;
 }
 
 .waiting {

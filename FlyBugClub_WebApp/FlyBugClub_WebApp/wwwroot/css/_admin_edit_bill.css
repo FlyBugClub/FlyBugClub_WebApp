@@ -8,7 +8,7 @@
 
 .bill-area {
     width: fit-content !important;
-    margin-bottom: 20px;
+    margin: 12px;
 }
 
 /* =============================== */
@@ -17,8 +17,7 @@
 
 .bill-detail-area {
     width: 57% !important;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin: 12px 25px 12px 12px;
 }
 
 .bill-detail-area table{
@@ -40,3 +39,11 @@
     .bill-detail-area table tr:hover td {
         background-color: rgba(250, 200, 152,0.7);
     }
+
+/* =============================== */
+/* ======== BORROW DETAIL ======== */
+/* =============================== */
+
+.edit-bill-detail{
+    
+}

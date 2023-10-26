@@ -1,555 +1,555 @@
 {
   "Files": [
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FlyBugClub_WebApp.bundle.scp.css",
       "PackagePath": "staticwebassets\\FlyBugClub_WebApp.bundle.scp.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\appsettings.Development.json",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.Development.json",
       "PackagePath": "staticwebassets\\appsettings.Development.json"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\appsettings.json",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\appsettings.json",
       "PackagePath": "staticwebassets\\appsettings.json"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_edit_bill.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_edit_bill.css",
       "PackagePath": "staticwebassets\\css\\_admin_edit_bill.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_login.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\_admin_login.css",
       "PackagePath": "staticwebassets\\css\\_admin_login.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\bill_admin_page.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\bill_admin_page.css",
       "PackagePath": "staticwebassets\\css\\bill_admin_page.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\category_admin_page.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\category_admin_page.css",
       "PackagePath": "staticwebassets\\css\\category_admin_page.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\create_device.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\create_device.css",
       "PackagePath": "staticwebassets\\css\\create_device.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\cuslogin.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\cuslogin.css",
       "PackagePath": "staticwebassets\\css\\cuslogin.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\dashboard.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\dashboard.css",
       "PackagePath": "staticwebassets\\css\\dashboard.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\default_setting.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\default_setting.css",
       "PackagePath": "staticwebassets\\css\\default_setting.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\detail_card_device.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\detail_card_device.css",
       "PackagePath": "staticwebassets\\css\\detail_card_device.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\device_admin_page.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\device_admin_page.css",
       "PackagePath": "staticwebassets\\css\\device_admin_page.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\header.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\header.css",
       "PackagePath": "staticwebassets\\css\\header.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\headeradmin.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\headeradmin.css",
       "PackagePath": "staticwebassets\\css\\headeradmin.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\home.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\home.css",
       "PackagePath": "staticwebassets\\css\\home.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\login_signup.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\login_signup.css",
       "PackagePath": "staticwebassets\\css\\login_signup.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\payment.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\payment.css",
       "PackagePath": "staticwebassets\\css\\payment.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\site.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\store.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\store.css",
       "PackagePath": "staticwebassets\\css\\store.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\css\\swiper-bundle.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\css\\swiper-bundle.min.css",
       "PackagePath": "staticwebassets\\css\\swiper-bundle.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\favicon.ico",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\Video\\Sequence 03.mp4",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\Video\\Sequence 03.mp4",
       "PackagePath": "staticwebassets\\img\\Video\\Sequence 03.mp4"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8796.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8796.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF8796.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8830.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF8830.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF8830.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9444.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9444.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF9444.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9451.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9451.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF9451.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9470.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9470.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF9470.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9475.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\DSCF9475.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\DSCF9475.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\IMG_0042.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\core_team\\IMG_0042.jpg",
       "PackagePath": "staticwebassets\\img\\core_team\\IMG_0042.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\avatar.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\avatar.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\avatar.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\bug-icon.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\bug-icon.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\bug-icon.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\income.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\income.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\income.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\sales.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\sales.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\sales.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\user.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\user.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\user.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\web-visit.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_icon\\web-visit.png",
       "PackagePath": "staticwebassets\\img\\img_icon\\web-visit.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen).png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen).png",
       "PackagePath": "staticwebassets\\img\\img_logo\\Bug(Đen).png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen)1.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\Bug(Đen)1.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\Bug(Đen)1.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FLYBUG CLUB.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FLYBUG CLUB.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\FLYBUG CLUB.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\FlyBugBLue.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue1.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\FlyBugBLue1.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\FlyBugBLue1.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\flybug.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\flybug.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\flybug.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\logo.png",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_logo\\logo.png",
       "PackagePath": "staticwebassets\\img\\img_logo\\logo.png"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\8ICG.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\8ICG.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\8ICG.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\ArduinoUnoR3.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\ArduinoUnoR3.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\ArduinoUnoR3.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\HC-SR04.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\HC-SR04.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\HC-SR04.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\LCD-1602-I2C.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\LCD-1602-I2C.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\LCD-1602-I2C.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\Raspery_Pi_4.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\Raspery_Pi_4.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\Raspery_Pi_4.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\bluth.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\bluth.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\bluth.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\breadboard.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\breadboard.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\breadboard.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\buzzer.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\buzzer.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\buzzer.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-anh-sang.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-anh-sang.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\cam-bien-anh-sang.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-mua-5jdk.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cam-bien-mua-5jdk.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\cam-bien-mua-5jdk.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-cai-cai.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-cai-cai.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\cap-cai-cai.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-cai.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-cai.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\cap-duc-cai.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-duc.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\cap-duc-duc.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\cap-duc-duc.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht11.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht11.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\dht11.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht22.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dht22.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\dht22.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dientro220.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\dientro220.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\dientro220.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\do-line.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\do-line.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\do-line.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\fm52.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\fm52.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\fm52.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\lcd-tft.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\lcd-tft.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\lcd-tft.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\led.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led7doan.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\led7doan.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\led7doan.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\m9bi.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\m9bi.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\m9bi.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\may-bom-nuoc-mini.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\may-bom-nuoc-mini.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\may-bom-nuoc-mini.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mega-arduino.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mega-arduino.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\mega-arduino.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mq-2.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\mq-2.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\mq-2.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\nutnhan4chan.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\nutnhan4chan.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\nutnhan4chan.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\pir.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\pir.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\pir.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\rfid.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\rfid.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\rfid.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-mg90.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-mg90.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\servo-mg90.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-sg90.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo-sg90.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\servo-sg90.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo20kg.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\servo20kg.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\servo20kg.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\wemosD1R2.jpg",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\img\\img_products\\wemosD1R2.jpg",
       "PackagePath": "staticwebassets\\img\\img_products\\wemosD1R2.jpg"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\GoToTop.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\GoToTop.js",
       "PackagePath": "staticwebassets\\js\\GoToTop.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\pagination.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\pagination.js",
       "PackagePath": "staticwebassets\\js\\pagination.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\reloader.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\reloader.js",
       "PackagePath": "staticwebassets\\js\\reloader.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\site.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\slidebestseller.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\slidebestseller.js",
       "PackagePath": "staticwebassets\\js\\slidebestseller.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\js\\swiper-bundle.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\js\\swiper-bundle.min.js",
       "PackagePath": "staticwebassets\\js\\swiper-bundle.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "E:\\Hoa Sen University\\IT\\Do_An_chuyen_nganh_A\\Test\\FlyBugClub_WebApp2\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
