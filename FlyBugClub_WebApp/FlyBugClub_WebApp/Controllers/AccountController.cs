@@ -254,7 +254,7 @@ namespace FlyBugClub_WebApp.Controllers
                 return View();
             }
         }
-        public async Task<IActionResult> ChangePassword(string newPassword, string confirmPassword)
+        public async Task<IActionResult> EnterChangePassword(string newPassword, string confirmPassword)
         {
             string email = HttpContext.Session.GetString("email23");
 
@@ -286,6 +286,11 @@ namespace FlyBugClub_WebApp.Controllers
                 // Xử lý khi không tìm thấy người dùng
                 return View();
             }
+        }
+
+        public IActionResult User()
+        {
+            return View();
         }
 
     }
