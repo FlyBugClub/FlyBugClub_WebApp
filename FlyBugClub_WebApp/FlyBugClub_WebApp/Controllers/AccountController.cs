@@ -217,6 +217,7 @@ namespace FlyBugClub_WebApp.Controllers
     
         public IActionResult ChangePassword()
         {
+            string email_user = HttpContext.Session.GetString("email_user");
             return View();
         }
 
@@ -290,6 +291,11 @@ namespace FlyBugClub_WebApp.Controllers
 
         public IActionResult User()
         {
+            var email = HttpContext.Session.GetString("email");
+            if (email != null)
+            {
+                HttpContext.Session.SetString("email_user", email);
+            }
             return View();
         }
 
