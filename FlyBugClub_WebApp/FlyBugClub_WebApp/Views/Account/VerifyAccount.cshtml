@@ -31,17 +31,63 @@
             <div class="img">
                 <img src="~/img/img_logo/Bug(Đen)1.png" alt="photo logo" />
             </div>
-            <div class="input-otp">
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
-            </div>
-            <h5></h5>
-            <a></a>
-            <button type="submit">Verify</button>
+            <form method="post" action="/Account/cuong">
+                <div class="input-otp">
+                    <input type="text" name="otp0" id="otp-0" class="otp-input" maxlength="1">
+                    <input type="text" name="otp1" id="otp-1" class="otp-input" maxlength="1">
+                    <input type="text" name="otp2" id="otp-2" class="otp-input" maxlength="1">
+                    <input type="text" name="otp3" id="otp-3" class="otp-input" maxlength="1">
+                    <input type="text" name="otp4" id="otp-4" class="otp-input" maxlength="1">
+                    <input type="text" name="otp5" id="otp-5" class="otp-input" maxlength="1">
+                </div>
+                <h5></h5>
+                <a></a>
+
+                <button type="submit">Nhấn vào tôi</button>
+            </form>
+            <form method="post" action="/Account/ResendEmail">
+
+
+                <button type="submit">Resend</button>
+            </form>
+
         </div>
     </div>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tìm trường input đầu tiên
+            var firstInput = document.getElementById("otp-0");
+
+            // Focus vào trường input đầu tiên
+            if (firstInput) {
+                firstInput.focus();
+            }
+        });
+
+        document.addEventListener("input", function (e) {
+            if (e.target.className === "otp-input" && e.target.value.length === 1) {
+                var nextInput = e.target.nextElementSibling;
+                if (nextInput) {
+                    nextInput.focus();
+                }
+            }
+        });
+
+        document.addEventListener("paste", function (e) {
+            e.preventDefault();
+            var pastedText = (e.clipboardData || window.clipboardData).getData("text");
+            if (pastedText.length === 6) {
+                for (var i = 0; i < 6; i++) {
+                    var input = document.getElementById("otp-" + (i));
+                    input.value = pastedText[i];
+                }
+            }
+        });
+    </script>
+
+
+
+
+
 </body>
