@@ -6,7 +6,7 @@
         <div class="col function edit-bill-detail">
             <form asp-action="EditBillDetail">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col col-md-6">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <input type="hidden" asp-for="BorrowDetailId" />
                         <div class="form-group">
@@ -30,7 +30,7 @@
                             <span asp-validation-for="Price" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col col-md-6">
                         <div class="form-group">
                             <label asp-for="SubTotal" class="control-label">Sub total</label>
                             <input asp-for="SubTotal" class="form-control" readonly />

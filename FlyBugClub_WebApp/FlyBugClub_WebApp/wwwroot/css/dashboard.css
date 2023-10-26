@@ -105,8 +105,22 @@ section.dashboard{
     border-radius: 8px;
 }
 
+.dashboard .info-sales .head-income{
+    display: flex;
+    justify-content: space-between;
+}
+
 .dashboard .info-sales h5{
     padding: 10px;
+}
+
+.dashboard .info-sales .fill-income{
+    height: 35px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 2px #000000 solid;
+    border-radius: 6px;
+    padding: 8px 15px !important;
 }
 
 .dashboard .income-form{

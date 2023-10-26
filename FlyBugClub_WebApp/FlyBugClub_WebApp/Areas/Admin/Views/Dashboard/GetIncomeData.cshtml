@@ -74,7 +74,7 @@
                     <div class="info-sales">
                         <div class="head-income">
                             <h5>Fanacial</h5>
-                            <input type="month" class="fill-income" />
+                            <input type="month" class="fill-income" id="selectedMonth" />
                         </div>
                         <form action="" class="income-form">
                             <div class="table-container">
@@ -109,3 +109,20 @@
     </section>
     <section></section>
 </div>
+
+<script>
+    $(document).ready(function () {
+        // Lắng nghe sự kiện thay đổi tháng
+        $("#selectedMonth").on("change", function () {
+            var selectedMonth = $(this).val();
+            updateIncomeTable(selectedMonth);
+        });
+    });
+
+    function updateIncomeTable(selectedMonth) {
+        // Gửi yêu cầu Ajax để lấy dữ liệu doanh thu và cập nhật bảng
+        $.get("/Dashboard/GetIncomeData", { selectedMonth: selectedMonth }, function (data) {
+            $("#incomeTableContainer").html(data);
+        });
+    }
+</script>

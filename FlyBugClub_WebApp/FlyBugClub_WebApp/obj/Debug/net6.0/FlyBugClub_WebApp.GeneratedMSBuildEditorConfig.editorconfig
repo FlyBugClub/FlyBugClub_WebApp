@@ -32,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Dashboard/GetIncomeData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEdldEluY29tZURhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Projects/FlyBugClub_WebApp/FlyBugClub_WebApp/FlyBugClub_WebApp/Areas/Admin/Views/Member/Member.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyXE1lbWJlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

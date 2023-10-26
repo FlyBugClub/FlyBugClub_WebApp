@@ -10,6 +10,9 @@ namespace FlyBugClub_WebApp.Repository
         public bool Delete(string bill);
         public List<BillBorrow> GetAllBill();
         public List<BillBorrow> GetAllBillsWithDetails();
+        public List<BillBorrow> GetWaitingBillsWithDetails();
+        public List<BillBorrow> GetBorrowingBillsWithDetails();
+        public List<BillBorrow> GetDoneBillsWithDetails();
         public List<BorrowDetail> GetDetailBillByBID(string bid);
         public List<BorrowDetail> GetBorrowDetailsByBillBorrowId(string billBorrowId);
         public List<Supplier> GetAllSuppliers();
@@ -117,6 +120,33 @@ namespace FlyBugClub_WebApp.Repository
         public BorrowDetail findBillDetailById(string billId, string detailId)
         {
             return _ctx.BorrowDetails.FirstOrDefault(x => x.Bid == billId && x.BorrowDetailId == detailId);
+        }
+
+        public List<BillBorrow> GetWaitingBillsWithDetails()
+        {
+            return _ctx.BillBorrows.Where(x=>x.Status == 0)
+                .OrderByDescending(b=>b.BorrowDate)
+                .Include(b => b.BorrowDetails)
+                .Include(b => b.SidNavigation)
+                .ToList();
+        }
+
+        public List<BillBorrow> GetBorrowingBillsWithDetails()
+        {
+            return _ctx.BillBorrows.Where(x => x.Status == 1)
+                .OrderByDescending(b => b.BorrowDate)
+                .Include(b => b.BorrowDetails)
+                .Include(b => b.SidNavigation)
+                .ToList();
+        }
+
+        public List<BillBorrow> GetDoneBillsWithDetails()
+        {
+            return _ctx.BillBorrows.Where(x => x.Status == 2)
+                .OrderByDescending(b => b.BorrowDate)
+                .Include(b => b.BorrowDetails)
+                .Include(b => b.SidNavigation)
+                .ToList();
         }
     }
 }

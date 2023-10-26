@@ -11,6 +11,11 @@
                     <div class="col-md-6">
                         <input type="hidden" asp-for="Bid" />
                         <div class="form-group">
+                            <label asp-for="Bid" class="control-label">Bill ID</label>
+                            <input asp-for="Bid" class="form-control" asp-items="ViewBag.Bid" readonly />
+                            <span asp-validation-for="Bid" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
                             <label asp-for="Sid" class="control-label">MSSV/MSNV</label>
                             <input asp-for="Sid" class="form-control" asp-items="ViewBag.Sid" readonly />
                             <span asp-validation-for="Sid" class="text-danger"></span>
@@ -30,11 +35,6 @@
                             <input asp-for="ReceiveDay" class="form-control" />
                             <span asp-validation-for="ReceiveDay" class="text-danger"></span>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="Note" class="control-label">Note bill</label>
-                            <input asp-for="Note" class="form-control" readonly />
-                            <span asp-validation-for="Note" class="text-danger"></span>
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -51,6 +51,11 @@
                             <label asp-for="Total" class="control-label">Total</label>
                             <input asp-for="Total" class="form-control" readonly />
                             <span asp-validation-for="Total" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Note" class="control-label">Note bill</label>
+                            <input asp-for="Note" class="form-control" readonly />
+                            <span asp-validation-for="Note" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Status" class="control-label">Status</label>

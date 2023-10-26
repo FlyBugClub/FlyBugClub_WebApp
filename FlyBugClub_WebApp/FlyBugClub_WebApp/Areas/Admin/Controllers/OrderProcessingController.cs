@@ -26,8 +26,11 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         public IActionResult Bill()
         {
             List<BillBorrow> getAllBillWDetail = _orderProcessingRepository.GetAllBillsWithDetails();
+            List<BillBorrow> getWaitingBill = _orderProcessingRepository.GetWaitingBillsWithDetails();
+            List<BillBorrow> getBorrowingBill = _orderProcessingRepository.GetBorrowingBillsWithDetails();
+            List<BillBorrow> getDoneBill = _orderProcessingRepository.GetDoneBillsWithDetails();
 
-            foreach (var bill in getAllBillWDetail)
+            foreach (var bill in getWaitingBill)
             {
                 /*bill.Sid = _orderProcessingRepository.GetUserName(bill.Sid);*/
                 var userName = bill.SidNavigation.Name;
@@ -37,6 +40,31 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                     detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
                 }
             }
+            foreach (var bill in getBorrowingBill)
+            {
+                /*bill.Sid = _orderProcessingRepository.GetUserName(bill.Sid);*/
+                var userName = bill.SidNavigation.Name;
+
+                foreach (var detail in bill.BorrowDetails)
+                {
+                    detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                }
+            }
+            foreach (var bill in getDoneBill)
+            {
+                /*bill.Sid = _orderProcessingRepository.GetUserName(bill.Sid);*/
+                var userName = bill.SidNavigation.Name;
+
+                foreach (var detail in bill.BorrowDetails)
+                {
+                    detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                }
+            }
+
+            BillModel billModel = new BillModel();
+            billModel.getWaitingBill = getWaitingBill;
+            billModel.getBorowingBill = getBorrowingBill;
+            billModel.getDoneBill = getDoneBill;
 
             int countWaiting = _ctx.BillBorrows.Count(x => x.Status == 0);
             int countBorrowing = _ctx.BillBorrows.Count(x => x.Status == 1);
@@ -45,7 +73,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             ViewBag.countBorrowing = countBorrowing;
             ViewBag.countDone = countDone;
 
-            return View("Bill", getAllBillWDetail);
+            return View("Bill", billModel);
         }
 
         public enum BorrowStatus
