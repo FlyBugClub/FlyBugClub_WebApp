@@ -20,10 +20,10 @@ namespace FlyBugClub_WebApp.Controllers
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-
+        
         private readonly IEmailSender _emailSender;
 
-
+       
 
         public AccountController(FlyBugClubWebApplicationContext ctx, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
         {
@@ -34,7 +34,7 @@ namespace FlyBugClub_WebApp.Controllers
 
         public IActionResult VerifyAccount()
         {
-
+            
             string otp = HttpContext.Request.Query["otp"];
             string usersJson = HttpContext.Request.Query["user"];
             string ForgotPassword = HttpContext.Request.Query["ForgotPassword"];
@@ -51,11 +51,11 @@ namespace FlyBugClub_WebApp.Controllers
             if (otp != null)
             {
                 HttpContext.Session.SetString("otp", otp);
-            }
+            }    
             if (usersJson != null)
             {
                 HttpContext.Session.SetString("user_json", usersJson);
-            }
+            }    
             return View();
         }
         [HttpPost]
@@ -68,8 +68,8 @@ namespace FlyBugClub_WebApp.Controllers
             string ForgotPassword = HttpContext.Session.GetString("ForgotPassword");
             string email_forgotpas = HttpContext.Session.GetString("email_forgotpas");
             string validate_otp = otp0 + otp1 + otp2 + otp3 + otp4 + otp5;
-
-
+            
+ 
 
             //var query = _ctx.Users.FromSqlRaw("SELECT Email FROM Users WHERE Email = {0}", email);
             //var userWithEmail = query.FirstOrDefault();
@@ -115,11 +115,11 @@ namespace FlyBugClub_WebApp.Controllers
             }
             else
             {
-
+               
                 return View("~/Views/Account/VerifyAccount.cshtml");
 
             }
-
+            
             // Xử lý yêu cầu POST ở đây
 
         }
@@ -129,12 +129,12 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = GenerateOTP();
             string user_json = HttpContext.Session.GetString("user_json");
             string forgot_email = HttpContext.Session.GetString("email_forgotpas");
-            if (user_json != null)
+            if (user_json!=null)
             {
                 List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
                 SendEmail(otp, Data_User[5]);
             }
-            else if (forgot_email != null)
+            else if(forgot_email!=null)
             {
                 SendEmail(otp, forgot_email);
             }
@@ -214,7 +214,7 @@ namespace FlyBugClub_WebApp.Controllers
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-
+    
         public IActionResult ChangePassword()
         {
             return View();
@@ -222,6 +222,39 @@ namespace FlyBugClub_WebApp.Controllers
 
 
         public async Task<IActionResult> ResetPassword(string newPassword, string confirmPassword)
+        {
+            string email = HttpContext.Session.GetString("email23");
+
+            if (newPassword != confirmPassword)
+            {
+                // Xử lý khi mật khẩu và xác nhận mật khẩu không khớp
+                return View();
+            }
+
+            var user = await _userManager.FindByNameAsync(email);
+            string name = "hehe";
+            if (user != null)
+            {
+
+                string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var result = await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
+                if (result.Succeeded)
+                {
+                    return LocalRedirect("~/Identity/Account/LoginCustomer");
+                }
+                else
+                {
+                    // Xử lý khi việc đặt lại mật khẩu không thành công
+                    return View();
+                }
+            }
+            else
+            {
+                // Xử lý khi không tìm thấy người dùng
+                return View();
+            }
+        }
+        public async Task<IActionResult> ChangePassword(string newPassword, string confirmPassword)
         {
             string email = HttpContext.Session.GetString("email23");
 
