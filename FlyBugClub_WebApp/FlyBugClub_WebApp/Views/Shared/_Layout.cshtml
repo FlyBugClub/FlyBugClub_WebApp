@@ -70,6 +70,9 @@
                     @if(SignInManager.IsSignedIn(User)){
                         var user = await UserManager.GetUserAsync(User);
                         var fullName = user.FullName;
+                        var email = user.Email;
+                        Context.Session.SetString("email", email);
+                        var cuong = "";
                         <li class="center">
                             <a class="user-name" asp-controller="Account" asp-action="UserPage">@fullName</a>
                             <a href="/store/Logout">Logout</a>
