@@ -217,6 +217,11 @@ namespace FlyBugClub_WebApp.Controllers
     
         public IActionResult ChangePassword()
         {
+            string email = HttpContext.Session.GetString("email_user");
+            if (email != null)
+            {
+                HttpContext.Session.SetString("email", email);
+            }
             return View();
         }
 
@@ -228,11 +233,10 @@ namespace FlyBugClub_WebApp.Controllers
             if (newPassword != confirmPassword)
             {
                 // Xử lý khi mật khẩu và xác nhận mật khẩu không khớp
-                return View();
+                return View("~/Views/Account/ResetPassword.cshtml");
             }
 
             var user = await _userManager.FindByNameAsync(email);
-            string name = "hehe";
             if (user != null)
             {
 
@@ -254,42 +258,113 @@ namespace FlyBugClub_WebApp.Controllers
                 return View();
             }
         }
-        public async Task<IActionResult> EnterChangePassword(string newPassword, string confirmPassword)
+        public async Task<IActionResult> EnterChangePassword(string oldPassword,string newPassword, string confirmPassword)
         {
-            string email = HttpContext.Session.GetString("email23");
 
+            if (oldPassword != null) {
+                HttpContext.Session.SetString("oldpassword", oldPassword);
+            }
+            if (newPassword != null)
+            {
+                HttpContext.Session.SetString("newpassword", newPassword);
+            }
+            if (confirmPassword != null)
+            {
+                HttpContext.Session.SetString("conformpassword", confirmPassword);
+            }
+
+
+            if (oldPassword == null )
+            {
+                ViewBag.OldPassword = "Chưa nhập mật khẩu cũ";
+                return View("~/Views/Account/ChangePassword.cshtml");
+            }
+            else
+            {
+                var OldPassword = HttpContext.Session.GetString("oldpassword");
+                if (OldPassword !=null)
+                {
+                    ViewBag.valueOldPassword = OldPassword;
+                }    
+                ViewBag.OldPassword = "";
+            }
+
+            if (newPassword == null)
+            {
+                ViewBag.NewPassword = "Chưa nhập mật khẩu mới";
+                return View("~/Views/Account/ChangePassword.cshtml");
+            }
+            else 
+            {
+                var NewPassword = HttpContext.Session.GetString("newpassword");
+                if (NewPassword != null)
+                {
+                    ViewBag.valueNewPassword = NewPassword;
+                }
+                ViewBag.NewPassword = "";
+            } 
+            
+            if(confirmPassword == null)
+            {
+                ViewBag.ConformPassword = "Chưa nhập xác nhận lại mật khẩu ";
+                return View("~/Views/Account/ChangePassword.cshtml");
+            }
+            else
+            {
+                var ConformPassword = HttpContext.Session.GetString("conformpassword");
+                if (ConformPassword != null)
+                {
+                    ViewBag.valueConformPassword = ConformPassword;
+                }
+                ViewBag.ConformPassword = "";
+            } 
+            
             if (newPassword != confirmPassword)
             {
                 // Xử lý khi mật khẩu và xác nhận mật khẩu không khớp
-                return View();
+                return View("~/Views/Account/ChangePassword.cshtml");
             }
+            string email_user = HttpContext.Session.GetString("email");
+            var user = await _userManager.FindByNameAsync(email_user);
 
-            var user = await _userManager.FindByNameAsync(email);
-            string name = "hehe";
             if (user != null)
             {
-
-                string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var result = await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
-                if (result.Succeeded)
+                string hashedPassword = user.PasswordHash;
+                var passwordHasher = new PasswordHasher<ApplicationUser>();
+                var passwordVerificationResult = passwordHasher.VerifyHashedPassword(null, hashedPassword, oldPassword);
+                if (passwordVerificationResult == PasswordVerificationResult.Success)
                 {
-                    return LocalRedirect("~/Identity/Account/LoginCustomer");
+                    // Mật khẩu cũ đúng, bạn có thể thực hiện thay đổi mật khẩu
+                    var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+                    if (result.Succeeded)
+                    {
+                        return LocalRedirect("~/Identity/Account/LoginCustomer");
+                    }
+                    else
+                    {
+                        return View("~/Views/Account/ChangePassword.cshtml");
+                    }
                 }
                 else
                 {
-                    // Xử lý khi việc đặt lại mật khẩu không thành công
-                    return View();
+                    return View("~/Views/Account/ChangePassword.cshtml");
                 }
+
             }
             else
             {
                 // Xử lý khi không tìm thấy người dùng
-                return View();
+                return View("~/Views/Account/ChangePassword.cshtml");
             }
         }
 
         public IActionResult User()
         {
+            var email = HttpContext.Session.GetString("email");
+            if (email != null)
+            {
+                HttpContext.Session.SetString("email_user", email);
+            }
             return View();
         }
 
