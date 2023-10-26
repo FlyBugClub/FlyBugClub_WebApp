@@ -1,4 +1,9 @@
-﻿
+
+
+<div class="center">
+    
+</div>
+
 <div class="body">
     <section class="dashboard">
         <div class="container">
@@ -88,12 +93,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <tr>
                                             <td>10/07/2023</td>
                                             <td>1.490.000 đ</td>
                                             <td>100.000 đ</td>
                                             <td>1.390.000 đ</td>
                                         </tr>
+
+                                        
+                                           @(await Component.InvokeAsync("_BillBorrow"))
+                                           
+
                                     </tbody>
                                 </table>
                             </div>
@@ -101,7 +112,53 @@
                     </div>
                 </div>
                 <div class="col col-md-4">
+
+
+                     <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
+                    <div class="form-group">
+                        <label for="dayInput">Ngày</label>
+                        <input type="text" class="form-control" id="dayInput" name="day">
+                    </div>
+                    <div class="form-group">
+                        <label for="monthInput">Tháng</label>
+                        <input type="text" class="form-control" id="monthInput"name="month">
+                    </div>
+                    <div class="form-group">
+                        <label for="yearInput">Năm</label>
+                        <input type="text" class="form-control" id="yearInput" name="year">
+                    </div>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"></button>
+                </form>
+                    <!-- Modal for Month and Year Input -->
+                    <!-- The Modal -->
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    Modal body..
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        
+                    </script>
                     <div class="calender-aera">
+                        
                     </div>
                 </div>
             </div>
