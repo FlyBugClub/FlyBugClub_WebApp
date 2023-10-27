@@ -236,9 +236,51 @@ namespace FlyBugClub_WebApp.Controllers
         public async Task<IActionResult> ResetPassword(string newPassword, string confirmPassword)
         {
             string email = HttpContext.Session.GetString("email23");
+            if (newPassword != null)
+            {
+
+                HttpContext.Session.SetString("reset_newpassword", newPassword);
+            }
+            if (confirmPassword != null)
+            {
+                HttpContext.Session.SetString("reset_conformpassword", confirmPassword);
+            }
+
+
+            if (newPassword == null)
+            {
+                ViewBag.ResetNewPassword = "Chưa nhập mật khẩu mới";
+                return View("~/Views/Account/ResetPassword.cshtml");
+            }
+            else
+            {
+                var NewPassword = HttpContext.Session.GetString("reset_newpassword");
+                if (NewPassword != null)
+                {
+                    ViewBag.ValueResetNewPassword = NewPassword;
+                }
+                ViewBag.ResetNewPassword = "";
+            }
+
+            if (confirmPassword == null)
+            {
+                ViewBag.ResetConformPassword = "Chưa nhập xác nhận lại mật khẩu ";
+                return View("~/Views/Account/ResetPassword.cshtml");
+            }
+            else
+            {
+                var ConformPassword = HttpContext.Session.GetString("reset_conformpassword");
+                if (ConformPassword != null)
+                {
+                    ViewBag.ValueResetConformPassword = ConformPassword;
+                }
+                ViewBag.ResetConformPassword = "";
+            }
+
 
             if (newPassword != confirmPassword)
             {
+                ViewBag.ResetconfirmPassword = "xác nhận mk ko giống với mk mới ";
                 // Xử lý khi mật khẩu và xác nhận mật khẩu không khớp
                 return View("~/Views/Account/ResetPassword.cshtml");
             }
