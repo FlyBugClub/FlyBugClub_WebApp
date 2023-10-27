@@ -28,6 +28,9 @@ using MimeKit;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using static FlyBugClub_WebApp.Areas.Identity.Pages.Account.RegisterModel;
+using System.Text.RegularExpressions;
+using System.Reflection;
+using FlyBugClub_WebApp.Migrations;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
@@ -93,6 +96,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "UID")]
+            [ValidateUID(ErrorMessage = "UID phải có 5 số cuối là 12897")]
             public string UID { get; set; }
 
             [Required]
@@ -154,7 +158,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid)
-            {
+                {
                 /*var user = CreateUser();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
@@ -171,10 +175,14 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 {
                     position = "TC";
                 }
+                else if (Input.Email.EndsWith("gmail.com"))
+                {
+                    position = "STU";
+                }
                 List<string> data_user = new List<string> { Input.FullName, Input.UID, position, Input.PhoneNumber, Input.Address, Input.Email, Input.Password };
                 var User_Json = JsonConvert.SerializeObject(data_user);
-
-                return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={User_Json}");
+                var encodedUserJson = System.Web.HttpUtility.UrlEncode(User_Json, Encoding.UTF8);
+                return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={encodedUserJson}");
 
 
 
@@ -255,6 +263,57 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
             return (IUserEmailStore<ApplicationUser>)_userStore;
+        }
+    }
+    public class ValidateUIDAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value is string uid)
+            {
+                // Kiểm tra xem UID có đúng định dạng "12897" ở 5 số cuối không
+                if (uid.Length >= 6)
+                {
+                    string emailValue;
+                    string lastFiveDigits = uid.Substring(uid.Length - 5);
+                    PropertyInfo emailProperty = validationContext.ObjectType.GetProperty("Email");
+                    if (emailProperty != null)
+                    {
+                        emailValue = (string)emailProperty.GetValue(validationContext.ObjectInstance);
+                        // Đây, bạn có thể kiểm tra và xử lý Input.Email nếu cần thiết.
+
+
+                        Match match = Regex.Match(emailValue, @"\d+");
+                        
+                        if (match.Success)
+                        {
+                            string numberString = match.Value;
+                            string lastFiveDigits_email = match.Value;
+                            if (lastFiveDigits == lastFiveDigits_email)
+                            {
+                                // Đây là nơi bạn có thể truy cập Input.Email thông qua validationContext.ObjectInstance
+
+                                return ValidationResult.Success;
+                            }
+                            else
+                            {
+                                return new ValidationResult("UID không khớp với mail sinh viên.");
+                            }
+                        }
+                        else
+                        {
+                            return new ValidationResult("UID không hợp lệ.");
+                        }
+                    }
+                }
+                else
+                {
+                    return new ValidationResult(" Nhập MSSV của bạn.");
+                }    
+
+            }
+
+            return new ValidationResult("UID không hợp lệ.");
         }
     }
 }
