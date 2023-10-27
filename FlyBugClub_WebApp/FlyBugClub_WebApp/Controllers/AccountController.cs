@@ -293,5 +293,10 @@ namespace FlyBugClub_WebApp.Controllers
             return View();
         }
 
+        public IActionResult ChangeInfoUser()
+        {
+            return View();
+        }
+
     }
 }

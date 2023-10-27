@@ -1,0 +1,42 @@
+.wrap-info-user {
+    color: #fff;
+}
+
+.wrap-info-user input, section, option{
+    color: #012a4a;
+}
+
+
+
+.wrap-info-user {
+    background: #4d4d4d;
+    border: none;
+    border-radius: 24px;
+}
+
+/*==========================*/
+/*==== CHANGE INFO USER ====*/
+/*==========================*/
+
+.wrap-info-user form.ChangeInfoUser{
+    width: 100%;
+}
+
+.wrap-info-user .form-group{
+    margin-top: 20px;
+}
+
+.wrap-info-user .btn-submit{
+    display: flex;
+    justify-content: center;
+}
+
+.wrap-info-user .btn-submit input{
+    width: 90%;
+    height: 37px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    color:#fff;
+    border: none;
+    border-radius: 24px !important;
+}
