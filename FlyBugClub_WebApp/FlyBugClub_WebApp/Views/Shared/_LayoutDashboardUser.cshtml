@@ -121,7 +121,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="sub-btn">
+                                <a asp-controller="Account" asp-action="Receiption" class="sub-btn">
                                     <i class="fas fa-solid fa-clock-rotate-left"></i>
                                     <span class="nav-item">Lịch sử mua hàng</span>
                                 </a>
@@ -218,6 +218,7 @@
     @*Main Function*@
     <script src="~/js/reloader.js"></script>
     <script src="~/js/GoToTop.js"></script>
+    <script src="~/js/table_expand_process_bill.js"></script>
     <script>
         $(function () {
             $("#upload_link").on('click', function (e) {

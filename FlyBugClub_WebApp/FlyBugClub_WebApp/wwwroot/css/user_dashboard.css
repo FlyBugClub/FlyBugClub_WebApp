@@ -1,5 +1,6 @@
 .wrap-info-user {
     color: #fff;
+    padding: 20px 0;
 }
 
 .wrap-info-user input, section, option{
@@ -14,11 +15,51 @@
     border-radius: 24px;
 }
 
+.bluecol{
+    color:#012a4a;
+}
+
+/*==========================*/
+/*======== INFO USER =======*/
+/*==========================*/
+
+.wrap-info-user .avatar img{
+    border: none;
+    border-radius: 24px;
+}
+
+.wrap-info-user #uplaod{
+    display: none;
+}
+
+.wrap-info-user .hello{
+    width: fit-content;
+    padding: 5px 15px;
+    background: #f7a922;
+    border-radius: 6px;
+}
+
+.wrap-info-user .welcome{
+    margin-left: 35px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.wrap-info-user .single-info{
+    display: flex;
+    height: 60px;
+}
+
+.wrap-info-user .address p{
+    max-width: 160px;
+    width: 100%;
+}
+
 /*==========================*/
 /*==== CHANGE INFO USER ====*/
 /*==========================*/
 
-.wrap-info-user form.ChangeInfoUser{
+.wrap-info-user form.ChangeInfoUser {
     width: 100%;
 }
 
@@ -40,3 +81,69 @@
     border: none;
     border-radius: 24px !important;
 }
+
+/*==========================*/
+/*======= Receiption =======*/
+/*==========================*/
+
+.wrap-info-user h4.non-bill{
+    text-align: center;
+    color: #a3a3a3;
+}
+
+.receiption-conponent {
+    padding: 15px;
+}
+
+.wrap-info-user table.table-receiption {
+    width: 100%;
+    background: #d8d8d8;
+    border: none;
+    border-radius: 16px;
+}
+
+.wrap-info-user table p{
+    margin-bottom: 0 !important;
+}
+
+.wrap-info-user table.table-receiption .parent-body .parent-tr td{
+    height: 30px;
+}
+
+.wrap-info-user table.table-receiption .parent-body .parent-tr:hover td {
+    background: #bbbbbb;
+}
+
+.wrap-info-user table.table-receiption table.child-table{
+    width: 100%;
+}
+
+.wrap-info-user .table-receiption table.child-table .child-tr td{
+    height: 40px;
+}
+
+.wrap-info-user .table-receiption table.child-table .child-tr:hover td {
+    background: #f8e2b8;
+}
+
+.wrap-info-user table thead{
+    height: 50px;
+}
+
+.wrap-info-user table th, td{
+    text-align: center;
+    color: #012a4a;
+}
+
+.expandable-row {
+    display: none;
+}
+
+.word-left {
+    text-align: left;
+}
+
+.word-right {
+    text-align: right;
+}
+

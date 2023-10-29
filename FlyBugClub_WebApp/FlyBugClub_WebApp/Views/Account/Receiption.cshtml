@@ -1,0 +1,132 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDashboardUser.cshtml";
+}
+
+@model List<FlyBugClub_WebApp.Models.BillBorrow>
+
+@using Microsoft.AspNetCore.Identity
+@using FlyBugClub_WebApp.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="wrap-info-user receiption-conponent">
+        <form>
+            <table border="1" class="table-receiption table table-striped">
+                <thead>
+                    <tr>
+                        <th class="bid">Mã hóa đơn</th>
+                        <th class="date">Ngày thuê</th>
+                        <th class="note">Ngày trả</th>
+                        <th class="status">Trạng thái</th>
+                        <th class="money">Tiền cọc</th>
+                        <th class="">Thành tiền</th>
+                        <th>Xem</th>
+                    </tr>
+                </thead>
+                <tbody class="parent-body">
+                    @foreach (var bill in Model)
+                    {
+                        <tr class="parent-tr" onclick="toggleRow('expandable-row-@bill.Bid')">
+                            <td class="outsite-info bid">@bill.Bid</td>
+                            <td class="outsite-info">@bill.BorrowDate.ToString("dd/MM/yyyy")</td>
+                            <td class="outsite-info">
+                                @if (@bill.ReturnDate == null)
+                                {
+                                    <p>//</p>
+                                }
+                                else
+                                {
+                                    @bill.ReturnDate.Value.ToString("dd/MM/yyyy")
+                                    ;
+                                }
+                            </td>
+                            <td class="max-word outsite-info note word-left px-4">
+                                @if (@bill.Status == 0)
+                                {
+                                    <p>Chưa thanh toán</p>
+                                }
+                                else if (@bill.Status == 1)
+                                {
+                                    <p>Đang thuê</p>
+                                }
+                                else if (@bill.Status == 2)
+                                {
+                                    <p>Hoàn tất thuê hàng</p>
+                                }
+                            </td>
+                            <td class="waiting outsite-info word-right">
+                                @if (@bill.DepositPriceOnBill != null)
+                                {
+                                    @bill.DepositPriceOnBill.Value.ToString("0.000 đ")
+                                    ;
+                                }
+                            </td>
+                            <td class="outsite-info word-right">
+                                @if (@bill.Total != null)
+                                {
+                                    @bill.Total.Value.ToString("0.000 đ")
+                                }
+                            </td>
+                            <td class="outsite-info">
+                                @if(@bill.Status == 0)
+                                {
+                                    <a asp-action="WatchBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
+                                    <span class="bluecol"> ||</span>
+                                    <a asp-controller="Account" asp-action="DeleteBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-trash"></i></a>
+                                }
+                                else
+                                {
+                                    <a asp-action="WatchBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
+                                }
+                            </td>
+                        </tr>
+                        <tr class="expandable-row detail-info detail" id="expandable-row-@bill.Bid">
+                            <td colspan="9" class="child">
+                                <table class="child-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Thiết bị</th>
+                                            <th>Số lượng</th>
+                                            <th>Đã trả</th>
+                                            <th>Hư hại</th>
+                                            <th>Giá cọc</th>
+                                            <th>Giá</th>
+                                            <th>Tổng</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var detail in bill.BorrowDetails)
+                                        {
+                                            <tr class="child-tr">
+                                                <td class="word-left px-3">@detail.DeviceId</td>
+                                                <td>@detail.Quantity</td>
+                                                <td>@detail.ReturnQuantity</td>
+                                                <td>@detail.QtyDamage</td>
+                                                <td class="word-right">@detail.DepositPrice.ToString("0.000") đ</td>
+                                                <td class="word-right">@detail.Price.ToString("0.000") đ</td>
+                                                <td class="word-right px-3">@detail.SubTotal.ToString("0.000") đ</td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+}
+else
+{
+    <div class="wrap-info-user receiption-conponent">
+        <h4 class="non-bill">Hiện chưa có hóa đơn nào trong cửa hàng</h4>
+    </div>
+    
+}
+
+

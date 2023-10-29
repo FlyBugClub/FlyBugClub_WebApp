@@ -119,18 +119,18 @@
                                                     <h3>@item.Name</h3>
                                                     <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                                                     <div class="center icon-card">
-                                                        <button class="icon icon-share">
-                                                            <a href="#">
+                                                        <button type="button" class="icon icon-share">
+                                                            <a href="#" title="Chia sẽ">
                                                                 <i class="fa-solid fa-share"></i>
                                                             </a>
                                                         </button>
                                                         <button class="icon icon-love" asp-route-id="@item.DeviceId">
-                                                            <a href="#">
+                                                            <a href="#" title="Yêu thích">
                                                                 <i class="fa-regular fa-heart"></i>
                                                             </a>
                                                         </button>
                                                         <button class="icon icon-share">
-                                                            <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@item.DeviceId">
+                                                            <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@item.DeviceId" title="Bỏ giỏ">
                                                                 <i class="fa-solid fa-cart-plus"></i>
                                                             </a>
                                                         </button>

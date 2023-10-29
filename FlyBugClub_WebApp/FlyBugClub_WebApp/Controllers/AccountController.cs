@@ -1,6 +1,7 @@
 ﻿using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Migrations;
 using FlyBugClub_WebApp.Models;
+using FlyBugClub_WebApp.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using Newtonsoft.Json;
+using System.Linq;
 using System.Security;
 using System.Text;
 
@@ -16,6 +18,7 @@ namespace FlyBugClub_WebApp.Controllers
     public class AccountController : Controller
     {
         private FlyBugClubWebApplicationContext _ctx;
+        private IOrderProcessingRepository _orderProcessingRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -25,9 +28,13 @@ namespace FlyBugClub_WebApp.Controllers
 
        
 
-        public AccountController(FlyBugClubWebApplicationContext ctx, UserManager<ApplicationUser> userManager, IEmailSender emailSender)
+        public AccountController(FlyBugClubWebApplicationContext ctx, 
+            IOrderProcessingRepository orderProcessingRepository,
+            UserManager<ApplicationUser> userManager, 
+            IEmailSender emailSender)
         {
             _ctx = ctx;
+            _orderProcessingRepository = orderProcessingRepository;
             _userManager = userManager;
             _emailSender = emailSender;
         }
@@ -288,7 +295,7 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
 
-        public IActionResult User()
+        public IActionResult UserPage()
         {
             return View();
         }
@@ -296,6 +303,46 @@ namespace FlyBugClub_WebApp.Controllers
         public IActionResult ChangeInfoUser()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Receiption()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return LocalRedirect("/Identity/Account/LoginCustomer");
+            }
+            else
+            {
+                var billsByUID = _ctx.BillBorrows
+                    .Where(b => b.Sid == currentUser.UID)
+                    .Include(b => b.BorrowDetails)
+                    .OrderByDescending(b => b.BorrowDate)
+                    .OrderBy(b => b.Status)
+                    .ToList();
+
+                foreach (var bill in billsByUID)
+                {
+                    foreach (var detail in bill.BorrowDetails)
+                    {
+                        detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                    }
+                }
+
+                if (billsByUID.Count == 0)
+                {
+                    billsByUID = null;
+                }
+
+                return View(billsByUID);
+            }
+        }
+
+        public IActionResult DeleteBill(string id)
+        {
+            _orderProcessingRepository.Delete(id);
+            return RedirectToAction("Receiption", "Account");
         }
 
     }

@@ -36,7 +36,7 @@
 </head>
 <body>
     <div id="backgrounf-loding">
-        <img id="preloader" src="~/img/img_logo/FlyBugBLue1.png" alt="loading..."></img>
+        <img id="preloader" src="~/img/img_logo/FlyBugBLue1.png" alt="loading..."/>
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
     <!-- ======================== -->
@@ -71,7 +71,7 @@
                         var user = await UserManager.GetUserAsync(User);
                         var fullName = user.FullName;
                         <li class="center">
-                            <a class="user-name" asp-controller="Account" asp-action="User">@fullName</a>
+                            <a class="user-name" asp-controller="Account" asp-action="UserPage">@fullName</a>
                             <a href="/store/Logout">Logout</a>
                         </li>
                     }
