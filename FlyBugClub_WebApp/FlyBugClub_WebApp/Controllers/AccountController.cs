@@ -407,21 +407,90 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
 
-        public IActionResult UserPage()
+        public async Task<IActionResult>  UserPage()
         {
             var email = HttpContext.Session.GetString("email");
-            if (email != null)
+            HttpContext.Session.SetString("email_user", email);
+            var user = await _userManager.FindByNameAsync(email);
+            if (user != null)
             {
-                HttpContext.Session.SetString("email_user", email);
+                ViewBag.FullName = user.FullName;
+                ViewBag.UID = user.UID;
+                ViewBag.Phone = user.Phone;
+                ViewBag.Address = user.Address;
+                ViewBag.Email = user.Email;
+                if (user.PositionID == "STU")
+                {
+                    ViewBag.Position = "Sinh Viên";
+                }
+                else if (user.PositionID == "TC")
+                {
+                    ViewBag.Position = "Giảng viên/Nhân viên";
+                }
+                else if (user.PositionID == "MB")
+                {
+                    ViewBag.Position = "Thành viên CLB";
+                }
+
+                if (user.Gender != null)
+                {
+                    ViewBag.Gender = user.Gender;
+                }
+                else ViewBag.Gender = "__/__";
+
+                if (user.Faculty != null)
+                {
+                    ViewBag.Khoa = user.Faculty;
+                }
+                else ViewBag.Khoa = "__/__";
+
+
+                if (user.Major != null)
+                {
+                    ViewBag.Nganh = user.Major;
+                }
+                else ViewBag.Nganh = "__/__";
             }
             return View();
         }
 
-        public IActionResult ChangeInfoUser()
+        public async Task<IActionResult> ChangeInfoUser()
         {
+            var email = HttpContext.Session.GetString("email");
+            HttpContext.Session.SetString("email", email);
             return View();
         }
+        public async Task<IActionResult> Finish_ChangeInfoUser(string Name,string Gender,string Phone,string Address,string Major,string Faculty)
+        {
 
+            var email = HttpContext.Session.GetString("email");
+            var user = await _userManager.FindByNameAsync(email);
+            if (user != null)
+            {
+                user.FullName = Name;
+                user.Gender = Gender;
+                user.Phone = Phone;
+                user.Address = Address;
+                user.Major = Major;
+                user.Faculty = Faculty;
+                var result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                {
+                    HttpContext.Session.SetString("email", email);
+                    return RedirectToAction("UserPage");
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            else
+            {
+                return View();
+            }    
+            
+        }
         public async Task<IActionResult> Receiption()
         {
             var currentUser = await _userManager.GetUserAsync(User);

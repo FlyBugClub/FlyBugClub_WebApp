@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-9">
                 <h2 class="hello">Hello</h2>
-                <h3>| Nguyễn Quốc Duy |</h3>
+                <h3>| @ViewBag.FullName |</h3>
                 <h4 class="welcome">Welcome to FlyBug Club Website</h4>
                 <hr />
                 <div class="container">
@@ -20,40 +20,36 @@
                         <div class="col">
                             <div class="single-info">
                                 <b>MSSV/MSNV:</b>
-                                <p>22011125</p>
-                            </div>
-                            <div class="single-info">
-                                <b>Họ và tên:</b>
-                                <p>Nguyễn Thành Nhân</p>
+                                <p>@ViewBag.UID</p>
                             </div>
                             <div class="single-info">
                                 <b>Giới tính:</b>
-                                <p>Nam</p>
+                                <p>@ViewBag.Gender</p>
                             </div>
                             <div class="single-info">
                                 <b>Số điện thoại:</b>
-                                <p>22011125</p>
+                                <p>@ViewBag.Phone</p>
                             </div>
                             <div class="single-info address">
-                                <b>Địa chỉ: <span>21/48/23 Nguyễn Chí Thành/Q. Bình Tân/TP. HCM</span></b>
+                                <b>Địa chỉ: <span>@ViewBag.Address</span></b>
                             </div>
                         </div>
                         <div class="col">
                             <div class="single-info">
                                 <b>Email:</b>
-                                <p>nhan.nt11125@sinhvien.hoasen.edu.vn</p>
+                                <p>@ViewBag.Email</p>
                             </div>
                             <div class="single-info">
                                 <b>Khoa:</b>
-                                <p>Công nghệ thông tin</p>
+                                <p>@ViewBag.Khoa</p>
                             </div>
                             <div class="single-info">
                                 <b>Ngành:</b>
-                                <p>Công nghệ thông tin</p>
+                                <p>@ViewBag.Nganh</p>
                             </div>
                             <div class="single-info">
                                 <b>Vị trí:</b>
-                                <p>Sinh viên</p>
+                                <p>@ViewBag.Position</p>
                             </div>
                         </div>
                     </div>
