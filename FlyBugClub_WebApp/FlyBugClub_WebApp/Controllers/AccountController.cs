@@ -1,4 +1,4 @@
-﻿using FlyBugClub_WebApp.Areas.Identity.Data;
+using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Migrations;
 using FlyBugClub_WebApp.Models;
 using FlyBugClub_WebApp.Repository;
