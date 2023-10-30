@@ -376,7 +376,7 @@ namespace FlyBugClub_WebApp.Controllers
             string email_user = HttpContext.Session.GetString("email");
             var user = await _userManager.FindByNameAsync(email_user);
 
-<<<<<<< HEAD
+
             if (user != null)
             {
                 string hashedPassword = user.PasswordHash;
@@ -483,7 +483,7 @@ namespace FlyBugClub_WebApp.Controllers
                 else
                 {
                     return View();
-=======
+
             if (user != null)
             {
                 string hashedPassword = user.PasswordHash;
@@ -505,13 +505,13 @@ namespace FlyBugClub_WebApp.Controllers
                 else
                 {
                     return View("~/Views/Account/ChangePassword.cshtml");
->>>>>>> main
+
                 }
 
             }
             else
             {
-<<<<<<< HEAD
+
                 return View();
             }    
             
@@ -524,7 +524,7 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 return LocalRedirect("/Identity/Account/LoginCustomer");
             }
-=======
+
                 // Xử lý khi không tìm thấy người dùng
                 return View("~/Views/Account/ChangePassword.cshtml");
             }
@@ -553,7 +553,7 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 return LocalRedirect("/Identity/Account/LoginCustomer");
             }
->>>>>>> main
+
             else
             {
                 var billsByUID = _ctx.BillBorrows
