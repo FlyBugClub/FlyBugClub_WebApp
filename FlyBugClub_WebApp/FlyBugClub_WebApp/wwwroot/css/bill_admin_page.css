@@ -6,6 +6,18 @@
     width: 93% !important;
 }
 
+.text-yellow {
+    color: #c7ac2f;
+}
+
+.text-green {
+    color: #39b230;
+}
+
+.text-purple {
+    color: #8734d0;
+}
+
 .word-left{
     text-align:left;
 }
@@ -20,6 +32,26 @@
 
 .function-bill{
     margin-bottom: 12px;
+}
+
+    .function-bill .count {
+        width: fit-content;
+        background: #012a4a;
+        margin-bottom: 20px;
+        padding: 5px 15px;
+        border: 3px solid ; 
+        border-radius: 12px;
+    }
+
+.function-bill .count p{
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+
+.function-bill .count p span{
+    font-size: 18px !important;
+    font-weight: 700;
 }
 
 .bill-table {
@@ -78,25 +110,6 @@
 .bill-table tbody.parent-body td.active-function{
     padding: 0 5px;
 }
-
-.waiting {
-    color: #c7ac2f;
-    font-weight: 700;
-    border-top: 1px solid #000 !important;
-}
-
-.borrowing {
-    color: #8734d0;
-    font-weight: 700;
-    border-top: 1px solid #000 !important;
-}
-
-.done{
-    color: #39b230;
-    font-weight: 700;
-    border-top: 1px solid #000 !important;
-}
-
 
 .max-word {
     max-width: 100%;
@@ -162,4 +175,27 @@
 
 .QtyofStatus h3.borrowing {
     color: #8734d0;
+}
+
+/* =============================== */
+/* ======== HISTORY UPDATE ======= */
+/* =============================== */
+
+table.history-update{
+    background: #f2f2f2;
+    border-radius: 12px
+}
+
+table.history-update thead th{
+    height: 40px;
+    text-align: center;
+}
+
+table.history-update tbody td.date-update{
+    padding: 0 10px;
+}
+
+table.history-update tbody td.content-update{
+    padding: 0 10px;
+    text-align: justify;
 }

@@ -1,8 +1,11 @@
-﻿using FlyBugClub_WebApp.Models;
+﻿using FlyBugClub_WebApp.Areas.Identity.Data;
+using FlyBugClub_WebApp.Models;
 using FlyBugClub_WebApp.Repository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NuGet.Protocol.Core.Types;
 using System.Collections.Generic;
 using System.Data;
 
@@ -15,13 +18,16 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         private FlyBugClubWebApplicationContext _ctx;
         private IOrderProcessingRepository _orderProcessingRepository;
         private IProductRepository _productRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
         public OrderProcessingController(FlyBugClubWebApplicationContext ctx, 
                                         IOrderProcessingRepository orderProcessingRepository,
-                                        IProductRepository productRepository)
+                                        IProductRepository productRepository,
+                                        UserManager<ApplicationUser> userManager)
         {
             _ctx = ctx;
             _orderProcessingRepository = orderProcessingRepository;
             _productRepository = productRepository;
+            _userManager = userManager;
         }
         public IActionResult Bill()
         {
@@ -60,6 +66,8 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                     detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
                 }
             }
+
+
 
             BillModel billModel = new BillModel();
             billModel.getWaitingBill = getWaitingBill;
@@ -115,7 +123,9 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateBill(BillBorrow billBorrow)
         {
+            // Cập nhật billBorrow trong cơ sở dữ liệu
             _orderProcessingRepository.Update(billBorrow);
+
             return RedirectToAction("Bill", "OrderProcessing");
         }
 
