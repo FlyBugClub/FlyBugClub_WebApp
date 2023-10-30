@@ -55,11 +55,11 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
                     List<BillBorrow> billBorrows = _ctx.BillBorrows
                     .Where(b => b.BorrowDate >= firstDayOfMonth && b.BorrowDate <= lastDayOfMonth && b.Status == 2)
-<<<<<<< HEAD
+
                     .OrderBy(b => b.BorrowDate) // Sắp xếp theo ngày tăng dần
-=======
+
                     .OrderByDescending(b => b.BorrowDate) // Sắp xếp theo ngày tăng dần
->>>>>>> main
+
                     .ToList();
 
                     decimal totalAmount = (decimal)billBorrows.Sum(b => b.Total);
