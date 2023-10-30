@@ -14,7 +14,7 @@ section.dashboard{
     height: 160px;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
 }
 
@@ -100,6 +100,7 @@ section.dashboard{
 .dashboard .info-sales{
     width: 100%;
     height: fit-content;
+    margin: 12px 0;
     background: #fff;
     border: none;
     border-radius: 8px;
@@ -114,13 +115,37 @@ section.dashboard{
     padding: 10px;
 }
 
-.dashboard .info-sales .fill-income{
-    height: 35px;
-    margin-top: 10px;
-    margin-right: 20px;
-    border: 2px #000000 solid;
-    border-radius: 6px;
-    padding: 8px 15px !important;
+.dashboard .info-sales .head-income .time-filter{
+    margin: 5px 20px;
+    padding: 0 0 0 8px;
+    border: 2px #000 solid;
+    border-radius: 8px;
+}
+
+.dashboard .info-sales .time-filter input{
+    height: 20px;
+    width: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dashboard .info-sales .time-filter input::placeholder{
+    text-align: center;
+}
+
+.dashboard .info-sales .time-filter input.month{
+    width: 20px;
+}
+
+.dashboard .info-sales .head-income .time-filter button{
+     padding: 2px;
+     background-color: transparent;
+     margin-right: 2px;
+     border-radius: 0 8px 8px 0 !important;
+}
+
+.dashboard .info-sales .head-income .time-filter button i{
+    font-size: 14px;
 }
 
 .dashboard .income-form{
@@ -148,6 +173,10 @@ section.dashboard{
     border-collapse: collapse;
 }
 
+.dashboard .income-form table thead .stt{
+    width: 100px;
+}
+
 .dashboard .income-form table thead{
     position: sticky; 
     top: 0;
@@ -164,7 +193,7 @@ section.dashboard{
     cursor: default;
 }
 
-.dashboard .income-form table tr:hover{
+.dashboard .income-form table tr:hover td{
     background-color: #f2f2f2;
 }
 

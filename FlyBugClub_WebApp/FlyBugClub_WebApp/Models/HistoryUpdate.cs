@@ -5,7 +5,7 @@ namespace FlyBugClub_WebApp.Models;
 
 public partial class HistoryUpdate
 {
-    public int? Bid { get; set; }
+    public string? Bid { get; set; }
 
     public string? BorrowDetailId { get; set; }
 

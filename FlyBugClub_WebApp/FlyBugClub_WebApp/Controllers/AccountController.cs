@@ -376,6 +376,7 @@ namespace FlyBugClub_WebApp.Controllers
             string email_user = HttpContext.Session.GetString("email");
             var user = await _userManager.FindByNameAsync(email_user);
 
+<<<<<<< HEAD
             if (user != null)
             {
                 string hashedPassword = user.PasswordHash;
@@ -482,11 +483,35 @@ namespace FlyBugClub_WebApp.Controllers
                 else
                 {
                     return View();
+=======
+            if (user != null)
+            {
+                string hashedPassword = user.PasswordHash;
+                var passwordHasher = new PasswordHasher<ApplicationUser>();
+                var passwordVerificationResult = passwordHasher.VerifyHashedPassword(null, hashedPassword, oldPassword);
+                if (passwordVerificationResult == PasswordVerificationResult.Success)
+                {
+                    // Mật khẩu cũ đúng, bạn có thể thực hiện thay đổi mật khẩu
+                    var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+                    if (result.Succeeded)
+                    {
+                        return LocalRedirect("~/Identity/Account/LoginCustomer");
+                    }
+                    else
+                    {
+                        return View("~/Views/Account/ChangePassword.cshtml");
+                    }
+                }
+                else
+                {
+                    return View("~/Views/Account/ChangePassword.cshtml");
+>>>>>>> main
                 }
 
             }
             else
             {
+<<<<<<< HEAD
                 return View();
             }    
             
@@ -499,6 +524,36 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 return LocalRedirect("/Identity/Account/LoginCustomer");
             }
+=======
+                // Xử lý khi không tìm thấy người dùng
+                return View("~/Views/Account/ChangePassword.cshtml");
+            }
+        }
+
+        public IActionResult UserPage()
+        {
+            var email = HttpContext.Session.GetString("email");
+            if (email != null)
+            {
+                HttpContext.Session.SetString("email_user", email);
+            }
+            return View();
+        }
+
+        public IActionResult ChangeInfoUser()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> Receiption()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return LocalRedirect("/Identity/Account/LoginCustomer");
+            }
+>>>>>>> main
             else
             {
                 var billsByUID = _ctx.BillBorrows
