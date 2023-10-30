@@ -34,48 +34,48 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             _dashboard = dashboard;
         }
 
-        public IActionResult Dashboard(int day, int month, int year)  //Trang Dashboard chính của admin
+        public IActionResult Dashboard( int month, int year)
         {
-              int currentYear = DateTime.Now.Year;
-
-              // Tính tổng số lượng thuê thiết bị qua tất cả các đơn hàng
-              int totalQuantity = _ctx.BillBorrows.SelectMany(x => x.BorrowDetails).Sum(d => d.Quantity);
-              ViewBag.TotalQuantity = totalQuantity;
-
-              // Tính tổng tiền từ các billBorrow có Status là true
-              var totalAmount = _ctx.BillBorrows.Where(x => x.Status == 1 && x.BorrowDate.Year == currentYear).Sum(b => b.Total);
-              ViewBag.TotalAmount = totalAmount;
-
-              // Đếm số lượng BillBorrow có Status là true
-              int countTrue = _ctx.BillBorrows.Count(b => b.Status == 1);
-              ViewBag.countTrue = countTrue;
-
-
-            // xử lý bill borrow
-            List<BillBorrow> billBorrows = new List<BillBorrow>();
-
-            if (day > 0 && month > 0 && year > 0)
+            int currentYear = DateTime.Now.Year;
+            ViewBag.TotalQuantity = _ctx.BillBorrows.SelectMany(x => x.BorrowDetails).Sum(d => d.Quantity);
+            ViewBag.TotalAmount = _ctx.BillBorrows.Where(x => x.Status == 2 && x.BorrowDate.Year == currentYear).Sum(b => b.Total);
+            ViewBag.CountTrue = _ctx.BillBorrows.Count(b => b.Status == 1);
+            int day = 1;
+            if (month > 0 && year > 0)
             {
-                // Tạo một đối tượng kiểu DateTime từ dữ liệu ngày, tháng, năm nhận được
-                var targetDate = new DateTime(year, month, day);
+                if (DateTime.TryParse($"{year}-{month}-{day}", out var targetDate))
+                {
+                    // Tìm ngày đầu tháng
+                    var firstDayOfMonth = new DateTime(targetDate.Year, targetDate.Month, 1);
 
-                // Truy vấn dữ liệu theo ngày
-                billBorrows = _ctx.BillBorrows
-                    .Where(b => b.BorrowDate.Date == targetDate.Date)
+                    // Tìm ngày cuối tháng
+                    var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+                    var currentDate = DateTime.Now; // Ngày hiện tại
+
+                    List<BillBorrow> billBorrows = _ctx.BillBorrows
+                    .Where(b => b.BorrowDate >= firstDayOfMonth && b.BorrowDate <= lastDayOfMonth && b.Status == 2)
+                    .OrderByDescending(b => b.BorrowDate) // Sắp xếp theo ngày tăng dần
                     .ToList();
+
+                    decimal totalAmount = (decimal)billBorrows.Sum(b => b.Total);
+                    ViewBag.TotalAmount1 = totalAmount;
+                    return View("Dashboard", billBorrows);
+                }
+                else
+                {
+                    // Xử lý trường hợp ngày tháng năm không hợp lệ
+                    ViewBag.ErrorMessage = "Ngày tháng năm không hợp lệ.";
+                }
             }
-            else
-            {
-                // Xử lý trường hợp không có ngày, tháng, năm được cung cấp
-                billBorrows = _ctx.BillBorrows.ToList();
-            }
 
-
-
-
-
-            return View();
+            List<BillBorrow> allBillBorrows = _ctx.BillBorrows.Where(b=>b.Status == 2).ToList();
+            decimal totalAmount1 = (decimal)allBillBorrows.Sum(b => b.Total);
+            ViewBag.TotalAmount1 = totalAmount1;
+            return View("Dashboard", allBillBorrows);
         }
+
+
 
         public IActionResult Logout() // Trả về trang đăng nhập khi đăng xuất
         {

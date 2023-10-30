@@ -1,3 +1,4 @@
+@model List<FlyBugClub_WebApp.Models.BillBorrow>
 
 <div class="center">
     
@@ -78,62 +79,54 @@
                     <div class="info-sales">
                         <div class="head-income">
                             <h5>Fanacial</h5>
-                            <input type="month" class="fill-income" />
+                            <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
+                                <div class="time-filter">
+                                    <input class="input-time month" type="text" id="monthInput" name="month" value="@ViewBag.Month" placeholder="MM" pattern="\d{1,2}" inputmode="numeric" />
+                                    <span>/</span>
+                                    <input class="input-time year" type="text" id="yearInput" name="year" value="@ViewBag.Year" placeholder="yyyy" pattern="\d{1,4}" inputmode="numeric" />
+                                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
                         </div>
                         <form action="" class="income-form">
                             <div class="table-container">
                                 <table>
                                     <thead>
                                         <tr>
+                                            <th class="stt">#</th>
                                             <th class="date">Date</th>
-                                            <th class="income">Salary</th>
-                                            <th>Payment</th>
+                                            <th>Receiption</th>
                                             <th>Income</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<<<<<<< Updated upstream
-
-                                        <tr>
-                                            <td>10/07/2023</td>
-                                            <td>1.490.000 đ</td>
-                                            <td>100.000 đ</td>
-                                            <td>1.390.000 đ</td>
-                                        </tr>
-
-                                        
-                                           @(await Component.InvokeAsync("_BillBorrow"))
-                                           
-
-=======
-                                        
-                                           @(await Component.InvokeAsync("_BillBorrow"))
-                                           
->>>>>>> Stashed changes
+                                        @{
+                                            int i = 1;
+                                        }
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@i</td>
+                                                <td>@item.BorrowDate.ToString("dd/MM/yyyy")</td>
+                                                <td>12</td>
+                                                <td class="word-right px-4">@item.Total.Value.ToString("0.00") đ</td>
+                                            </tr>
+                                            i++;
+                                        }
                                     </tbody>
                                 </table>
+                                @*<h1>Tổng tháng: @ViewBag.TotalAmount1 </h1>*@
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="col col-md-4">
-
-
-                     <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
-                    <div class="form-group">
-                        <label for="dayInput">Ngày</label>
-                        <input type="text" class="form-control" id="dayInput" name="day">
-                    </div>
-                    <div class="form-group">
-                        <label for="monthInput">Tháng</label>
-                        <input type="text" class="form-control" id="monthInput"name="month">
-                    </div>
-                    <div class="form-group">
-                        <label for="yearInput">Năm</label>
-                        <input type="text" class="form-control" id="yearInput" name="year">
-                    </div>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"></button>
-                </form>
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
                     <!-- Modal for Month and Year Input -->
                     <!-- The Modal -->
                     <div class="modal" id="myModal">

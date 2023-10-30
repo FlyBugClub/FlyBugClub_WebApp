@@ -116,7 +116,14 @@
                             <th></th>
                             <th class="btn-order">
                                 <div class="center">
-                                    <button type="submit">Đặt hàng</button>
+                                    @if (Model.Card.GetCountItem() == 0)
+                                    {
+                                        <button disabled>Đặt hàng</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit">Đặt hàng</button>
+                                    }
                                 </div>
 
                             </th>

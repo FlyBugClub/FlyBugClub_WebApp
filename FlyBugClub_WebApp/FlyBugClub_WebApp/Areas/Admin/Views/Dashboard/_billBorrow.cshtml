@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<FlyBugClub_WebApp.Models.BillBorrow>
+@{
+}
+
+    @foreach (var bill in Model)
+    {
+        <tr>
+           <td>@bill.Bid</td>
+            <td>@bill.BorrowDate.ToShortDateString()</td>
+        </tr>
+    }
+
+

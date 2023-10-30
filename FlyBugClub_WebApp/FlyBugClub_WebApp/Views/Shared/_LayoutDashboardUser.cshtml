@@ -22,11 +22,8 @@
     <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="~/css/default_setting.css">
-    <link rel="stylesheet" href="~/css/header.css">
-    <link rel="stylesheet" href="~/css/home.css">
-    <link rel="stylesheet" href="~/css/store.css">
-    <link rel="stylesheet" href="~/css/payment.css">
-    <link rel="stylesheet" href="~/css/detail_card_device.css">
+    <link rel="stylesheet" href="~/css/header_dashboard_user.css">
+    <link rel="stylesheet" href="~/css/user_dashboard.css">
 
     <!-- JetBrains Mono font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,11 +67,8 @@
                     @if(SignInManager.IsSignedIn(User)){
                         var user = await UserManager.GetUserAsync(User);
                         var fullName = user.FullName;
-                        var email = user.Email;
-                        Context.Session.SetString("email", email);
-                        var cuong = "";
                         <li class="center">
-                            <a class="user-name" asp-controller="Account" asp-action="UserPage">@fullName</a>
+                            <a class="user-name" asp-controller="Account" asp-action="User">@fullName</a>
                             <a href="/store/Logout">Logout</a>
                         </li>
                     }
@@ -89,25 +83,86 @@
                 </ul>
             </div>
         </div>
-        <div class="text-logo">
+        @*<div class="text-logo">
             <img src="~/img/img_logo/FLYBUG CLUB.png" alt="Photo logo">
-        </div>
+        </div>*@
     </header>
 
-    <!-- ======================== -->
-    <!-- ========= BODY ========= -->
-    <!-- =========================-->
-    <div class="body">
-        @RenderBody()
+    <div>
+        <div class="container mw1440">
+            <div class="row">
+                <div class="col col-lg-3 row-nav">
+                    <nav>
+                        <ul>
+                            <li>
+                                <div class="center">
+                                    <img src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
+                                </div>
+                                <div class="center">
+                                    <input id="upload" type="file"/>
+                                    <a asp-controller="" asp-action="" id="upload_link" class="edit-info">Đổi ảnh nền</a>
+                                </div>
+                            </li>
+                            <li>
+                                @if (SignInManager.IsSignedIn(User))
+                                {
+                                    var user = await UserManager.GetUserAsync(User);
+                                    var UID = user.UID;
+                                    <a asp-controller="Account" asp-action="ChangeInfoUser" asp-route-id="">
+                                        <i class="fas fa-solid fa-user-pen"></i>
+                                        <span class="nav-item">Chỉnh sửa thông tin</span>
+                                    </a>
+                                }
+                            </li>
+                            <li>
+                                <a asp-controller="" asp-action="">
+                                    <i class="fas fa-solid fa-heart"></i>
+                                    <span class="nav-item">Sản phẩm yêu thích</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-controller="Account" asp-action="Receiption" class="sub-btn">
+                                    <i class="fas fa-solid fa-clock-rotate-left"></i>
+                                    <span class="nav-item">Lịch sử mua hàng</span>
+                                </a>
+                            </li>
+                            @*<li>
+                                <a href="#" class="sub-btn">
+                                    <i class="fas fa-solid fa-diagram-project"></i>
+                                    <span class="nav-item">Project</span>
+                                </a>
+                            </li>*@
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-solid fa-lock"></i>
+                                    <span class="nav-item">Đổi mật khẩu</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/dashboard/logout" class="logout">
+                                    <i class="fas fa-solid fa-right-from-bracket"></i>
+                                    <span class="nav-item">Đăng xuất</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col col-lg-9">
+                    <!-- ======================== -->
+                    <!-- ========= BODY ========= -->
+                    <!-- =========================-->
+                    <div class="info-use">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ======================== -->
     <!-- ======== FOOTER ======== -->
     <!-- =========================-->
     <div class="body">
-        <!-- ================================ -->
-        <!-- =========== FOOTER ============= -->
-        <!-- =================================-->
         <footer class="footer">
             <div class="footer-leftside">
                 <div class="left">
@@ -163,18 +218,16 @@
     @*Main Function*@
     <script src="~/js/reloader.js"></script>
     <script src="~/js/GoToTop.js"></script>
-
-    @*Store*@
-    <script src="~/js/pagination.js"></script>
-    <script src="~/js/search_function.js"></script>
-    <script src="~/js/input_date_now.js"></script>
-
-    @*Payment*@
-    <script src="~/js/slidebestseller.js"></script>
-    <script src="~/js/qty.js"></script>
-
-    
-    
+    <script src="~/js/table_expand_process_bill.js"></script>
+    <script>
+        $(function () {
+            $("#upload_link").on('click', function (e) {
+                e.preventDefault();
+                $("#upload:hidden").trigger('click');
+            });
+        });
+    </script>
+ 
     @*@await RenderSectionAsync("Scripts", required: false)*@
 </body>
 </html>

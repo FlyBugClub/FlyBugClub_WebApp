@@ -3,8 +3,11 @@
 
 <div class="mw1440">
     <div class="row w93">
-        <div class="col-lg-10 col-md-12">
+        <div class="col-8">
             <div class="function function-bill">
+                <div class="count ">
+                    <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
+                </div>
                 <table border="1" class="bill-table">
                     <thead>
                         <tr>
@@ -81,6 +84,9 @@
                 </table>
             </div>
             <div class="function function-bill">
+                <div class="count">
+                    <p>Borrowing: <span class="text-purple">@ViewBag.countBorrowing</span></p>
+                </div>
                 <table border="1" class="bill-table">
                     <thead>
                         <tr>
@@ -108,8 +114,7 @@
                                     @if (@item.Total != null)
                                     {
                                         // Biến kiểu Nullable có giá trị, bạn có thể truy cập giá trị bằng .Value
-                                        @item.Total.Value.ToString("0.00")
-                                        ;
+                                        @item.Total.Value.ToString("0.00");
                                     }
                                 </td>
                                 <td class="outsite-info active-function">
@@ -167,8 +172,7 @@
                                                     <td class="word-right">
                                                         @if (@detail.Price != null)
                                                         {
-                                                            @detail.Price.ToString("0.00")
-                                                            ;
+                                                            @detail.Price.ToString("0.00");
                                                         }
                                                     </td>
                                                     <td class="word-right">@detail.SubTotal.ToString("0.00")</td>
@@ -237,6 +241,9 @@
                 </table>
             </div>
             <div class="function function-bill">
+                <div class="count">
+                    <p>Done: <span class="text-green">@ViewBag.countDone</span></p>
+                </div>
                 <table border="1" class="bill-table">
                     <thead>
                         <tr>
@@ -393,30 +400,35 @@
                 </table>
             </div>
         </div>
-        <div class="col-lg-2 col-md-6">
-            <div class="row">
-                <div class="function QtyofStatus">
-                    <div class="wrap-number">
-                        <h4>Waiting</h4>
-                        <h3 class="waiting">@ViewBag.countWaiting</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="function QtyofStatus">
-                    <div class="wrap-number">
-                        <h4>Borrowing</h4>
-                        <h3 class="borrowing">@ViewBag.countBorrowing</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="function QtyofStatus">
-                    <div class="wrap-number">
-                        <h4>Done</h4>
-                    <h3 class="done">@ViewBag.countDone</h3>
-                    </div>
-                </div>
+        <div class="col-4">
+            <div class="function function-bill">
+                <h5>History Update</h5>
+                <table class="history-update">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="date-update" >11/10/2023</td>
+                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310001</b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-update" >11/10/2023</td>
+                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310009</b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-update" >12/10/2023</td>
+                            <td class="content-update"><b>Đinh Quốc Cường</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310006</b></td>
+                        </tr>
+                        <tr>
+                            <td class="date-update" >15/10/2023</td>
+                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310005</b></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
