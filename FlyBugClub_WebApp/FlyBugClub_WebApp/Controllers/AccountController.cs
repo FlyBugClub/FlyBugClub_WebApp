@@ -23,14 +23,14 @@ namespace FlyBugClub_WebApp.Controllers
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-        
+
         private readonly IEmailSender _emailSender;
 
-       
 
-        public AccountController(FlyBugClubWebApplicationContext ctx, 
+
+        public AccountController(FlyBugClubWebApplicationContext ctx,
             IOrderProcessingRepository orderProcessingRepository,
-            UserManager<ApplicationUser> userManager, 
+            UserManager<ApplicationUser> userManager,
             IEmailSender emailSender)
         {
             _ctx = ctx;
@@ -41,7 +41,7 @@ namespace FlyBugClub_WebApp.Controllers
 
         public IActionResult VerifyAccount()
         {
-            
+
             string otp = HttpContext.Request.Query["otp"];
             string usersJson = HttpContext.Request.Query["user"];
             string ForgotPassword = HttpContext.Request.Query["ForgotPassword"];
@@ -58,11 +58,11 @@ namespace FlyBugClub_WebApp.Controllers
             if (otp != null)
             {
                 HttpContext.Session.SetString("otp", otp);
-            }    
+            }
             if (usersJson != null)
             {
                 HttpContext.Session.SetString("user_json", usersJson);
-            }    
+            }
             return View();
         }
         [HttpPost]
@@ -75,8 +75,8 @@ namespace FlyBugClub_WebApp.Controllers
             string ForgotPassword = HttpContext.Session.GetString("ForgotPassword");
             string email_forgotpas = HttpContext.Session.GetString("email_forgotpas");
             string validate_otp = otp0 + otp1 + otp2 + otp3 + otp4 + otp5;
-            
- 
+
+
 
             //var query = _ctx.Users.FromSqlRaw("SELECT Email FROM Users WHERE Email = {0}", email);
             //var userWithEmail = query.FirstOrDefault();
@@ -122,11 +122,11 @@ namespace FlyBugClub_WebApp.Controllers
             }
             else
             {
-               
+
                 return View("~/Views/Account/VerifyAccount.cshtml");
 
             }
-            
+
             // Xử lý yêu cầu POST ở đây
 
         }
@@ -136,12 +136,12 @@ namespace FlyBugClub_WebApp.Controllers
             string otp = GenerateOTP();
             string user_json = HttpContext.Session.GetString("user_json");
             string forgot_email = HttpContext.Session.GetString("email_forgotpas");
-            if (user_json!=null)
+            if (user_json != null)
             {
                 List<string> Data_User = JsonConvert.DeserializeObject<List<string>>(user_json);
                 SendEmail(otp, Data_User[5]);
             }
-            else if(forgot_email!=null)
+            else if (forgot_email != null)
             {
                 SendEmail(otp, forgot_email);
             }
@@ -221,7 +221,7 @@ namespace FlyBugClub_WebApp.Controllers
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-    
+
         public IActionResult ChangePassword()
         {
             string email = HttpContext.Session.GetString("email_user");
@@ -307,10 +307,11 @@ namespace FlyBugClub_WebApp.Controllers
                 return View();
             }
         }
-        public async Task<IActionResult> EnterChangePassword(string oldPassword,string newPassword, string confirmPassword)
+        public async Task<IActionResult> EnterChangePassword(string oldPassword, string newPassword, string confirmPassword)
         {
 
-            if (oldPassword != null) {
+            if (oldPassword != null)
+            {
                 HttpContext.Session.SetString("oldpassword", oldPassword);
             }
             if (newPassword != null)
@@ -323,7 +324,7 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
 
-            if (oldPassword == null )
+            if (oldPassword == null)
             {
                 ViewBag.OldPassword = "Chưa nhập mật khẩu cũ";
                 return View("~/Views/Account/ChangePassword.cshtml");
@@ -331,10 +332,10 @@ namespace FlyBugClub_WebApp.Controllers
             else
             {
                 var OldPassword = HttpContext.Session.GetString("oldpassword");
-                if (OldPassword !=null)
+                if (OldPassword != null)
                 {
                     ViewBag.valueOldPassword = OldPassword;
-                }    
+                }
                 ViewBag.OldPassword = "";
             }
 
@@ -343,7 +344,7 @@ namespace FlyBugClub_WebApp.Controllers
                 ViewBag.NewPassword = "Chưa nhập mật khẩu mới";
                 return View("~/Views/Account/ChangePassword.cshtml");
             }
-            else 
+            else
             {
                 var NewPassword = HttpContext.Session.GetString("newpassword");
                 if (NewPassword != null)
@@ -351,9 +352,9 @@ namespace FlyBugClub_WebApp.Controllers
                     ViewBag.valueNewPassword = NewPassword;
                 }
                 ViewBag.NewPassword = "";
-            } 
-            
-            if(confirmPassword == null)
+            }
+
+            if (confirmPassword == null)
             {
                 ViewBag.ConformPassword = "Chưa nhập xác nhận lại mật khẩu ";
                 return View("~/Views/Account/ChangePassword.cshtml");
@@ -366,8 +367,8 @@ namespace FlyBugClub_WebApp.Controllers
                     ViewBag.valueConformPassword = ConformPassword;
                 }
                 ViewBag.ConformPassword = "";
-            } 
-            
+            }
+
             if (newPassword != confirmPassword)
             {
                 // Xử lý khi mật khẩu và xác nhận mật khẩu không khớp
@@ -376,7 +377,27 @@ namespace FlyBugClub_WebApp.Controllers
             string email_user = HttpContext.Session.GetString("email");
             var user = await _userManager.FindByNameAsync(email_user);
 
-
+            if (user != null)
+            {
+                string hashedPassword = user.PasswordHash;
+                var passwordHasher = new PasswordHasher<ApplicationUser>();
+                var passwordVerificationResult = passwordHasher.VerifyHashedPassword(null, hashedPassword, oldPassword);
+                if (passwordVerificationResult == PasswordVerificationResult.Success)
+                {
+                    // Mật khẩu cũ đúng, bạn có thể thực hiện thay đổi mật khẩu
+                    var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
+                    if (result.Succeeded)
+                    {
+                        return LocalRedirect("~/Identity/Account/LoginCustomer");
+                    }
+                    else
+                    {
+                        return View("~/Views/Account/ChangePassword.cshtml");
+                    }
+                }
+                else
+                {
+                    return View("~/Views/Account/ChangePassword.cshtml");
                 }
 
             }
@@ -387,7 +408,7 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
 
-        public async Task<IActionResult>  UserPage()
+        public async Task<IActionResult> UserPage()
         {
             var email = HttpContext.Session.GetString("email");
             HttpContext.Session.SetString("email_user", email);
@@ -440,7 +461,7 @@ namespace FlyBugClub_WebApp.Controllers
             HttpContext.Session.SetString("email", email);
             return View();
         }
-        public async Task<IActionResult> Finish_ChangeInfoUser(string Name,string Gender,string Phone,string Address,string Major,string Faculty)
+        public async Task<IActionResult> Finish_ChangeInfoUser(string Name, string Gender, string Phone, string Address, string Major, string Faculty)
         {
 
             var email = HttpContext.Session.GetString("email");
@@ -462,38 +483,14 @@ namespace FlyBugClub_WebApp.Controllers
                 else
                 {
                     return View();
-
-            if (user != null)
-            {
-                string hashedPassword = user.PasswordHash;
-                var passwordHasher = new PasswordHasher<ApplicationUser>();
-                var passwordVerificationResult = passwordHasher.VerifyHashedPassword(null, hashedPassword, oldPassword);
-                if (passwordVerificationResult == PasswordVerificationResult.Success)
-                {
-                    // Mật khẩu cũ đúng, bạn có thể thực hiện thay đổi mật khẩu
-                    var result = await _userManager.ChangePasswordAsync(user, oldPassword, newPassword);
-                    if (result.Succeeded)
-                    {
-                        return LocalRedirect("~/Identity/Account/LoginCustomer");
-                    }
-                    else
-                    {
-                        return View("~/Views/Account/ChangePassword.cshtml");
-                    }
-                }
-                else
-                {
-                    return View("~/Views/Account/ChangePassword.cshtml");
-
                 }
 
             }
             else
             {
-
                 return View();
-            }    
-            
+            }
+
         }
         public async Task<IActionResult> Receiption()
         {
@@ -503,8 +500,6 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 return LocalRedirect("/Identity/Account/LoginCustomer");
             }
-
-
             else
             {
                 var billsByUID = _ctx.BillBorrows
