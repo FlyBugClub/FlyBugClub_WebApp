@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.AspNetCore.Identity;
 using FlyBugClub_WebApp.Data;
 using FlyBugClub_WebApp.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,17 @@ builder.Services.AddDbContext<FlyBugClubDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("FlyBugClubDB"));
 });
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Identity/Account/LoginCustomer"; // Đường dẫn đến trang đăng nhập
+        options.LogoutPath = "/Identity/Account/Logout"; // Đường dẫn đến trang đăng xuất
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromDays(30); // Thời gian tồn tại của cookie
+        options.SlidingExpiration = true;
+    });
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

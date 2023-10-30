@@ -1,6 +1,6 @@
 ﻿@*@model List<FlyBugClub_WebApp.Models.Device>*@
 @model MenuCard
-
+@using System.Security.Claims
 <section class="body">
     <div class="container">
         <div class="row">
@@ -49,6 +49,24 @@
                 </div>
             </div>
             <div class="col col-lg-9 right">
+                
+                @{
+                    // Lấy HttpContext từ Context
+                    var httpContext = Context.Request.HttpContext;
+                    // Lấy user từ cookie Identity
+                    var userPrincipal = httpContext.User;
+
+                    // Kiểm tra xem người dùng đã đăng nhập hay chưa
+                    if (userPrincipal.Identity.IsAuthenticated)
+                    {
+                        string userId = userPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                       
+                        string username = userPrincipal.FindFirst(ClaimTypes.Name)?.Value;
+                    }
+                }
+
+
                 <div class="center">
                     <div class="store">
                         <!-- <h1>Cửa hàng</h1> -->

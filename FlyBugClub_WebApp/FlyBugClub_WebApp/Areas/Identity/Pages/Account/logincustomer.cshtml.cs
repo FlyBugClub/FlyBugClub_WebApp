@@ -110,6 +110,8 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                   
+                    //Response.Cookies.Append("Email", Input.Email);
                     return LocalRedirect("/");
                 }
                 if (result.RequiresTwoFactor)
