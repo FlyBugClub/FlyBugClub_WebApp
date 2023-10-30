@@ -10,7 +10,16 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label asp-for="DeviceId" class="control-label"></label>
-                                <input asp-for="DeviceId" class="form-control" />
+                                @{
+                                    var billcounter =ViewBag.BillCounter;
+                                    if (billcounter<10)
+                                    {
+                                        billcounter = "0" + @ViewBag.BillCounter;
+                                    }
+                                    var temp = "SS"  + @ViewBag.Year + @ViewBag.Month + billcounter;
+                                }
+                                
+                                <input asp-for="DeviceId" placeholder="@temp"  class="form-control" readonly />
                                 <span asp-validation-for="DeviceId" class="text-danger"></span>
                             </div>
 
@@ -50,6 +59,41 @@
                                 <label asp-for="CategoryId" class="control-label"></label>
                                 <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.GenreId"></select>
                             </div>
+
+                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <script>
+                                $(document).ready(function () {
+                                    // Lắng nghe sự kiện thay đổi trên dropdown CategoryId
+                                    $("#CategoryId").change(function () {
+                                        // Lấy giá trị đã chọn
+                                        var selectedCategory = $(this).val();
+                                        var billNumber =@ViewBag.BillCounter;
+                                        if (billNumber < 10) {
+                                            billNumber = "0" + billNumber.toString();
+                                        }
+                                        var month = @ViewBag.Month;
+                                        var year = @ViewBag.Year;
+                                        // Thay đổi giá trị của placeholder của DeviceId dựa trên giá trị của CategoryId
+                                        switch (selectedCategory) {
+                                            case "1":
+                                                $("#DeviceId").attr("placeholder", "SS");
+                                                $("#DeviceId").val("SS" + year + month  + billNumber);
+                                                break;
+                                            case "2":
+                                                $("#DeviceId").attr("placeholder", "HW");
+                                                $("#DeviceId").val("HW" + year + month + billNumber);
+                                                break;
+                                            case "3":
+                                                $("#DeviceId").attr("placeholder", "CN");
+                                                $("#DeviceId").val("CN"+ year + month  + billNumber);
+                                                break;
+                                            // Thêm các trường hợp khác nếu cần
+                                            default:
+                                                break;
+                                        }
+                                    });
+                                });
+                            </script>
 
                             <div class="form-group">
                                 <label asp-for="QtyBorrowed" class="control-label"></label>

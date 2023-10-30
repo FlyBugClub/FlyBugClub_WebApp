@@ -12,16 +12,19 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Administrator")]
     public class ShopController : Controller
     {
+        private readonly FlyBugClubWebApplicationContext _ctx;
         private IProductRepository _productRepository;
         private IGenreRepository _genreRepository;
         private readonly SignInManager<ApplicationUser> _signInManager;
         public ShopController(IProductRepository productRepository, 
                                 IGenreRepository genreRepository,
-                                SignInManager<ApplicationUser> signInManager)
+                                SignInManager<ApplicationUser> signInManager,
+                                FlyBugClubWebApplicationContext ctx)
         {
             _productRepository = productRepository;
             _genreRepository = genreRepository;
             _signInManager = signInManager;
+            _ctx = ctx;
         }
         public IActionResult Devices()
         {
@@ -72,11 +75,15 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
         public IActionResult CreateDevice()
         {
+            var lastTwoDigitsOfYear = DateTime.Now.Year % 100;
+            var currentMonth = DateTime.Now.Month;
             /*================== Get All Data Genre ==================*/
-
+            var billCounter = _ctx.BillBorrows.Count() + 1;
             var genreList = _genreRepository.GetAll();
             ViewBag.GenreId = new SelectList(genreList, "CategoryId", "CategoryName");
-
+            ViewBag.BillCounter = billCounter;
+            ViewBag.Month =currentMonth;
+            ViewBag.Year = lastTwoDigitsOfYear;
             return View("createDevice", new Device());
         }
 
