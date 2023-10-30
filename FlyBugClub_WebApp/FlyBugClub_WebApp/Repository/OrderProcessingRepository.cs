@@ -5,7 +5,6 @@ namespace FlyBugClub_WebApp.Repository
 {
     public interface IOrderProcessingRepository
     {
-        public bool Create(BillBorrow billBorrow);
         public bool Update(BillBorrow billBorrow);
         public bool Delete(string bill);
         public List<BillBorrow> GetAllBill();
@@ -50,11 +49,6 @@ namespace FlyBugClub_WebApp.Repository
                 .Include(b=>b.BorrowDetails)
                 .Include(b=>b.SidNavigation)
                 .ToList();
-        }
-
-        public bool Create(BillBorrow billBorrow)
-        {
-            throw new NotImplementedException();
         }
 
         public bool Update(BillBorrow billBorrow)
