@@ -1,5 +1,6 @@
 ﻿using FlyBugClub_WebApp.Models;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 namespace FlyBugClub_WebApp.Repository
 {
@@ -8,6 +9,7 @@ namespace FlyBugClub_WebApp.Repository
         public bool Create(Device device);
         public bool Update(Device device);
         public bool Delete(string device);
+
         public List<Device> GetAllDevices();
         public List<Device> Top10BestSeller();
         public List<Device> FindAllProductByCateId(string Cateid);
@@ -19,6 +21,10 @@ namespace FlyBugClub_WebApp.Repository
         public Device findById(string id);
         public bool CheckId(string id);
         public bool CheckNameDevice(string name);
+
+        public AspNetUser GetUidUser(string id);
+
+        public List<BorrowRate> GetBorrowRate(string id);
     }
     public class ProductRepository : IProductRepository
     {
@@ -76,6 +82,11 @@ namespace FlyBugClub_WebApp.Repository
             return _ctx.Devices.ToList();
         }
 
+        public List<BorrowRate> GetBorrowRate(string uid)
+        {
+            return _ctx.BorrowRates.Where(x => x.Uid == uid).ToList();
+        }
+
         public List<Device> GetConnectionProduct(string Cateid)
         {
             return _ctx.Devices.Where(x=>x.CategoryId == "3").ToList();
@@ -89,6 +100,11 @@ namespace FlyBugClub_WebApp.Repository
         public List<Device> GetSensorProduct(string Cateid)
         {
             return _ctx.Devices.Where(x => x.CategoryId == "1").ToList();
+        }
+
+        public AspNetUser GetUidUser(string id)
+        {
+            return _ctx.AspNetUsers.Where(x => x.Id == id).FirstOrDefault();
         }
 
         public List<Device> SearchByName(string keyword)

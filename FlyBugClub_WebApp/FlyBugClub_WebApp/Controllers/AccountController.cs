@@ -113,7 +113,7 @@ namespace FlyBugClub_WebApp.Controllers
                         Email = Data_User[5],
 
 
-                    };
+                    };  
 
                     _ctx.Users.Add(usr);
                     _ctx.SaveChanges();

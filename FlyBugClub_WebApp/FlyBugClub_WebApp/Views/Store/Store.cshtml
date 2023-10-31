@@ -1,6 +1,8 @@
 ﻿@*@model List<FlyBugClub_WebApp.Models.Device>*@
 @model MenuCard
+
 @using System.Security.Claims
+@using Microsoft.AspNetCore.Identity;
 <section class="body">
     <div class="container">
         <div class="row">
@@ -17,17 +19,18 @@
                     <div class="shopping-function">
                         <p>Giỏ hàng</p>
                         <div class="center">
-                            @if(Model.Card.GetCountItem() == 0)
+                            @if (Model.Card.GetCountItem() == 0)
                             {
-                                
+
                             }
-                            else{
+                            else
+                            {
                                 <div class="qty">
                                     <p>@Model.Card.GetCountItem()</p>
                                 </div>
                             }
                             @*<div class="qty">
-                                <p>1</p>
+                            <p>1</p>
                             </div>*@
                             <div class="center ">
                                 <button class="icon-shopping">
@@ -49,30 +52,23 @@
                 </div>
             </div>
             <div class="col col-lg-9 right">
-                
-                @{
-                    // Lấy HttpContext từ Context
-                    var httpContext = Context.Request.HttpContext;
-                    // Lấy user từ cookie Identity
-                    var userPrincipal = httpContext.User;
-
-                    // Kiểm tra xem người dùng đã đăng nhập hay chưa
-                    if (userPrincipal.Identity.IsAuthenticated)
-                    {
-                        string userId = userPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-                       
-                        string username = userPrincipal.FindFirst(ClaimTypes.Name)?.Value;
-                    }
-                }
-
 
                 <div class="center">
                     <div class="store">
                         <!-- <h1>Cửa hàng</h1> -->
                         <div class="fill-function">
+                            @{
+                                string userId = "";
+                                string Email = "";
+                                if (User.Identity.IsAuthenticated)
+                                {
+                                    userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                                    Email = User.FindFirst(ClaimTypes.Sid)?.Value;
+                                    
+                                }
+                            }
                             <div action="function-leftside">
-                                <form method="get" asp-action="FillProduct" asp-controller="Store" >
+                                <form method="get" asp-action="FillProduct" asp-controller="Store">
                                     <span>Bug Store</span>
                                     <select name="fillOption" id="fillOption" class="category" onchange="this.form.submit()">
                                         @if (ViewBag.fillOption == "all")
@@ -113,21 +109,45 @@
                                     </select>
                                 </form>
                             </div>
-                            
+
                             <form class="fill-form" method="get" asp-action="SortProduct" asp-controller="Store">
                                 <div class="fill">
                                     <button type="submit" name="sortOption" value="BestSelling">Bán chạy</button>
                                     <button type="submit" name="sortOption" value="PriceAscending">Giá tăng dần</button>
                                     <button type="submit" name="sortOption" value="PriceDescending">Giá giảm dần</button>
-                                    
+
                                 </div>
                             </form>
                         </div>
                         <hr style="width:100%;text-align:left;margin-left:0; color:white; height: 2px; margin-top: 8px;">
                         <div class="item-store">
                             <div class="row">
-                                @foreach (var item in Model.GetDevices)
+                                @{
+                                    
+                                    var devices = Model.GetDevices; // Lấy danh sách thiết bị
+                                    var BorrowRates = Model.borrowRate;
+                                    var deviceCount = devices.Count(); // Số lượng thiết bị
+                                    
+                                }
+
+                                @for (int i = 0; i < deviceCount; i++)
                                 {
+                                    bool? Status=false;
+                                    var item = devices[i];
+                                    if (BorrowRates != null)
+                                    {
+                                        foreach (var BorrowRate in BorrowRates)
+                                        {
+                                            if (BorrowRate.DeviceId == item.DeviceId)
+                                            {
+                                                Status = BorrowRate.Status;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                   
+                                    string loveStatus = Status == true ? "fa-solid" : "fa-regular";
+
                                     @if (item.Status == 1)
                                     {
                                         <div class="col col-xl-4">
@@ -142,11 +162,12 @@
                                                                 <i class="fa-solid fa-share"></i>
                                                             </a>
                                                         </button>
-                                                        <button class="icon icon-love" asp-route-id="@item.DeviceId">
+                                                        <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
                                                             <a href="#" title="Yêu thích">
-                                                                <i class="fa-regular fa-heart"></i>
+                                                                <i class="fa-heart @loveStatus"></i>
                                                             </a>
                                                         </button>
+
                                                         <button class="icon icon-share">
                                                             <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@item.DeviceId" title="Bỏ giỏ">
                                                                 <i class="fa-solid fa-cart-plus"></i>
@@ -160,40 +181,7 @@
                                             </div>
                                         </div>
                                     }
-                                    else if (item.Status == 0)
-                                    {
-                                        <div class="col col-xl-4">
-                                            <div class="item-card sold-out-card">
-                                                <p class="sold-out">Hết hàng</p>
-                                                <a id="productLink" asp-controller="Store" asp-action="DetailCard" asp-route-Id="@item.DeviceId">
-                                                    <img src="~/img/img_products/@item.ImagePath" alt="Photo item store">
-                                                    <h3>@item.Name</h3>
-                                                    <p>Hết hàng</p>
-                                                    <div class="center icon-card">
-                                                        <button class="icon icon-share">
-                                                            <a href="#">
-                                                                <i class="fa-solid fa-share"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button class="icon icon-love" asp-route-id="@item.DeviceId">
-                                                            <a href="#">
-                                                                <i class="fa-regular fa-heart"></i>
-                                                            </a>
-                                                        </button>
-                                                        <button class="icon icon-share" disabled>
-                                                            <a href="javascript:void(0);">
-                                                                <i class="fa-solid fa-cart-plus"></i>
-                                                            </a>
-                                                        </button>
-                                                    </div>
-                                                    <div class="center item-price">
-                                                        <h2> Liên hệ </h2>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
                                     }
-                                }
                             </div>
                         </div>
                         @{
@@ -208,7 +196,8 @@
                             <div class="left-side" style="display:block">
                                 <div class="pagination">
                                     <ul>
-                                        @if(prevPage > 0){
+                                        @if (prevPage > 0)
+                                        {
                                             <li class="btn-back">
                                                 <a class="page-link" href="?page=@prevPage"><i class="fa-solid fa-location-arrow"></i></a>
                                             </li>
@@ -216,7 +205,8 @@
 
                                         <li><a href="?page=1">1</a></li>
 
-                                        @if(currentPage > maxVisiblePages / 2 + 1){
+                                        @if (currentPage > maxVisiblePages / 2 + 1)
+                                        {
                                             <li>...</li>
                                         }
 
@@ -232,7 +222,7 @@
                                             }
                                         }
 
-                                        @if(currentPage < totalPages - (int)(maxVisiblePages / 2))
+                                        @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
                                         {
                                             <li>...</li>
                                         }
@@ -245,7 +235,7 @@
                                                 <a class="page-link" href="?page=@nextPage"><i class="fa-solid fa-location-arrow"></i></a>
                                             </li>
                                         }
-                                       
+
                                     </ul>
                                 </div>
                             </div>
@@ -255,11 +245,64 @@
                             <div class="left-side" style="height: 100px"></div>
                         }
                         @*<h1 style="color:white"></h1>*@
-                       
+
                     </div>
                 </div>
             </div>
+
+            <script>
+                function handleButtonClick(button) {
+                    event.preventDefault();
+
+                    var status;
+                    var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
+                    var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
+                    // tim rong
+                    if (heartIcon_regular != null) {
+                        status = "false";
+                    }
+                    // tim dac
+                    else if (heartIcon_solid != null) {
+                        status = "true";
+
+                    }
+                    var deviceId = button.getAttribute("data-index");
+
+                    // Sử dụng userId ở phạm vi JavaScript
+                    alert("0cuongggggggggggggg " + deviceId);
+                    var userId = "@userId";
+                    if (userId !== "") {
+
+                        fetchData(userId, deviceId, status);
+
+                    }
+
+                    async function fetchData(userId, deviceId, status) {
+                        const response = await fetch(`/api/users/getuserbyuid?uid=${userId}&deviceid=${deviceId}&status=${status}`);
+
+                        if (response.ok) {
+
+
+                            if (status === "true") {
+                                heartIcon_regular.classList.remove('fa-regular');
+                                heartIcon_regular.classList.add('fa-solid');
+                            }
+                            else {
+                                heartIcon_solid.classList.remove('fa-solid');
+                                heartIcon_solid.classList.add('fa-regular');
+                            }
+                        }
+
+                    }
+                }
+
+            </script>
         </div>
     </div>
+
+
+    
 </section>
+
+
 

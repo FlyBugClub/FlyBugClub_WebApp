@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using FlyBugClub_WebApp.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using System.Globalization;
+using MessagePack.Formatters;
 
 namespace FlyBugClub_WebApp.Controllers
 {
@@ -19,19 +20,23 @@ namespace FlyBugClub_WebApp.Controllers
         private readonly ILogger<StoreController> _logger;
         private IProductRepository _productRepository;
         private IGenreRepository _genreRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
         SignInManager<ApplicationUser> _signInManager;
 
         public StoreController(FlyBugClubWebApplicationContext ctx, 
                                 ILogger<StoreController> logger, 
                                 IProductRepository productRepository,
                                 IGenreRepository genreRepository,
-                                SignInManager<ApplicationUser> signInManager
+                                SignInManager<ApplicationUser> signInManager,
+                                UserManager<ApplicationUser> userManager
+
             )
         {
             _ctx = ctx;
             _logger = logger;
             _productRepository = productRepository;
             _genreRepository = genreRepository;
+            _userManager = userManager;
             _signInManager = signInManager;
         }
         public static string noteBill { get; set; }
@@ -43,7 +48,7 @@ namespace FlyBugClub_WebApp.Controllers
             return LocalRedirect("/");
         }               
 
-        public IActionResult Store(int page = 1)
+        public async Task< IActionResult> Store(int page = 1)
         {
             /*==================== Pagination ====================*/
 
@@ -70,12 +75,16 @@ namespace FlyBugClub_WebApp.Controllers
 
             /*================== Get All Data Devices ==================*/
 
+
+
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             //1. lay du lieu
             List<Device> listdevice = _productRepository.GetAllDevices().OrderBy(x => x.DeviceId).Skip(startIndex).Take(itemsPerPage).ToList();
             //2. gui du lieu cho view
 
             CardModel cartModel = new CardModel();
             cartModel.CardId = HttpContext.Session.Id;
+
             if (HttpContext.Session.Get<List<Item>>("store") != null)
             {
                 List<Item>? items = HttpContext.Session.Get<List<Item>>("store");
@@ -83,6 +92,13 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
             MenuCard m = new MenuCard();
+            if (userId != null)
+            {
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                m.borrowRate = GetBorrowRate;
+            }
+            
             m.GetDevices = listdevice;
             m.Card = cartModel;
 
@@ -259,7 +275,7 @@ namespace FlyBugClub_WebApp.Controllers
             return View("FillProduct", m);
         }  // lọc sản phẩm theo loại
 
-        public IActionResult Payment(string note)  //Xử lý giỏ hàng
+        public async Task<IActionResult> Payment(string note)  //Xử lý giỏ hàng
         {
             if (!_signInManager.IsSignedIn(User))
             {
@@ -268,10 +284,10 @@ namespace FlyBugClub_WebApp.Controllers
             else
             {
                 List<Device> top10BestSeller = _productRepository.Top10BestSeller();
-
+             
                 MenuCard m = new MenuCard();
                 m.Top10Bestdevicces = top10BestSeller;
-
+             
                 ViewBag.sessionId = HttpContext.Session.Id;
                 CardModel cartModel = new CardModel();
                 cartModel.CardId = HttpContext.Session.Id;
