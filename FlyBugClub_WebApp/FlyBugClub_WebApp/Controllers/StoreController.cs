@@ -297,7 +297,7 @@ namespace FlyBugClub_WebApp.Controllers
                     cartModel.setAllItem(items);
                 }
 
-                noteBill = note;
+                /*noteBill = note;*/
 
                 m.Card = cartModel;
 
