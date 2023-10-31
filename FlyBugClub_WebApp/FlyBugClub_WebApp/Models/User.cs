@@ -21,6 +21,8 @@ public partial class User
 
     public string? Faculty { get; set; }
 
+    public string? ImgUser { get; set; }
+
     public string PositionId { get; set; } = null!;
 
     public string? Account { get; set; }

@@ -13,9 +13,9 @@ public partial class HistoryUpdate
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual BillBorrow? BorrowDetail { get; set; }
+    public virtual BillBorrow? BidNavigation { get; set; }
 
-    public virtual BorrowDetail? BorrowDetailNavigation { get; set; }
+    public virtual BorrowDetail? BorrowDetail { get; set; }
 
     public virtual User? UidNavigation { get; set; }
 }

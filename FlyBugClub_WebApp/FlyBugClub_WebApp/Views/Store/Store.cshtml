@@ -49,7 +49,6 @@
                 </div>
             </div>
             <div class="col col-lg-9 right">
-                
                 @{
                     // Lấy HttpContext từ Context
                     var httpContext = Context.Request.HttpContext;
@@ -65,8 +64,6 @@
                         string username = userPrincipal.FindFirst(ClaimTypes.Name)?.Value;
                     }
                 }
-
-
                 <div class="center">
                     <div class="store">
                         <!-- <h1>Cửa hàng</h1> -->
@@ -137,11 +134,6 @@
                                                     <h3>@item.Name</h3>
                                                     <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                                                     <div class="center icon-card">
-                                                        <button type="button" class="icon icon-share">
-                                                            <a href="#" title="Chia sẽ">
-                                                                <i class="fa-solid fa-share"></i>
-                                                            </a>
-                                                        </button>
                                                         <button class="icon icon-love" asp-route-id="@item.DeviceId">
                                                             <a href="#" title="Yêu thích">
                                                                 <i class="fa-regular fa-heart"></i>
@@ -170,11 +162,6 @@
                                                     <h3>@item.Name</h3>
                                                     <p>Hết hàng</p>
                                                     <div class="center icon-card">
-                                                        <button class="icon icon-share">
-                                                            <a href="#">
-                                                                <i class="fa-solid fa-share"></i>
-                                                            </a>
-                                                        </button>
                                                         <button class="icon icon-love" asp-route-id="@item.DeviceId">
                                                             <a href="#">
                                                                 <i class="fa-regular fa-heart"></i>

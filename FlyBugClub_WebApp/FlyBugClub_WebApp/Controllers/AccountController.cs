@@ -66,6 +66,7 @@ namespace FlyBugClub_WebApp.Controllers
             return View();
         }
         [HttpPost]
+        
         public async Task<IActionResult> cuongAsync(string otp0, string otp1, string otp2, string otp3, string otp4, string otp5)
         {
             //var email = "cuong.dq12897@sinhvien.hoasen.edu.vn";
@@ -131,6 +132,7 @@ namespace FlyBugClub_WebApp.Controllers
 
         }
         [HttpPost]
+        
         public IActionResult ResendEmail()
         {
             string otp = GenerateOTP();
@@ -149,6 +151,7 @@ namespace FlyBugClub_WebApp.Controllers
             HttpContext.Session.SetString("otp", otp);
             return LocalRedirect($"/Account/VerifyAccount");
         }
+        
         public void SendEmail(string otp, string email)
         {
             using (var client = new MailKit.Net.Smtp.SmtpClient())
@@ -175,6 +178,7 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
         }
+        
         public string GenerateUID(int length)
         {
             StringBuilder result = new StringBuilder(length);
@@ -222,16 +226,24 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
 
-        public IActionResult ChangePassword()
+        public async Task<IActionResult> ChangePassword()
         {
-            string email = HttpContext.Session.GetString("email_user");
-            if (email != null)
-            {
-                HttpContext.Session.SetString("email", email);
-            }
-            return View();
-        }
+            var currentUser = await _userManager.GetUserAsync(User);
 
+            if (currentUser == null)
+            {
+                return LocalRedirect("/Identity/Account/LoginCustomer");
+            }
+            else
+            {
+                string email = HttpContext.Session.GetString("email_user");
+                if (email != null)
+                {
+                    HttpContext.Session.SetString("email", email);
+                }
+                return View();
+            }
+        }
 
         public async Task<IActionResult> ResetPassword(string newPassword, string confirmPassword)
         {
@@ -307,6 +319,7 @@ namespace FlyBugClub_WebApp.Controllers
                 return View();
             }
         }
+        
         public async Task<IActionResult> EnterChangePassword(string oldPassword, string newPassword, string confirmPassword)
         {
 
@@ -410,57 +423,76 @@ namespace FlyBugClub_WebApp.Controllers
 
         public async Task<IActionResult> UserPage()
         {
-            var email = HttpContext.Session.GetString("email");
-            HttpContext.Session.SetString("email_user", email);
-            var user = await _userManager.FindByNameAsync(email);
-            if (user != null)
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
             {
-                ViewBag.FullName = user.FullName;
-                ViewBag.UID = user.UID;
-                ViewBag.Phone = user.Phone;
-                ViewBag.Address = user.Address;
-                ViewBag.Email = user.Email;
-                if (user.PositionID == "STU")
-                {
-                    ViewBag.Position = "Sinh Viên";
-                }
-                else if (user.PositionID == "TC")
-                {
-                    ViewBag.Position = "Giảng viên/Nhân viên";
-                }
-                else if (user.PositionID == "MB")
-                {
-                    ViewBag.Position = "Thành viên CLB";
-                }
-
-                if (user.Gender != null)
-                {
-                    ViewBag.Gender = user.Gender;
-                }
-                else ViewBag.Gender = "__/__";
-
-                if (user.Faculty != null)
-                {
-                    ViewBag.Khoa = user.Faculty;
-                }
-                else ViewBag.Khoa = "__/__";
-
-
-                if (user.Major != null)
-                {
-                    ViewBag.Nganh = user.Major;
-                }
-                else ViewBag.Nganh = "__/__";
+                return LocalRedirect("/Identity/Account/LoginCustomer");
             }
-            return View();
+            else
+            {
+                var email = HttpContext.Session.GetString("email");
+                HttpContext.Session.SetString("email_user", email);
+                var user = await _userManager.FindByNameAsync(email);
+                if (user != null)
+                {
+                    ViewBag.FullName = user.FullName;
+                    ViewBag.UID = user.UID;
+                    ViewBag.Phone = user.Phone;
+                    ViewBag.Address = user.Address;
+                    ViewBag.Email = user.Email;
+                    if (user.PositionID == "STU")
+                    {
+                        ViewBag.Position = "Sinh Viên";
+                    }
+                    else if (user.PositionID == "TC")
+                    {
+                        ViewBag.Position = "Giảng viên/Nhân viên";
+                    }
+                    else if (user.PositionID == "MB")
+                    {
+                        ViewBag.Position = "Thành viên CLB";
+                    }
+
+                    if (user.Gender != null)
+                    {
+                        ViewBag.Gender = user.Gender;
+                    }
+                    else ViewBag.Gender = "__/__";
+
+                    if (user.Faculty != null)
+                    {
+                        ViewBag.Khoa = user.Faculty;
+                    }
+                    else ViewBag.Khoa = "__/__";
+
+
+                    if (user.Major != null)
+                    {
+                        ViewBag.Nganh = user.Major;
+                    }
+                    else ViewBag.Nganh = "__/__";
+                }
+                return View();
+            }
         }
 
         public async Task<IActionResult> ChangeInfoUser()
         {
-            var email = HttpContext.Session.GetString("email");
-            HttpContext.Session.SetString("email", email);
-            return View();
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return LocalRedirect("/Identity/Account/LoginCustomer");
+            }
+            else
+            {
+                var email = HttpContext.Session.GetString("email");
+                HttpContext.Session.SetString("email", email);
+                return View();
+            }
         }
+        
         public async Task<IActionResult> Finish_ChangeInfoUser(string Name, string Gender, string Phone, string Address, string Major, string Faculty)
         {
 
@@ -492,6 +524,7 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
         }
+        
         public async Task<IActionResult> Receiption()
         {
             var currentUser = await _userManager.GetUserAsync(User);
