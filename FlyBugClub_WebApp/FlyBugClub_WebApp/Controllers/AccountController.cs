@@ -565,5 +565,19 @@ namespace FlyBugClub_WebApp.Controllers
             return RedirectToAction("Receiption", "Account");
         }
 
+        public async Task<IActionResult> FavoriteDevice()
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (currentUser == null)
+            {
+                return LocalRedirect("/Identity/Account/LoginCustomer");
+            }
+            else
+            {
+                return View();
+            }
+                
+        }
     }
 }

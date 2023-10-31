@@ -1,4 +1,4 @@
-.wrap-info-user {
+﻿.wrap-info-user {
     color: #fff;
     padding: 20px 0;
 }
@@ -147,3 +147,87 @@
     text-align: right;
 }
 
+/*==========================*/
+/*===== FAVORITE DEVICE ====*/
+/*==========================*/
+
+h2.title-favorite{
+    color:#fff;
+    font-size: 24px;
+}
+
+.item-card {
+    background-color: #565656;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.item-card img{
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 20px 20px 0 0;
+}
+
+.item-card h3{
+    width: 100%;
+    margin: 23px 0;
+    padding: 0 28px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    white-space: nowrap; /* Ngăn ngừng xuống dòng */
+    overflow: hidden; /* Ẩn nội dung vượt quá độ rộng */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." cho nội dung bị ẩn */
+}
+
+.item-card p{
+    height: 48px;
+    color: white;
+    text-align: left;
+    padding: 0 20px;
+    font-size: 16px;
+    margin: 15px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.item-card .icon-card{
+    margin: 10px 0;
+}
+
+.item-card .icon-card .icon{
+    width: 48px;
+    height: 48px;
+    border: none;
+    margin: 15px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+}
+
+.item-card .icon-card .icon i{
+    color: #012A4A;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all .25s ease-in;
+}
+
+.item-card .icon-card .icon:hover{
+    rotate: 360deg;
+    transition: all .25s ease-in;
+}
+
+.item-card .item-price h2{
+    width: 230px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
