@@ -34,8 +34,8 @@ namespace FlyBugClub_WebApp.Controllers
             _genreRepository = genreRepository;
             _signInManager = signInManager;
         }
-        public static string noteBill { get; set; }
-        /*public DateTime ReceiptDate { get; set; }*/
+/*        public static string noteBill { get; set; }
+        *//*public DateTime ReceiptDate { get; set; }*/
 
         public IActionResult Logout()
         {
