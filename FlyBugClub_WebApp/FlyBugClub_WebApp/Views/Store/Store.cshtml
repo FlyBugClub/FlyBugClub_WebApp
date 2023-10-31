@@ -1,4 +1,4 @@
-﻿@*@model List<FlyBugClub_WebApp.Models.Device>*@
+@*@model List<FlyBugClub_WebApp.Models.Device>*@
 @model MenuCard
 
 @using System.Security.Claims
@@ -181,6 +181,33 @@
                                             </div>
                                         </div>
                                     }
+                                    else if (item.Status == 0)
+                                    {
+                                        <div class="col col-xl-4">
+                                            <div class="item-card sold-out-card">
+                                                <p class="sold-out">Hết hàng</p>
+                                                <a id="productLink" asp-controller="Store" asp-action="DetailCard" asp-route-Id="@item.DeviceId">
+                                                    <img src="~/img/img_products/@item.ImagePath" alt="Photo item store">
+                                                    <h3>@item.Name</h3>
+                                                    <p>Hết hàng</p>
+                                                    <div class="center icon-card">
+                                                        <button class="icon icon-love" asp-route-id="@item.DeviceId">
+                                                            <a href="#">
+                                                                <i class="fa-regular fa-heart"></i>
+                                                            </a>
+                                                        </button>
+                                                        <button class="icon icon-share" disabled>
+                                                            <a href="javascript:void(0);">
+                                                                <i class="fa-solid fa-cart-plus"></i>
+                                                            </a>
+                                                        </button>
+                                                    </div>
+                                                    <div class="center item-price">
+                                                        <h2> Liên hệ </h2>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
                                     }
                             </div>
                         </div>
