@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <p>Hoặc tìm kiếm sản phẩm</p>
-                        <form class="search-form" action="@Url.Action("Search", "Store")" method="get">
+                        <form class="search-form" asp-controller="Store" asp-action="Search" method="get">
                             <div class="center">
                                 <input type="text" class="text-input" id="keyword" name="keyword" onkeydown="return preventEnter(event)" value="@ViewBag.keyword" placeholder="Tìm kiếm..." />
                                 <button type="submit" class="search-button" id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -209,7 +209,8 @@
                                             </div>
                                         </div>
                                     }
-                            </div>
+                                }
+                                </div>
                         </div>
                         @{
                             int currentPage = ViewBag.CurrentPage;
@@ -326,10 +327,4 @@
             </script>
         </div>
     </div>
-
-
-    
 </section>
-
-
-
