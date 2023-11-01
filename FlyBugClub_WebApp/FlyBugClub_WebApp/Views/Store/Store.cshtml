@@ -59,11 +59,11 @@
                         <div class="fill-function">
                             @{
                                 string userId = "";
-                                string Email = "";
+                                
                                 if (User.Identity.IsAuthenticated)
                                 {
                                     userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                                    Email = User.FindFirst(ClaimTypes.Sid)?.Value;
+                                    
                                     
                                 }
                             }

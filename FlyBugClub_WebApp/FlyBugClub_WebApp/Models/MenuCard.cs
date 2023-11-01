@@ -11,6 +11,7 @@
         public Device device { get; set; }
         public AspNetUser GetUidUser { get; set; }
         public CardModel Card { get; set; }
+        public List<Device> GetDeviceFavorite {  get; set; }
         public BillBorrow BillBorrow { get; set; }
         public BorrowDetail borrowDetail { get; set; }
         

@@ -11,6 +11,7 @@ using MimeKit;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Security;
+using System.Security.Claims;
 using System.Text;
 
 namespace FlyBugClub_WebApp.Controllers
@@ -22,7 +23,7 @@ namespace FlyBugClub_WebApp.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
+        private IProductRepository _productRepository;
 
         private readonly IEmailSender _emailSender;
 
@@ -31,9 +32,11 @@ namespace FlyBugClub_WebApp.Controllers
         public AccountController(FlyBugClubWebApplicationContext ctx,
             IOrderProcessingRepository orderProcessingRepository,
             UserManager<ApplicationUser> userManager,
+            IProductRepository productRepository,
             IEmailSender emailSender)
         {
             _ctx = ctx;
+            _productRepository = productRepository;
             _orderProcessingRepository = orderProcessingRepository;
             _userManager = userManager;
             _emailSender = emailSender;
@@ -568,16 +571,26 @@ namespace FlyBugClub_WebApp.Controllers
         public async Task<IActionResult> FavoriteDevice()
         {
             var currentUser = await _userManager.GetUserAsync(User);
-
-            if (currentUser == null)
+            MenuCard m = new MenuCard();
+            if (currentUser != null)
             {
-                return LocalRedirect("/Identity/Account/LoginCustomer");
+                
+                
+               
+                    
+                    List<Device> DevicesFavorite = _productRepository.GetDevicesFavorite(currentUser.UID);
+                    m.GetDeviceFavorite = DevicesFavorite;
+                
+        
+                return View(m);
             }
             else
             {
-                return View();
+                return View(m);
             }
                 
         }
+
     }
+
 }

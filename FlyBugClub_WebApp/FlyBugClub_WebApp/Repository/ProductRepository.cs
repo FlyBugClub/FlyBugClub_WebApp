@@ -25,6 +25,7 @@ namespace FlyBugClub_WebApp.Repository
         public AspNetUser GetUidUser(string id);
 
         public List<BorrowRate> GetBorrowRate(string id);
+        public List<Device> GetDevicesFavorite(string id);
     }
     public class ProductRepository : IProductRepository
     {
@@ -90,6 +91,28 @@ namespace FlyBugClub_WebApp.Repository
         public List<Device> GetConnectionProduct(string Cateid)
         {
             return _ctx.Devices.Where(x=>x.CategoryId == "3").ToList();
+        }
+
+        public List<Device> GetDevicesFavorite(string uid)
+        {
+            List<Device> devices = new List<Device>();
+            var borrowrates = _ctx.BorrowRates.Where(x => x.Uid == uid && x.Status == true).ToList();
+            if (borrowrates!= null)
+            {
+                foreach (var borrowrate in borrowrates)
+                {
+                    var device = _ctx.Devices.Where(x => x.DeviceId == borrowrate.DeviceId).FirstOrDefault();
+                    if (device!=null)
+                    {
+                        devices.Add(device);
+                        device = null;
+                    }    
+                }    
+                return devices;
+
+            }
+            return devices;
+            
         }
 
         public List<Device> GetHardwareProduct(string Cateid)
