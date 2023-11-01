@@ -26,19 +26,46 @@ namespace FlyBugClub_WebApp.Controllers
             var asp_user = await _userManager.FindByIdAsync(uid);
             if (asp_user != null)
             {
-                BorrowRate borrowRate = new BorrowRate()
+                var result =  _ctx.BorrowRates.Where(u => u.Uid == asp_user.UID).ToList();
+
+                int flag = 0;
+                if (result != null)
                 {
-                    Uid = asp_user.UID,
-                    DeviceId = deviceid,
-                    Status = bool.Parse(status)
-                };
-                _ctx.BorrowRates.Add(borrowRate);
+                    foreach (var item in result)
+                    {
+                        if (item.DeviceId == deviceid)
+                        {
+                            flag = 1;
+                        }
+                    }
+                }
 
-                // Lưu thay đổi vào cơ sở dữ liệu
-                _ctx.SaveChanges();
+                    if (flag == 1)
+                    {
+                    BorrowRate borrowRateToUpdate = _ctx.BorrowRates.FirstOrDefault(rate => rate.Uid == asp_user.UID && rate.DeviceId == deviceid); // Thay someId bằng ID của bản ghi bạn muốn cập nhật
+                    borrowRateToUpdate.Status = bool.Parse(status);
+                    _ctx.BorrowRates.Update(borrowRateToUpdate);
+                            _ctx.SaveChanges();
 
-                
-                return Ok(asp_user);
+
+                            return Ok(asp_user);
+                    }
+                else
+                {
+                    BorrowRate borrowRate = new BorrowRate()
+                    {
+                        Uid = asp_user.UID,
+                        DeviceId = deviceid,
+                        Status = bool.Parse(status)
+                    };
+                    _ctx.BorrowRates.Add(borrowRate);
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    _ctx.SaveChanges();
+
+
+                    return Ok(asp_user);
+                }    
             }
             else
             {

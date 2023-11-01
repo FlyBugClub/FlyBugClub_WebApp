@@ -287,17 +287,18 @@
                     var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
                     // tim rong
                     if (heartIcon_regular != null) {
-                        status = "false";
+                        status = "true";
                     }
                     // tim dac
                     else if (heartIcon_solid != null) {
-                        status = "true";
+                        status = "false";
 
                     }
+                   
                     var deviceId = button.getAttribute("data-index");
 
                     // Sử dụng userId ở phạm vi JavaScript
-                    alert("0cuongggggggggggggg " + deviceId);
+                    
                     var userId = "@userId";
                     if (userId !== "") {
 
@@ -310,7 +311,7 @@
 
                         if (response.ok) {
 
-
+                            
                             if (status === "true") {
                                 heartIcon_regular.classList.remove('fa-regular');
                                 heartIcon_regular.classList.add('fa-solid');
@@ -328,3 +329,6 @@
         </div>
     </div>
 </section>
+
+
+
