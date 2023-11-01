@@ -120,14 +120,60 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             return View("EditBillDetail", _orderProcessingRepository.findBillDetailById(billId, detailId));
         }
 
+
+
         [HttpPost]
         public IActionResult UpdateBill(BillBorrow billBorrow)
         {
             // Cập nhật billBorrow trong cơ sở dữ liệu
             _orderProcessingRepository.Update(billBorrow);
 
+            var historyUpdate = new HistoryUpdate
+            {
+                 // Gán giá trị từ borrowDetail
+                BorrowDetailId = "None", // Gán giá trị từ borrowDetail
+                Uid = "chua lay duoc", // Gán giá trị của UID (nếu có)
+                UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
+            };
+
+            // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
+            _ctx.HistoryUpdates.Add(historyUpdate);
+            _ctx.SaveChanges();
+            return RedirectToAction("Bill", "OrderProcessing");
+
+        }
+        [HttpPost]
+        public IActionResult UpdateBillDetail(BorrowDetail borrowDetail)
+        {
+            
+
+           
+                // Tìm BorrowDetail trong cơ sở dữ liệu dựa vào categoryId hoặc Bid
+                BorrowDetail existingBorrowDetail = _ctx.BorrowDetails.FirstOrDefault(x => x.BorrowDetailId == borrowDetail.BorrowDetailId);
+           
+            if (existingBorrowDetail != null)
+            {
+                // Cập nhật các trường của BorrowDetail với giá trị mới từ borrowDetail
+                _ctx.Entry(existingBorrowDetail).CurrentValues.SetValues(borrowDetail);
+
+
+                _ctx.SaveChanges();
+
+            }
+            var historyUpdate = new HistoryUpdate
+            {
+                Bid = borrowDetail.Bid, // Gán giá trị từ borrowDetail
+                BorrowDetailId = borrowDetail.BorrowDetailId, // Gán giá trị từ borrowDetail
+                Uid = "chua lay duoc", // Gán giá trị của UID (nếu có)
+                UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
+            };
+
+            // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
+            _ctx.HistoryUpdates.Add(historyUpdate);
+            _ctx.SaveChanges();
             return RedirectToAction("Bill", "OrderProcessing");
         }
+            
 
         public IActionResult DeleteBill(string id)
         {
