@@ -16,7 +16,7 @@
                     <th>Email</th>
                     <th>Major</th>
                     <th>Faculty</th>
-                    <th>Position</th>
+                    <th>PositionID</th>
                     <th>Account</th>
                     <th>#</th>
                 </tr>
@@ -34,11 +34,11 @@
                         <td>@item.Email </td>
                         <td>@item.Major</td>
                         <td>@item.Faculty</td>
-                        <td>@item.Position</td>
+                        <td>@item.PositionId</td>
                         <td>@item.Account</td>
                         <td class="last">
-                          @*  <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> ||
-                            <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>*@
+                            <a asp-action="Edit" asp-route-id="@item.StudentId"><i class="fa-solid fa-pen-to-square"></i></a> ||
+                            <a asp-action="DeleteMember" asp-route-id="@item.StudentId"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 }
