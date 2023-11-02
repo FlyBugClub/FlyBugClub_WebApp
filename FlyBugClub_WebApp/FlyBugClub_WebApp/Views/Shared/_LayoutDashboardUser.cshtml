@@ -68,7 +68,7 @@
                         var user = await UserManager.GetUserAsync(User);
                         var fullName = user.FullName;
                         <li class="center">
-                            <a class="user-name" asp-controller="Account" asp-action="User">@fullName</a>
+                            <a class="user-name" asp-controller="Account" asp-action="UserPage">@fullName</a>
                             <a href="/store/Logout">Logout</a>
                         </li>
                     }
@@ -221,6 +221,7 @@
     <script src="~/js/reloader.js"></script>
     <script src="~/js/GoToTop.js"></script>
     <script src="~/js/table_expand_process_bill.js"></script>
+    <script src="~/js/btn_favorite_device.js"></script>
     <script>
         $(function () {
             $("#upload_link").on('click', function (e) {

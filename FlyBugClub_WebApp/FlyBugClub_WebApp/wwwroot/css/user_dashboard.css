@@ -231,3 +231,24 @@ h2.title-favorite{
     border-radius: 20px;
     text-align: center;
 }
+
+/*  @############ SOLD OUT CARD ############@ */
+
+.sold-out-card {
+    position: relative;
+}
+
+.sold-out-card p.sold-out{
+    position: absolute;
+    height: fit-content !important;
+    padding: 3px 50px !important;
+    background: #ea3a3a;
+    color: #012a4a;
+    transform: rotate(-45deg);
+    font-size: 20px !important;
+    font-weight: bolder;
+    text-align:center;
+    top: 18px;
+    left: -45px;
+    clip-path: polygon(21% 0, 77.7% 0, 96% 100%, 2.5% 100%);
+}

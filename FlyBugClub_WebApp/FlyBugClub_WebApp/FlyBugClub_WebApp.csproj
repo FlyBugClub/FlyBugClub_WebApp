@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\btn_favorite_device.js" />
     <Content Remove="wwwroot\js\collapenav.js" />
     <Content Remove="wwwroot\js\input_date_now.js" />
     <Content Remove="wwwroot\js\search_function.js" />
@@ -17,6 +18,7 @@
     <None Include="wwwroot\js\collapenav.js" />
     <None Include="wwwroot\js\search_function.js" />
     <None Include="wwwroot\js\input_date_now.js" />
+    <None Include="wwwroot\js\btn_favorite_device.js" />
     <None Include="wwwroot\js\table_expand_process_bill.js" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
