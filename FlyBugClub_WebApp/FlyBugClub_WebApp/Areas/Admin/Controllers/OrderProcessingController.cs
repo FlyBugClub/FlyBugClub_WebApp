@@ -128,9 +128,10 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             // Cập nhật billBorrow trong cơ sở dữ liệu
             _orderProcessingRepository.Update(billBorrow);
 
-            var historyUpdate = new HistoryUpdate
+           /* var historyUpdate = new HistoryUpdate
             {
                  // Gán giá trị từ borrowDetail
+
                 BorrowDetailId = "None", // Gán giá trị từ borrowDetail
                 Uid = "chua lay duoc", // Gán giá trị của UID (nếu có)
                 UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
@@ -138,11 +139,11 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
             _ctx.HistoryUpdates.Add(historyUpdate);
-            _ctx.SaveChanges();
+            _ctx.SaveChanges();*/
             return RedirectToAction("Bill", "OrderProcessing");
 
         }
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult UpdateBillDetail(BorrowDetail borrowDetail)
         {
             
@@ -172,7 +173,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             _ctx.HistoryUpdates.Add(historyUpdate);
             _ctx.SaveChanges();
             return RedirectToAction("Bill", "OrderProcessing");
-        }
+        }*/
             
 
         public IActionResult DeleteBill(string id)

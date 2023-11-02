@@ -1,1 +1,48 @@
 ﻿<h1>Member</h1>
+@model List<FlyBugClub_WebApp.Models.User>
+
+<div class="device-area">
+    
+    <form>
+        <table class="table-device">
+            <thead>
+                <tr>
+                    <th>ImgUser</th>
+                    <th>StudentId</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Major</th>
+                    <th>Faculty</th>
+                    <th>Position</th>
+                    <th>Account</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="first image-device"><img src="~/img/img_products/@item.ImgUser" /></td>
+                        <td>@item.StudentId</td>
+                        <td>@item.Name</td>
+                        <td>@item.Gender </td>
+                        <td>@item.Phone</td>
+                        <td>@item.Address</td>
+                        <td>@item.Email </td>
+                        <td>@item.Major</td>
+                        <td>@item.Faculty</td>
+                        <td>@item.Position</td>
+                        <td>@item.Account</td>
+                        <td class="last">
+                          @*  <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> ||
+                            <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>
