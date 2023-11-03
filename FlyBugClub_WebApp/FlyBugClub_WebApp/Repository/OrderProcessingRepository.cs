@@ -5,7 +5,9 @@ namespace FlyBugClub_WebApp.Repository
 {
     public interface IOrderProcessingRepository
     {
+        public bool UpdatetBillDetail(BorrowDetail billBorrow);
         public bool Update(BillBorrow billBorrow);
+        public bool AddHistory(HistoryUpdate billBorrow);
         public bool Delete(string bill);
         public List<BillBorrow> GetAllBill();
         public List<BillBorrow> GetAllBillsWithDetails();
@@ -141,6 +143,32 @@ namespace FlyBugClub_WebApp.Repository
                 .Include(b => b.BorrowDetails)
                 .Include(b => b.SidNavigation)
                 .ToList();
+        }
+
+        public bool UpdatetBillDetail(BorrowDetail billBorrow)
+        {
+            BorrowDetail bill = _ctx.BorrowDetails.FirstOrDefault(x => x.BorrowDetailId == billBorrow.BorrowDetailId);
+            if (bill != null)
+            {
+                _ctx.Entry(bill).CurrentValues.SetValues(billBorrow);
+                _ctx.SaveChanges();
+            }
+            return true;
+        }
+
+        public bool AddHistory(HistoryUpdate history)
+        {
+            HistoryUpdate histories = _ctx.HistoryUpdates.FirstOrDefault(x => x.HistoryUpdateId == history.HistoryUpdateId);
+            if (histories != null)
+            {
+                _ctx.HistoryUpdates.Add(histories);
+                _ctx.SaveChanges();
+            }
+            return true;
+
+            // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
+           
+            
         }
     }
 }

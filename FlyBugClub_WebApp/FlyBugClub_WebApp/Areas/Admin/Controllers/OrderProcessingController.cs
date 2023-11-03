@@ -123,57 +123,43 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult UpdateBill(BillBorrow billBorrow)
+        public async Task< IActionResult> UpdateBill(BillBorrow billBorrow)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
             // Cập nhật billBorrow trong cơ sở dữ liệu
             _orderProcessingRepository.Update(billBorrow);
 
-           /* var historyUpdate = new HistoryUpdate
+            var historyUpdate = new HistoryUpdate
             {
-                 // Gán giá trị từ borrowDetail
+                // Gán giá trị từ borrowDetail
 
-                BorrowDetailId = "None", // Gán giá trị từ borrowDetail
-                Uid = "chua lay duoc", // Gán giá trị của UID (nếu có)
+                BorrowDetailId = null,// Gán giá trị từ borrowDetail
+                Uid = currentUser.UID, // Gán giá trị của UID (nếu có)
                 UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
             };
-
-            // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
-            _ctx.HistoryUpdates.Add(historyUpdate);
-            _ctx.SaveChanges();*/
+            _orderProcessingRepository.AddHistory(historyUpdate);
             return RedirectToAction("Bill", "OrderProcessing");
 
         }
-        /*[HttpPost]
-        public IActionResult UpdateBillDetail(BorrowDetail borrowDetail)
+        [HttpPost]
+        public async Task<IActionResult> UpdateBillDetail(BorrowDetail borrowDetail)
         {
-            
-
-           
-                // Tìm BorrowDetail trong cơ sở dữ liệu dựa vào categoryId hoặc Bid
-                BorrowDetail existingBorrowDetail = _ctx.BorrowDetails.FirstOrDefault(x => x.BorrowDetailId == borrowDetail.BorrowDetailId);
-           
-            if (existingBorrowDetail != null)
-            {
-                // Cập nhật các trường của BorrowDetail với giá trị mới từ borrowDetail
-                _ctx.Entry(existingBorrowDetail).CurrentValues.SetValues(borrowDetail);
-
-
-                _ctx.SaveChanges();
-
-            }
+            var currentUser = await _userManager.GetUserAsync(User);
+            // Tìm BorrowDetail trong cơ sở dữ liệu dựa vào categoryId hoặc Bid
+            _orderProcessingRepository.UpdatetBillDetail(borrowDetail);
             var historyUpdate = new HistoryUpdate
             {
-                Bid = borrowDetail.Bid, // Gán giá trị từ borrowDetail
+                // Gán giá trị từ borrowDetail
+
                 BorrowDetailId = borrowDetail.BorrowDetailId, // Gán giá trị từ borrowDetail
-                Uid = "chua lay duoc", // Gán giá trị của UID (nếu có)
+                Uid = currentUser.UID, // Gán giá trị của UID (nếu có)
                 UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
             };
+            _orderProcessingRepository.AddHistory(historyUpdate);
 
-            // Thêm đối tượng lịch sử cập nhật vào cơ sở dữ liệu
-            _ctx.HistoryUpdates.Add(historyUpdate);
-            _ctx.SaveChanges();
+
             return RedirectToAction("Bill", "OrderProcessing");
-        }*/
+        }
             
 
         public IActionResult DeleteBill(string id)

@@ -26,4 +26,6 @@ public partial class BorrowDetail
     public virtual BillBorrow BidNavigation { get; set; } = null!;
 
     public virtual Device Device { get; set; } = null!;
+
+    public virtual ICollection<HistoryUpdate> HistoryUpdates { get; set; } = new List<HistoryUpdate>();
 }

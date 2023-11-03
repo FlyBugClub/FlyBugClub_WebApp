@@ -29,6 +29,8 @@ public partial class BillBorrow
 
     public virtual ICollection<BorrowDetail> BorrowDetails { get; set; } = new List<BorrowDetail>();
 
+    public virtual ICollection<HistoryUpdate> HistoryUpdates { get; set; } = new List<HistoryUpdate>();
+
     public virtual User SidNavigation { get; set; } = null!;
 
     public virtual Supplier Supplier { get; set; } = null!;

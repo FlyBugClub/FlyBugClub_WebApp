@@ -31,5 +31,7 @@ public partial class User
 
     public virtual ICollection<BorrowRate> BorrowRates { get; set; } = new List<BorrowRate>();
 
+    public virtual ICollection<HistoryUpdate> HistoryUpdates { get; set; } = new List<HistoryUpdate>();
+
     public virtual Position Position { get; set; } = null!;
 }
