@@ -117,6 +117,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
         public IActionResult EditBillDetail(string billId, string detailId)
         {
+
             return View("EditBillDetail", _orderProcessingRepository.findBillDetailById(billId, detailId));
         }
 
@@ -141,12 +142,14 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             return RedirectToAction("Bill", "OrderProcessing");
 
         }
+
         [HttpPost]
         public async Task<IActionResult> UpdateBillDetail(BorrowDetail borrowDetail)
         {
             var currentUser = await _userManager.GetUserAsync(User);
             // Tìm BorrowDetail trong cơ sở dữ liệu dựa vào categoryId hoặc Bid
             _orderProcessingRepository.UpdatetBillDetail(borrowDetail);
+
             var historyUpdate = new HistoryUpdate
             {
                 // Gán giá trị từ borrowDetail
@@ -155,6 +158,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                 Uid = currentUser.UID, // Gán giá trị của UID (nếu có)
                 UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
             };
+
             _orderProcessingRepository.AddHistory(historyUpdate);
 
 

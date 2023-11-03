@@ -108,9 +108,9 @@
                                 {
                                     var user = await UserManager.GetUserAsync(User);
                                     var UID = user.UID;
-                                    <a asp-controller="Account" asp-action="ChangeInfoUser" asp-route-id="">
+                                    <a asp-controller="Account" asp-action="UserPage">
                                         <i class="fas fa-solid fa-user-pen"></i>
-                                        <span class="nav-item">Chỉnh sửa thông tin</span>
+                                        <span class="nav-item">Trang cá nhân</span>
                                     </a>
                                 }
                             </li>

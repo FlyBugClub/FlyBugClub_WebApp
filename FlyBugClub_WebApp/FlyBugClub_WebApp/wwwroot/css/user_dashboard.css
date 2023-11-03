@@ -39,7 +39,26 @@
     border-radius: 6px;
 }
 
-.wrap-info-user .welcome{
+.head-infouser{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-settinginfo {
+    color: #d4d4d4;
+    font-size: 14px;
+}
+
+.btn-settinginfo i{
+    color: #d4d4d4;
+    margin-right:5px;
+}
+
+.btn-settinginfo:hover{
+    color: #dddddd !important;
+}
+
+.wrap-info-user .welcome {
     margin-left: 35px;
     font-size: 14px;
     font-style: italic;
@@ -251,4 +270,42 @@ h2.title-favorite{
     top: 18px;
     left: -45px;
     clip-path: polygon(21% 0, 77.7% 0, 96% 100%, 2.5% 100%);
+}
+
+/*===========================*/
+/*===== CHANGE PASSWORD =====*/
+/*===========================*/
+
+.form-change-pass{
+    width: fit-content;
+    margin-left: 50px;
+}
+
+.change-pass {
+    width: 450px;
+    height: 120px;
+}
+
+.change-pass tr th{
+    color:white;
+    text-align:left;
+}
+
+.change-pass tr input{
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 8px; 
+}
+
+.form-change-pass .btn-change {
+    margin-top: 20px;
+}
+
+.btn-change button{
+    background: #012a4a;
+    color: #fff;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 12px;
 }

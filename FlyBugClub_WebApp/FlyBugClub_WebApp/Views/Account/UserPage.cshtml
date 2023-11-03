@@ -11,7 +11,11 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <h2 class="hello">Hello</h2>
+                <div class="head-infouser">
+                    <h2 class="hello">Hello</h2>
+                    <a class="btn-settinginfo" asp-controller="Account" asp-action="ChangeInfoUser" asp-route-id=""><i class="fa-solid fa-gear"></i>Chỉnh sửa thông tin</a>
+                </div>
+                
                 <h3>| @ViewBag.FullName |</h3>
                 <h4 class="welcome">Welcome to FlyBug Club Website</h4>
                 <hr />

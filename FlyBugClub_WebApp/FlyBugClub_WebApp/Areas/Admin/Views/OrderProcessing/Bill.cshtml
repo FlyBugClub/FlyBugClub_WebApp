@@ -191,13 +191,15 @@
                                                         {
                                                             <td class="word-left">Not yet</td>
                                                             <td>@detail.QtyDamage</td>
-                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                            <td colspan="1"><a asp-controller="OrderProcessing" asp-action="EditBillDetail" asp-route-billId="@detail.Bid" asp-route-detailId="@detail.BorrowDetailId"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                                         }
                                                         else if (detail.ReturnQuantity < detail.Quantity)
                                                         {
                                                             <td class="word-left">Not enough</td>
                                                             <td>@detail.QtyDamage</td>
-                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                            <td colspan="1"><a asp-controller ="OrderProcessing" asp-action="EditBillDetail" asp-route-billId="@detail.Bid" asp-route-detailId="@detail.BorrowDetailId"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                                                            </td>
                                                         }
                                                         else if (detail.ReturnQuantity > 0 && detail.ReturnQuantity < detail.Quantity)
                                                         {
@@ -208,7 +210,7 @@
                                                         {
                                                             <td>Enough</td>
                                                             <td>@detail.QtyDamage</td>
-                                                            <td colspan="1"><a asp-action="#" asp-route-id="#"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                                            <td colspan="1"><a asp-controller="OrderProcessing" asp-action="EditBillDetail" asp-route-billId="@detail.Bid" asp-route-detailId="@detail.BorrowDetailId"><i class="fa-solid fa-pen-to-square"></i></a></td>
                                                         }
                                                         else if (detail.ReturnQuantity == detail.Quantity)
                                                         {

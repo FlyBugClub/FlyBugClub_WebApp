@@ -5,7 +5,7 @@ namespace FlyBugClub_WebApp.Repository
 {
     public interface IOrderProcessingRepository
     {
-        public bool UpdatetBillDetail(BorrowDetail billBorrow);
+        public bool UpdatetBillDetail(BorrowDetail borrowDetail);
         public bool Update(BillBorrow billBorrow);
         public bool AddHistory(HistoryUpdate billBorrow);
         public bool Delete(string bill);
@@ -145,12 +145,12 @@ namespace FlyBugClub_WebApp.Repository
                 .ToList();
         }
 
-        public bool UpdatetBillDetail(BorrowDetail billBorrow)
+        public bool UpdatetBillDetail(BorrowDetail borrowDetail)
         {
-            BorrowDetail bill = _ctx.BorrowDetails.FirstOrDefault(x => x.BorrowDetailId == billBorrow.BorrowDetailId);
-            if (bill != null)
+            BorrowDetail detail = _ctx.BorrowDetails.FirstOrDefault(x => x.BorrowDetailId == borrowDetail.BorrowDetailId);
+            if (detail != null)
             {
-                _ctx.Entry(bill).CurrentValues.SetValues(billBorrow);
+                _ctx.Entry(detail).CurrentValues.SetValues(borrowDetail);
                 _ctx.SaveChanges();
             }
             return true;

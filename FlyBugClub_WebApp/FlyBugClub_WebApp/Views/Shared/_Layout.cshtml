@@ -47,14 +47,14 @@
         <div class="nav">
             <div class="nav__links">
                 <ul class="nav__links-left">
-                    <li class="@(ViewContext.RouteData.Values["action"].ToString() == "Home"?"active":"")">
+                    <li class="@*@(ViewContext.RouteData.Values["action"].ToString() == "Home"?"active":"")*@">
                         <a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a>
                     </li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Đồ án</a></li>
-                    <li class="@(ViewContext.RouteData.Values["action"].ToString() == "Store"?"active":"") 
+                    <li class="@*@(ViewContext.RouteData.Values["action"].ToString() == "Store"?"active":"") 
                                 @(ViewContext.RouteData.Values["action"].ToString() == "DetailCard"?"active":"") 
-                                @(ViewContext.RouteData.Values["action"].ToString() == "Payment"?"active":"")">
+                                @(ViewContext.RouteData.Values["action"].ToString() == "Payment"?"active":"")*@">
                         <a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a>
                     </li>
                 </ul>
