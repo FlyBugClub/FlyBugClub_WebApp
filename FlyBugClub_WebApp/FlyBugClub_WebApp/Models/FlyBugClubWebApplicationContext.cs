@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -57,26 +57,9 @@ public partial class FlyBugClubWebApplicationContext : DbContext
 
     public virtual DbSet<YeuCauUngTuyen> YeuCauUngTuyens { get; set; }
 
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-    //        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-
-
-      => optionsBuilder.UseSqlServer("Server=sql.bsite.net\\MSSQL2016;uid=ngunemay123_web_clb;password=conchongu0123;database=ngunemay123_web_clb;Encrypt=true;TrustServerCertificate=true");
-
-        
-
-   
-    /*
-            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-            => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
-    */
-
-
+        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -102,19 +85,22 @@ public partial class FlyBugClubWebApplicationContext : DbContext
             entity.Property(e => e.Faculty).HasMaxLength(50);
             entity.Property(e => e.FullName).HasMaxLength(50);
             entity.Property(e => e.Gender).HasMaxLength(5);
+            entity.Property(e => e.ImgUser)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.Major).HasMaxLength(100);
             entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
             entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
             entity.Property(e => e.Phone)
-                .HasMaxLength(11)
-                .IsFixedLength();
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.PositionId)
-                .HasMaxLength(10)
-                .IsFixedLength()
+                .HasMaxLength(5)
+                .IsUnicode(false)
                 .HasColumnName("PositionID");
             entity.Property(e => e.Uid)
                 .HasMaxLength(15)
-                .IsFixedLength()
+                .IsUnicode(false)
                 .HasColumnName("UID");
             entity.Property(e => e.UserName).HasMaxLength(256);
 
@@ -334,11 +320,12 @@ public partial class FlyBugClubWebApplicationContext : DbContext
 
         modelBuilder.Entity<HistoryUpdate>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("HistoryUpdate");
+            entity.ToTable("HistoryUpdate");
 
-            entity.Property(e => e.Bid).HasColumnName("BID");
+            entity.Property(e => e.Bid)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("BID");
             entity.Property(e => e.BorrowDetailId)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -349,15 +336,15 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .HasColumnName("UID");
             entity.Property(e => e.UpdateDate).HasColumnType("datetime");
 
-            entity.HasOne(d => d.BorrowDetail).WithMany()
-                .HasForeignKey(d => d.BorrowDetailId)
+            entity.HasOne(d => d.BidNavigation).WithMany(p => p.HistoryUpdates)
+                .HasForeignKey(d => d.Bid)
                 .HasConstraintName("FK_HistoryUpdate_BillBorrow");
 
-            entity.HasOne(d => d.BorrowDetailNavigation).WithMany()
+            entity.HasOne(d => d.BorrowDetail).WithMany(p => p.HistoryUpdates)
                 .HasForeignKey(d => d.BorrowDetailId)
                 .HasConstraintName("FK_HistoryUpdate_BorrowDetail");
 
-            entity.HasOne(d => d.UidNavigation).WithMany()
+            entity.HasOne(d => d.UidNavigation).WithMany(p => p.HistoryUpdates)
                 .HasForeignKey(d => d.Uid)
                 .HasConstraintName("FK_HistoryUpdate_User");
         });
@@ -466,6 +453,9 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Faculty).HasMaxLength(50);
             entity.Property(e => e.Gender).HasMaxLength(50);
+            entity.Property(e => e.ImgUser)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.Major).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.Phone)
