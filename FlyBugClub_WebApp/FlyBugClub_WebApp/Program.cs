@@ -100,3 +100,4 @@ app.MapRazorPages();
 app.Run();
 
 /*Scaffold-DBContext "Server=.\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true" Microsoft.EntityFrameWorkCore.SqlServer -OutputDir Models*/
+/*Scaffold-DBContext "Server=sql.bsite.net\MSSQL2016;uid=ngunemay123_web_clb;password=conchongu0123;database=ngunemay123_web_clb;Encrypt=true;TrustServerCertificate=true" Microsoft.EntityFrameWorkCore.SqlServer -OutputDir Models -f*/
