@@ -109,6 +109,18 @@ body {
     justify-content: center;
   }
 
+.word-left {
+    text-align: left ;
+}
+
+.word-right {
+    text-align: right;
+}
+
+.word-center{
+    text-align: center;
+}
+
   /* ============= Custom ScrollBar ============= */
   ::-webkit-scrollbar {
     width: 12px;

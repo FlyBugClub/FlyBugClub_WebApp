@@ -19,11 +19,15 @@
 }
 
 .word-left{
-    text-align:left;
+    text-align:left !important;
 }
 
 .word-right {
     text-align: right;
+}
+
+.word-center {
+    text-align: center;
 }
 
 .expandable-row {

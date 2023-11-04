@@ -26,9 +26,33 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             _signInManager = signInManager;
             _ctx = ctx;
         }
-        public IActionResult Devices()
+        public IActionResult Devices(int page = 1)
         {
-            List<Device> lst = _productRepository.GetAllDevices();
+            /*==================== Pagination ====================*/
+
+            int itemsPerPage = 12; // Số mục muốn hiển thị cho mỗi trang
+
+            // Lấy tổng số mục từ nguồn dữ liệu của bạn (ví dụ: cơ sở dữ liệu)
+            int totalItems = _ctx.Devices.Count();
+            int totalPages = (int)Math.Ceiling((double)totalItems / itemsPerPage);
+
+            // Tính toán vị trí bắt đầu và kết thúc của mục cho trang hiện tại
+            int startIndex = (page - 1) * itemsPerPage;
+            int endIndex = startIndex + itemsPerPage;
+
+            int currentPage = page;
+            int nextPage = currentPage + 1;
+            int prevPage = currentPage - 1;
+
+            ViewBag.CurrentPage = currentPage;
+            ViewBag.NextPage = nextPage;
+            ViewBag.PrevPage = prevPage;
+            ViewBag.ItemsPerPage = itemsPerPage;
+            ViewBag.TotalDevices = totalItems;
+            ViewBag.TotalPages = totalPages;
+
+
+            List<Device> lst = _productRepository.GetAllDevices().OrderBy(x=>x.DeviceId).Skip(startIndex).Take(itemsPerPage).ToList();
 
             return View("Devices", lst);
         }

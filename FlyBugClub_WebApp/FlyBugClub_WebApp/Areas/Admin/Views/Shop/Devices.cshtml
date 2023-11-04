@@ -1,6 +1,6 @@
 ﻿@model List<FlyBugClub_WebApp.Models.Device>
 
-<div class="device-area">
+<div class="device-area" style="width: 95% !important">
     <div class="btn-newDevice">
         <h3>Devices</h3>
         <button>
@@ -20,6 +20,7 @@
                     <th>inventory</th>
                     <th>Rented</th>
                     <th>Borrow rate</th>
+                    <th>Status</th>
                     <th>#</th>
                 </tr>
             </thead>
@@ -28,11 +29,24 @@
                 {
                     <tr>
                         <td class="first image-device"><img src="~/img/img_products/@item.ImagePath" /></td>
-                        <td>@item.Name</td>
-                        <td>@item.Price.ToString("0.000") đ</td>
+                        <td style="text-align:left">@item.Name</td>
+                        <td>@item.Price.ToString("0.00") đ</td>
                         <td>@item.Quantity</td>
                         <td>@item.QtyBorrowed</td>
                         <td>@item.BorrowRate </td>
+                        @if (@item.Status == 0)
+                        {
+                            <td><span class="status-soldutout">Hết hàng</span></td>
+                        }
+                        else if (@item.Status == 1)
+                        {
+                            <td><span class="status-active">Hoạt động</span></td>
+                        }
+                        else if (@item.Status == 2)
+                        {
+                            <td>Bán chạy</td>
+                        }
+                        
                         <td class="last">
                             <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> ||
                             <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>
@@ -42,4 +56,64 @@
             </tbody>
         </table>
     </form>
+    @{
+        int currentPage = ViewBag.CurrentPage;
+        int totalPages = ViewBag.TotalPages;
+        int nextPage = ViewBag.NextPage;
+        int prevPage = ViewBag.PrevPage;
+        int maxVisiblePages = 3;
+    }
+    @if (ViewBag.TotalDevices > ViewBag.ItemsPerPage)
+    {
+        <div class="left-side" style="display:block">
+            <div class="pagination">
+                <ul>
+                    @if (prevPage > 0)
+                    {
+                        <li class="btn-back">
+                            <a class="page-link" href="?page=@prevPage"><i class="fa-solid fa-location-arrow"></i></a>
+                        </li>
+                    }
+
+                    <li><a href="?page=1">1</a></li>
+
+                    @if (currentPage > maxVisiblePages / 2 + 1)
+                    {
+                        <li>...</li>
+                    }
+
+                    @for (int i = Math.Max(2, currentPage - (int)(maxVisiblePages / 2)); i <= Math.Min(totalPages - 1, currentPage + (int)(maxVisiblePages / 2)); i++)
+                    {
+                        if (i == currentPage)
+                        {
+                            <li class="active"><span>@i</span></li>
+                        }
+                        else
+                        {
+                            <li><a href="?page=@i">@i</a></li>
+                        }
+                    }
+
+                    @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
+                    {
+                        <li>...</li>
+                    }
+
+                    <li><a href="?page=@totalPages">@totalPages</a></li>
+
+                    @if (nextPage <= totalPages)
+                    {
+                        <li class="btn-next">
+                            <a class="page-link" href="?page=@nextPage"><i class="fa-solid fa-location-arrow"></i></a>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    }
+    else if (ViewBag.TotalDevices <= ViewBag.ItemsPerPage)
+    {
+        <div class="left-side" style="height: 100px"></div>
+    }
 </div>

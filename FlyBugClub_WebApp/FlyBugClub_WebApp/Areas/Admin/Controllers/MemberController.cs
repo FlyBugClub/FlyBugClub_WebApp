@@ -14,28 +14,42 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Administrator")]
     public class MemberController : Controller
     {
-        private readonly FlyBugClubWebApplicationContext _context;
+        private readonly FlyBugClubWebApplicationContext _ctx;
+        private IMemberRepository _memberRepository;
+        private IPositionRepository _positionRepository;
 
-        public MemberController(FlyBugClubWebApplicationContext context)
+        public MemberController(FlyBugClubWebApplicationContext ctx, 
+                                IMemberRepository memberRepository,
+                                IPositionRepository positionRepository)
         {
-            _context = context;
+            _ctx = ctx;
+            _memberRepository = memberRepository;
+            _positionRepository = positionRepository;   
         }
 
         public IActionResult Member()
         {
-            // Sử dụng LINQ để lấy tất cả người dùng từ DbContext
-            List<User> lst = _context.Users.ToList();
+            
+            List<User> lst = _memberRepository.getAll();
+
+            List<Position> positions = _positionRepository.GetAll();
+            Dictionary<string, string> positionNames = new Dictionary<string, string>();
+            foreach (var position in positions)
+            {
+                positionNames[position.PositionId] = position.PositionName;
+            }
+            ViewBag.PositionNames = positionNames;
 
             return View("Member", lst);
         }
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _ctx.Users == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var user = await _ctx.Users
                 .Include(u => u.Position)
                 .FirstOrDefaultAsync(m => m.StudentId == id);
             if (user == null)
@@ -43,13 +57,19 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            var roleNameList = _positionRepository.GetAll();
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
+
             return View(user);
         }
 
         // GET: Admin/Users/Create
         public IActionResult Create()
         {
-            ViewData["PositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId");
+            var roleNameList = _positionRepository.GetAll();
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
+
+            ViewData["PositionId"] = new SelectList(_ctx.Positions, "PositionId", "PositionId");
             return View();
         }
 
@@ -60,30 +80,37 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("StudentId,Name,Gender,Phone,Address,Email,Major,Faculty,ImgUser,PositionId,Account")] User user)
         {
+            var roleNameList = _positionRepository.GetAll();
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
+
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
+                _ctx.Add(user);
+                await _ctx.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId", user.PositionId);
+            ViewData["PositionId"] = new SelectList(_ctx.Positions, "PositionId", "PositionId", user.PositionId);
             return View(user);
         }
 
         // GET: Admin/Users/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _ctx.Users == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _ctx.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
-            ViewData["PositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId", user.PositionId);
+
+            var roleNameList = _positionRepository.GetAll();
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
+
+            ViewData["PositionId"] = new SelectList(_ctx.Positions, "PositionId", "PositionId", user.PositionId);
             return View(user);
         }
 
@@ -94,6 +121,9 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("StudentId,Name,Gender,Phone,Address,Email,Major,Faculty,ImgUser,PositionId,Account")] User user)
         {
+            var roleNameList = _positionRepository.GetAll();
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
+
             if (id != user.StudentId)
             {
                 return NotFound();
@@ -103,8 +133,8 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
+                    _ctx.Update(user);
+                    await _ctx.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -119,19 +149,20 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PositionId"] = new SelectList(_context.Positions, "PositionId", "PositionId", user.PositionId);
+
+            ViewData["PositionId"] = new SelectList(_ctx.Positions, "PositionId", "PositionId", user.PositionId);
             return View(user);
         }
 
         // GET: Admin/Users/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Users == null)
+            if (id == null || _ctx.Users == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var user = await _ctx.Users
                 .Include(u => u.Position)
                 .FirstOrDefaultAsync(m => m.StudentId == id);
             if (user == null)
@@ -147,23 +178,23 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Users == null)
+            if (_ctx.Users == null)
             {
                 return Problem("Entity set 'FlyBugClubWebApplicationContext.Users'  is null.");
             }
-            var user = await _context.Users.FindAsync(id);
+            var user = await _ctx.Users.FindAsync(id);
             if (user != null)
             {
-                _context.Users.Remove(user);
+                _ctx.Users.Remove(user);
             }
 
-            await _context.SaveChangesAsync();
+            await _ctx.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(string id)
         {
-            return (_context.Users?.Any(e => e.StudentId == id)).GetValueOrDefault();
+            return (_ctx.Users?.Any(e => e.StudentId == id)).GetValueOrDefault();
         }
 
 
