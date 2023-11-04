@@ -38,7 +38,11 @@
 
 /* =============================== */
 /* ========= TABLE DEVICE ======== */
-/* =============================== */
+/* ============================== */
+
+.table-device tr:nth-child(even) {
+    background-color: rgba(167, 199, 231, 0.3) !important;
+}
 
 .device-area {
     width: 80%;
@@ -53,13 +57,27 @@
     /*border: 2px solid #ffd800;*/
 }
 
+.table-device thead th{
+    height: 50px;
+    background: #000;
+    color: #fff;
+}
+
+.table-device thead th:nth-child(1){
+    border-top-left-radius: 16px;
+}
+
+.table-device thead th:nth-child(9){
+    border-top-right-radius: 16px;
+}
+
 .table-device th,td{
     text-align:center;
     /*border: 2px solid #ffd800*/
 }
 
 .table-device tbody tr:hover td{
-   background: #f2f2f2;
+   background-color: rgba(250, 200, 152,0.7);
 }
 
 .table-device td{
@@ -76,4 +94,18 @@
     width: 120px;
     margin: 10px auto;
     border-radius: 10px
+}
+
+.status-soldutout{
+    padding: 5px 15px;
+    background: #eb3b3b;
+    color: #fff;
+    border-radius: 16px;
+}
+
+.status-active {
+    padding: 5px 15px;
+    background: #124f7e;
+    color: #fff;
+    border-radius: 16px;
 }

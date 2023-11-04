@@ -62,6 +62,8 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IGenreRepository, GenreProductRepository>();
 builder.Services.AddTransient<IOrderProcessingRepository, OrderProcessingRepository>();
 builder.Services.AddTransient<IDashboardRepository, DashboardRepository>();
+builder.Services.AddTransient<IMemberRepository, MemberRepository>();
+builder.Services.AddTransient<IPositionRepository, PositionRepository>();
 builder.Services.AddSession();
 
 // Add services to the container.

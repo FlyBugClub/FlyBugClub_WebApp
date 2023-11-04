@@ -1,0 +1,176 @@
+﻿.table-scroll{
+    overflow-x: auto;
+}
+
+.table-member {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+
+.table-scroll::-webkit-scrollbar {
+    height: 8px !important;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background-color: #888 !important; /* Màu nền cho thanh cuộn */
+    border-radius: 6px !important; /* Độ cong góc của thanh cuộn */
+}
+
+/*===============================*/
+/*======== TABLE MEMBER =========*/
+/*===============================*/
+
+.table-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background-color: #888; /* Màu nền cho thanh cuộn */
+    border-radius: 6px; /* Độ cong góc của thanh cuộn */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*tr.header-row th:nth-child(odd) {
+    background: #f6781f;
+}*/
+
+.member-area{
+    width: 95%;
+    height: 100%;
+    background: #fff;
+    margin-bottom: 50px;
+    padding: 20px;
+    border: none;
+    border-radius: 24px;
+}
+
+.table-scroll {
+    width: 100%;
+    height: 550px;
+    overflow-x: auto ;
+    /*overflow-y: auto;*/
+}
+
+table.table-member {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 150% !important;
+}
+
+.table-member thead {
+    position: sticky;
+    top: 0;
+}
+
+.table-member th {
+    height: 50px;
+    padding: 0 10px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+.table-member td{
+    padding: 0 10px;
+}
+
+.table-member th.img {
+    width: 120px;
+    border-top-left-radius: 16px;
+}
+
+.table-member th.name {
+    width: 250px;
+}
+
+.table-member th.SID {
+    width: 150px;
+}
+
+.table-member th.role {
+    width: 140px;
+    
+}
+
+.table-member th.email{
+    width:fit-content !important;
+}
+
+.table-member th.phone {
+    width: 150px;
+}
+
+.table-member th.address {
+    width: 300px;
+}
+
+.table-member th.major {
+    width: 230px;
+}
+
+.table-member th.faculty {
+    width: 230px;
+}
+
+.table-member th.action {
+    width: 80px;
+    border-top-right-radius: 16px;
+}
+
+
+span.empty {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-member td.image-device img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 8px 25%;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    background-size: cover !important; /* Cắt ảnh để hiển thị tỷ lệ 1:1 */
+    background-position: center !important; /* Căn giữa ảnh */
+    background-repeat: no-repeat !important; /* Ngăn lặp ảnh nếu có */
+}
+
+.table-member tbody td.last a i.info {
+    font-size: 21px;
+}
+
+.table-member tbody tr:hover td {
+    background-color: rgba(250, 200, 152,0.7);
+}
+
+/*===============================*/
+/*======== EDIT MEMBER =========*/
+/*===============================*/
+
+.edit-member img{   
+    border-radius: 16px;
+}
+
+.edit-member .form-group{
+    margin-top: 15px;
+}
+
+.btn-save{
+    width: 100%;
+    margin-top: 10px;
+    padding: 6px 15px;
+    background: #000;
+    color: white;
+    border-radius: 24px;
+}
+
+.btn-save:hover{
+    color: white;
+}

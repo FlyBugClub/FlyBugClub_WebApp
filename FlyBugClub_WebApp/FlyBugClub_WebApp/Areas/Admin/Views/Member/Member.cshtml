@@ -1,48 +1,112 @@
-﻿<h1>Member</h1>
-@model List<FlyBugClub_WebApp.Models.User>
+﻿@model List<FlyBugClub_WebApp.Models.User>
 
-<div class="device-area">
-    
+<div class="member-area">
     <form>
-        <table class="table-device">
-            <thead>
-                <tr>
-                    <th>ImgUser</th>
-                    <th>StudentId</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Major</th>
-                    <th>Faculty</th>
-                    <th>PositionID</th>
-                    <th>Account</th>
-                    <th>#</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td class="first image-device"><img src="~/img/img_products/@item.ImgUser" /></td>
-                        <td>@item.StudentId</td>
-                        <td>@item.Name</td>
-                        <td>@item.Gender </td>
-                        <td>@item.Phone</td>
-                        <td>@item.Address</td>
-                        <td>@item.Email </td>
-                        <td>@item.Major</td>
-                        <td>@item.Faculty</td>
-                        <td>@item.PositionId</td>
-                        <td>@item.Account</td>
-                        <td class="last">
-                            <a asp-action="Edit" asp-route-id="@item.StudentId"><i class="fa-solid fa-pen-to-square"></i></a> ||
-                            <a asp-action="DeleteMember" asp-route-id="@item.StudentId"><i class="fa-solid fa-trash"></i></a>
-                        </td>
+        <div class="table-scroll">
+            <table class="table-member">
+                <thead>
+                    <tr class="header-row">
+                        <th class="img">Image</th>
+                        <th class="name">Name</th>
+                        <th class="SID">ID</th>
+                        <th class="role">Role</th>
+                        <th class="gender">Gender</th>
+                        <th class="email">Email</th>
+                        <th class="phone">Phone</th>
+                        <th class="address">Address</th>
+                        <th class="major">Major</th>
+                        <th class="faculty">Faculty</th>
+                        <th class="action">#</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        string empty = "//";
+
+                        <tr>
+                            <td class="first image-device"><img src="~/img/img_user/IMG_0042.11.jpg" /></td>
+                            <td class="name word-left">@item.Name</td>
+                            <td class="SID">@item.StudentId</td>
+                            <td class="role word-center">
+                                @if (ViewBag.PositionNames.ContainsKey(item.PositionId))
+                                {
+                                    @ViewBag.PositionNames[item.PositionId]
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="gender word-left">
+                                @if (@item.Gender != null)
+                                {
+                                    @item.Gender
+                                }
+                                else
+                                {
+                                    @empty
+                                }
+
+                            </td>
+                            <td class="email word-left">
+                                @if (@item.Email != null)
+                                {
+                                    @item.Email
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="phone">
+                                @if (@item.Phone != null)
+                                {
+                                    @item.Phone
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="address word-left">
+                                @if (@item.Address != null)
+                                {
+                                    @item.Address
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="major word-left">
+                                @if (item.Major != null)
+                                {
+                                    @item.Major
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="faculty word-left">
+                                @if (@item.Faculty != null)
+                                {
+                                    @item.Faculty
+                                }
+                                else
+                                {
+                                    <div class="word-center">@empty</div>
+                                }
+                            </td>
+                            <td class="last">
+                                <a asp-action="Edit" asp-route-id="@item.StudentId"><i class="info fa-solid fa-circle-info"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </form>
 </div>
+
