@@ -492,24 +492,39 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 var email = HttpContext.Session.GetString("email");
                 HttpContext.Session.SetString("email", email);
+                ViewBag.Name = currentUser.FullName;
+                ViewBag.Gender = currentUser.Gender;
+                ViewBag.Phone = currentUser.Phone;
+                ViewBag.Major = currentUser.Major;
+                ViewBag.Faculty = currentUser.Faculty;
+                ViewBag.Address = currentUser.Address;
+
                 return View();
             }
         }
-        
         public async Task<IActionResult> Finish_ChangeInfoUser(string Name, string Gender, string Phone, string Address, string Major, string Faculty)
         {
 
             var email = HttpContext.Session.GetString("email");
-            var user = await _userManager.FindByNameAsync(email);
-            if (user != null)
+            var aspuser = await _userManager.FindByNameAsync(email);
+            var user = await _ctx.Users.FirstOrDefaultAsync(r => r.Email == email);
+            if (aspuser != null && user != null)
             {
-                user.FullName = Name;
+                user.Name = Name;
                 user.Gender = Gender;
                 user.Phone = Phone;
                 user.Address = Address;
                 user.Major = Major;
                 user.Faculty = Faculty;
-                var result = await _userManager.UpdateAsync(user);
+                _ctx.SaveChanges();
+
+                aspuser.FullName = Name;
+                aspuser.Gender = Gender;
+                aspuser.Phone = Phone;
+                aspuser.Address = Address;
+                aspuser.Major = Major;
+                aspuser.Faculty = Faculty;
+                var result = await _userManager.UpdateAsync(aspuser);
                 if (result.Succeeded)
                 {
                     HttpContext.Session.SetString("email", email);
@@ -527,7 +542,8 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
         }
-        
+
+
         public async Task<IActionResult> Receiption()
         {
             var currentUser = await _userManager.GetUserAsync(User);
