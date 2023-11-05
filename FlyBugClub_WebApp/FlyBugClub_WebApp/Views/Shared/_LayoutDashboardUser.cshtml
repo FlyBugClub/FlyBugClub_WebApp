@@ -98,10 +98,10 @@
                                 <div class="center">
                                     <img src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
                                 </div>
-                                @*<div class="center">
+                                <div class="center">
                                     <input id="upload" type="file"/>
-                                    <a asp-controller="" asp-action="" id="upload_link" class="edit-info">Đổi ảnh nền</a>
-                                </div>*@
+                                    <a id="upload_link" class="edit-info">Đổi ảnh nền</a>
+                                </div>
                             </li>
                             <li>
                                 @if (SignInManager.IsSignedIn(User))
@@ -222,14 +222,15 @@
     <script src="~/js/GoToTop.js"></script>
     <script src="~/js/table_expand_process_bill.js"></script>
     <script src="~/js/btn_favorite_device.js"></script>
-    @*<script>
+    @*<script src="~/js/update_image_user.js"></script>*@
+    <script>
         $(function () {
             $("#upload_link").on('click', function (e) {
                 e.preventDefault();
                 $("#upload:hidden").trigger('click');
             });
         });
-    </script>*@
+    </script>
  
     @*@await RenderSectionAsync("Scripts", required: false)*@
 </body>

@@ -101,11 +101,87 @@
     border-radius: 24px !important;
 }
 
+.change-info .ChangeInfoUser .avatar-area{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius:50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.change-info .ChangeInfoUser img.change-avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px #fff solid;
+}
+
+.change-info .ChangeInfoUser .avatar-area input{
+    position:absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 80px;
+    cursor: pointer;
+    transition: 0 .5s;
+    font-size: 9px;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}
+
+.change-info .ChangeInfoUser .avatar-area input::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.change-info .ChangeInfoUser .avatar-area input::before{
+    content:'\f030';
+    margin-left: 6px;
+    font-family: fontAwesome;
+    font-size: 25px;
+    color:#fff;
+    display: inline-block;
+    -webkit-user-select: none;
+}
+
+.change-info .ChangeInfoUser .avatar-area input::after{
+    content: 'Update';
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    display:block;
+    top: 70px;
+}
+
+.change-info .ChangeInfoUser .avatar-area input:hover{
+    opacity: 1;
+}
+
+/*.change-info .ChangeInfoUser #upload-img {
+    display: none;
+}*/
+/*.change-info .ChangeInfoUser .edit-info {
+    margin-top: 10px;
+    padding: 5px 15px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    text-align:center;
+}*/
+.change-info .ChangeInfoUser .edit-info i {
+    margin: 0 8px 0 0;
+    color: #000;
+}
+
 /*==========================*/
 /*======= Receiption =======*/
 /*==========================*/
-
-.wrap-info-user h4.non-bill{
+.wrap-info-user h4.non-bill {
     text-align: center;
     color: #a3a3a3;
 }

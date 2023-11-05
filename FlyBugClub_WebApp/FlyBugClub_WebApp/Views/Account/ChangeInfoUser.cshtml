@@ -4,56 +4,63 @@
     Layout = "~/Views/Shared/_LayoutDashboardUser.cshtml";
 }
 
-<div class="wrap-info-user">
-    <div class="row">
-        <div class="col">
-            <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
-                <div class="center">
-                    <div class="w-100 mx-3">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <input type="hidden" asp-for="StudentId" />
-                     
-                        <div class="form-group">
-                            <label asp-for="Name" class="control-label">Họ và tên</label>
-                            <input asp-for="Name" class="form-control" value="@ViewBag.Name" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Gender" class="control-label">Giới tính</label>
-                            <select asp-for="Gender" class="form-control" >
-                                <option selected>@ViewBag.Gender</option>
-                                <option>Nam</option>
-                                <option>Nữ</option>
-                                <option>Khác</option>
-                            </select>
-                            <span asp-validation-for="Gender" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Phone" class="control-label">Số điện thoại</label>
-                            <input asp-for="Phone" class="form-control" value="@ViewBag.Phone" />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Address" class="control-label">Địa chỉ</label>
-                            <input asp-for="Address" class="form-control" value="@ViewBag.Address" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>
+<div class="wrap-info-user change-info">
+    <div class="container">
+        <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
+            <div class="row">
+                <div class="col-3">
+                    <div class="avatar-area center">
+                        <img class="change-avatar" src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
+                        <input type="file" asp-for="ImgUser" id="upload-img" value="Change"/>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="StudentId" />
 
-                    </div>
-                    <div class="w-100 mx-3">
-                        <div class="form-group">
-                            <label asp-for="Major" class="control-label">Khoa</label>
-                            <input asp-for="Major" class="form-control" value="@ViewBag.Major" />
-                            <span asp-validation-for="Major" class="text-danger"></span>
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label">Họ và tên</label>
+                                <input asp-for="Name" class="form-control" value="@ViewBag.Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Gender" class="control-label">Giới tính</label>
+                                <select asp-for="Gender" class="form-control">
+                                    <option selected>@ViewBag.Gender</option>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                    <option>Khác</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Phone" class="control-label">Số điện thoại</label>
+                                <input asp-for="Phone" class="form-control" value="@ViewBag.Phone" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="Faculty" class="control-label">Ngành</label>
-                            <input asp-for="Faculty" class="form-control" value="@ViewBag.Faculty" />
-                            <span asp-validation-for="Faculty" class="text-danger"></span>
+                        <div class="col">
+                            <div class="form-group">
+                                <label asp-for="Address" class="control-label">Địa chỉ</label>
+                                <input asp-for="Address" class="form-control" value="@ViewBag.Address" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Major" class="control-label">Khoa</label>
+                                <input asp-for="Major" class="form-control" value="@ViewBag.Major" />
+                                <span asp-validation-for="Major" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Faculty" class="control-label">Ngành</label>
+                                <input asp-for="Faculty" class="form-control" value="@ViewBag.Faculty" />
+                                <span asp-validation-for="Faculty" class="text-danger"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group btn-submit">
-                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <div class="form-group btn-submit">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,12 +68,12 @@
     </div>
 </div>
 
-@*<script>
+@*<script>   
     $(function () {
         $("#upload_link").on('click', function (e) {
             e.preventDefault();
-            $("#upload:hidden").trigger('click');
+            $("#upload-img:hidden").trigger('click');
         });
     });
-</script>
-*@
+</script>*@
+
