@@ -413,22 +413,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="date-update" >11/10/2023</td>
-                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310001</b></td>
+                        @foreach (var item in Model.getAllHistory)
+                        {
+                             <tr>
+                            <td class="date-update" >@item.UpdateDate</td>
+                            <td class="content-update"><b>@item.Uid</b> đã thay đổi trang thái hóa đơn số <b>@item.BorrowDetailId</b></td>
                         </tr>
-                        <tr>
-                            <td class="date-update" >11/10/2023</td>
-                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310009</b></td>
-                        </tr>
-                        <tr>
-                            <td class="date-update" >12/10/2023</td>
-                            <td class="content-update"><b>Đinh Quốc Cường</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310006</b></td>
-                        </tr>
-                        <tr>
-                            <td class="date-update" >15/10/2023</td>
-                            <td class="content-update"><b>Nguyễn Quốc Duy</b> đã thay đổi trang thái hoa hóa đơn số <b>STU2310005</b></td>
-                        </tr>
+                        }
+                       
+                       
                     </tbody>
                 </table>
             </div>

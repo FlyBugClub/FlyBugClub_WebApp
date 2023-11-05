@@ -35,7 +35,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             List<BillBorrow> getWaitingBill = _orderProcessingRepository.GetWaitingBillsWithDetails();
             List<BillBorrow> getBorrowingBill = _orderProcessingRepository.GetBorrowingBillsWithDetails();
             List<BillBorrow> getDoneBill = _orderProcessingRepository.GetDoneBillsWithDetails();
-
+            List<HistoryUpdate> getAllHistory = _orderProcessingRepository.GetDAllHistory();
             foreach (var bill in getWaitingBill)
             {
                 /*bill.Sid = _orderProcessingRepository.GetUserName(bill.Sid);*/
@@ -66,6 +66,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                     detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
                 }
             }
+            
 
 
 
@@ -73,7 +74,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             billModel.getWaitingBill = getWaitingBill;
             billModel.getBorowingBill = getBorrowingBill;
             billModel.getDoneBill = getDoneBill;
-
+            billModel.getAllHistory = getAllHistory;
             int countWaiting = _ctx.BillBorrows.Count(x => x.Status == 0);
             int countBorrowing = _ctx.BillBorrows.Count(x => x.Status == 1);
             int countDone = _ctx.BillBorrows.Count(x => x.Status == 2);
@@ -134,7 +135,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             {
                 // Gán giá trị từ borrowDetail
 
-                BorrowDetailId = null,// Gán giá trị từ borrowDetail
+                BorrowDetailId = "",// Gán giá trị từ borrowDetail
                 Uid = currentUser.UID, // Gán giá trị của UID (nếu có)
                 UpdateDate = DateTime.Now // Hoặc ngày cập nhật mong muốn
             };

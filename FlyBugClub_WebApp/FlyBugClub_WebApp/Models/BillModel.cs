@@ -5,5 +5,7 @@
         public List<BillBorrow> getWaitingBill { get; set; }
         public List<BillBorrow> getBorowingBill { get; set; }
         public List<BillBorrow> getDoneBill { get; set; }
+        public List<HistoryUpdate> getAllHistory { get; set; }
+
     }
 }
