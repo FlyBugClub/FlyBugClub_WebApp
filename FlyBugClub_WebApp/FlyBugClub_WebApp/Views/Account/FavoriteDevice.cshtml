@@ -1,14 +1,13 @@
-﻿
+
 @using System.Security.Claims
 @using Microsoft.AspNetCore.Identity;
 @model MenuCard
 
 @{
-    string userId = "";
+    
     Layout = "~/Views/Shared/_LayoutDashboardUser.cshtml";
-    userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
-
 <h2 class="title-favorite">Sản phẩm yêu thích</h2>
 <hr style="width:100%;text-align:left;margin-left:0; color:white; height: 2px; margin-top: 8px;">
 <div class="container">
@@ -27,7 +26,7 @@
                                         <h3>@item.Name</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                                         <div class="center icon-card">
-                                            <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick1(this)">
+                                            <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
                                                 <a href="#" title="Yêu thích">
                                                     <i class="fa-heart fa-solid"></i>
                                                 </a>
@@ -56,11 +55,11 @@
                                         <h3>@item.Name</h3>
                                         <p>Hết hàng</p>
                                         <div class="center icon-card">
-                                        <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick1(this)">
-                                            <a href="#" title="Yêu thích">
-                                                <i class="fa-heart fa-solid"></i>
-                                            </a>
-                                        </button>
+                                            <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
+                                                <a href="#">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </button>
                                             <button class="icon icon-share" disabled>
                                                 <a href="javascript:void(0);">
                                                     <i class="fa-solid fa-cart-plus"></i>
@@ -81,59 +80,54 @@
                     <p>Chưa có thêm thiết bị ưu thích</p>
                 }            
         </div>
-        <script>
-            function handleButtonClick1(button) {
-                event.preventDefault();
-            @{
-                string name = "ehehe";
-            }
-                var status;
-                var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
-                var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
-                // tim rong
-                if (heartIcon_regular != null) {
-                    status = "true";
-                }
-
-                // tim dac
-                else if (heartIcon_solid != null) {
-                    status = "false";
-
-                }
-
-                alert(heartIcon_solid);
-                var deviceId = button.getAttribute("data-index");
-
-                // Sử dụng userId ở phạm vi JavaScript
-
-                var ID = "@userId";
-             
-                if (ID !== "") {
-
-                    fetchData(ID, deviceId, status);
-
-                }
-
-                async function fetchData(ID, deviceId, status) {
-                    const response = await fetch(`/api/users/getuserbyuid?uid=${ID}&deviceid=${deviceId}&status=${status}`);
-
-                    if (response.ok) {
-
-
-                        if (status === "true") {
-                            heartIcon_regular.classList.remove('fa-regular');
-                            heartIcon_regular.classList.add('fa-solid');
-                        }
-                        else {
-                            heartIcon_solid.classList.remove('fa-solid');
-                            heartIcon_solid.classList.add('fa-regular');
-                        }
-                    }
-
-                }
-            }
-        </script>
-
     </div>
 </div>
+
+<script>
+    function handleButtonClick(button) {
+        event.preventDefault();
+
+        var status;
+        var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
+        var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
+        // tim rong
+        if (heartIcon_regular != null) {
+            status = "true";
+        }
+        // tim dac
+        else if (heartIcon_solid != null) {
+            status = "false";
+
+        }
+
+        var deviceId = button.getAttribute("data-index");
+
+        // Sử dụng userId ở phạm vi JavaScript
+
+        var userId = "@userId";
+        if (userId !== "") {
+
+            fetchData(userId, deviceId, status);
+
+        }
+
+        async function fetchData(userId, deviceId, status) {
+            const response = await fetch(`/api/users/getuserbyuid?uid=${userId}&deviceid=${deviceId}&status=${status}`);
+
+            if (response.ok) {
+
+
+                if (status === "true") {
+                    heartIcon_regular.classList.remove('fa-regular');
+                    heartIcon_regular.classList.add('fa-solid');
+                }
+                else {
+                    heartIcon_solid.classList.remove('fa-solid');
+                    heartIcon_solid.classList.add('fa-regular');
+                }
+            }
+
+        }
+    }
+</script>
 
