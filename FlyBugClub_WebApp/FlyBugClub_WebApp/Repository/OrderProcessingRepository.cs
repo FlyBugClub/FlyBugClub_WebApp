@@ -7,10 +7,6 @@ namespace FlyBugClub_WebApp.Repository
     {
 
         public bool UpdatetBillDetail(BorrowDetail borrowDetail);
-
-
-        public bool UpdatetBillDetail(BorrowDetail billBorrow);
-
         public bool Update(BillBorrow billBorrow);
         public bool AddHistory(HistoryUpdate billBorrow);
         public bool Delete(string bill);
@@ -26,7 +22,10 @@ namespace FlyBugClub_WebApp.Repository
         string GetDeviceName(string deviceId);
         string GetUserName(string Sid);
         public BillBorrow findById(string id);
+        public BillBorrow GetMaxBillId();
+        public BorrowDetail findBorrowDetailById(string borrowDetailId);
         public BorrowDetail findBillDetailById(string billId, string detailId);
+        public string GetFacilityNameById(int facilityId);
     }
     public class OrderProcessingRepository : IOrderProcessingRepository
     {
@@ -56,6 +55,8 @@ namespace FlyBugClub_WebApp.Repository
             return _ctx.BillBorrows
                 .Include(b=>b.BorrowDetails)
                 .Include(b=>b.SidNavigation)
+                .OrderBy(x=>x.Status)
+                .ThenByDescending(x=>x.BorrowDate)
                 .ToList();
         }
 
@@ -178,7 +179,29 @@ namespace FlyBugClub_WebApp.Repository
 
         public List<HistoryUpdate> GetDAllHistory()
         {
-            return _ctx.HistoryUpdates.ToList();
+            return _ctx.HistoryUpdates.OrderByDescending(x=>x.UpdateDate).ToList();
+        }
+
+        public string GetFacilityNameById(int facilityId)
+        {
+            var facility = _ctx.ReceivingFacilities.FirstOrDefault(f => f.Id == facilityId);
+
+            if (facility != null)
+            {
+                return facility.Name; // Trả về tên cơ sở nếu tìm thấy FacilityId.
+            }
+
+            return string.Empty;
+        }
+
+        public BorrowDetail findBorrowDetailById(string borrowDetailId)
+        {
+            return _ctx.BorrowDetails.FirstOrDefault(bd => bd.BorrowDetailId == borrowDetailId);
+        }
+
+        public BillBorrow GetMaxBillId()
+        {
+            return _ctx.BillBorrows.OrderByDescending(x=>x.Bid).Take(1).SingleOrDefault();
         }
     }
 }

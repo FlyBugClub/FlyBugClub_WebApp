@@ -27,7 +27,13 @@ public partial class BillBorrow
 
     public decimal? DepositPriceOnBill { get; set; }
 
+    public int FacilityId { get; set; }
+
+    public string? Phone { get; set; }
+
     public virtual ICollection<BorrowDetail> BorrowDetails { get; set; } = new List<BorrowDetail>();
+
+    public virtual ReceivingFacility Facility { get; set; } = null!;
 
     public virtual ICollection<HistoryUpdate> HistoryUpdates { get; set; } = new List<HistoryUpdate>();
 

@@ -543,7 +543,6 @@ namespace FlyBugClub_WebApp.Controllers
 
         }
 
-
         public async Task<IActionResult> Receiption()
         {
             var currentUser = await _userManager.GetUserAsync(User);
@@ -577,10 +576,36 @@ namespace FlyBugClub_WebApp.Controllers
                 return View(billsByUID);
             }
         }
+        public IActionResult DetailReceiption(string id)
+        {
+            List<BorrowDetail> billdetail = _orderProcessingRepository.GetDetailBillByBID(id);
 
+            ViewBag.Bid = id;
+
+            return View("DetailReceiption", billdetail);
+        }
         public IActionResult DeleteBill(string id)
         {
-            _orderProcessingRepository.Delete(id);
+            List<BorrowDetail> bill = _orderProcessingRepository.GetBorrowDetailsByBillBorrowId(id);
+
+            if (bill != null)
+            {
+                foreach (var item in bill)
+                {
+                    var device = _productRepository.findById(item.DeviceId);
+
+                    if (device != null)
+                    {
+                        int currentQuantity = device.Quantity;
+                        currentQuantity += item.Quantity;
+                        device.Quantity = currentQuantity;
+                        _ctx.SaveChanges();
+                    }
+                }
+
+                _orderProcessingRepository.Delete(id);
+            }
+
             return RedirectToAction("Receiption", "Account");
         }
 

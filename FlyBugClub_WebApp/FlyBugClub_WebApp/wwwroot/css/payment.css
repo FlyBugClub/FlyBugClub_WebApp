@@ -230,6 +230,21 @@ form.get-info-form input{
     float: right;
 }
 
+form.get-info-form select{
+    width: 100%;
+    color: #012a4a;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    background: rgba(255, 255, 255, 0.80);
+    display: flex;
+    float: right;
+}
+
+form.get-info-form select option{
+    color: #012a4a;
+}
+
 form.get-info-form textarea{
     height: 100%;
     width: 100%;

@@ -38,14 +38,19 @@
     margin-bottom: 12px;
 }
 
-    .function-bill .count {
-        width: fit-content;
-        background: #012a4a;
-        margin-bottom: 20px;
-        padding: 5px 15px;
-        border: 3px solid ; 
-        border-radius: 12px;
-    }
+.function-bill .top-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.function-bill .count {
+    width: fit-content;
+    background: #012a4a;
+    margin-bottom: 20px;
+    padding: 2px 10px;
+    border: 3px solid ; 
+    border-radius: 12px;
+}
 
 .function-bill .count p{
     color: #fff;
@@ -57,6 +62,18 @@
     font-size: 18px !important;
     font-weight: 700;
 }
+
+.function-bill .top-box .combobox{
+    margin: 5px 10px;
+}
+
+.combobox select{
+    width: 130px;
+    padding: 2px 4px;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
 
 .bill-table {
     width: 100%;
@@ -105,6 +122,25 @@
 .bill-table tbody.parent-body td.status-bill{
     width: 100px;
     padding: 0 20px;
+}
+
+.wrap-status{
+    padding: 3px 8px;
+    text-align:center;
+    border: none;
+    border-radius:12px;
+}
+
+span.yellow {
+    background: #c7ac2f;
+}
+
+span.purple {
+    background: #9544dc;
+}
+
+span.green{
+    background: #39b230;
 }
 
 .bill-table tbody.parent-body td.money-total{
@@ -185,21 +221,41 @@
 /* ======== HISTORY UPDATE ======= */
 /* =============================== */
 
-table.history-update{
-    background: #f2f2f2;
-    border-radius: 12px
+.wrap-histoty{
+    background: #eee;
+    margin: 10px 0;
+    padding: 5px 7px;
+    border:none;
+    border-radius: 6px
 }
 
-table.history-update thead th{
-    height: 40px;
-    text-align: center;
+.wrap-histoty .top-box{
+    width: fit-content;
+    display: flex;
+    margin: 2px 5px 8px 2px;
+    padding: 0 5px;
+    /*border-bottom: 4px #012a4a solid;*/
+    border-radius: 6px;
 }
 
-table.history-update tbody td.date-update{
-    padding: 0 10px;
+.wrap-histoty .top-box i {
+    font-size: 12px;
+    margin: auto 5px auto 2px;
 }
 
-table.history-update tbody td.content-update{
-    padding: 0 10px;
-    text-align: justify;
+.wrap-histoty .top-box .time-update{
+    font-size: 12px;
+    margin: auto 5px auto 2px;
+}
+
+.wrap-histoty .content-update{
+    cursor: default;
+}
+
+.wrap-histoty .content-update b{
+    color: #012a4a;
+    padding: 1px;
+    background: #dedede;
+    cursor: default;
+    /*border-bottom: 2px solid #012a4a;*/
 }

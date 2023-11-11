@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using static FlyBugClub_WebApp.Areas.Admin.Controllers.OrderProcessingController;
 
 namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 {
@@ -56,7 +57,13 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             return View("Devices", lst);
         }
-         
+
+        public enum DeviceStatus
+        {
+            SoldOut = 0,
+            Stocking = 1,
+        }
+
         [HttpPost]
         public IActionResult saveDevice(Device device)
         {
@@ -82,6 +89,18 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
                     }
                     else
                     {
+                        var genreList = _genreRepository.GetAll();
+                        ViewBag.GenreId = new SelectList(genreList, "CategoryId", "CategoryName");
+
+                        ViewBag.StatusList = new SelectList(Enum.GetValues(typeof(DeviceStatus))
+                            .Cast<DeviceStatus>()
+                            .Select(v => new SelectListItem
+                            {
+                                Text = v.ToString(),
+                                Value = ((int)v).ToString()
+                            }), "Value", "Text");
+
+
                         _productRepository.Create(device);
                         return RedirectToAction("Devices");
                     }
@@ -103,8 +122,18 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             var currentMonth = DateTime.Now.Month;
             /*================== Get All Data Genre ==================*/
             var billCounter = _ctx.BillBorrows.Count() + 1;
+
             var genreList = _genreRepository.GetAll();
             ViewBag.GenreId = new SelectList(genreList, "CategoryId", "CategoryName");
+
+            ViewBag.StatusList = new SelectList(Enum.GetValues(typeof(DeviceStatus))
+                            .Cast<DeviceStatus>()
+                            .Select(v => new SelectListItem
+                            {
+                                Text = v.ToString(),
+                                Value = ((int)v).ToString()
+                            }), "Value", "Text");
+
             ViewBag.BillCounter = billCounter;
             ViewBag.Month =currentMonth;
             ViewBag.Year = lastTwoDigitsOfYear;
@@ -114,6 +143,17 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult UpdateDevice(Device device)
         {
+            var genreList = _genreRepository.GetAll();
+            ViewBag.GenreId = new SelectList(genreList, "CategoryId", "CategoryName");
+
+            ViewBag.StatusList = new SelectList(Enum.GetValues(typeof(DeviceStatus))
+                            .Cast<DeviceStatus>()
+                            .Select(v => new SelectListItem
+                            {
+                                Text = v.ToString(),
+                                Value = ((int)v).ToString()
+                            }), "Value", "Text");
+
             _productRepository.Update(device);
             return RedirectToAction("Devices", "Shop");
         }
@@ -124,6 +164,15 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             var genreList = _genreRepository.GetAll();
             ViewBag.GenreId = new SelectList(genreList, "CategoryId", "CategoryName");
+
+
+            ViewBag.StatusList = new SelectList(Enum.GetValues(typeof(DeviceStatus))
+                            .Cast<DeviceStatus>()
+                            .Select(v => new SelectListItem
+                            {
+                                Text = v.ToString(),
+                                Value = ((int)v).ToString()
+                            }), "Value", "Text");
 
             return View("EditDevice", _productRepository.findById(Id));
         }

@@ -6,22 +6,40 @@
         <div class="col-8">
             <div class="function function-bill">
                 <div class="top-box">
-                    <div class="count">
+                    @*<div class="count">
                         <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
-                    </div>
-                    <div class="count">
-                        <p>Borrowing: <span class="text-purple">@ViewBag.countBorrowing</span></p>
-                    </div>
-                    <div class="count">
-                        <p>Done: <span class="text-green">@ViewBag.countDone</span></p>
-                    </div>
+                    </div>*@
                     <div class="combobox">
                         <form asp-controller="OrderProcessing" asp-action="FilterBills" method="get">
                             <select name="filterBills" id="filterBills" onchange="this.form.submit()">
+                                @if(ViewBag.fillOption == "all_bills")
+                                {
                                 <option value="all_bills" selected>All</option>
                                 <option value="waiting_bill">Waiting</option>
                                 <option value="borrowing_bill">Borrowing</option>
                                 <option value="done_bill">Done</option>
+                                }
+                                else if(ViewBag.fillOption == "waiting_bill")
+                                {
+                                <option value="all_bills">All</option>
+                                <option value="waiting_bill" selected>Waiting</option>
+                                <option value="borrowing_bill">Borrowing</option>
+                                <option value="done_bill">Done</option>
+                                }
+                                else if(ViewBag.fillOption == "borrowing_bill")
+                                {
+                                <option value="all_bills">All</option>
+                                <option value="waiting_bill">Waiting</option>
+                                <option value="borrowing_bill" selected>Borrowing</option>
+                                <option value="done_bill">Done</option>
+                                }
+                                else if(ViewBag.fillOption == "done_bill")
+                                {
+                                <option value="all_bills">All</option>
+                                <option value="waiting_bill">Waiting</option>
+                                <option value="borrowing_bill">Borrowing</option>
+                                <option value="done_bill" selected>Done</option>
+                                }
                             </select>
                         </form>
                     </div>
@@ -49,18 +67,7 @@
                                 <td class="outsite-info word-right sid">@item.Sid</td>
                                 <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
                                 <td class="max-word outsite-info note word-left">@item.Note</td>
-                                @if(item.Status == 0)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status yellow">Waiting</span></td>
-                                }
-                                else if (item.Status == 1)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status purple">Borrowing</span></td>
-                                }
-                                else if (item.Status == 2)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status green">Done</span></td>
-                                }
+                                <td class="waiting outsite-info word-left status-bill"><span>Waiting</span></td>
                                 
                                 <td class="outsite-info word-right">
                                     @if (@item.Total != null)
@@ -69,25 +76,10 @@
                                         @item.Total.Value.ToString("0.00");
                                     }
                                 </td>
-                                @if (item.Status == 0)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
-                                        <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                }
-                                else if (item.Status == 1)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    </td>
-                                }
-                                else if (item.Status == 2)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-eye"></i></a>
-                                    </td>
-                                }
+                                <td class="outsite-info active-function">
+                                    <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
+                                    <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
+                                </td>
                             </tr>
                             <tr class="expandable-row detail-info detail" id="expandable-row-@item.Bid">
                                 <td colspan="9" class="child">
@@ -127,6 +119,67 @@
                         }
                     </tbody>
                 </table>
+                @{
+                    int currentPage = ViewBag.CurrentPage;
+                    int totalPages = ViewBag.TotalPages;
+                    int maxVisiblePages = 3;
+                    int prevPage = currentPage - 1;
+                    int nextPage = currentPage + 1;
+                    string controllerName = "OrderProcessing";
+                }
+                @if (@ViewBag.TotalDevices > ViewBag.ItemPerPage)
+                {
+                    <div class="left-side" style="display:block">
+                        <div class="pagination">
+                            <ul>
+                                @if (prevPage > 0)
+                                {
+                                    <li class="btn-back">
+                                        <a class="page-link" href="@Url.Action("FilterBills", controllerName, new { fillOption = ViewBag.fillOption, page = prevPage })"><i class="fa-solid fa-location-arrow"></i></a>
+                                    </li>
+                                }
+
+                                <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = 1 })">1</a></li>
+
+                                @if (currentPage > maxVisiblePages / 2 + 1)
+                                {
+                                    <li>...</li>
+                                }
+
+                                @for (int i = Math.Max(2, currentPage - (int)(maxVisiblePages / 2)); i <= Math.Min(totalPages - 1, currentPage + (int)(maxVisiblePages / 2)); i++)
+                                {
+                                    if (i == currentPage)
+                                    {
+                                        <li class="active"><span>@i</span></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = i })">@i</a></li>
+                                    }
+                                }
+
+                                @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
+                                {
+                                    <li>...</li>
+                                }
+
+                                <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = totalPages })">@totalPages</a></li>
+
+                                @if (nextPage <= totalPages)
+                                {
+                                    <li class="btn-next">
+                                        <a class="page-link" href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = nextPage })"><i class="fa-solid fa-location-arrow"></i></a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                }
+                else if (@ViewBag.TotalDevices <= ViewBag.ItemPerPage)
+                {
+                    <div class="left-side" style="height: 100px"></div>
+                }
             </div>
         </div>
         <div class="col-4">

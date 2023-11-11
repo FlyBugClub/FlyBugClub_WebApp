@@ -20,6 +20,8 @@ namespace FlyBugClub_WebApp.Controllers
         private readonly ILogger<StoreController> _logger;
         private IProductRepository _productRepository;
         private IGenreRepository _genreRepository;
+        private IFacilityRepository _facilityRepository;
+        private IOrderProcessingRepository _orderProcessingRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         SignInManager<ApplicationUser> _signInManager;
 
@@ -27,6 +29,8 @@ namespace FlyBugClub_WebApp.Controllers
                                 ILogger<StoreController> logger, 
                                 IProductRepository productRepository,
                                 IGenreRepository genreRepository,
+                                IFacilityRepository facilityRepository,
+                                IOrderProcessingRepository orderProcessingRepository,
                                 SignInManager<ApplicationUser> signInManager,
                                 UserManager<ApplicationUser> userManager
 
@@ -36,6 +40,8 @@ namespace FlyBugClub_WebApp.Controllers
             _logger = logger;
             _productRepository = productRepository;
             _genreRepository = genreRepository;
+            _facilityRepository = facilityRepository;
+            _orderProcessingRepository = orderProcessingRepository;
             _userManager = userManager;
             _signInManager = signInManager;
         }
@@ -217,11 +223,10 @@ namespace FlyBugClub_WebApp.Controllers
         [HttpGet]
         public IActionResult FillProduct(string fillOption, int page = 1)
         {
-            var filteredProducts = new List<Device>();
+            /*var filteredProducts = new List<Device>();*/
 
             // Lấy dữ liệu dựa trên fillOption
             var dataToPage = new List<Device>();
-
 
             if (fillOption == "all")
             {
@@ -297,6 +302,9 @@ namespace FlyBugClub_WebApp.Controllers
                     cartModel.setAllItem(items);
                 }
 
+                var facilityList = _facilityRepository.GetAll();
+                ViewBag.FacilityId = new SelectList(facilityList, "Id", "Name");
+
                 /*noteBill = note;*/
 
                 m.Card = cartModel;
@@ -314,6 +322,9 @@ namespace FlyBugClub_WebApp.Controllers
             //doc session va luu database
             List<Item>? items = HttpContext.Session.Get<List<Item>>("store");
 
+            var facilityList = _facilityRepository.GetAll();
+            ViewBag.FacilityId = new SelectList(facilityList, "Id", "Name");
+
             BillBorrow bill = new BillBorrow();
 
             string userEmail = string.Empty;
@@ -325,6 +336,10 @@ namespace FlyBugClub_WebApp.Controllers
             string format = "yyyy-MM-ddTHH:mm";
             var note = Request.Form["note"].ToString();
             var receiptDateStr = Request.Form["myDatetimeInput"];
+            var fullName = Request.Form["fullName"];
+            var userID = Request.Form["userId"];
+            var phone = Request.Form["phonenumber"];
+            var selectedFacilityId = Request.Form["selectedFacilityId"];
             DateTime receiptDate;
 
             User u = _ctx.Users.OrderByDescending(x => x.Email == userEmail).Take(1).SingleOrDefault();
@@ -332,10 +347,24 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 int lastTwoDigitsOfYear = DateTime.Now.Year % 100;
                 int currentMonth = DateTime.Now.Month;
-                int nextBillNumber = _ctx.BillBorrows.Count() + 1;
+                int nextBillNumber = 0;
+
+                var maxId = _orderProcessingRepository.GetMaxBillId();
+                if(maxId.Bid != null)
+                {
+                    if (int.TryParse(maxId.Bid.Substring(maxId.Bid.Length - 3), out int lastTwoDigits))
+                    {
+                        nextBillNumber = lastTwoDigits + 1;
+                    }
+                }
 
                 bill.Bid = $"{u.PositionId}{lastTwoDigitsOfYear:00}{currentMonth:00}{nextBillNumber:000}";
                 bill.Sid = u.StudentId;
+                bill.Phone = phone;
+                if (int.TryParse(selectedFacilityId, out int facilityId))
+                {
+                    bill.FacilityId = facilityId;
+                }
                 bill.BorrowDate = DateTime.Now;
                 bill.ReturnDate = null;
                 bill.ReceiveDay = receiptDate;

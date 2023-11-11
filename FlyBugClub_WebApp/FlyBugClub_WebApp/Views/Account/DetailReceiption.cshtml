@@ -1,0 +1,48 @@
+﻿@model List<FlyBugClub_WebApp.Models.BorrowDetail>
+
+@{
+    Layout = "~/Views/Shared/_LayoutDashboardUser.cshtml";
+}
+
+<h2 class="title-favorite">Đơn hàng số @ViewBag.Bid</h2>
+<hr style="width:100%;text-align:left;margin-left:0; color:white; height: 2px; margin-top: 8px;">
+<div class="wrap-info-user receiption-conponent">
+    <div class="de-receiption">
+        <table>
+            <thead>
+                <tr>
+                    <th>Thiết bị</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Tổng tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    decimal total = 0;
+                    decimal subTotal = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    {
+                        subTotal = item.SubTotal * item.Quantity;
+                    }
+                    <tr>
+                        <td>@item.DeviceId</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price.ToString("0.000")</td>
+                        <td>@subTotal.ToString("0.000")</td>
+                    </tr>
+                    {
+                        total += @item.SubTotal;
+                    }
+                }
+                <tr>
+                    <td colspan="3">Tổng hóa đơn</td>
+                    <td>@total.ToString("0.000")</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

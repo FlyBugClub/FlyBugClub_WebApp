@@ -10,6 +10,9 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+
+<h2 class="title-favorite">Lịch sử đơn hàng</h2>
+<hr style="width:100%;text-align:left;margin-left:0; color:white; height: 2px; margin-top: 8px;">
 @if (Model != null && Model.Count > 0)
 {
     <div class="wrap-info-user receiption-conponent">
@@ -73,13 +76,13 @@
                             <td class="outsite-info">
                                 @if(@bill.Status == 0)
                                 {
-                                    <a asp-action="WatchBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
+                                    <a asp-controller="Account" asp-action="DetailReceiption" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
                                     <span class="bluecol"> ||</span>
                                     <a asp-controller="Account" asp-action="DeleteBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-trash"></i></a>
                                 }
                                 else
                                 {
-                                    <a asp-action="WatchBill" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
+                                    <a asp-controller="Account" asp-action="DetailReceiption" asp-route-id="@bill.Bid"><i class="bluecol fa-solid fa-eye"></i></a>
                                 }
                             </td>
                         </tr>

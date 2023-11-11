@@ -17,15 +17,15 @@ public partial class BorrowDetail
 
     public decimal SubTotal { get; set; }
 
-    public int? ReturnQuantity { get; set; }
+    public int ReturnQuantity { get; set; }
 
-    public int? QtyDamage { get; set; }
+    public int QtyDamage { get; set; }
 
     public decimal DepositPrice { get; set; }
 
-    public virtual BillBorrow? BidNavigation { get; set; } = null!;
+    public virtual BillBorrow BidNavigation { get; set; } = null!;
 
-    public virtual Device? Device { get; set; } = null!;
+    public virtual Device Device { get; set; } = null!;
 
     public virtual ICollection<HistoryUpdate> HistoryUpdates { get; set; } = new List<HistoryUpdate>();
 }

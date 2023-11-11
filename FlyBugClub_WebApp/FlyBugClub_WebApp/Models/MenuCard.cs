@@ -13,9 +13,7 @@
         public CardModel Card { get; set; }
         public List<Device> GetDeviceFavorite {  get; set; }
         public BillBorrow BillBorrow { get; set; }
-        public BorrowDetail borrowDetail { get; set; }
-        
-        
+        public BorrowDetail borrowDetail { get; set; }        
 
     }
 }

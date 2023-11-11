@@ -79,14 +79,20 @@
                     <div class="info-sales">
                         <div class="head-income">
                             <h5>Fanacial</h5>
-                            <form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
+                            <form>
+                                <div class="datepicker">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly/>
+                                </div>
+                            </form>
+                            @*<form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
                                 <div class="time-filter">
                                     <input class="input-time month" type="text" id="monthInput" name="month" value="@ViewBag.Month" placeholder="MM" pattern="\d{1,2}" inputmode="numeric" />
                                     <span>/</span>
                                     <input class="input-time year" type="text" id="yearInput" name="year" value="@ViewBag.Year" placeholder="yyyy" pattern="\d{1,4}" inputmode="numeric" />
                                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </div>
-                            </form>
+                            </form>*@
                         </div>
                         <form action="" class="income-form">
                             <div class="table-container">
@@ -115,12 +121,113 @@
                                         }
                                     </tbody>
                                 </table>
-                                @*<h1>Tổng tháng: @ViewBag.TotalAmount1 </h1>*@
+                                
                             </div>
                         </form>
+                        <div class="total-income">
+                            <div class="total">
+                                <div><b>Total income</b></div>
+                                <div><b>@ViewBag.TotalAmount1</b></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col col-md-4">
+                    <div class="row">
+                        <div class="col">
+                            <div class="calendar">
+                                <div class="top-calendar">
+                                    <div class="month-year"id="current-month-year">September 2023</div>
+                                    <div class="icon-next-prev" id="month-year">
+                                        <ul>
+                                            <li><i class="fa-solid fa-angle-left" id="prev-month"></i></li>
+                                            <li><i class="fa-solid fa-angle-right" id="next-month"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="weekdays">
+                                    <li>Mo</li>
+                                    <li>Tu</li>
+                                    <li>We</li>
+                                    <li>Th</li>
+                                    <li>Fr</li>
+                                    <li>Sa</li>
+                                    <li>Su</li>
+                                </ul>
+                                <ul class="days" id="calendar-days">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li><span class="active">10</span></li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li><span class="event">18</span></li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li><span class="event">23</span></li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                </ul>
+                                <div class="schedules">
+                                    <div class="schedules-title">Schedules</div>
+                                    <div class="schedule-wrap">
+                                        <div class="schedule-box">
+                                            <div class="center">
+                                                <div class="schedule-day"><b class="random-background">23</b></div>
+                                                <div class="schedule-content">
+                                                    <p class="content">Nguyễn Văn A created an order</p>
+                                                    <p class="time">14:00 - 16:00 at Thanh Thai</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-wrap">
+                                        <div class="schedule-box">
+                                            <div class="center">
+                                                <div class="schedule-day"><b class="random-background"><span class="number">18</span></b></div>
+                                                <div class="schedule-content">
+                                                    <p class="content">Nguyễn Văn A created an order</p>
+                                                    <p class="time">09:00 - 11:00 at Thanh Thai</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-wrap">
+                                        <div class="schedule-box">
+                                            <div class="center">
+                                                <div class="schedule-day"><b class="random-background">18</b></div>
+                                                <div class="schedule-content">
+                                                    <p class="content">Nguyễn Văn A created an order</p>
+                                                    <p class="time">09:00 - 11:00 at Thanh Thai</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col col-md-4">
                     @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                     {
                         <div class="alert alert-danger">
@@ -158,9 +265,26 @@
                     <div class="calender-aera">
                         
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </section>
-    <section></section>
 </div>
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Mảng màu nền ngẫu nhiên
+        const randomBackgroundColors = [
+            "#ffcdb2", "#ffcdb2", "#e5989b", "#f2e8cf", "#a7c957", "#edf6f9", "#ffddd2", "#e29578",
+            "#fca311", "#f2e9e4", "#caf0f8", "#90e0ef", "#ffb3c1", "#ffb5a7", "#fec89a", "#f8edeb",
+            "#ffe8d6", "#b7b7a4", "#efd3d7", "#eff7f6", "#b2f7ef", "#ffdab9", "#b8b8ff", "#ffeedd"
+        ];
+
+        // Chọn một màu ngẫu nhiên cho mỗi phần tử <b>
+        const randomBackgroundElements = document.querySelectorAll(".random-background");
+
+        randomBackgroundElements.forEach(function (element) {
+            const randomColor = randomBackgroundColors[Math.floor(Math.random() * randomBackgroundColors.length)];
+            element.style.background = randomColor;
+        });
+    });
+ </script>

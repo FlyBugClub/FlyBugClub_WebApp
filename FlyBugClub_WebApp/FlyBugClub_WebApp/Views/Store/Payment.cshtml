@@ -101,8 +101,8 @@
                             <th><input type="text" name="phonenumber" value="@phonenumber"></th>
                         </tr>
                         <tr>
-                            <th>Địa chỉ</th>
-                            <th><input type="text" name="address" value="@address"></th>
+                            <th>Nhận tại cơ sở</th>
+                            <th><select asp-items="@ViewBag.FacilityId" name="selectedFacilityId"></select></th>
                         </tr>
                         <tr>
                             <th>Ngày nhận</th>

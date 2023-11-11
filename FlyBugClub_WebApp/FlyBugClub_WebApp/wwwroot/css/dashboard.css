@@ -98,6 +98,7 @@ section.dashboard{
 /* ============================= */
 
 .dashboard .info-sales{
+    position: relative;
     width: 100%;
     height: fit-content;
     margin: 12px 0;
@@ -112,10 +113,25 @@ section.dashboard{
 }
 
 .dashboard .info-sales h5{
-    padding: 10px;
+    margin: 15px 15px
 }
 
-.dashboard .info-sales .head-income .time-filter{
+/* DATE PICKER */
+
+.head-income .datepicker{
+    padding: 1px 5px 1px 10px;
+    margin: 15px 15px 0 10px;
+    border: 2.3px #000 solid;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.head-income .datepicker input{
+    cursor: pointer;
+}
+
+/*input Date time*/
+.dashboard .info-sales .head-income .time-filter {
     margin: 5px 20px;
     padding: 0 0 0 8px;
     border: 2px #000 solid;
@@ -166,11 +182,31 @@ section.dashboard{
 .dashboard .income-form .table-container::-webkit-scrollbar-thumb {
     background-color: #888; /* Màu nền cho thanh cuộn */
     border-radius: 6px; /* Độ cong góc của thanh cuộn */
+    margin: 0 20px;
 }
 
 .dashboard .income-form table{
-    width: 100%;
+    width: 96%;
     border-collapse: collapse;
+    margin: 0 20px
+
+}
+
+.dashboard .income-form table thead th{
+    background: #e4e4e4;
+    height: 35px;
+}
+
+.dashboard .income-form table thead th:nth-child(1){
+    border-radius: 6px 0 0 6px;
+}
+
+.dashboard .income-form table thead th:nth-child(4){
+    border-radius: 0 6px 6px 0;
+}
+
+.dashboard .income-form table tbody tr:nth-child(even){
+    background: none;    
 }
 
 .dashboard .income-form table thead .stt{
@@ -208,8 +244,182 @@ section.dashboard{
 
 .dashboard .income-form table td{
     padding: 10px 0;
+    border-bottom: 1px #ccc solid;
+}
+
+.info-sales .total-income{
+    width: 95%;
+    position:absolute;
+    bottom: 0;
+}
+
+.info-sales .total-income .total{
+    margin: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-sales .total-income .total b{
+    font-size: 20px;
 }
 
 /* ============================= */
 /* ========= Calender ========== */
 /* ============================= */
+.dashboard .calendar {
+    width: 100%;
+    height: fit-content;
+    margin: 12px 0;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.dashboard .top-calendar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .top-calendar ul{
+    display: flex
+}
+
+.dashboard .top-calendar {
+    font-size: 18px;
+}
+
+.dashboard .top-calendar .month-year, .icon-next-prev {
+    margin: 10px 15px;
+}
+
+.dashboard .top-calendar .icon-next-prev li{
+    background-color: rgba(155, 155, 155,0.4);
+    margin: 0 4px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dashboard .calendar .weekdays {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.dashboard .calendar .weekdays li {
+    display: inline-block;
+    width: 13.4%;
+    color: #666;
+    text-align: center;
+    cursor: default;
+}
+
+.dashboard .calendar .days {
+    padding: 10px 0;
+    margin: 0;
+}
+
+.dashboard .calendar .days li {
+    list-style-type: none;
+  display: inline-block;
+  width: 13.4%;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size:12px;
+  color: #012a4a;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.days li .active {
+    padding: 6px;
+    background: #012a4a;
+    color: white !important;
+    border:none;
+    border-radius: 20px;
+}
+
+.days li span.event {
+    position: relative;
+}
+
+.days li span.event::after {
+    content: "•"; 
+    position: absolute;
+    bottom: -18px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    color: #777;
+}
+
+/*.days li .appoitment {
+    padding: 3.5px;
+    color: #777 !important;
+    border: 3px #eb573d solid;
+    border-radius: 20px;
+}*/
+
+/*.days li .delivered {
+    padding: 5px;
+    background: #eb573d;
+    color: white !important;
+    border: none;
+    border-radius: 10px;
+}*/
+
+
+
+
+
+.dashboard .calendar .schedules-title {
+    margin: 0px 15px 15px 15px;
+    font-size: 18px;
+}
+
+.schedule-wrap{
+    display: flex;
+    justify-content: center;
+}
+
+.schedule-box{
+    position:relative;
+    width: 380px;
+    margin: 6px 0;
+    padding: 15px 15px;
+    border: 1px #000 solid;
+    border-radius: 12px;
+}
+
+.schedule-day{
+    height: fit-content;
+    margin: auto 10px auto 0;
+
+}
+
+.schedule-day b {
+    margin: 0 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    background: #deb781;
+    font-size: 24px;
+}
+
+.random-background {
+    opacity: 0.8;
+}
+
+.schedule-content p {
+    margin-bottom: 0;
+}
+
+.schedule-content .content{
+    font-weight: bolder;
+}
+
+.schedule-content .time {
+    color: #666;
+    font-size: 14px;
+}

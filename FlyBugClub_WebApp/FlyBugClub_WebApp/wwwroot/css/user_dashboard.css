@@ -243,11 +243,45 @@
 }
 
 /*==========================*/
-/*===== FAVORITE DEVICE ====*/
+/*==== DETAIL Receiption ===*/
 /*==========================*/
 
-h2.title-favorite{
+.de-receiption *{
     color:#fff;
+}
+
+.de-receiption table {
+    width: 100%;
+}
+
+.de-receiption table th,td{
+    text-align: center;
+}
+
+.de-receiption table th{
+    height: 35px;
+    background: #e4e4e4;
+    color: #012a4a;
+}
+
+.de-receiption table th:nth-child(1) {
+    border-radius: 6px 0 0 6px;
+}
+
+.de-receiption table th:nth-child(4) {
+    border-radius: 0 6px 6px 0;
+}
+
+.de-receiption table td{
+    height: 60px;
+    border-bottom: 2px solid #fff;
+}
+
+/*==========================*/
+/*===== FAVORITE DEVICE ====*/
+/*==========================*/
+h2.title-favorite {
+    color: #fff;
     font-size: 24px;
 }
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -51,22 +51,17 @@ public partial class FlyBugClubWebApplicationContext : DbContext
 
     public virtual DbSet<Position> Positions { get; set; }
 
+    public virtual DbSet<ReceivingFacility> ReceivingFacilities { get; set; }
+
     public virtual DbSet<Supplier> Suppliers { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<YeuCauUngTuyen> YeuCauUngTuyens { get; set; }
 
-    /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-<<<<<<< Updated upstream
-=======
-        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
-*/
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-
-        => optionsBuilder.UseSqlServer("Server=sql.bsite.net\\MSSQL2016;uid=ngunemay123_web_clb;password=conchongu0123;database=ngunemay123_web_clb;Encrypt=true;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;uid=sa;password=1;database=FlyBugClub_WebApplication;Encrypt=true;TrustServerCertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -164,6 +159,9 @@ public partial class FlyBugClubWebApplicationContext : DbContext
             entity.Property(e => e.BorrowDate).HasColumnType("datetime");
             entity.Property(e => e.DepositPriceOnBill).HasColumnType("money");
             entity.Property(e => e.Note).HasMaxLength(200);
+            entity.Property(e => e.Phone)
+                .HasMaxLength(11)
+                .IsUnicode(false);
             entity.Property(e => e.ReceiveDay).HasColumnType("datetime");
             entity.Property(e => e.ReturnDate).HasColumnType("datetime");
             entity.Property(e => e.Sid)
@@ -172,6 +170,11 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .HasColumnName("SID");
             entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
             entity.Property(e => e.Total).HasColumnType("money");
+
+            entity.HasOne(d => d.Facility).WithMany(p => p.BillBorrows)
+                .HasForeignKey(d => d.FacilityId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_BillBorrow_Receiving_Facility");
 
             entity.HasOne(d => d.SidNavigation).WithMany(p => p.BillBorrows)
                 .HasForeignKey(d => d.Sid)
@@ -422,6 +425,13 @@ public partial class FlyBugClubWebApplicationContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("PositionID");
             entity.Property(e => e.PositionName).HasMaxLength(50);
+        });
+
+        modelBuilder.Entity<ReceivingFacility>(entity =>
+        {
+            entity.ToTable("Receiving_Facility");
+
+            entity.Property(e => e.Name).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Supplier>(entity =>

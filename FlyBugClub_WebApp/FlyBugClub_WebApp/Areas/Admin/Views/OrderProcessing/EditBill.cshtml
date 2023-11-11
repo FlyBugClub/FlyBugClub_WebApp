@@ -1,4 +1,4 @@
-﻿@model FlyBugClub_WebApp.Models.BillBorrow
+﻿  @model FlyBugClub_WebApp.Models.BillBorrow
 @inject IProductRepository ProductRepository
 @inject IOrderProcessingRepository OrderProcess
 
@@ -21,8 +21,30 @@
                             <span asp-validation-for="Sid" class="text-danger"></span>
                         </div>
                         <div class="form-group">
+                            <label asp-for="FacilityId" class="control-label">Delivery facility</label>
+                            <input asp-for="FacilityId" class="form-control" asp-items="ViewBag.FacilityName" readonly  style="display:none"/>
+                            <input class="form-control" value="@ViewBag.FacilityName" readonly />
+                            <span asp-validation-for="Sid" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label">Phone Number</label>
+                            <input asp-for="Phone" class="form-control" asp-items="ViewBag.Phone" readonly />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SupplierId" class="control-label">Supplier device</label>
+                            <select asp-for="SupplierId" class="form-control" asp-items="@ViewBag.SupplierList"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FeeShip" class="control-label">FeeShip</label>
+                            <input asp-for="FeeShip" class="form-control" />
+                            <span asp-validation-for="FeeShip" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
                             <label asp-for="BorrowDate" class="control-label">Borrow date</label>
-                            <input asp-for="BorrowDate" class="form-control" readonly  />
+                            <input asp-for="BorrowDate" class="form-control" readonly />
                             <span asp-validation-for="BorrowDate" class="text-danger"></span>
                         </div>
                         <div class="form-group">
@@ -34,18 +56,6 @@
                             <label asp-for="ReceiveDay" class="control-label">Receive date</label>
                             <input asp-for="ReceiveDay" class="form-control" />
                             <span asp-validation-for="ReceiveDay" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label asp-for="SupplierId" class="control-label">Supplier device</label>
-                            <select asp-for="SupplierId" class="form-control" asp-items="@ViewBag.SupplierList"></select>
-                            @*<span asp-validation-for="SupplierId" class="text-danger"></span>*@
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="FeeShip" class="control-label">FeeShip</label>
-                            <input asp-for="FeeShip" class="form-control" />
-                            <span asp-validation-for="FeeShip" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Total" class="control-label">Total</label>
@@ -67,7 +77,10 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <div class="center">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+
                 </div>
             </form>
         </div>
@@ -96,16 +109,16 @@
                             <td>@item.ReturnQuantity</td>
                             <td class="word-right">@item.Price.ToString("0.00")</td>
                             <td>
-                                <a asp-action="EditBillDetail" 
-                                asp-route-billId="@item.Bid"  
-                                asp-route-detailId="@item.BorrowDetailId">
+                                <a asp-action="EditBillDetail"
+                               asp-route-billId="@item.Bid"
+                               asp-route-detailId="@item.BorrowDetailId">
                                     <i class="fa-solid fa-pen"></i>
                                 </a>
                             </td>
                         </tr>
                         i++;
                     }
-                    
+
                 </tbody>
             </table>
         </div>
