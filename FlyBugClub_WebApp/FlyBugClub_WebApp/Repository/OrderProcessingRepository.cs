@@ -25,6 +25,7 @@ namespace FlyBugClub_WebApp.Repository
         public BillBorrow GetMaxBillId();
         public BorrowDetail findBorrowDetailById(string borrowDetailId);
         public BorrowDetail findBillDetailById(string billId, string detailId);
+        public List<BillBorrow> findBillByStatus(int statusId);
         public string GetFacilityNameById(int facilityId);
     }
     public class OrderProcessingRepository : IOrderProcessingRepository
@@ -202,6 +203,11 @@ namespace FlyBugClub_WebApp.Repository
         public BillBorrow GetMaxBillId()
         {
             return _ctx.BillBorrows.OrderByDescending(x=>x.Bid).Take(1).SingleOrDefault();
+        }
+
+        public List<BillBorrow> findBillByStatus(int statusId)
+        {
+            return _ctx.BillBorrows.Where(x => x.Status == statusId).ToList();
         }
     }
 }

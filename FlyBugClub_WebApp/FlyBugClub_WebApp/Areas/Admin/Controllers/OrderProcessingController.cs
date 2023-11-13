@@ -72,17 +72,33 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             var billList = new List<BillBorrow>();
 
-            if (filterBills == "waiting_bill")
+            if (filterBills == "all")
             {
-                billList = _orderProcessingRepository.GetWaitingBillsWithDetails();
+                billList = _orderProcessingRepository.GetAllBillsWithDetails();
+            }
+            else if (filterBills == "waiting_bill")
+            {
+                billList = _orderProcessingRepository.findBillByStatus(0);
             }
             else if (filterBills == "borrowing_bill")
             {
-                billList = _orderProcessingRepository.GetBorrowingBillsWithDetails();
+                billList = _orderProcessingRepository.findBillByStatus(1);
             }
             else if (filterBills == "done_bill")
             {
-                billList = _orderProcessingRepository.GetDoneBillsWithDetails();
+                billList = _orderProcessingRepository.findBillByStatus(2);
+            }
+
+            List<BillBorrow> getAllBill = _orderProcessingRepository.GetAllBillsWithDetails();
+            foreach (var bill in getAllBill)
+            {
+                /*bill.Sid = _orderProcessingRepository.GetUserName(bill.Sid);*/
+                var userName = bill.SidNavigation.Name;
+
+                foreach (var detail in bill.BorrowDetails)
+                {
+                    detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                }
             }
 
             /*==================== Pagination ====================*/
@@ -109,6 +125,13 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             ViewBag.CurrentPage = page;
             ViewBag.fillOption = filterBills;
 
+            int countWaiting = _ctx.BillBorrows.Count(x => x.Status == 0);
+            int countBorrowing = _ctx.BillBorrows.Count(x => x.Status == 1);
+            int countDone = _ctx.BillBorrows.Count(x => x.Status == 2);
+
+            ViewBag.countWaiting = countWaiting;
+            ViewBag.countBorrowing = countBorrowing;
+            ViewBag.countDone = countDone;
 
             return View("FilterBills", billModel);
         }

@@ -160,6 +160,106 @@
     opacity: 1;
 }
 
+/* btn */
+
+.change-info  .avatar-area {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.change-info img.change-avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px #fff solid;
+}
+
+.change-info .avatar-area button {
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 80px;
+    cursor: pointer;
+    transition: 0 .5s;
+    font-size: 9px;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}
+
+.change-info .avatar-area button::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.change-info .avatar-area button::before {
+    content: '\f030';
+    margin-left: 6px;
+    font-family: fontAwesome;
+    font-size: 25px;
+    color: #fff;
+    display: inline-block;
+    -webkit-user-select: none;
+}
+
+.change-info .avatar-area button::after {
+    content: 'Update';
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    top: 70px;
+}
+
+.change-info .avatar-area button:hover {
+    opacity: 1;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 /*.change-info .ChangeInfoUser #upload-img {
     display: none;
 }*/

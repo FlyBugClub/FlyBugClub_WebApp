@@ -6,9 +6,9 @@
         <div class="col-8">
             <div class="function function-bill">
                 <div class="top-box">
-                    @*<div class="count">
+                    <div class="count">
                         <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
-                    </div>*@
+                    </div>
                     <div class="combobox">
                         <form asp-controller="OrderProcessing" asp-action="FilterBills" method="get">
                             <select name="filterBills" id="filterBills" onchange="this.form.submit()">
@@ -135,11 +135,11 @@
                                 @if (prevPage > 0)
                                 {
                                     <li class="btn-back">
-                                        <a class="page-link" href="@Url.Action("FilterBills", controllerName, new { fillOption = ViewBag.fillOption, page = prevPage })"><i class="fa-solid fa-location-arrow"></i></a>
+                                        <a class="page-link" href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = prevPage })"><i class="fa-solid fa-location-arrow"></i></a>
                                     </li>
                                 }
 
-                                <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = 1 })">1</a></li>
+                                <li><a href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = 1 })">1</a></li>
 
                                 @if (currentPage > maxVisiblePages / 2 + 1)
                                 {
@@ -154,7 +154,7 @@
                                     }
                                     else
                                     {
-                                        <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = i })">@i</a></li>
+                                        <li><a href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = i })">@i</a></li>
                                     }
                                 }
 
@@ -163,12 +163,12 @@
                                     <li>...</li>
                                 }
 
-                                <li><a href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = totalPages })">@totalPages</a></li>
+                                <li><a href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = totalPages })">@totalPages</a></li>
 
                                 @if (nextPage <= totalPages)
                                 {
                                     <li class="btn-next">
-                                        <a class="page-link" href="@Url.Action("FillProduct", controllerName, new { fillOption = ViewBag.fillOption, page = nextPage })"><i class="fa-solid fa-location-arrow"></i></a>
+                                        <a class="page-link" href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = nextPage })"><i class="fa-solid fa-location-arrow"></i></a>
                                     </li>
                                 }
 
