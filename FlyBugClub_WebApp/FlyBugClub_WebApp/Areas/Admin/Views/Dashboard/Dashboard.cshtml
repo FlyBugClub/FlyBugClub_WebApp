@@ -1,9 +1,9 @@
 @model List<FlyBugClub_WebApp.Models.BillBorrow>
-
 <div class="center">
     
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src = "~/js/datepicker.js"></script>
 <div class="body">
     <section class="dashboard">
         <div class="container">
@@ -82,9 +82,12 @@
                             <form>
                                 <div class="datepicker">
                                     <i class="fa-solid fa-calendar"></i>
-                                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" readonly/>
+                                    <input type="text" name="daterange" value="" class="" id="cuong" readonly/>
+                                    
                                 </div>
+                                
                             </form>
+                            
                             @*<form method="get" asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard">
                                 <div class="time-filter">
                                     <input class="input-time month" type="text" id="monthInput" name="month" value="@ViewBag.Month" placeholder="MM" pattern="\d{1,2}" inputmode="numeric" />
@@ -288,3 +291,19 @@
         });
     });
  </script>
+<script>
+
+ 
+    document.getElementById('cuong').onchange = function () {
+        
+        let value = document.getElementById("cuong").className;
+        alert(value);
+       
+    };
+</script>
+
+
+
+
+
+
