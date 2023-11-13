@@ -6,14 +6,26 @@
 
 <div class="wrap-info-user change-info">
     <div class="container">
-        <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
-            <div class="row">
-                <div class="col-3">
-                    <div class="avatar-area center">
-                        <img class="change-avatar" src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
-                        <input type="file" asp-for="ImgUser" id="upload-img" value="Change"/>
+        <div class="row">
+            <div class="col-3">
+                <div class="avatar-area center">
+                    <img class="change-avatar" src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
+                    @*<input type="file" asp-for="ImgUser" id="upload-img" value="Change"/>*@
+                    <button id="upload-img"></button>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Some text in the Modal..</p>
+                        </div>
+
                     </div>
                 </div>
+            </div>
+            <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col">
@@ -63,17 +75,35 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
-@*<script>   
-    $(function () {
-        $("#upload_link").on('click', function (e) {
-            e.preventDefault();
-            $("#upload-img:hidden").trigger('click');
-        });
-    });
-</script>*@
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
+    // Get the button that opens the modal
+    var btn = document.getElementById("upload-img");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
