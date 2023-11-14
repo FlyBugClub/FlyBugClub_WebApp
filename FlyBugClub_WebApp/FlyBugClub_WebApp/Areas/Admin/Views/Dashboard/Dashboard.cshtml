@@ -104,24 +104,11 @@
                                         <tr>
                                             <th class="stt">#</th>
                                             <th class="date">Date</th>
-                                            <th>Receiption</th>
                                             <th>Income</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @{
-                                            int i = 1;
-                                        }
-                                        @foreach (var item in Model)
-                                        {
-                                            <tr>
-                                                <td>@i</td>
-                                                <td>@item.BorrowDate.ToString("dd/MM/yyyy")</td>
-                                                <td>12</td>
-                                                <td class="word-right px-4">@item.Total.Value.ToString("0.00") đ</td>
-                                            </tr>
-                                            i++;
-                                        }
+                                    <tbody id="list_billborrow">
+                                        
                                     </tbody>
                                 </table>
                                 
@@ -130,7 +117,9 @@
                         <div class="total-income">
                             <div class="total">
                                 <div><b>Total income</b></div>
-                                <div><b>@ViewBag.TotalAmount1</b></div>
+                                <div>
+                                    <b id="TotalIncome"></b>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -291,15 +280,69 @@
         });
     });
  </script>
+
+
 <script>
 
  
     document.getElementById('cuong').onchange = function () {
         
-        let value = document.getElementById("cuong").className;
-        alert(value);
-       
+        let date = document.getElementById("cuong").className;
+        
+        if(date !== null)
+        {
+            
+            fetchData(date);
+        }  
     };
+    async function fetchData(date) {
+        const response = await fetch(`/api/users/getbillbydate?date=${date}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json(); // Chuyển đổi response thành JSON
+        console.log(data);
+        // Ở đây, bạn có thể xử lý dữ liệu theo cách mong muốn
+        const tbody = document.getElementById("list_billborrow");
+        
+        // Xóa nội dung cũ của tbody
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+        var Sum = 0;
+       
+        data.forEach((item, i) => {
+            const receiveDay = new Date(item.receiveDay);
+            const status = item.status;
+            const convertedValue = parseFloat(item.total) * 1000;
+            Sum = Sum + convertedValue;
+            const formattedValue = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'VND',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            }).format(convertedValue);
+
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+            <td>${i+1}</td>
+            <td>${receiveDay.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+            <td>${formattedValue}</td>
+        `;
+            tbody.appendChild(newRow);
+           
+        });
+        const formattedSum = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(Sum);
+        const TotalIncome = document.getElementById("TotalIncome");
+
+        TotalIncome.innerHTML = formattedSum;
+    }
 </script>
 
 
