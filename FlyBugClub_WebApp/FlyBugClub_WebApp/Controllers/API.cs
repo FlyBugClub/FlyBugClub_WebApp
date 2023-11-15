@@ -3,6 +3,7 @@ using FlyBugClub_WebApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace FlyBugClub_WebApp.Controllers
 {
@@ -75,6 +76,20 @@ namespace FlyBugClub_WebApp.Controllers
 
 
         }
-       
+
+        [HttpGet]
+        [Route("getbillbydate")]
+        public async Task<List<BillBorrow>> GetBillByDate(string date)
+        {
+            string[] two_date = date.Split("@@");
+            DateTime startDate = DateTime.ParseExact(two_date[0], "yyyy-MM-dd", CultureInfo.InvariantCulture); // Chỉnh lại định dạng ngày nếu cần
+            DateTime endDate = DateTime.ParseExact(two_date[1], "yyyy-MM-dd", CultureInfo.InvariantCulture).AddDays(1); // Chỉnh lại định dạng ngày nếu cần
+
+            var result = _ctx.BillBorrows.Where(u => u.BorrowDate >= startDate && u.BorrowDate <= endDate).ToList();
+
+            return result;
+
+        }
+
     }
 }
