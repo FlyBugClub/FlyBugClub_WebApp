@@ -170,7 +170,7 @@ section.dashboard{
 }
 
 .dashboard .income-form .table-container {
-    height: 250px;
+    height: 230px;
     overflow-y: auto; 
     position: relative; 
 }
@@ -248,19 +248,22 @@ section.dashboard{
 }
 
 .info-sales .total-income{
+    padding-bottom: 10px;
     width: 95%;
-    position:absolute;
-    bottom: 0;
 }
 
 .info-sales .total-income .total{
-    margin: 10px 20px;
+    border-top: 1.5px solid #012a4a;
+    border-bottom: 1.5px solid #012a4a;
+    margin: 0 20px;
+    padding: 5px 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .info-sales .total-income .total b{
+    padding: 0 20px;
     font-size: 20px;
 }
 

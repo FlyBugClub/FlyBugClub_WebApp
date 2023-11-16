@@ -6,9 +6,36 @@
         <div class="col-8">
             <div class="function function-bill">
                 <div class="top-box">
-                    <div class="count">
-                        <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
-                    </div>
+                    @if (ViewBag.fillOption == "all_bills")
+                    {
+                        <div class="count">
+                            <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
+                        </div>
+                        <div class="count">
+                            <p>Borrowing: <span class="text-purple">@ViewBag.countBorrowing</span></p>
+                        </div>
+                        <div class="count">
+                            <p>Done: <span class="text-green">@ViewBag.countDone</span></p>
+                        </div>
+                    }
+                    else if (ViewBag.fillOption == "waiting_bill")
+                    {
+                        <div class="count">
+                            <p>Waitting: <span class="text-yellow">@ViewBag.countWaiting</span></p>
+                        </div>
+                    }
+                    else if (ViewBag.fillOption == "borrowing_bill")
+                    {
+                        <div class="count">
+                            <p>Borrowing: <span class="text-yellow">@ViewBag.countBorrowing</span></p>
+                        </div>
+                    }
+                    else if (ViewBag.fillOption == "done_bill")
+                    {
+                        <div class="count">
+                            <p>Done: <span class="text-yellow">@ViewBag.countDone</span></p>
+                        </div>
+                    }
                     <div class="combobox">
                         <form asp-controller="OrderProcessing" asp-action="FilterBills" method="get">
                             <select name="filterBills" id="filterBills" onchange="this.form.submit()">
@@ -52,7 +79,6 @@
                             <th>User name</th>
                             <th>UID</th>
                             <th class="date">Borrow date</th>
-                            <th class="note">Note</th>
                             <th class="status">Status</th>
                             <th class="money">Money</th>
                             <th>#</th>
@@ -66,8 +92,18 @@
                                 <td class="outsite-info name word-left">@item.SidNavigation.Name</td>
                                 <td class="outsite-info word-right sid">@item.Sid</td>
                                 <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
-                                <td class="max-word outsite-info note word-left">@item.Note</td>
-                                <td class="waiting outsite-info word-left status-bill"><span>Waiting</span></td>
+                                @if (item.Status == 0)
+                                {
+                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status yellow">Waiting</span></td>
+                                }
+                                else if (item.Status == 1)
+                                {
+                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status purple">Borrowing</span></td>
+                                }
+                                else if (item.Status == 2)
+                                {
+                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status green">Done</span></td>
+                                }
                                 
                                 <td class="outsite-info word-right">
                                     @if (@item.Total != null)
@@ -119,14 +155,16 @@
                         }
                     </tbody>
                 </table>
-                @{
-                    int currentPage = ViewBag.CurrentPage;
-                    int totalPages = ViewBag.TotalPages;
-                    int maxVisiblePages = 3;
-                    int prevPage = currentPage - 1;
-                    int nextPage = currentPage + 1;
-                    string controllerName = "OrderProcessing";
-                }
+            </div>
+            @{
+                int currentPage = ViewBag.CurrentPage;
+                int totalPages = ViewBag.TotalPages;
+                int maxVisiblePages = 6;
+                int prevPage = currentPage - 1;
+                int nextPage = currentPage + 1;
+                string controllerName = "OrderProcessing";
+            }
+            <div class="center">
                 @if (@ViewBag.TotalDevices > ViewBag.ItemPerPage)
                 {
                     <div class="left-side" style="display:block">
@@ -143,7 +181,7 @@
 
                                 @if (currentPage > maxVisiblePages / 2 + 1)
                                 {
-                                    <li>...</li>
+                                    <li class="dot">...</li>
                                 }
 
                                 @for (int i = Math.Max(2, currentPage - (int)(maxVisiblePages / 2)); i <= Math.Min(totalPages - 1, currentPage + (int)(maxVisiblePages / 2)); i++)
@@ -160,7 +198,7 @@
 
                                 @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
                                 {
-                                    <li>...</li>
+                                    <li class="dot">...</li>
                                 }
 
                                 <li><a href="@Url.Action("FilterBills", controllerName, new { filterBills = ViewBag.fillOption, page = totalPages })">@totalPages</a></li>
@@ -181,7 +219,8 @@
                     <div class="left-side" style="height: 100px"></div>
                 }
             </div>
-        </div>
+            </div>
+            
         <div class="col-4">
             <div class="function function-bill">
                 <h5>History Update</h5>

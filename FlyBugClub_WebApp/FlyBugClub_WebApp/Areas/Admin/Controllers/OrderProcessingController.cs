@@ -72,7 +72,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             var billList = new List<BillBorrow>();
 
-            if (filterBills == "all")
+            if (filterBills == "all_bills")
             {
                 billList = _orderProcessingRepository.GetAllBillsWithDetails();
             }
@@ -103,7 +103,7 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
 
             /*==================== Pagination ====================*/
 
-            int itemsPerPage = 1; // Số mục muốn hiển thị cho mỗi trang
+            int itemsPerPage = 16; // Số mục muốn hiển thị cho mỗi trang
 
             // Lấy tổng số mục từ nguồn dữ liệu của bạn (ví dụ: cơ sở dữ liệu)
             int totalItems = billList.Count();

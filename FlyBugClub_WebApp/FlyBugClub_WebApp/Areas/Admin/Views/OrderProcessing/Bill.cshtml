@@ -34,7 +34,6 @@
                             <th>User name</th>
                             <th>UID</th>
                             <th class="date">Borrow date</th>
-                            <th class="note">Note</th>
                             <th class="status">Status</th>
                             <th class="money">Money</th>
                             <th>#</th>
@@ -48,7 +47,6 @@
                                 <td class="outsite-info name word-left">@item.SidNavigation.Name</td>
                                 <td class="outsite-info word-right sid">@item.Sid</td>
                                 <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
-                                <td class="max-word outsite-info note word-left">@item.Note</td>
                                 @if(item.Status == 0)
                                 {
                                     <td class="waiting outsite-info word-left status-bill"><span class="wrap-status yellow">Waiting</span></td>

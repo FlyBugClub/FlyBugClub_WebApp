@@ -302,93 +302,92 @@ section.body .search {
     color: white;
     padding: 10px 40px;
     border-radius: 6px;
-    /* background-color: orange; */
 }
 
-    .body .right .store .pagination ul {
-        margin: 20px 30px;
-    }
+.body .right .store .pagination ul {
+margin: 20px 30px;
+}
 
-        .body .right .store .pagination ul li {
-            display: inline-block;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 45px;
-            user-select: none !important;
-        }
+.body .right .store .pagination ul li {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 45px;
+    user-select: none !important;
+}
 
-            .body .right .store .pagination ul li span {
-                font-size: 20px;
-                transform: rotate(0deg);
-            }
+.body .right .store .pagination ul li span {
+    font-size: 20px;
+    transform: rotate(0deg);
+}
 
-            .body .right .store .pagination ul li span:hover {
-                transform: rotate(15deg);
-                color: #012a4a;
-            }
+.body .right .store .pagination ul li span:hover {
+    transform: rotate(15deg);
+    color: #012a4a;
+}
 
-            .body .right .store .pagination ul li a {
-                color: #fff;
-                font-size: 20px;
-                transform: rotate(0deg);
-            }
+.body .right .store .pagination ul li a {
+    color: #fff;
+    font-size: 20px;
+    transform: rotate(0deg);
+}
 
-                .body .right .store .pagination ul li a:hover {
-                    transform: rotate(15deg);
-                    color: #012a4a;
-                }
+.body .right .store .pagination ul li a:hover {
+    transform: rotate(15deg);
+    color: #012a4a;
+}
 
-/*            .body .right .store .pagination ul li .btn-next a i{
-                background-color: #3d3d3d;
-                outline: none;
-                border: none;
-                rotate: 45deg;
-            }*/
+/*.body .right .store .pagination ul li .btn-next a i{
+    background-color: #3d3d3d;
+    outline: none;
+    border: none;
+    rotate: 45deg;
+}*/
 
-            a.page-link{
-                background-color:transparent;
-                color: white;
-                border: none;
+a.page-link{
+    background-color:transparent;
+    color: white;
+    border: none;
                 
-            }
+}
 
-            a.page-link:hover{
-                background-color:transparent;
-                color: white;
-                border: none;
-                outline:none;
-            }
+a.page-link:hover{
+    background-color:transparent;
+    color: white;
+    border: none;
+    outline:none;
+}
 
-            .body .right .store .pagination ul li.btn-back a i {
-                background-color: #3d3d3d;
-                font-size: 22px;
-                outline: none;
-                border: none;
-                rotate: 230deg;
-                cursor: pointer;
-            }
+.body .right .store .pagination ul li.btn-back a i {
+    background-color: #3d3d3d;
+    font-size: 22px;
+    outline: none;
+    border: none;
+    rotate: 230deg;
+    cursor: pointer;
+}
 
-            .body .right .store .pagination ul li.btn-next a i {
-                rotate: 45deg;
-                font-size: 22px;
-                cursor: pointer;
-            }
+.body .right .store .pagination ul li.btn-next a i {
+    rotate: 45deg;
+    font-size: 22px;
+    cursor: pointer;
+}
 
-    .body .right .store .pagination .btn1 i,
-    .body .right .store .pagination .btn2 i {
-        display: inline-flex;
-        align-items: center;
-        font-size: 35px;
-        background-color: transparent;
-        color: white;
-    }
+.body .right .store .pagination .btn1 i,
+.body .right .store .pagination .btn2 i {
+    display: inline-flex;
+    align-items: center;
+    font-size: 35px;
+    background-color: transparent;
+    color: white;
+}
 
-    .body .right .store .pagination ul li.active {
-        color: #012A4A;
-        background-color: #D9D9D9;
-        background-repeat: no-repeat;
-    }
+.body .right .store .pagination ul li.active {
+    color: #012A4A;
+    background-color: #D9D9D9;
+    background-repeat: no-repeat;
+}
