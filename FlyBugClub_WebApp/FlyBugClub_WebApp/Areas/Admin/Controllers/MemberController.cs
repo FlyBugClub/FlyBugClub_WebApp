@@ -14,17 +14,23 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
     [Authorize(Roles = "Administrator")]
     public class MemberController : Controller
     {
+
         private readonly FlyBugClubWebApplicationContext _ctx;
         private IMemberRepository _memberRepository;
         private IPositionRepository _positionRepository;
-
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         public MemberController(FlyBugClubWebApplicationContext ctx, 
                                 IMemberRepository memberRepository,
-                                IPositionRepository positionRepository)
+                                IPositionRepository positionRepository, 
+                                UserManager<ApplicationUser> userManager,
+                                RoleManager<IdentityRole> roleManager)
         {
             _ctx = ctx;
             _memberRepository = memberRepository;
-            _positionRepository = positionRepository;   
+            _positionRepository = positionRepository;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Member()
@@ -100,13 +106,22 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
-            var user = await _ctx.Users.FindAsync(id);
+            var UserManager = await _userManager.FindByNameAsync(id);
+            var user = await _ctx.Users.FindAsync(UserManager.UID);
             if (user == null)
             {
                 return NotFound();
             }
-
+            var userRoles = await _userManager.GetRolesAsync(UserManager);
+           
+            if (userRoles.Contains("Administrator"))
+            {
+                ViewBag.Role = "Admin";
+            }
+            else
+            {
+                ViewBag.Role = "Customer";
+            }
             var roleNameList = _positionRepository.GetAll();
             ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
 
@@ -119,38 +134,45 @@ namespace FlyBugClub_WebApp.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("StudentId,Name,Gender,Phone,Address,Email,Major,Faculty,ImgUser,PositionId,Account")] User user)
+        public async Task<IActionResult> Edit(string id, [Bind("StudentId,Name,Gender,Phone,Address,Email,Major,Faculty,ImgUser,PositionId,Account")] User user,string role)
         {
             var roleNameList = _positionRepository.GetAll();
-            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");
-
-            if (id != user.StudentId)
+            ViewBag.PositionSelectList = new SelectList(roleNameList, "PositionId", "PositionName");   
+            var UserManager = await _userManager.FindByNameAsync(user.Email);
+            var User = await _ctx.Users.FindAsync(UserManager.UID);
+            if (user == null)
             {
-                return NotFound();
+                // Xử lý trường hợp người dùng không tồn tại
+                return NotFound("User not found");
+            }
+            if (role.Equals("Admin"))
+            {
+                var userRoles = await _userManager.GetRolesAsync(UserManager);                // Kiểm tra xem người dùng đã tồn tại không
+                await _userManager.RemoveFromRolesAsync(UserManager, userRoles);
+
+                // Thêm người dùng vào vai trò mới
+                await _userManager.AddToRoleAsync(UserManager, "Administrator");
+                ViewBag.Role = "Admin";
+            }
+            else
+            {
+                var userRoles = await _userManager.GetRolesAsync(UserManager);                // Kiểm tra xem người dùng đã tồn tại không
+                await _userManager.RemoveFromRolesAsync(UserManager, userRoles);
+
+                // Thêm người dùng vào vai trò mới
+                await _userManager.AddToRoleAsync(UserManager, "Customer");
+                ViewBag.Role = "Customer";
+
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _ctx.Update(user);
-                    await _ctx.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserExists(user.StudentId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
+            UserManager.PositionID = user.PositionId;
+            var result = await _userManager.UpdateAsync(UserManager);
+            User.PositionId = user.PositionId;
+            _ctx.Users.Update(User);
+            await _ctx.SaveChangesAsync();
 
             ViewData["PositionId"] = new SelectList(_ctx.Positions, "PositionId", "PositionId", user.PositionId);
+
             return View(user);
         }
 
