@@ -117,52 +117,7 @@
     border: 5px #fff solid;
 }
 
-.change-info .ChangeInfoUser .avatar-area input{
-    position:absolute;
-    bottom: 0;
-    outline: none;
-    color: transparent;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px 80px;
-    cursor: pointer;
-    transition: 0 .5s;
-    font-size: 9px;
-    background-color: rgba(0,0,0,0.5);
-    opacity: 0;
-}
-
-.change-info .ChangeInfoUser .avatar-area input::-webkit-file-upload-button{
-    visibility: hidden;
-}
-
-.change-info .ChangeInfoUser .avatar-area input::before{
-    content:'\f030';
-    margin-left: 6px;
-    font-family: fontAwesome;
-    font-size: 25px;
-    color:#fff;
-    display: inline-block;
-    -webkit-user-select: none;
-}
-
-.change-info .ChangeInfoUser .avatar-area input::after{
-    content: 'Update';
-    font-family: Arial;
-    font-weight: bold;
-    font-size: 12px;
-    color: #fff;
-    display:block;
-    top: 70px;
-}
-
-.change-info .ChangeInfoUser .avatar-area input:hover{
-    opacity: 1;
-}
-
-/* btn */
-
-.change-info  .avatar-area {
+.change-info .avatar-area {
     position: relative;
     height: 200px;
     width: 200px;
@@ -178,7 +133,7 @@
     border: 5px #fff solid;
 }
 
-.change-info .avatar-area button {
+.change-info .avatar-area button.upload-img {
     position: absolute;
     bottom: 0;
     outline: none;
@@ -193,11 +148,11 @@
     opacity: 0;
 }
 
-.change-info .avatar-area button::-webkit-file-upload-button {
+.change-info .avatar-area button.upload-img::-webkit-file-upload-button {
     visibility: hidden;
 }
 
-.change-info .avatar-area button::before {
+.change-info .avatar-area button.upload-img::before {
     content: '\f030';
     margin-left: 6px;
     font-family: fontAwesome;
@@ -207,7 +162,7 @@
     -webkit-user-select: none;
 }
 
-.change-info .avatar-area button::after {
+.change-info .avatar-area button.upload-img::after {
     content: 'Update';
     font-family: Arial;
     font-weight: bold;
@@ -217,22 +172,22 @@
     top: 70px;
 }
 
-.change-info .avatar-area button:hover {
+.change-info .avatar-area button.upload-img:hover {
     opacity: 1;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding: 25px 0; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 /* Modal Content */
@@ -241,7 +196,7 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 70%;
 }
 
 /* The Close Button */
@@ -259,25 +214,11 @@
   cursor: pointer;
 }
 
-
-/*.change-info .ChangeInfoUser #upload-img {
-    display: none;
-}*/
-/*.change-info .ChangeInfoUser .edit-info {
-    margin-top: 10px;
-    padding: 5px 15px;
-    background: #fff;
-    color: #000;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    text-align:center;
-}*/
 .change-info .ChangeInfoUser .edit-info i {
     margin: 0 8px 0 0;
     color: #000;
-}
-
+}s
+*/
 /*==========================*/
 /*======= Receiption =======*/
 /*==========================*/

@@ -11,18 +11,87 @@
                 <div class="avatar-area center">
                     <img class="change-avatar" src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
                     @*<input type="file" asp-for="ImgUser" id="upload-img" value="Change"/>*@
-                    <button id="upload-img"></button>
-
+                    <button class="upload-img" id="upload-img"></button>
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
-
                         <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
+                        <div style="width: 100%">
+                            <div class="center">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <div class="card">
+                                        <div class="card-header">Crop Image File</div>
+                                        <div class="card-body">
+                                            <div id="cropper1"></div>
+                                            <input type="file" id="BrowseFile" class="form-control" value="Choose Image" accept="image/*" />
+                                            <button id="btnupload" style="margin-top: 10px;" name="btnupload" class="btn btn-success">Crop</button>
+                                        </div>
+                                    </div>
+                                    @section scripts
+                                        {
+                                        <script type="text/javascript">
 
-                            <p>Some text in the Modal..</p>
+                                            var basic = $('#cropper1').croppie
+                                                ({
+                                                    viewport: { width: 300, height: 300 },
+                                                    boundary: { width: 700, height: 400 },
+                                                    showZoomer: true,
+                                                    url: '/img/img_user/default_image.png',
+                                                    format: 'png'
+                                                });
+
+
+                                            function readFile(input) {
+                                                if (input.files && input.files[0]) {
+                                                    var reader = new FileReader();
+
+                                                    reader.onload = function (e) {
+                                                        $('#cropper1').croppie('bind', {
+                                                            url: e.target.result
+                                                        });
+                                                    }
+                                                    reader.readAsDataURL(input.files[0]);
+                                                }
+                                            }
+
+                                            $('#BrowseFile').on('change', function () { readFile(this); });
+
+                                            $('#btnupload').on('click', function () {
+                                                basic.croppie('result', 'blob').then(function (blob) {
+                                                    var formData = new FromData();
+
+                                                    formData.append('filename', 'FileName.png');
+                                                    formData.append('blob', Blob);
+                                                    var myAppUrlSetting =
+                                                    {
+                                                        MyUserfulUrl: '@Url.Action("SaveCropedImage", "Account")'
+                                                    }
+
+                                                    var request = new XMLHttpRequest();
+                                                    request.open('POST', myAppUrlSetting.MyUserfulUrl);
+                                                    request.send(formData);
+                                                    request.onreadystatechange = function () {
+                                                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                                                            var response = JSON.parse(request.responseText);
+
+                                                            if (response.message == "OK") {
+                                                                alert('Photo cropped Successfully!')
+                                                            }
+
+                                                            if (response.message == "ERROR") {
+                                                                window.location.reload();
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    }
+                                </div>
+                            </div>
                         </div>
-
+                        
+                        
                     </div>
                 </div>
             </div>

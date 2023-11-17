@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MimeKit;
 using Newtonsoft.Json;
 using System.Linq;
@@ -18,28 +19,52 @@ namespace FlyBugClub_WebApp.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ILogger _logger;
+        IWebHostEnvironment _webHostEnvironment;
         private FlyBugClubWebApplicationContext _ctx;
         private IOrderProcessingRepository _orderProcessingRepository;
         private readonly UserManager<ApplicationUser> _userManager;
         private static readonly Random random = new Random();
         private const string validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         private IProductRepository _productRepository;
-
         private readonly IEmailSender _emailSender;
 
-
-
-        public AccountController(FlyBugClubWebApplicationContext ctx,
+        public AccountController(
+            ILogger<AccountController> logger,
+            IWebHostEnvironment webHostEnvironment,
+            FlyBugClubWebApplicationContext ctx,
             IOrderProcessingRepository orderProcessingRepository,
             UserManager<ApplicationUser> userManager,
             IProductRepository productRepository,
             IEmailSender emailSender)
         {
+            _webHostEnvironment = webHostEnvironment;
+            _logger = logger;
             _ctx = ctx;
             _productRepository = productRepository;
             _orderProcessingRepository = orderProcessingRepository;
             _userManager = userManager;
             _emailSender = emailSender;
+        }
+
+        public IActionResult SaveCropedImage(string filename, IFormFile blob)
+        {
+            try
+            {
+                using (var image = Image.Load(blob.OpenReadStream()))
+                {
+                    var uploadDir = @"Image";
+                    filename = Guid.NewGuid().ToString() + "-" + filename;
+                    var path = Path.Combine(_webHostEnvironment.WebRootPath, uploadDir, filename);
+                    image.Mutate(x => x.Resize(200, 200));
+                    image.Save(path);
+                }
+                return Json(new { Message = "OK" });
+            }
+            catch (Exception)
+            {
+                return Json(new { Message = "ERROR" });
+            }
         }
 
         public IActionResult VerifyAccount()

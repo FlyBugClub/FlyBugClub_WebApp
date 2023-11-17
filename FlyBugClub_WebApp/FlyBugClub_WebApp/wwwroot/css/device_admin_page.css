@@ -6,6 +6,10 @@
 /* ====== BUTTON NEW DEVICE ====== */
 /* =============================== */
 
+.device-area{
+    margin-bottom: 20px;
+}
+
 .device-area .btn-newDevice{
     display: flex;
     justify-content: space-between;
@@ -67,13 +71,17 @@
     border-top-left-radius: 16px;
 }
 
-.table-device thead th:nth-child(9){
+.table-device thead th:nth-child(8){
     border-top-right-radius: 16px;
 }
 
 .table-device th,td{
     text-align:center;
     /*border: 2px solid #ffd800*/
+}
+
+.table-device tbody td.last{
+    padding: 0 10px;
 }
 
 .table-device tbody tr:hover td{

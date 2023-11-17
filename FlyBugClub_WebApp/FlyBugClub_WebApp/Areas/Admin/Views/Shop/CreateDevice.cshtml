@@ -12,7 +12,7 @@
                                 <label asp-for="DeviceId" class="control-label"></label>
                                 @{
                                     var billcounter =ViewBag.BillCounter;
-                                    if (billcounter<10)
+                                    if (billcounter < 10)
                                     {
                                         billcounter = "0" + @ViewBag.BillCounter;
                                     }

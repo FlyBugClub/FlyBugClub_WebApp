@@ -48,8 +48,9 @@
                         }
                         
                         <td class="last">
-                            <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> ||
-                            <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>
+                            <a asp-action="EditDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-pen-to-square"></i></a> 
+                            @*||
+                            <a asp-action="DeleteDevice" asp-route-id="@item.DeviceId"><i class="fa-solid fa-trash"></i></a>*@
                         </td>
                     </tr>
                 }
@@ -61,56 +62,59 @@
         int totalPages = ViewBag.TotalPages;
         int nextPage = ViewBag.NextPage;
         int prevPage = ViewBag.PrevPage;
-        int maxVisiblePages = 3;
+        int maxVisiblePages = 6;
     }
     @if (ViewBag.TotalDevices > ViewBag.ItemsPerPage)
     {
-        <div class="left-side" style="display:block">
-            <div class="pagination">
-                <ul>
-                    @if (prevPage > 0)
-                    {
-                        <li class="btn-back">
-                            <a class="page-link" href="?page=@prevPage"><i class="fa-solid fa-location-arrow"></i></a>
-                        </li>
-                    }
-
-                    <li><a href="?page=1">1</a></li>
-
-                    @if (currentPage > maxVisiblePages / 2 + 1)
-                    {
-                        <li>...</li>
-                    }
-
-                    @for (int i = Math.Max(2, currentPage - (int)(maxVisiblePages / 2)); i <= Math.Min(totalPages - 1, currentPage + (int)(maxVisiblePages / 2)); i++)
-                    {
-                        if (i == currentPage)
+        <div class="center mt-4">
+            <div class="left-side" style="display:block">
+                <div class="pagination">
+                    <ul>
+                        @if (prevPage > 0)
                         {
-                            <li class="active"><span>@i</span></li>
+                            <li class="btn-back">
+                                <a class="page-link" href="?page=@prevPage"><i class="fa-solid fa-location-arrow"></i></a>
+                            </li>
                         }
-                        else
+
+                        <li><a href="?page=1">1</a></li>
+
+                        @if (currentPage > maxVisiblePages / 2 + 1)
                         {
-                            <li><a href="?page=@i">@i</a></li>
+                            <li class="dot">...</li>
                         }
-                    }
 
-                    @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
-                    {
-                        <li>...</li>
-                    }
+                        @for (int i = Math.Max(2, currentPage - (int)(maxVisiblePages / 2)); i <= Math.Min(totalPages - 1, currentPage + (int)(maxVisiblePages / 2)); i++)
+                        {
+                            if (i == currentPage)
+                            {
+                                <li class="active"><span>@i</span></li>
+                            }
+                            else
+                            {
+                                <li><a href="?page=@i">@i</a></li>
+                            }
+                        }
 
-                    <li><a href="?page=@totalPages">@totalPages</a></li>
+                        @if (currentPage < totalPages - (int)(maxVisiblePages / 2))
+                        {
+                            <li class="dot">...</li>
+                        }
 
-                    @if (nextPage <= totalPages)
-                    {
-                        <li class="btn-next">
-                            <a class="page-link" href="?page=@nextPage"><i class="fa-solid fa-location-arrow"></i></a>
-                        </li>
-                    }
+                        <li><a href="?page=@totalPages">@totalPages</a></li>
 
-                </ul>
+                        @if (nextPage <= totalPages)
+                        {
+                            <li class="btn-next">
+                                <a class="page-link" href="?page=@nextPage"><i class="fa-solid fa-location-arrow"></i></a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
             </div>
         </div>
+        
     }
     else if (ViewBag.TotalDevices <= ViewBag.ItemsPerPage)
     {
