@@ -4,6 +4,7 @@ using FlyBugClub_WebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlyBugClub_WebApp.Migrations
 {
     [DbContext(typeof(FlyBugClubDBContext))]
-    partial class FlyBugClubDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231117133238_fifth")]
+    partial class fifth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

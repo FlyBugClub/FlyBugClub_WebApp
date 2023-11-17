@@ -36,6 +36,10 @@ public class ApplicationUser : IdentityUser
     public string? Email { get; set; }
 
     [PersonalData]
+    [Column(TypeName = "varchar(100)")]
+    public string? ImgUser { get; set; }
+
+    [PersonalData]
     [Column(TypeName = "nvarchar(100)")]
     public string? Major { get; set; }
 

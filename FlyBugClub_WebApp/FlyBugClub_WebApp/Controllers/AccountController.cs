@@ -53,7 +53,7 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 using (var image = Image.Load(blob.OpenReadStream()))
                 {
-                    var uploadDir = @"Image";
+                    var uploadDir = @"img/img_user";
                     filename = Guid.NewGuid().ToString() + "-" + filename;
                     var path = Path.Combine(_webHostEnvironment.WebRootPath, uploadDir, filename);
                     image.Mutate(x => x.Resize(200, 200));
@@ -523,6 +523,7 @@ namespace FlyBugClub_WebApp.Controllers
                 ViewBag.Major = currentUser.Major;
                 ViewBag.Faculty = currentUser.Faculty;
                 ViewBag.Address = currentUser.Address;
+                ViewBag.ImgUser = currentUser.ImgUser;
 
                 return View();
             }

@@ -44,14 +44,12 @@
         <div class="nav">
             <div class="nav__links">
                 <ul class="nav__links-left">
-                    <li class="@(ViewContext.RouteData.Values["action"].ToString() == "Home"?"active":"")">
+                    <li>
                         <a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a>
                     </li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Đồ án</a></li>
-                    <li class="@(ViewContext.RouteData.Values["action"].ToString() == "Store"?"active":"") 
-                                @(ViewContext.RouteData.Values["action"].ToString() == "DetailCard"?"active":"") 
-                                @(ViewContext.RouteData.Values["action"].ToString() == "Payment"?"active":"")">
+                    <li>
                         <a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a>
                     </li>
                 </ul>
@@ -95,15 +93,21 @@
                 <div class="col col-lg-3 row-nav">
                     <nav>
                         <ul>
-                            <li>
-                                <div class="center">
-                                    <img src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
-                                </div>
-                                <div class="center">
-                                    <input id="upload" type="file"/>
-                                    <a id="upload_link" class="edit-info">Đổi ảnh nền</a>
-                                </div>
-                            </li>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                var user = await UserManager.GetUserAsync(User);
+                                var ImgUser = user.ImgUser;
+
+                                <li>
+                                    <div class="center">
+                                        <img src="~/img/img_user/@ImgUser" alt="logo" class="avatar">
+                                    </div>
+                                    <div class="center">
+                                        <input id="upload" type="file" />
+                                        <a id="upload_link" class="edit-info">Đổi ảnh nền</a>
+                                    </div>
+                                </li>
+                            }
                             <li>
                                 @if (SignInManager.IsSignedIn(User))
                                 {
