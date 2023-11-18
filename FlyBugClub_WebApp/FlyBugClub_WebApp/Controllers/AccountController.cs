@@ -132,6 +132,7 @@ namespace FlyBugClub_WebApp.Controllers
 
 
                     var result = await _userManager.CreateAsync(user, Data_User[6]);
+                    await _userManager.AddToRoleAsync(user, "Customer");
                     User usr = new User()
                     {
                         Name = Data_User[0],
