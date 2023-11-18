@@ -9,7 +9,8 @@
         <div class="row">
             <div class="col-3">
                 <div class="avatar-area center">
-                    <img class="change-avatar" src="~/img/core_team/IMG_0042.jpg" alt="logo" class="avatar">
+
+                    <img class="change-avatar" src="~/img/img_user/@ViewBag.ImgUser" alt="logo" class="avatar">
                     @*<input type="file" asp-for="ImgUser" id="upload-img" value="Change"/>*@
                     <button class="upload-img" id="upload-img"></button>
                     <!-- The Modal -->
@@ -58,17 +59,17 @@
 
                                             $('#btnupload').on('click', function () {
                                                 basic.croppie('result', 'blob').then(function (blob) {
-                                                    var formData = new FromData();
+                                                    var formData = new FormData();
 
                                                     formData.append('filename', 'FileName.png');
-                                                    formData.append('blob', Blob);
+                                                    formData.append('blob', blob);
                                                     var myAppUrlSetting =
                                                     {
-                                                        MyUserfulUrl: '@Url.Action("SaveCropedImage", "Account")'
+                                                        MyUsefulUrl: '@Url.Action("SaveCropedImage", "Account")'
                                                     }
 
                                                     var request = new XMLHttpRequest();
-                                                    request.open('POST', myAppUrlSetting.MyUserfulUrl);
+                                                    request.open('POST', myAppUrlSetting.MyUsefulUrl);
                                                     request.send(formData);
                                                     request.onreadystatechange = function () {
                                                         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
@@ -95,8 +96,8 @@
                     </div>
                 </div>
             </div>
-            <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
-                <div class="col-md-9">
+            <div class="col-md-9">
+                <form asp-action="Finish_ChangeInfoUser" class="ChangeInfoUser">
                     <div class="row">
                         <div class="col">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -144,8 +145,8 @@
                             <input type="submit" value="Save" class="btn btn-primary" />
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

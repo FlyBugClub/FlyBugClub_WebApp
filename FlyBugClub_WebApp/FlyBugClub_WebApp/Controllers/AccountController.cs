@@ -53,7 +53,7 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 using (var image = Image.Load(blob.OpenReadStream()))
                 {
-                    var uploadDir = @"Image";
+                    var uploadDir = @"img/img_user";
                     filename = Guid.NewGuid().ToString() + "-" + filename;
                     var path = Path.Combine(_webHostEnvironment.WebRootPath, uploadDir, filename);
                     image.Mutate(x => x.Resize(200, 200));
@@ -187,7 +187,7 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 client.Connect("smtp.gmail.com", 465, true);
                 //client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
-                client.Authenticate("cuong.dq12897@sinhvien.hoasen.edu.vn", "75R22UYT");
+                client.Authenticate("flybug@hoasen.edu.vn", "@FlyBugClub@hoasen.edu.vn");
                 var bodyBuilder = new BodyBuilder
                 {
                     HtmlBody = $"<p>hello anh, otp: {otp}</p>",
@@ -524,10 +524,12 @@ namespace FlyBugClub_WebApp.Controllers
                 ViewBag.Major = currentUser.Major;
                 ViewBag.Faculty = currentUser.Faculty;
                 ViewBag.Address = currentUser.Address;
+                ViewBag.ImgUser = currentUser.ImgUser;
 
                 return View();
             }
         }
+        
         public async Task<IActionResult> Finish_ChangeInfoUser(string Name, string Gender, string Phone, string Address, string Major, string Faculty)
         {
 
@@ -602,6 +604,7 @@ namespace FlyBugClub_WebApp.Controllers
                 return View(billsByUID);
             }
         }
+        
         public IActionResult DetailReceiption(string id)
         {
             List<BorrowDetail> billdetail = _orderProcessingRepository.GetDetailBillByBID(id);
@@ -610,6 +613,7 @@ namespace FlyBugClub_WebApp.Controllers
 
             return View("DetailReceiption", billdetail);
         }
+        
         public IActionResult DeleteBill(string id)
         {
             List<BorrowDetail> bill = _orderProcessingRepository.GetBorrowDetailsByBillBorrowId(id);
@@ -641,13 +645,8 @@ namespace FlyBugClub_WebApp.Controllers
             MenuCard m = new MenuCard();
             if (currentUser != null)
             {
-                
-                
-               
-                    
-                    List<Device> DevicesFavorite = _productRepository.GetDevicesFavorite(currentUser.UID);
-                    m.GetDeviceFavorite = DevicesFavorite;
-                
+                List<Device> DevicesFavorite = _productRepository.GetDevicesFavorite(currentUser.UID);
+                m.GetDeviceFavorite = DevicesFavorite;   
         
                 return View(m);
             }

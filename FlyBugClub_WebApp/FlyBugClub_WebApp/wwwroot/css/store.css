@@ -32,8 +32,20 @@ section.body .search {
     }
 }
 
+.body .search .store-note {
+    width: 100%;
+}
+
 .body .search .store-note p {
-    padding: 35px 35px 10px 35px;
+    width: 85%;
+    margin-top: 30px;
+    height: 200px;
+    overflow-y: auto; 
+    position: relative; 
+}
+
+.body .search .store-note p::-webkit-scrollbar {
+    width: 0px;
 }
 
 .body .search p {

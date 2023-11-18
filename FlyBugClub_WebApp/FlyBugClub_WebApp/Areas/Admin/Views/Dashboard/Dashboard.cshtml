@@ -98,7 +98,6 @@
                                     </thead>
                                     <tbody id="list_billborrow"></tbody>
                                 </table>
-                                
                             </div>
                         </form>
                         <div class="total-income">
@@ -114,7 +113,7 @@
                         <div class="col">
                             <div class="calendar">
                                 <div class="top-calendar">
-                                    <div class="month-year"id="current-month-year">September 2023</div>
+                                    <div class="month-year"id="current-month-year">September 2022</div>
                                     <div class="icon-next-prev" id="month-year">
                                         <ul>
                                             <li><i class="fa-solid fa-angle-left" id="prev-month"></i></li>
@@ -204,45 +203,6 @@
                         </div>
                     </div>
                 </div>
-                @*<div class="col col-md-4">
-                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-                    {
-                        <div class="alert alert-danger">
-                            @ViewBag.ErrorMessage
-                        </div>
-                    }
-                    <!-- Modal for Month and Year Input -->
-                    <!-- The Modal -->
-                    <div class="modal" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title">Modal Heading</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    Modal body..
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        
-                    </script>
-                    <div class="calender-aera">
-                        
-                    </div>
-                </div>*@
             </div>
         </div>
     </section>
@@ -265,7 +225,6 @@
         });
     });
  </script>
-
     
 <script>
     //2023-10-29@@2023-11-11
@@ -336,8 +295,99 @@
     }
 </script>
 
+<script>
+    function getDaysInMonth(year, month) {
+        // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
+        // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
+        const lastDay = new Date(year, month + 1, 0).getDate();
+        return lastDay;
+    }
 
+    // Lấy ngày, tháng và năm hiện tại
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
+    let currentMonth = currentDate.getMonth();
+    let daysInCurrentMonth = getDaysInMonth(currentYear, currentMonth);
 
+    console.log(`Số ngày trong tháng hiện tại: ${daysInCurrentMonth}`);
 
+    // Hàm cập nhật ngày trong tháng
+    function updateCalendar() {
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+        // Vị trí bắt đầu của các ngày trong tuần
+        const startDayPosition = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
+
+        // Đối tượng HTML của ul#calendar-days
+        const calendarDaysElement = document.getElementById('calendar-days');
+
+        // Xóa các phần tử con cũ của ul#calendar-days
+        calendarDaysElement.innerHTML = '';
+
+        // Thêm các thẻ li vào ul#calendar-days
+        for (let i = 0; i < startDayPosition; i++) {
+            const emptyLi = document.createElement('li');
+            calendarDaysElement.appendChild(emptyLi);
+        }
+
+        for (let i = 1; i <= daysInCurrentMonth; i++) {
+            const dayLi = document.createElement('li');
+            dayLi.textContent = i;
+
+            // Nếu đây là ngày hiện tại, bạn có thể thêm một lớp CSS để làm nổi bật
+            if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
+                dayLi.classList.add('active');
+            }
+
+            // Thêm các logic khác tùy thuộc vào yêu cầu của bạn (ví dụ: xác định ngày có sự kiện)
+
+            calendarDaysElement.appendChild(dayLi);
+        }
+    }
+
+    function updateMonthYearDisplay() {
+        const monthNames = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        // Lấy tên tháng tương ứng với currentMonth
+        const currentMonthName = monthNames[currentMonth];
+
+        // Hiển thị tháng và năm trong thẻ có id là "current-month-year"
+        document.getElementById('current-month-year').textContent = `${currentMonthName} ${currentYear}`;
+    }
+
+    // Sự kiện nhấn cho nút "prev-month"
+    document.getElementById('prev-month').addEventListener('click', function () {
+        // Giảm tháng đi 1
+        currentMonth = parseInt(currentDate.getMonth());
+        currentMonth--;
+        // Nếu tháng là tháng 0 (tháng 1), cập nhật năm và tháng về tháng 12 của năm trước
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        // Cập nhật lịch
+        updateCalendar();
+    });
+
+    // Sự kiện nhấn cho nút "next-month"
+    document.getElementById('next-month').addEventListener('click', function () {
+        // Tăng tháng đi 1
+        currentMonth++;
+        // Nếu tháng là tháng 11 (tháng 12), cập nhật năm và tháng về tháng 1 của năm sau
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        // Cập nhật lịch
+        updateCalendar();
+    });
+
+    // Khởi tạo lịch khi trang được tải lần đầu
+    updateCalendar();
+    updateMonthYearDisplay();
+</script>
 
 

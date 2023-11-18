@@ -107,7 +107,7 @@
     width: 200px;
     border-radius:50%;
     overflow: hidden;
-    margin: auto;
+    margin: 20% 8% !important;
 }
 
 .change-info .ChangeInfoUser img.change-avatar {
