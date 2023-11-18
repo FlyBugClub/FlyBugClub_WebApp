@@ -1,83 +1,77 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
-    const currentMonthYearElement = document.getElementById("current-month-year");
-    const prevMonthButton = document.getElementById("prev-month");
-    const nextMonthButton = document.getElementById("next-month");
-    const calendarDaysElement = document.getElementById("calendar-days");
+﻿function getDaysInMonth(year, month) {
+    // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
+    // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
+    const lastDay = new Date(year, month + 1, 0).getDate();
+    return lastDay;
+}
 
-    // Lấy tháng và năm hiện tại từ nội dung phần tử "current-month-year"
-    let currentMonthYear = currentMonthYearElement.textContent.split(' ');
-    let currentMonth = currentMonthYear[0];
-    let currentYear = parseInt(currentMonthYear[1]); // Chuyển sang số nguyên
+// Lấy ngày, tháng và năm hiện tại
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+const daysInCurrentMonth = getDaysInMonth(currentYear, currentMonth);
 
-    // Xử lý khi nút "prev-month" được nhấn
-    prevMonthButton.addEventListener("click", function () {
-        // Giảm tháng đi 1
-        currentMonth = getPreviousMonth(currentMonth);
-        if (currentMonth === "December") {
-            currentYear -= 1;
-        }
+console.log(`Số ngày trong tháng hiện tại: ${daysInCurrentMonth}`);
 
-        // Cập nhật nội dung phần tử "current-month-year"
-        currentMonthYearElement.textContent = currentMonth + " " + currentYear;
+// Hàm cập nhật ngày trong tháng
+function updateCalendar() {
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
 
-        // Cập nhật danh sách ngày
-        updateCalendarDays();
-    });
+    // Vị trí bắt đầu của các ngày trong tuần
+    const startDayPosition = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
 
-    // Xử lý khi nút "next-month" được nhấn
-    nextMonthButton.addEventListener("click", function () {
-        // Tăng tháng lên 1
-        currentMonth = getNextMonth(currentMonth);
-        if (currentMonth === "January") {
-            currentYear += 1;
-        }
+    // Đối tượng HTML của ul#calendar-days
+    const calendarDaysElement = document.getElementById('calendar-days');
 
-        // Cập nhật nội dung phần tử "current-month-year"
-        currentMonthYearElement.textContent = currentMonth + " " + currentYear;
+    // Xóa các phần tử con cũ của ul#calendar-days
+    calendarDaysElement.innerHTML = '';
 
-        // Cập nhật danh sách ngày
-        updateCalendarDays();
-    });
-
-    // Hàm lấy tháng trước
-    function getPreviousMonth(currentMonth) {
-        const months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-
-        const currentIndex = months.indexOf(currentMonth);
-        if (currentIndex === 0) {
-            return "December";
-        } else {
-            return months[currentIndex - 1];
-        }
+    // Thêm các thẻ li vào ul#calendar-days
+    for (let i = 0; i < startDayPosition; i++) {
+        const emptyLi = document.createElement('li');
+        calendarDaysElement.appendChild(emptyLi);
     }
 
-    // Hàm lấy tháng tiếp theo
-    function getNextMonth(currentMonth) {
-        const months = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
+    for (let i = 1; i <= daysInCurrentMonth; i++) {
+        const dayLi = document.createElement('li');
+        dayLi.textContent = i;
 
-        const currentIndex = months.indexOf(currentMonth);
-        if (currentIndex === 11) {
-            return "January";
-        } else {
-            return months[currentIndex + 1];
+        // Nếu đây là ngày hiện tại, bạn có thể thêm một lớp CSS để làm nổi bật
+        if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
+            dayLi.classList.add('active');
         }
+
+        // Thêm các logic khác tùy thuộc vào yêu cầu của bạn (ví dụ: xác định ngày có sự kiện)
+
+        calendarDaysElement.appendChild(dayLi);
     }
+}
 
-    // Hàm cập nhật danh sách ngày dựa trên tháng và năm hiện tại
-    function updateCalendarDays() {
-        // Loại bỏ tất cả các ngày hiện có
-        calendarDaysElement.innerHTML = "";
+// Sự kiện nhấn cho nút "prev-month"
+document.getElementById('prev-month').addEventListener('click', function () {
+    // Giảm tháng đi 1
+    currentMonth--;
+    // Nếu tháng là tháng 0 (tháng 1), cập nhật năm và tháng về tháng 12 của năm trước
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    // Cập nhật lịch
+    updateCalendar();
+});
 
-        // Tạo một đối tượng Date cho tháng và năm hiện tại
-        const currentDate = new Date(currentYear, getMonthIndex(currentMonth), 1);
+// Sự kiện nhấn cho nút "next-month"
+document.getElementById('next-month').addEventListener('click', function () {
+    // Tăng tháng đi 1
+    currentMonth++;
+    // Nếu tháng là tháng 11 (tháng 12), cập nhật năm và tháng về tháng 1 của năm sau
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    // Cập nhật lịch
+    updateCalendar();
+});
 
-        // Tính số ngày trong tháng
-        const lastDay = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
-
-        // Tính thứ
+// Khởi tạo lịch khi trang được tải lần đầu
+updateCalendar();
