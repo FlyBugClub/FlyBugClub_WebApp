@@ -1,0 +1,38 @@
+/*=============================*/
+/*======= SIGN UP EMAIL =======*/
+/*=============================*/
+
+.wrap-email{
+    width: 100px;
+    height: 100px;
+}
+
+.wrap-email .email-size{
+    width: 620px;
+    margin: auto;
+}
+
+.email-size .email-header{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+.email-size .email-header .email-content-header{
+    display:flex;
+}
+
+.email-size .email-header .email-content-header img{
+    width: 60px;
+    height: 30px;
+    margin: auto 0;
+}
+
+.email-size .email-header .email-content-header h3{
+    margin: 27px 8px;
+}
+
+.wrap-email .email-size .email-content p{
+    color: #000;
+}
+

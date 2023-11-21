@@ -336,11 +336,11 @@ section.dashboard{
   font-size: 15px;
 }
 
-.days li .active {
+dashboard .calendar .days li.active {
     padding: 6px;
     background: #012a4a;
     color: white !important;
-    border:none;
+    border: none;
     border-radius: 20px;
 }
 

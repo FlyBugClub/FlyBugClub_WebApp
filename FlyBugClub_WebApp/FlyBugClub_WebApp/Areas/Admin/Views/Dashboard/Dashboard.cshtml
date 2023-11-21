@@ -361,7 +361,6 @@
     // Sự kiện nhấn cho nút "prev-month"
     document.getElementById('prev-month').addEventListener('click', function () {
         // Giảm tháng đi 1
-        currentMonth = parseInt(currentDate.getMonth());
         currentMonth--;
         // Nếu tháng là tháng 0 (tháng 1), cập nhật năm và tháng về tháng 12 của năm trước
         if (currentMonth < 0) {
