@@ -36,26 +36,17 @@
     <!-- =========================-->
 
     <header>
-        <div class="nav">
-            <div class="nav__links">
-                <ul class="nav__links-left">
-                    <li class="@*@(ViewContext.RouteData.Values["action"].ToString() == "Home"?"active":"")*@">
+        <div class="container">
+            <div class="nav">
+                <ul class="nav__links">
+                    <li class="">
                         <a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a>
                     </li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Đồ án</a></li>
-                    <li>
+                    <li class="">
                         <a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a>
                     </li>
-                </ul>
-            </div>
-            <div class="logo">
-                <div>
-                    <img src="~/img/img_logo/logo.png" alt="FlyBug logo">
-                </div>
-            </div>
-            <div class="nav__links">
-                <ul class="nav__links-right">
                     <li><a href="#">Hình ảnh</a></li>
                     <li><a href="#">Chiêu mộ</a></li>
                     <li class="center login">
@@ -64,6 +55,11 @@
                         <a href="/Identity/Account/Register" class="dangky">Đăng ký</a>
                     </li>
                 </ul>
+                <div class="logo">
+                    <div class="main-logo">
+                        <img src="~/img/img_logo/logo.png" alt="FlyBug logo">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
