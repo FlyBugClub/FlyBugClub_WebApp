@@ -83,7 +83,7 @@ section.body .search {
 }
 
 .body .search .shopping-function button.icon-shopping:hover i {
-    rotate: 360deg;
+    /*rotate: 360deg;*/
     transition: all .25s ease-in;
 }
 
@@ -167,19 +167,19 @@ section.body .search {
     margin-right: 10px;
 }
 
-    .body .right .store .fill-function .fill button {
-        background-color: transparent;
-        color: #fff;
-        margin: 0 2px;
-        padding: 3px 10px;
-        border-radius: 20px;
-        border: 2px #d8d8d8 dashed;
-    }
+.body .right .store .fill-function .fill button {
+    background-color: transparent;
+    color: #fff;
+    margin: 0 2px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 2px #d8d8d8 dashed;
+}
 
-            .body .right .store .fill-function .fill button:hover {
-                background-color: #d8d8d8;
-                color: #012A4A;
-            }
+.body .right .store .fill-function .fill button:hover {
+    background-color: #d8d8d8;
+    color: #012A4A;
+}
 
 @media only screen and (max-width: 1043px) {
     .body .right .store .fill-function .fill {
@@ -244,28 +244,28 @@ section.body .search {
     margin: 10px 0;
 }
 
-    .body .right .store .icon-card .icon {
-        width: 48px;
-        height: 48px;
-        border: none;
-        margin: 15px;
-        background-color: #D9D9D9;
-        border-radius: 50%;
-    }
+.body .right .store .icon-card .icon {
+    width: 48px;
+    height: 48px;
+    border: none;
+    margin: 15px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+}
 
-        .body .right .store .icon-card .icon i {
-            /* border: orange 1px solid; */
-            color: #012A4A;
-            padding: 15px;
-            border-radius: 50%;
-            transition: all .25s ease-in;
-        }
+.body .right .store .icon-card .icon i {
+    /* border: orange 1px solid; */
+    color: #012A4A;
+    padding: 15px;
+    border-radius: 50%;
+    transition: all .25s ease-in;
+}
 
-        .body .right .store .icon-card .icon :hover i {
-            /* border: orange 1px solid; */
-            rotate: 360deg;
-            transition: all .25s ease-in;
-        }
+/*.body .right .store .icon-card .icon:hover i {*/
+    /* border: orange 1px solid; */
+    /*rotate: 360deg;*/
+    /*transition: all .25s ease-in;
+}*/
 
 .body .right .store .item-card .item-price h2 {
     width: 270px;
@@ -338,7 +338,7 @@ margin: 20px 30px;
 }
 
 .body .right .store .pagination ul li span:hover {
-    transform: rotate(15deg);
+    /*transform: rotate(15deg);*/
     color: #012a4a;
 }
 

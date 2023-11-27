@@ -1,135 +1,99 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
-    Layout = null;
+    //ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
 
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="~/img/img_logo/Bug(Đen).png" type="image/x-icon" />
-    <title>@ViewData["Title"]FlyBug Club</title>
-
-    <!-- Bootrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
-
-    <link rel="stylesheet" href="~/css/_admin_login.css">
-
-    <!-- JetBrains Mono font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-
-</head>
-<body>
-    <div class="screen">
-        <div class="wrap-login">
-            <div class="center">
-                <img src="~/img/img_logo/Bug(Đen).png" />
-            </div>
-            <form id="registerForm" class="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="row">
-                    <div class="col">
-                       @*  <div class="form-floating">
-                            <select asp-for="Input.PositionID" class="select-pos">
-                                @foreach (var item in (IEnumerable<SelectListItem>)ViewData["PositionList"])
-                                {
-                                    <option value="@item.Value">@item.Text</option>
-                                }
-                            </select>
-                            <label asp-for="Input.PositionID" class="form-label select-pos"></label>
-                            <span asp-validation-for="Input.PositionID" class="text-danger"></span>
-                        </div> *@
-                        <div class="form-floating">
-                            <input asp-for="Input.UID" class="form-control" autocomplete="username" aria-required="true" />
-                            <label asp-for="Input.UID" class="form-label">MSSV/MSNV</label>
-                            <span asp-validation-for="Input.UID" class="text-danger"></span>
-                        </div>
-                        <div class="form-floating">
-                            <input asp-for="Input.FullName" class="form-control" autocomplete="username" aria-required="true" />
-                            <label asp-for="Input.FullName" class="form-label"></label>
-                            <span asp-validation-for="Input.FullName" class="text-danger"></span>
-                        </div>
-                        <div class="form-floating">
-                            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                            <label asp-for="Input.Email" class="form-label"></label>
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-floating">
-                            <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="username" aria-required="true" />
-                            <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-floating">
-                            <input asp-for="Input.Address" class="form-control" autocomplete="username" aria-required="true" />
-                            <label asp-for="Input.Address" class="form-label"></label>
-                            <span asp-validation-for="Input.Address" class="text-danger"></span>
-                        </div>
-                        <div class="form-floating">
-                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                            <label asp-for="Input.Password" class="form-label"></label>
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                        </div>
-                        <div class="form-floating">
-                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                            <label asp-for="Input.ConfirmPassword" class="form-label"></label>
-                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+<div class="screen">
+    <div class="container">
+        <div class="wraper-account">
+            <div class="row">
+                <div class="col-7">
+                    <div class="content-login">
+                        <img class="img-background img-signup-page" src="~/img/img_background/bg2.gif" />
+                        <div class="content-on-background">
+                            <p class="slogan-in-account"><span>CREATE</span> THE <span>TALENT</span> WITH YOUR <span>PASSION</span></p>
+                            @*<div class="center">
+                            <a class="btn-change-page-account">Đăng ký</a>
+                            </div>*@
                         </div>
                     </div>
                 </div>
-                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-            </form>
+                <div class="col-5">
+                    <div class="wrap-content-account">
+                        <img class="img-logo" src="~/img/img_logo/logo-E-W.png" />
+                        <p class="title-content-account">Đăng ký thông tin tại đây!</p>
+                        <div class="center line-symbol">
+                            <hr style="width:50%;text-align:left; color:white; height: 2px; margin-left: 30px;">
+                            <i class="fa-solid fa-angle-down"></i>
+                            <hr style="width:50%;text-align:left; color:white; height: 2px; margin-right: 30px;">
+                        </div>
+                        <div class="center">
+                            <form id="registerForm" class="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-floating">
+                                    @*  <div class="form-floating">
+                                    <select asp-for="Input.PositionID" class="select-pos">
+                                    @foreach (var item in (IEnumerable<SelectListItem>)ViewData["PositionList"])
+                                    {
+                                    <option value="@item.Value">@item.Text</option>
+                                    }
+                                    </select>
+                                    <label asp-for="Input.PositionID" class="form-label select-pos"></label>
+                                    <span asp-validation-for="Input.PositionID" class="text-danger"></span>
+                                    </div> *@
+                                    <input class="input-signup" asp-for="Input.UID" placeholder="MSSV/MSNV" autocomplete="username" aria-required="true" />
+                                    @*<label asp-for="Input.UID" class="form-label">MSSV/MSNV</label>*@
+                                    <span asp-validation-for="Input.UID" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class ="input-signup" asp-for="Input.FullName" placeholder="Họ và tên" autocomplete="username" aria-required="true" />
+                                    @*<label asp-for="Input.FullName" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input-signup" asp-for="Input.Email" placeholder="Email" autocomplete="username" aria-required="true" />
+                                    @*<label asp-for="Input.Email" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input-signup" class="input-signup" asp-for="Input.PhoneNumber" placeholder="Số điện thoại" autocomplete="username" aria-required="true" />
+                                    @*<label asp-for="Input.PhoneNumber" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input-signup" asp-for="Input.Address" placeholder="Địa chỉ" autocomplete="username" aria-required="true" />
+                                    @*<label asp-for="Input.Address" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.Address" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input-signup" asp-for="Input.Password" placeholder="Mật khẩu" autocomplete="new-password" aria-required="true" />
+                                    @*<label asp-for="Input.Password" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input-signup" asp-for="Input.ConfirmPassword" placeholder="Xác nhận mật khẩu" autocomplete="new-password" aria-required="true" />
+                                    @*<label asp-for="Input.ConfirmPassword" class="form-label"></label>*@
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="center">
+                                    <button type="submit" class="submit">Đăng ký</button>
+                                </div>
+                                <div class="center">
+                                    <p class="regs">
+                                        Bạn đã có tài khoản?
+                                        <a class="register" asp-page="./LoginCustomer" asp-route-returnUrl="@Model.ReturnUrl">Đăng nhập ngay!</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</body>
-</html>
-
-
-        
-
-    @*<div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins!)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>*@
-
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

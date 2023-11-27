@@ -2,6 +2,7 @@ using FlyBugClub_WebApp.Areas.Identity.Data;
 using FlyBugClub_WebApp.Migrations;
 using FlyBugClub_WebApp.Models;
 using FlyBugClub_WebApp.Repository;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -181,33 +182,57 @@ namespace FlyBugClub_WebApp.Controllers
             return LocalRedirect($"/Account/VerifyAccount");
         }
         
-        public void SendEmail(string otp, string email)
+        public async void SendEmail(string otp, string email)
         {
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
                 //client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
-                client.Authenticate("flybug@hoasen.edu.vn", "@FlyBugClub@hoasen.edu.vn");
-                var bodyBuilder = new BodyBuilder
-                {
-                    HtmlBody = $"<p>hello anh, otp: {otp}</p>",
-                    TextBody = "Xin chao"
-                };
+                client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
+
+                string cshtmlContent = GetCshtmlContent("Views/Email/EmailOTP.cshtml");
+
+                string renderedHtml = await RenderCshtml(cshtmlContent, otp);
+
+                var bodyBuilder = new BodyBuilder();
+                bodyBuilder.HtmlBody = renderedHtml;
+                bodyBuilder.TextBody = "Xin chao";
+
                 var message = new MimeMessage
                 {
                     Body = bodyBuilder.ToMessageBody()
                 };
                 //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
-                message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
+                message.From.Add(new MailboxAddress("FlyBug Club", "flybug@hoasen.edu.vn"));
                 message.To.Add(new MailboxAddress("Test", email));
-                message.Subject = "FlyBug thông báo nhẹ";
+                message.Subject = "FlyBug thông báo nhè nhẹ :))";
                 client.Send(message);
                 client.Disconnect(true);
-
             }
-
         }
-        
+
+        // Hàm để đọc nội dung từ file CSHTML
+        private string GetCshtmlContent(string filePath)
+        {
+            // Đọc nội dung từ file CSHTML
+            string cshtmlContent = System.IO.File.ReadAllText(filePath);
+            return cshtmlContent;
+        }
+
+        // Hàm để render CSHTML để nhận được mã HTML
+        private async Task<string> RenderCshtml(string cshtmlContent, string otp)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            // Thực hiện các bước cần thiết để render CSHTML và thay thế các giá trị
+            // Đây chỉ là một ví dụ đơn giản, bạn có thể sử dụng RazorEngine hoặc các thư viện tương tự
+            // để thực hiện quá trình render CSHTML
+            cshtmlContent = cshtmlContent.Replace("Xin chào Danny!", $"Xin chào {currentUser.FullName}!");
+            cshtmlContent = cshtmlContent.Replace("OTP here", otp);
+
+            return cshtmlContent;
+        }
+
         public string GenerateUID(int length)
         {
             StringBuilder result = new StringBuilder(length);

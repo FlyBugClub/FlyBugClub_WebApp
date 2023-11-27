@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+}   
+
+body {
+    color: white;
+    background: #3d3d3d;
+}
+
+.row>*{
+    padding: 0;
+}
+
+.center{
+    display: flex;
+    justify-content:center;
+}
+
+.screen {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: 110px 0;
+}
+
+.screen .wraper-account {
+    height: fit-content;
+    width: 1000px;
+    margin: auto;
+    background-color: #333;
+    border: none;
+    border-radius: 24px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.screen .wraper-account .wrap-content-account{
+    margin: 24px 24px 0 24px;
+}
+
+.wraper-account img.img-logo {
+    width: 100px;
+    margin: 20px 0;
+}
+
+.content-login .content-on-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.slogan-in-account {
+    width: 430px;
+    font-size: 38px;
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: 0.759px;
+    font-style: italic;
+    font-weight: 400px;
+    text-shadow: 7px 7px 8.25px #000;
+}
+
+.slogan-in-account span{
+    font-weight: 800;
+}
+
+.wrap-content-account p.title-content-account {
+    margin-top: 30px;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.line-symbol{
+    margin-top: -15px;
+}
+
+.line-symbol hr{
+    margin-top: 6px;
+    margin-bottom: 30px;
+}
+
+.line-symbol i{
+    margin: 0 10px
+}
+
+.btn-change-page-account {
+    width: 200px;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.btn-change-page-account:hover {
+    
+    background: #fff;
+    color: #333;
+    transition: all .5s ease;
+}
+
+/*===========================*/
+/*========== Login ==========*/
+/*===========================*/
+label.form-label {
+    padding-top: 10px !important;
+}
+
+.wrap-content-account .form-floating input {
+    display:block;
+    text-align: left !important;
+    height: 50px;
+    width: 320px;
+    padding: 5px 15px;
+    margin: 15px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(217, 217, 217,0.6);
+}
+
+.forgot-password{
+    display:flex;
+    float:right;
+}
+
+.forgot-password a{
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    transition: all .25s ease;
+}
+
+.forgot-password a:hover{
+    color: #2fc6de;
+    transition: all .25s ease;
+}
+
+label.remember{
+    margin: 20px 0 10px 0;
+    font-size: 15px !important;
+}
+
+label.remember .form-check-input{
+    width: 18px;
+    height: 18px;
+}
+
+button.submit {
+    height: fit-content;
+    width: 200px !important;
+    margin-top: 5px;
+    padding: 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background: #333;
+    color: white;
+    transition: all .7s ease;
+}
+
+button.submit:hover {
+    background: #fff;
+    color: #333;
+    transition: all .7s ease;
+}
+
+.wrap-content-account p {
+    color: white;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.regs .register{
+    text-decoration: none;
+    color: #2774ff;
+    font-size: 13px;
+}
+
+.content-login{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+img.img-background {
+    width: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 0 24px 24px 0;
+    filter: blur(8px);
+    -webkit-filter: blur(2px);
+}
+
+/*===========================*/
+/*======== Register =========*/
+/*===========================*/
+
+.wrap-content-account input.input-signup{
+    width: 350px !important;
+    margin: 15px;
+}
+
+.img-signup-page{
+    border-radius: 24px 0 0 24px!important;
+}
+
+/*===========================*/
+/*======= OTP EMAIL =========*/
+/*===========================*/
+
+.wraper-account .img {
+    display: flex;
+    justify-content: center;
+}
+
+.wraper-account .wrap-content-account .input-otp {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+
+.wraper-account input {
+    width: 48px;
+    height: 48px;
+    margin: 0 6px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-resent-opt{
+    height:fit-content;
+    margin: auto 5px;
+}
+
+.btn-resent-opt {
+    background: none;
+    color: #f14444;
+    font-size: 13px;
+    border: none;
+}
+
+.verify-otp{
+    margin-top: 15px !important;
+}
