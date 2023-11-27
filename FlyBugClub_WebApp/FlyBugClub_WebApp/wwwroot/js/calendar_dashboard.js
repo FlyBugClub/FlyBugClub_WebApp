@@ -1,4 +1,4 @@
-﻿function getDaysInMonth(year, month) {
+﻿/*function getDaysInMonth(year, month) {
     // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
     // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
     const lastDay = new Date(year, month + 1, 0).getDate();
@@ -74,4 +74,4 @@ document.getElementById('next-month').addEventListener('click', function () {
 });
 
 // Khởi tạo lịch khi trang được tải lần đầu
-updateCalendar();
+updateCalendar();*/

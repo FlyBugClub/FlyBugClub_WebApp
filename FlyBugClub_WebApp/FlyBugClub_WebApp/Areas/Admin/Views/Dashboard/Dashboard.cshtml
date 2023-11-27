@@ -1,9 +1,8 @@
 @model List<FlyBugClub_WebApp.Models.BillBorrow>
 <div class="center">
-    
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src = "~/js/datepicker.js"></script>
+<script src="~/js/datepicker.js"></script>
 <div class="body">
     <section class="dashboard">
         <div class="container">
@@ -82,7 +81,7 @@
                             <form>
                                 <div class="datepicker">
                                     <i class="fa-solid fa-calendar"></i>
-                                    <input type="text" name="daterange" value="" class="" id="cuong" readonly/>
+                                    <input type="text" name="daterange" value="" class="" id="cuong" readonly />
                                 </div>
                             </form>
                         </div>
@@ -113,7 +112,7 @@
                         <div class="col">
                             <div class="calendar">
                                 <div class="top-calendar">
-                                    <div class="month-year"id="current-month-year">September 2022</div>
+                                    <div class="month-year" id="current-month-year">September 2022</div>
                                     <div class="icon-next-prev" id="month-year">
                                         <ul>
                                             <li><i class="fa-solid fa-angle-left" id="prev-month"></i></li>
@@ -130,41 +129,11 @@
                                     <li>Sa</li>
                                     <li>Su</li>
                                 </ul>
-                                <ul class="days" id="calendar-days">
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>3</li>
-                                    <li>4</li>
-                                    <li>5</li>
-                                    <li>6</li>
-                                    <li>7</li>
-                                    <li>8</li>
-                                    <li>9</li>
-                                    <li><span class="active">10</span></li>
-                                    <li>11</li>
-                                    <li>12</li>
-                                    <li>13</li>
-                                    <li>14</li>
-                                    <li>15</li>
-                                    <li>16</li>
-                                    <li>17</li>
-                                    <li><span class="event">18</span></li>
-                                    <li>19</li>
-                                    <li>20</li>
-                                    <li>21</li>
-                                    <li>22</li>
-                                    <li><span class="event">23</span></li>
-                                    <li>24</li>
-                                    <li>25</li>
-                                    <li>26</li>
-                                    <li>27</li>
-                                    <li>28</li>
-                                    <li>29</li>
-                                    <li>30</li>
-                                    <li>31</li>
+                                <ul class="days" id="calendar-days">    
                                 </ul>
-                                <div class="schedules">
-                                    <div class="schedules-title">Schedules</div>
+                                <div class="schedules-title">Schedules</div>
+                                <div class="schedules" id="id_schedules">
+                                    
                                     <div class="schedule-wrap">
                                         <div class="schedule-box">
                                             <div class="center">
@@ -176,7 +145,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="schedule-wrap">
+
+                                    @* <div class="schedule-wrap">
                                         <div class="schedule-box">
                                             <div class="center">
                                                 <div class="schedule-day"><b class="random-background"><span class="number">18</span></b></div>
@@ -197,9 +167,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> *@
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -207,7 +177,7 @@
         </div>
     </section>
 </div>
- <script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         // Mảng màu nền ngẫu nhiên
         const randomBackgroundColors = [
@@ -218,33 +188,46 @@
 
         // Chọn một màu ngẫu nhiên cho mỗi phần tử <b>
         const randomBackgroundElements = document.querySelectorAll(".random-background");
-
         randomBackgroundElements.forEach(function (element) {
             const randomColor = randomBackgroundColors[Math.floor(Math.random() * randomBackgroundColors.length)];
             element.style.background = randomColor;
         });
     });
- </script>
-    
+</script>
+
 <script>
     //2023-10-29@@2023-11-11
-    // const date = new Date();
-
-    // var DateStart = date.getFullYear+"-"+date.getMonth()+"1";
-    // var DateEnd = date.getFullYear + "-" + date.getMonth() + "31";
-    // var Final = DateStart + "@@" + DateEnd;
-    // alert(date.getFullYear);
+    const currentDate = new Date();
     
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+    let daysInCurrentMonth = getDaysInMonth(currentYear, currentMonth);
+ 
+    
+    Get10Bill();
+    
+  
+
+
     document.getElementById('cuong').onchange = function () {
-        
+
         let date = document.getElementById("cuong").className;
-        
-        if(date !== null)
-        {
-            
+
+        if (date !== null) {
+
             fetchData(date);
-        }  
+
+        }
     };
+    function getDaysInMonth(year, month) {
+        // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
+        // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
+        const lastDay = new Date(year, month + 1, 0).getDate();
+        return lastDay;
+    }
+
+    // Lấy số ngày trong tháng hiện tại
+    
     async function fetchData(date) {
         const response = await fetch(`/api/users/getbillbydate?date=${date}`);
         if (!response.ok) {
@@ -252,16 +235,15 @@
         }
 
         const data = await response.json(); // Chuyển đổi response thành JSON
-        console.log(data);
         // Ở đây, bạn có thể xử lý dữ liệu theo cách mong muốn
         const tbody = document.getElementById("list_billborrow");
-        
+
         // Xóa nội dung cũ của tbody
         while (tbody.firstChild) {
             tbody.removeChild(tbody.firstChild);
         }
         var Sum = 0;
-       
+
         data.forEach((item, i) => {
             const receiveDay = new Date(item.receiveDay);
             const status = item.status;
@@ -276,12 +258,12 @@
 
             const newRow = document.createElement("tr");
             newRow.innerHTML = `
-            <td>${i+1}</td>
-            <td>${receiveDay.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
-            <td>${formattedValue}</td>
-        `;
+                <td>${i + 1}</td>
+                <td>${receiveDay.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+                <td>${formattedValue}</td>
+            `;
             tbody.appendChild(newRow);
-           
+
         });
         const formattedSum = new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -293,31 +275,72 @@
 
         TotalIncome.innerHTML = formattedSum;
     }
-</script>
 
-<script>
+    async function Get10Bill() {
+        const response = await fetch(`/api/users/get10bill`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json(); // Chuyển đổi response thành JSON
+
+        // Ở đây, bạn có thể xử lý dữ liệu theo cách mong muốn
+        const tbody = document.getElementById("list_billborrow");
+
+        // Xóa nội dung cũ của tbody
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+        var Sum = 0;
+
+        data.forEach((item, i) => {
+            const receiveDay = new Date(item.receiveDay);
+            const status = item.status;
+            const convertedValue = parseFloat(item.total) * 1000;
+            Sum = Sum + convertedValue;
+            const formattedValue = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'VND',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            }).format(convertedValue);
+
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                    <td>${i + 1}</td>
+                    <td>${receiveDay.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' })}</td>
+                    <td>${formattedValue}</td>
+                `;
+            tbody.appendChild(newRow);
+
+        });
+        const formattedSum = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(Sum);
+        const TotalIncome = document.getElementById("TotalIncome");
+
+        TotalIncome.innerHTML = formattedSum;
+    }
     function getDaysInMonth(year, month) {
-        // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
-        // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
+            // Lưu ý: Tháng trong JavaScript đếm từ 0 đến 11 (0 là tháng 1, 11 là tháng 12)
+            // Nếu month không được chỉ định, nó sẽ lấy tháng hiện tại
         const lastDay = new Date(year, month + 1, 0).getDate();
         return lastDay;
     }
 
     // Lấy ngày, tháng và năm hiện tại
-    let currentDate = new Date();
-    let currentYear = currentDate.getFullYear();
-    let currentMonth = currentDate.getMonth();
-    let daysInCurrentMonth = getDaysInMonth(currentYear, currentMonth);
-
-    console.log(`Số ngày trong tháng hiện tại: ${daysInCurrentMonth}`);
+    
 
     // Hàm cập nhật ngày trong tháng
-    function updateCalendar() {
+    function updateCalendar(currentMonth) {
         const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-
+        
         // Vị trí bắt đầu của các ngày trong tuần
         const startDayPosition = firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1;
-
+        let daysInMonth = getDaysInMonth(currentYear, currentMonth);
         // Đối tượng HTML của ul#calendar-days
         const calendarDaysElement = document.getElementById('calendar-days');
 
@@ -327,23 +350,32 @@
         // Thêm các thẻ li vào ul#calendar-days
         for (let i = 0; i < startDayPosition; i++) {
             const emptyLi = document.createElement('li');
+
             calendarDaysElement.appendChild(emptyLi);
         }
 
-        for (let i = 1; i <= daysInCurrentMonth; i++) {
+        for (let i = 1; i <= daysInMonth; i++) {
             const dayLi = document.createElement('li');
-            dayLi.textContent = i;
 
+            dayLi.textContent = i;
+            dayLi.classList.add(i);
+            
             // Nếu đây là ngày hiện tại, bạn có thể thêm một lớp CSS để làm nổi bật
             if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
-                dayLi.classList.add('active');
+                
+                dayLi.id = "active";
             }
 
             // Thêm các logic khác tùy thuộc vào yêu cầu của bạn (ví dụ: xác định ngày có sự kiện)
 
             calendarDaysElement.appendChild(dayLi);
+            
+            updateMonthYearDisplay();
         }
+        GetBillEvent(currentMonth, currentYear, daysInMonth);
     }
+
+
 
     function updateMonthYearDisplay() {
         const monthNames = [
@@ -355,13 +387,14 @@
         const currentMonthName = monthNames[currentMonth];
 
         // Hiển thị tháng và năm trong thẻ có id là "current-month-year"
-        document.getElementById('current-month-year').textContent = `${currentMonthName} ${currentYear}`;
+        var currentMonthYearElement = document.getElementById("current-month-year");
+        currentMonthYearElement.innerHTML = currentYear + " " + currentMonthName; // Đặt giá trị mới tùy ý
+
     }
 
     // Sự kiện nhấn cho nút "prev-month"
     document.getElementById('prev-month').addEventListener('click', function () {
         // Giảm tháng đi 1
-        currentMonth = parseInt(currentDate.getMonth());
         currentMonth--;
         // Nếu tháng là tháng 0 (tháng 1), cập nhật năm và tháng về tháng 12 của năm trước
         if (currentMonth < 0) {
@@ -369,7 +402,7 @@
             currentYear--;
         }
         // Cập nhật lịch
-        updateCalendar();
+        updateCalendar(currentMonth);
     });
 
     // Sự kiện nhấn cho nút "next-month"
@@ -382,12 +415,123 @@
             currentYear++;
         }
         // Cập nhật lịch
-        updateCalendar();
+        updateCalendar(currentMonth);
     });
 
     // Khởi tạo lịch khi trang được tải lần đầu
-    updateCalendar();
+    updateCalendar(currentMonth);
+    
     updateMonthYearDisplay();
+    
+    async function GetBillEvent(currentMonth,  currentYear,  daysInCurrentMonth) {
+        var DateStart = currentYear + "-" + (parseInt(currentMonth) + 1) + "-01";
+        var DateEnd = currentYear + "-" + (parseInt(currentMonth) + 1) + "-" + daysInCurrentMonth;
+
+        let Final = DateStart + "@@" + "@@" + DateEnd;
+        const response = await fetch(`/api/users/getbillbydate?date=${Final}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json(); // Chuyển đổi response thành JSON
+        var borrowDates = data.map(item => item.borrowDate);
+        borrowDates.forEach(function (dateString) {
+            var borrowDate = new Date(dateString);
+            var day = borrowDate.getDate();
+            console.log(day);
+            var elementWithClass = document.getElementById("calendar-days").getElementsByClassName(day)[0];
+            elementWithClass.id = 'active';
+
+        });
+
+        const dayItems = document.querySelectorAll('[id^="active"]');
+        dayItems.forEach(dayItem => {
+            dayItem.addEventListener('click', function () {
+
+                console.log('Day clicked:', dayItem.className);
+                var elementWithschedules = document.getElementById("id_schedules");
+                elementWithschedules.innerHTML = '';
+                data.forEach(function (item) {
+                    var borrowDate = new Date(item.borrowDate);
+                    var day = borrowDate.getDate();
+
+                    if (day == dayItem.className) {
+                        console.log(item); // Nếu ngày trùng khớp, in ra thông tin của phần tử
+                        var dateTime = new Date(item.borrowDate);
+
+                  
+                        function formatNumber(number) {
+                            return number < 10 ? '0' + number : number.toString();
+                        }
+                        // Lấy ra giờ, phút và giây
+                        var hours = formatNumber(dateTime.getHours());
+                        var minutes = formatNumber(dateTime.getMinutes());
+
+                       
+                        var time = hours + ":" + minutes;
+                        var facility = "";
+                        
+                        if (item.facilityId == 1) {
+                            facility = "Nguyễn Văn Tráng";
+                        }
+                        else if (item.facilityId == 2) {
+                            facility = "Thành Thái";
+                        }
+                        else if (item.facilityId == 3) {
+                            facility = "Cao Thắng";
+                        }
+                        else if (item.facilityId == 4) {
+                            facility = "Quang Trung 2";
+                        }
+                       
+
+                     
+
+
+                        var scheduleWrapDiv = document.createElement('div');
+                        scheduleWrapDiv.classList.add('schedule-wrap');
+
+                        var scheduleBoxDiv = document.createElement('div');
+                        scheduleBoxDiv.classList.add('schedule-box');
+
+                        var centerDiv = document.createElement('div');
+                        centerDiv.classList.add('center');
+
+                        var scheduleDayDiv = document.createElement('div');
+                        scheduleDayDiv.classList.add('schedule-day');
+
+                        var randomBackgroundB = document.createElement('b');
+                        randomBackgroundB.classList.add('random-background');
+                        randomBackgroundB.textContent = dayItem.className;
+
+                        var scheduleContentDiv = document.createElement('div');
+                        scheduleContentDiv.classList.add('schedule-content');
+
+                        var contentP1 = document.createElement('p');
+                        contentP1.classList.add('content');
+                        contentP1.textContent = item.bid+' created an order';
+
+                        var contentP2 = document.createElement('p');
+                        contentP2.classList.add('time');
+                        contentP2.textContent = "Time: "+time + " AT: " + facility;
+
+                        // Gắn các phần tử vào nhau theo cấu trúc
+                        scheduleDayDiv.appendChild(randomBackgroundB);
+                        centerDiv.appendChild(scheduleDayDiv);
+                        scheduleContentDiv.appendChild(contentP1);
+                        scheduleContentDiv.appendChild(contentP2);
+                        centerDiv.appendChild(scheduleContentDiv);
+                        scheduleBoxDiv.appendChild(centerDiv);
+                        scheduleWrapDiv.appendChild(scheduleBoxDiv);
+
+                        elementWithschedules.appendChild(scheduleWrapDiv);
+                    }
+                });
+
+            });
+        });
+    }
+
+
+
 </script>
-
-
