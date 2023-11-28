@@ -1,14 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
-
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -31,6 +29,7 @@ using static FlyBugClub_WebApp.Areas.Identity.Pages.Account.RegisterModel;
 using System.Text.RegularExpressions;
 using System.Reflection;
 using FlyBugClub_WebApp.Migrations;
+using Microsoft.EntityFrameworkCore;
 
 namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 {
@@ -96,7 +95,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "UID")]
-            [ValidateUID(ErrorMessage = "UID phải có 5 số cuối là 12897")]
+            [ValidateUID(ErrorMessage = "UID ko hợp lệ")]
             public string UID { get; set; }
 
             [Required]
@@ -109,7 +108,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
 
             [Required]
             [EmailAddress]
-            //[RegularExpression(@"^[\w-]+(\.[\w-]+)*@hoasen\.edu\.vn$|^[\w-]+(\.[\w-]+)*@sinhvien\.hoasen\.edu\.vn$", ErrorMessage = "Invalid email domain.")]
+            [RegularExpression(@"^[\w-]+(\.[\w-]+)*@hoasen\.edu\.vn$|^[\w-]+(\.[\w-]+)*@sinhvien\.hoasen\.edu\.vn$", ErrorMessage = "Invalid email domain.")]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
@@ -157,29 +156,38 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
                 {
                 /*var user = CreateUser();
-
+                
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
-                string otp = GenerateOTP();
-                SendEmail(otp, Input.Email);
+                var existingEmail = _ctx.Users.FirstOrDefaultAsync(u => u.Email == Input.Email);
+                if (existingEmail == null) {
+                    string otp = GenerateOTP();
+                    SendEmail(otp, Input.Email);
 
-                var position = "";
-                if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
-                {
-                    position = "STU";
+                    var position = "";
+                    if (Input.Email.EndsWith("sinhvien.hoasen.edu.vn"))
+                    {
+                        position = "STU";
+                    }
+                    else if (Input.Email.EndsWith("hoasen.edu.vn"))
+                    {
+                        position = "TC";
+                    }
+                    else if (Input.Email.EndsWith("gmail.com"))
+                    {
+                        position = "STU";
+                    }
+                    List<string> data_user = new List<string> { Input.FullName, Input.UID, position, Input.PhoneNumber, Input.Address, Input.Email, Input.Password };
+                    var User_Json = JsonConvert.SerializeObject(data_user);
+                    var encodedUserJson = System.Web.HttpUtility.UrlEncode(User_Json, Encoding.UTF8);
+                    return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={encodedUserJson}");
+
                 }
-                else if (Input.Email.EndsWith("hoasen.edu.vn"))
+                else
                 {
-                    position = "TC";
+                    ModelState.AddModelError("Input.Email", "Email already exists.");
+                  
                 }
-                else if (Input.Email.EndsWith("gmail.com"))
-                {
-                    position = "STU";
-                }
-                List<string> data_user = new List<string> { Input.FullName, Input.UID, position, Input.PhoneNumber, Input.Address, Input.Email, Input.Password };
-                var User_Json = JsonConvert.SerializeObject(data_user);
-                var encodedUserJson = System.Web.HttpUtility.UrlEncode(User_Json, Encoding.UTF8);
-                return LocalRedirect($"/Account/VerifyAccount?otp={otp}&user={encodedUserJson}");
 
 
 
@@ -302,6 +310,24 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                     {
                         emailValue = (string)emailProperty.GetValue(validationContext.ObjectInstance);
                         // Đây, bạn có thể kiểm tra và xử lý Input.Email nếu cần thiết.
+                        string[] parts = emailValue.Split('@');
+                        if (parts.Length == 2)
+                        {
+                            string beforeAt = parts[0];
+                            string afterAt = parts[1];
+
+                            if(afterAt.Equals("hoasen.edu.vn"))
+                            {
+                                return ValidationResult.Success;
+                            }    
+
+                        }
+                        else
+                        {
+                            return new ValidationResult("Email sinh viên ko hợp lệ");
+                        }
+
+                       
 
 
                         Match match = Regex.Match(emailValue, @"\d+");
