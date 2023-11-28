@@ -98,8 +98,10 @@
                                         </thead>
                                         <tbody id="list_billborrow"></tbody>
                                     </table>
-                    <div class="info-sales">
-                        <div class="head-income">
+                                </div>
+                            </form>
+                            <div class="info-sales">
+                        @*<div class="head-income">
                             <h5>Fanacial</h5>
                             <form>
                                 <div class="datepicker">
@@ -113,6 +115,8 @@
                                     <div><b id="TotalIncome" class="amount"></b></div>
                                 </div>
                             </div>
+                        </div>*@
+                    </div>
                         </div>
                     </div>
                     <div class="row m-0">
@@ -218,13 +222,9 @@
     let currentYear = new Date().getFullYear();
     let currentMonth = new Date().getMonth();
     let daysInCurrentMonth = getDaysInMonth(currentYear, currentMonth);
- 
-    
+
     Get10Bill();
     
-  
-
-
     document.getElementById('cuong').onchange = function () {
 
         let date = document.getElementById("cuong").className;
@@ -547,7 +547,10 @@
             });
         });
     }
+</script>
 
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -589,19 +592,21 @@
             },
             vAxes: {
                 // Adds titles to each axis.
-                0: { title: 'Temps (Celsius)' },
-                1: { title: 'Daylight' }
+                0: { title: 'Temps (Celsius)', textStyle: { fontName: 'JetBrains Mono' } },
+                1: { title: 'Daylight', textStyle: { fontName: 'JetBrains Mono' } }
             },
             hAxis: {
                 ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
                 new Date(2014, 4), new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
                 new Date(2014, 8), new Date(2014, 9), new Date(2014, 10), new Date(2014, 11)
-                ]
+                ],
+                textStyle: { fontName: 'JetBrains Mono' }
             },
             vAxis: {
                 viewWindow: {
                     max: 30
-                }
+                },
+                textStyle: { fontName: 'JetBrains Mono' }
             }
         };
 
