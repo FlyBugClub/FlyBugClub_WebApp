@@ -83,9 +83,25 @@ namespace FlyBugClub_WebApp.Controllers
         {
             string[] two_date = date.Split("@@");
             DateTime startDate = DateTime.ParseExact(two_date[0], "yyyy-MM-dd", CultureInfo.InvariantCulture); // Chỉnh lại định dạng ngày nếu cần
-            DateTime endDate = DateTime.ParseExact(two_date[1], "yyyy-MM-dd", CultureInfo.InvariantCulture).AddDays(1); // Chỉnh lại định dạng ngày nếu cần
+            DateTime endDate = DateTime.ParseExact(two_date[1], "yyyy-MM-dd", CultureInfo.InvariantCulture).AddHours(23); // Chỉnh lại định dạng ngày nếu cần
 
             var result = _ctx.BillBorrows.Where(u => u.BorrowDate >= startDate && u.BorrowDate <= endDate).ToList();
+            result.Reverse();
+
+            
+            return result;
+
+        }
+        [HttpGet]
+        [Route("get10bill")]
+        public async Task<List<BillBorrow>> Get10Billl ()
+        {
+            var result = _ctx.BillBorrows
+             .OrderByDescending(b => b.BorrowDate) // Sắp xếp theo BorrowDate giảm dần
+             .Take(10) // Lấy 10 phần tử
+             .ToList();
+
+           
 
             return result;
 

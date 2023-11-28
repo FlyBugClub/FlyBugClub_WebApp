@@ -133,6 +133,7 @@ namespace FlyBugClub_WebApp.Controllers
                     user.ImgUser = "default_avatar.png";
 
                     var result = await _userManager.CreateAsync(user, Data_User[6]);
+                    await _userManager.AddToRoleAsync(user, "Customer");
                     User usr = new User()
                     {
                         Name = Data_User[0],
@@ -203,8 +204,8 @@ namespace FlyBugClub_WebApp.Controllers
                 };
                 //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
                 message.From.Add(new MailboxAddress("FlyBug Club", "flybug@hoasen.edu.vn"));
-                message.To.Add(new MailboxAddress("Test", email));
-                message.Subject = "FlyBug thông báo nhè nhẹ :))";
+                message.To.Add(new MailboxAddress("Xác nhận mã Email", email));
+                message.Subject = "Xác nhận mã email";
                 client.Send(message);
                 client.Disconnect(true);
             }
@@ -221,12 +222,12 @@ namespace FlyBugClub_WebApp.Controllers
         // Hàm để render CSHTML để nhận được mã HTML
         private async Task<string> RenderCshtml(string cshtmlContent, string otp)
         {
-            var currentUser = await _userManager.GetUserAsync(User);
+            
 
             // Thực hiện các bước cần thiết để render CSHTML và thay thế các giá trị
             // Đây chỉ là một ví dụ đơn giản, bạn có thể sử dụng RazorEngine hoặc các thư viện tương tự
             // để thực hiện quá trình render CSHTML
-            cshtmlContent = cshtmlContent.Replace("Xin chào Danny!", $"Xin chào {currentUser.FullName}!");
+            cshtmlContent = cshtmlContent.Replace("Xin chào Danny!", $"Xin chào!");
             cshtmlContent = cshtmlContent.Replace("OTP here", otp);
 
             return cshtmlContent;
