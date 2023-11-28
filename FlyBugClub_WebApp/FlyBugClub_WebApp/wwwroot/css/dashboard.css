@@ -35,18 +35,6 @@ section.dashboard{
     display: flex;
 }
 
-
-/* .dashboard .tagtop .link{
-    /* position: relative; */
-    /* top: 2px; */
-    /*display: flex;
-    float: right;
-    font-size: 14px;
-    left: 220;
-    padding: 5px;
-    color: #333;
-} */
-
 .dashboard .tagtop img{
     width: 40px;
     height: 40px;

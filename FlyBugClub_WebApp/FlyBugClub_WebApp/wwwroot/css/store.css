@@ -36,12 +36,36 @@ section.body .search {
     width: 100%;
 }
 
+.store-note .line-symbol {
+    padding-top: 20px;
+}
+
+.store-note .line-symbol p.renting-privacy {
+    height:fit-content !important;
+    font-size: 12px;
+    margin: 0 15px;
+    color: #d8d8d8;
+}
+
+.store-note .line-symbol hr{
+    height: 1.2px;
+    margin-top: 28px;
+    margin-bottom: 0px;
+    color: #000;
+}
+
+.line-symbol i{
+    margin: 0 10px
+}
+
 .body .search .store-note p {
     width: 85%;
-    margin-top: 30px;
-    height: 200px;
-    overflow-y: auto; 
-    position: relative; 
+    margin-top: 20px;
+    height: 120px;
+    overflow-y: auto;
+    position: relative;
+
+    color: #d8d8d8;
 }
 
 .body .search .store-note p::-webkit-scrollbar {
@@ -49,7 +73,7 @@ section.body .search {
 }
 
 .body .search p {
-    color: #FFF;
+    color: #d8d8d8;
     text-align: justify;
 }
 

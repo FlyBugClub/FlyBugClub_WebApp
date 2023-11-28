@@ -69,6 +69,10 @@ nav{
     z-index: 999;
 }
 
+nav ul.function-bottom{
+    border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
 nav::-webkit-scrollbar {
     width: 10px;
 }
@@ -198,10 +202,10 @@ nav:hover{
     transition: all 0.5s ease;
 }
 
-.logout{
+/*.logout{
     position: absolute;
     bottom: 0;
-}
+}*/
 
 /* ============= Custom ScrollBar ============= */
 
