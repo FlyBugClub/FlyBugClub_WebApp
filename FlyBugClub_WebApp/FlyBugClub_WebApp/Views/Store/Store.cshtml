@@ -161,11 +161,11 @@
                                                     <h3>@item.Name</h3>
                                                     <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                                                     <div class="center icon-card">
-                                                        <button type="button" class="icon icon-share">
+                                                        @*<button type="button" class="icon icon-share">
                                                             <a href="#" title="Chia sẽ">
                                                                 <i class="fa-solid fa-share"></i>
                                                             </a>
-                                                        </button>
+                                                        </button>*@
                                                         <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
                                                             <a href="#" title="Yêu thích">
                                                                 <i class="fa-heart @loveStatus"></i>
@@ -321,4 +321,4 @@
             }
         }
     }
-            </script>
+</script>

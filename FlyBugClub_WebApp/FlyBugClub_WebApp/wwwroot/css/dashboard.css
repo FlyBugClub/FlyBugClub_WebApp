@@ -325,11 +325,12 @@ section.dashboard{
 }
 
 #active {
+    
     padding: 6px;
     background: #012a4a;
     color: white !important;
     border:none;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
 #event {
@@ -345,24 +346,11 @@ section.dashboard{
     color: #777;
 }
 
-/*.days li .appoitment {
-    padding: 3.5px;
-    color: #777 !important;
-    border: 3px #eb573d solid;
-    border-radius: 20px;
-}*/
-
-/*.days li .delivered {
-    padding: 5px;
-    background: #eb573d;
-    color: white !important;
-    border: none;
-    border-radius: 10px;
-}*/
-
-
-
-
+.dashboard .calendar .schedules .text-empty-event{
+    color: #ccc;
+    font-style: italic;
+    font-size: 23px;
+}
 
 .dashboard .calendar .schedules-title {
     margin: 0px 15px 15px 15px;

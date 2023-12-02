@@ -2517,6 +2517,22 @@
           }
         }
       },
+      "SixLabors.ImageSharp/3.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7739,6 +7755,22 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
+    "SixLabors.ImageSharp/3.0.2": {
+      "sha512": "PlwUHnLZ67G1i0xXDYQJYbFiJsvXiEFWtKdV0QvY9j+dFasYbl+vWXXY42/asTsNjchsH5BLuoRzlf8Fa8lzpg==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.0.2.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -11649,7 +11681,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "MimeKit >= 4.2.0"
+      "MimeKit >= 4.2.0",
+      "SixLabors.ImageSharp >= 3.0.2"
     ]
   },
   "packageFolders": {
@@ -11658,11 +11691,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+      "projectUniqueName": "E:\\Projects\\GitLab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
       "projectName": "FlyBugClub_WebApp",
-      "projectPath": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
+      "projectPath": "E:\\Projects\\GitLab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
+      "outputPath": "E:\\Projects\\GitLab\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\FlyBugClub_WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11724,6 +11757,10 @@
           "MimeKit": {
             "target": "Package",
             "version": "[4.2.0, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[3.0.2, )"
           }
         },
         "imports": [

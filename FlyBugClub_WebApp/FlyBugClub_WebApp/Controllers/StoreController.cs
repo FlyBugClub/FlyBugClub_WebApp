@@ -400,6 +400,7 @@ namespace FlyBugClub_WebApp.Controllers
                 bd.Price = item.Price;
                 bd.Quantity= item.Quantity;
                 device.Quantity -= item.Quantity;
+                device.BorrowRate += 1;
                 bd.ReturnQuantity = 0;
                 bd.QtyDamage = 0;
                 

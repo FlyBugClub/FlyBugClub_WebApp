@@ -120,6 +120,27 @@
                                 }
                             </li>
                             <li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    var user = await UserManager.GetUserAsync(User);
+
+                                    if (await UserManager.IsInRoleAsync(user, "ADMINISTRATOR"))
+                                    {
+                                        <a asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard" style="display: block">
+                                            <i class="fas fa-solid fa-chart-simple"></i>
+                                            <span class="nav-item">Trang quản lý</span>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-area="Admin" asp-controller="Dashboard" asp-action="Dashboard" style="display: none">
+                                            <i class="fas fa-solid fa-chart-simple"></i>
+                                            <span class="nav-item">Trang cá nhân</span>
+                                        </a>
+                                    }
+                                }
+                            </li>
+                            <li>
                                 <a asp-controller="Account" asp-action="FavoriteDevice">
                                     <i class="fas fa-solid fa-heart"></i>
                                     <span class="nav-item">Sản phẩm yêu thích</span>
@@ -144,8 +165,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/" class="logout">
-
+                                @*<a href="/" class="logout"></a>*@
                                 <a href="/admin/dashboard/logout" class="logout">
                                     <i class="fas fa-solid fa-right-from-bracket"></i>
                                     <span class="nav-item">Đăng xuất</span>

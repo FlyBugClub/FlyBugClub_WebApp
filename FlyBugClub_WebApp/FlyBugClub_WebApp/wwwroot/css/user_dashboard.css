@@ -101,14 +101,14 @@
     border-radius: 24px !important;
 }
 
-.change-info .ChangeInfoUser .avatar-area{
+/*.change-info .ChangeInfoUser .avatar-area{
     position: relative;
     height: 200px;
     width: 200px;
     border-radius:50%;
     overflow: hidden;
     margin: 20% 8% !important;
-}
+}*/
 
 .change-info .ChangeInfoUser img.change-avatar {
     height: 200px;
@@ -123,14 +123,14 @@
     width: 200px;
     border-radius: 50%;
     overflow: hidden;
-    margin: auto;
+    margin: 20% auto;
 }
 
 .change-info img.change-avatar {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: 5px #fff solid;
+    border: 5px #ccc solid;
 }
 
 .change-info .avatar-area button.upload-img {

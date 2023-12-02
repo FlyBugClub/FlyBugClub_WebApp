@@ -48,8 +48,10 @@ namespace FlyBugClub_WebApp.Controllers
             _emailSender = emailSender;
         }
 
-        public IActionResult SaveCropedImage(string filename, IFormFile blob)
+        [HttpPost]
+        public async Task<IActionResult> SaveCropedImage(string filename, IFormFile blob)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
             try
             {
                 using (var image = Image.Load(blob.OpenReadStream()))
@@ -59,8 +61,13 @@ namespace FlyBugClub_WebApp.Controllers
                     var path = Path.Combine(_webHostEnvironment.WebRootPath, uploadDir, filename);
                     image.Mutate(x => x.Resize(200, 200));
                     image.Save(path);
+
+
+                    currentUser.ImgUser = filename;
+                    await _userManager.UpdateAsync(currentUser);
                 }
-                return Json(new { Message = "OK" });
+                /*return Json(new { Message = "OK" });*/
+                return RedirectToAction("ChangeInfoUser", "Account");
             }
             catch (Exception)
             {
@@ -492,7 +499,7 @@ namespace FlyBugClub_WebApp.Controllers
                 {
                     ViewBag.FullName = user.FullName;
                     ViewBag.UID = user.UID;
-                    ViewBag.Phone = user.Phone;
+                    ViewBag.Phone = user.PhoneNumber;
                     ViewBag.Address = user.Address;
                     ViewBag.Email = user.Email;
                     if (user.PositionID == "STU")
