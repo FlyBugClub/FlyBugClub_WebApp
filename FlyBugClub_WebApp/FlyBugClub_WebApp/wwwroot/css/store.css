@@ -288,12 +288,8 @@ section.body .search {
     width: 100%;
     color: #012A4A;
     padding: 15px;
+    border: none;
     border-radius: 16px;
-    transition: all .25s ease-in;
-}
-
-.body .right .store .icon-card .icon:hover i {
-    rotate: 0deg;
     transition: all .25s ease-in;
 }
 

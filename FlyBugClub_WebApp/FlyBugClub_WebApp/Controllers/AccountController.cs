@@ -637,11 +637,28 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
         
-        public IActionResult DetailReceiption(string id)
+        public async Task<IActionResult> DetailReceiption(string id)
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+
             List<BorrowDetail> billdetail = _orderProcessingRepository.GetDetailBillByBID(id);
 
             ViewBag.Bid = id;
+
+            var billsByUID = _ctx.BillBorrows
+                    .Where(b => b.Sid == currentUser.UID)
+                    .Include(b => b.BorrowDetails)
+                    .OrderByDescending(b => b.BorrowDate)
+                    .OrderBy(b => b.Status)
+                    .ToList();
+
+            foreach (var bill in billsByUID)
+            {
+                foreach (var detail in bill.BorrowDetails)
+                {
+                    detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                }
+            }
 
             return View("DetailReceiption", billdetail);
         }
