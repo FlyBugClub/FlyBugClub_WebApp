@@ -288,6 +288,19 @@
 <script>
     function handleButtonClick(button) {
         event.preventDefault();
+        var status;
+        var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
+        var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
+        // tim rong
+        if (heartIcon_regular != null) {
+            status = "true";
+        }
+        // tim dac
+        else if (heartIcon_solid != null) {
+            status = "false";
+
+        }
+
         var deviceId = button.getAttribute("data-index");
         var userId = "@userId";
         if (userId !== "") {

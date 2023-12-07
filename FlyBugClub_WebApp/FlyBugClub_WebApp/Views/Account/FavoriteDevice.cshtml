@@ -5,16 +5,29 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutDashboardUser.cshtml";
-    string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+   
 }
 
 <h2 class="title-favorite">Sản phẩm yêu thích</h2>
 <hr style="width:100%;text-align:left;margin-left:0; color:white; height: 2px; margin-top: 8px;">
 <div class="container">
     <div class="item-store">
+      
         <div class="row">
+            @{
+                string userId = "";
+
+                if (User.Identity.IsAuthenticated)
+                {
+                    userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+
+                }
+
+            }
                 @if (Model.GetDeviceFavorite != null)
                 {
+                
                     @foreach (var item in Model.GetDeviceFavorite)
                     {
                         if(item.Status == 1)
@@ -26,11 +39,11 @@
                                         <h3>@item.Name</h3>
                                         <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                                         <div class="center icon-card">
-                                            <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
-                                                <a href="#" title="Yêu thích">
-                                                    <i class="fa-heart fa-solid"></i>
-                                                </a>
-                                            </button>
+                                        <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
+                                            <a href="#" title="Yêu thích">
+                                                <i class="fa-heart fa-solid"></i>
+                                            </a>
+                                        </button>
 
                                             <button class="icon icon-share">
                                                 <a asp-controller="Store" asp-action="AddToCard" asp-route-id="@item.DeviceId" title="Bỏ giỏ">
@@ -55,11 +68,11 @@
                                         <h3>@item.Name</h3>
                                         <p>Hết hàng</p>
                                         <div class="center icon-card">
-                                            <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
-                                                <a href="#">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </a>
-                                            </button>
+                                        <button class="icon icon-love" data-index="@item.DeviceId" asp-route-id="@item.DeviceId" onclick="handleButtonClick(this)">
+                                            <a href="#" title="Yêu thích">
+                                                <i class="fa-heart fa-solid"></i>
+                                            </a>
+                                        </button>
                                             <button class="icon icon-share" disabled>
                                                 <a href="javascript:void(0);">
                                                     <i class="fa-solid fa-cart-plus"></i>
@@ -80,13 +93,13 @@
                     <p>Chưa có thêm thiết bị ưu thích</p>
                 }            
         </div>
+      
     </div>
 </div>
-
 <script>
     function handleButtonClick(button) {
         event.preventDefault();
-
+        alert("hehe");
         var status;
         var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
         var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
@@ -101,14 +114,19 @@
         }
 
         var deviceId = button.getAttribute("data-index");
-
-        // Sử dụng userId ở phạm vi JavaScript
-
         var userId = "@userId";
         if (userId !== "") {
 
             fetchData(userId, deviceId, status);
 
+            if (status === "true") {
+                heartIcon_regular.classList.remove('fa-regular');
+                heartIcon_regular.classList.add('fa-solid');
+            }
+            else {
+                heartIcon_solid.classList.remove('fa-solid');
+                heartIcon_solid.classList.add('fa-regular');
+            }
         }
 
         async function fetchData(userId, deviceId, status) {
@@ -126,8 +144,6 @@
                     heartIcon_solid.classList.add('fa-regular');
                 }
             }
-
         }
     }
 </script>
-
