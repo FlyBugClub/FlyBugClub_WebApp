@@ -112,7 +112,7 @@ namespace FlyBugClub_WebApp.Controllers
         } // xử lý cửa hàng
 
         [HttpGet]
-        public IActionResult Search(string keyword, int page = 1)
+        public async Task<IActionResult> Search(string keyword, int page = 1)
         {
             List<Device> products = _productRepository.SearchByName(keyword);
 
@@ -141,6 +141,7 @@ namespace FlyBugClub_WebApp.Controllers
             ViewBag.TotalPages = totalPages;
             ViewBag.keyword = keyword;
 
+            MenuCard m = new MenuCard();
             CardModel cartModel = new CardModel();
             cartModel.CardId = HttpContext.Session.Id;
             if (HttpContext.Session.Get<List<Item>>("store") != null)
@@ -149,7 +150,14 @@ namespace FlyBugClub_WebApp.Controllers
                 cartModel.setAllItem(items);
             }
 
-            MenuCard m = new MenuCard();
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                m.borrowRate = GetBorrowRate;
+            }
+
             m.Card = cartModel;
             m.GetDevices = paginatedProducts;
 
@@ -168,7 +176,7 @@ namespace FlyBugClub_WebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult SortProduct(string sortOption, int page = 1)
+        public async Task<IActionResult> SortProduct(string sortOption, int page = 1)
         {
             var products = _productRepository.GetAllDevices();
             /*==================== Pagination ====================*/
@@ -207,6 +215,14 @@ namespace FlyBugClub_WebApp.Controllers
                 cartModel.setAllItem(items);
             }
 
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                m.borrowRate = GetBorrowRate;
+            }
+
             m.GetDevices = paginatedProducts;
             m.Card = cartModel;
 
@@ -221,7 +237,7 @@ namespace FlyBugClub_WebApp.Controllers
         }  // Sắp xếp sản phẩm
 
         [HttpGet]
-        public IActionResult FillProduct(string fillOption, int page = 1)
+        public async Task<IActionResult> FillProduct(string fillOption, int page = 1)
         {
             /*var filteredProducts = new List<Device>();*/
 
@@ -265,6 +281,14 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 List<Item>? items = HttpContext.Session.Get<List<Item>>("store");
                 cartModel.setAllItem(items);
+            }
+
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                m.borrowRate = GetBorrowRate;
             }
 
             m.GetDevices = paginatedProducts;
