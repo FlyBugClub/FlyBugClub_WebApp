@@ -34,34 +34,38 @@
     <!-- ======================== -->
     <!-- ======== HEADER ======== -->
     <!-- =========================-->
-
     <header>
-        <div class="container">
-            <div class="nav">
-                <ul class="nav__links">
-                    <li class="">
-                        <a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a>
-                    </li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Đồ án</a></li>
-                    <li class="">
-                        <a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a>
-                    </li>
-                    <li><a href="#">Hình ảnh</a></li>
-                    <li><a href="#">Chiêu mộ</a></li>
-                    <li class="center login">
-                        <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
-                        <span>/</span>
-                        <a href="/Identity/Account/Register" class="dangky">Đăng ký</a>
-                    </li>
-                </ul>
-                <div class="logo">
-                    <div class="main-logo">
-                        <img src="~/img/img_logo/logo.png" alt="FlyBug logo">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <nav class="wrapper">
+            <ul class="nav sidebar" style="display: none;">
+                <li class="close" onclick=hideSidebar()><a href="#"><svg class="feather feather-x close-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18" /><line x1="6" x2="18" y1="6" y2="18" /></svg></a></li>
+                <li class="logo"><a href="#"><img class="logo" src="~/img/img_logo/logo01.png" alt="logo"></a></li>
+                <li class="center login hideOnMobile">
+                    <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
+                </li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Đồ án</a></li>
+                <li><a href="#">Cửa hàng</a></li>
+                <li><a href="#">Hình ảnh</a></li>
+                <li><a href="#">Chiêu mộ</a></li>
+            </ul>
+
+            <ul class="nav">
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="18" y2="18" /></svg></a></li>
+                <li class="hideOnMobile home"><a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a></li>
+                <li class="hideOnMobile"><a href="#">Giới thiệu</a></li>
+                <li class="hideOnMobile"><a href="#">Đồ án</a></li>
+                <li class="hideOnMobile"><a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a></li>
+                <li class="logo"><a asp-controller="Store" asp-action="Store" data-target="/Store/Store"><img class="logo" src="~/img/img_logo/logo01.png" alt="logo"></a></li>
+                <li class="hideOnMobile"><a href="#">Hình ảnh</a></li>
+                <li class="hideOnMobile"><a href="#">Chiêu mộ</a></li>
+                <li class="login hideOnMobile">
+                    <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
+                    <span>/</span>
+                    <a href="/Identity/Account/Register" class="dangky">Đăng ký</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- ======================== -->
@@ -72,6 +76,19 @@
 
     <!-- ======== JavaScript ======== -->
     @*JS*@
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+            sidebar.style.justifycontent = 'center'
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="~/js/swiper-bundle.min.js"></script>
     

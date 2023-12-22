@@ -643,26 +643,33 @@ namespace FlyBugClub_WebApp.Controllers
         {
             var currentUser = await _userManager.GetUserAsync(User);
 
-            List<BorrowDetail> billdetail = _orderProcessingRepository.GetDetailBillByBID(id);
-
-            ViewBag.Bid = id;
-
-            var billsByUID = _ctx.BillBorrows
-                    .Where(b => b.Sid == currentUser.UID)
-                    .Include(b => b.BorrowDetails)
-                    .OrderByDescending(b => b.BorrowDate)
-                    .OrderBy(b => b.Status)
-                    .ToList();
-
-            foreach (var bill in billsByUID)
+            if (currentUser == null)
             {
-                foreach (var detail in bill.BorrowDetails)
-                {
-                    detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
-                }
+                return LocalRedirect("/Identity/Account/LoginCustomer");
             }
+            else
+            {
+                List<BorrowDetail> billdetail = _orderProcessingRepository.GetDetailBillByBID(id);
 
-            return View("DetailReceiption", billdetail);
+                ViewBag.Bid = id;
+
+                var billsByUID = _ctx.BillBorrows
+                        .Where(b => b.Sid == currentUser.UID)
+                        .Include(b => b.BorrowDetails)
+                        .OrderByDescending(b => b.BorrowDate)
+                        .OrderBy(b => b.Status)
+                        .ToList();
+
+                foreach (var bill in billsByUID)
+                {
+                    foreach (var detail in bill.BorrowDetails)
+                    {
+                        detail.DeviceId = _orderProcessingRepository.GetDeviceName(detail.DeviceId);
+                    }
+                }
+
+                return View("DetailReceiption", billdetail);
+            }
         }
         
         public IActionResult DeleteBill(string id)
@@ -693,19 +700,26 @@ namespace FlyBugClub_WebApp.Controllers
         public async Task<IActionResult> FavoriteDevice()
         {
             var currentUser = await _userManager.GetUserAsync(User);
-            MenuCard m = new MenuCard();
-            if (currentUser != null)
+
+            if (currentUser == null)
             {
-                List<Device> DevicesFavorite = _productRepository.GetDevicesFavorite(currentUser.UID);
-                m.GetDeviceFavorite = DevicesFavorite;   
-        
-                return View(m);
+                return LocalRedirect("/Identity/Account/LoginCustomer");
             }
             else
             {
-                return View(m);
-            }
-                
+                MenuCard m = new MenuCard();
+                if (currentUser != null)
+                {
+                    List<Device> DevicesFavorite = _productRepository.GetDevicesFavorite(currentUser.UID);
+                    m.GetDeviceFavorite = DevicesFavorite;
+
+                    return View(m);
+                }
+                else
+                {
+                    return View(m);
+                }
+            }   
         }
 
     }

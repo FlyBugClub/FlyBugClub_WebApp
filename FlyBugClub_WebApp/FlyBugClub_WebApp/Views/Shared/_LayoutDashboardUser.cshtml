@@ -41,57 +41,89 @@
     <!-- ======== HEADER ======== -->
     <!-- =========================-->
     <header>
-        <div class="nav">
-            <div class="nav__links">
-                <ul class="nav__links-left">
-                    <li>
-                        <a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a>
+        <nav class="wrapper">
+            <ul class="nav sidebar" style="display: none;">
+                <li class="close" onclick=hideSidebar()><a href="#"><svg class="feather feather-x close-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18" /><line x1="6" x2="18" y1="6" y2="18" /></svg></a></li>
+                <li class="logo"><a href="#"><img class="logo" src="~/img/img_logo/logo01.png" alt="logo"></a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var user = await UserManager.GetUserAsync(User);
+                    var fullName = user.FullName;
+                    var email = user.Email;
+                    var ImgUser = user.ImgUser;
+                    Context.Session.SetString("email", email);
+                    var cuong = "";
+
+                    <li class="avatar hideOnMobile">
+                        <a asp-controller="Account" asp-action="UserPage" class="avatar-area">
+                            <p>@fullName</p>
+                            <img class="avatar-user" src="~/img/img_user/@ImgUser" alt="avatar" />
+                        </a>
                     </li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Đồ án</a></li>
-                    <li>
-                        <a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a>
+                }
+                else
+                {
+                    <li class="login hideOnMobile">
+                        <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
+                        @* <span>/</span>
+                    <a href="/Identity/Account/Register" class="dangky">Đăng ký</a> *@
                     </li>
-                </ul>
-            </div>
-            <div class="logo">
-                <div>
-                    <img src="~/img/img_logo/logo.png" alt="FlyBug logo">
-                </div>
-            </div>
-            <div class="nav__links">
-                <ul class="nav__links-right">
-                    <li><a href="#">Hình ảnh</a></li>
-                    <li><a href="#">Chiêu mộ</a></li>
-                    @if(SignInManager.IsSignedIn(User)){
-                        var user = await UserManager.GetUserAsync(User);
-                        var fullName = user.FullName;
-                        <li class="center">
-                            <a class="user-name" asp-controller="Account" asp-action="UserPage">@fullName</a>
-                            <a href="/store/Logout">Logout</a>
-                        </li>
-                    }
-                    else{
-                        <li class="center login">
-                            <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
-                            <span>/</span>
-                            <a href="/Identity/Account/Register" class="dangky">Đăng ký</a>
-                        </li>
-                    }
-                    
-                </ul>
-            </div>
-        </div>
-        @*<div class="text-logo">
-            <img src="~/img/img_logo/FLYBUG CLUB.png" alt="Photo logo">
-        </div>*@
+                }
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Đồ án</a></li>
+                <li><a href="#">Cửa hàng</a></li>
+                <li><a href="#">Hình ảnh</a></li>
+                <li><a href="#">Chiêu mộ</a></li>
+                <li><a href="/admin/dashboard/logout">Đăng xuất</a></li>
+            </ul>
+
+            <ul class="nav">
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12" /><line x1="3" x2="21" y1="6" y2="6" /><line x1="3" x2="21" y1="18" y2="18" /></svg></a></li>
+                <li class="hideOnMobile home"><a asp-controller="Home" asp-action="Home" data-target="/Home/Home">Trang chủ</a></li>
+                <li class="hideOnMobile"><a href="#">Giới thiệu</a></li>
+                <li class="hideOnMobile"><a href="#">Đồ án</a></li>
+                <li class="hideOnMobile"><a asp-controller="Store" asp-action="Store" data-target="/Store/Store">Cửa hàng</a></li>
+                <li class="logo"><a asp-controller="Store" asp-action="Store" data-target="/Store/Store"><img class="logo" src="~/img/img_logo/logo01.png" alt="logo"></a></li>
+                <li class="hideOnMobile"><a href="#">Hình ảnh</a></li>
+                <li class="hideOnMobile"><a href="#">Chiêu mộ</a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var user = await UserManager.GetUserAsync(User);
+                    var fullName = user.FullName;
+                    var email = user.Email;
+                    var ImgUser = user.ImgUser;
+                    Context.Session.SetString("email", email);
+                    var cuong = "";
+
+                    <li class="avatar hideOnMobile">
+                        <a asp-controller="Account" asp-action="UserPage" class="avatar-area">
+                            <p>@fullName</p>
+                            <img class="avatar-user" src="~/img/img_user/@ImgUser" alt="avatar" />
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="center login hideOnMobile">
+                        <a href="/Identity/Account/LoginCustomer">Đăng nhập</a>
+                        <span>/</span>
+                        <a href="/Identity/Account/Register" class="dangky">Đăng ký</a>
+                    </li>
+                }
+            </ul>
+        </nav>
     </header>
+
+    <div class="text-logo">
+        <img src="~/img/img_logo/FLYBUG CLUB.png" alt="Photo logo">
+    </div>
 
     <div>
         <div class="container mw1440">
             <div class="row">
                 <div class="col col-lg-3 row-nav">
-                    <nav>
+                    <nav class="left-side">
                         <ul>
                             @if (SignInManager.IsSignedIn(User))
                             {
@@ -238,6 +270,19 @@
 
 
     <!-- ======== JavaScript ======== -->
+    <script>
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+            sidebar.style.justifycontent = 'center'
+        }
+
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+
     @*JS*@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="~/js/swiper-bundle.min.js"></script>

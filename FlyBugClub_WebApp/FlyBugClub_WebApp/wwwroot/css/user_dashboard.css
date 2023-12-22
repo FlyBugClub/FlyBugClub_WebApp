@@ -1,6 +1,7 @@
 .wrap-info-user {
     color: #fff;
     padding: 20px 0;
+    margin-right: 20px;
 }
 
 .wrap-info-user input, section, option{
@@ -26,6 +27,7 @@
 .wrap-info-user .avatar img{
     border: none;
     border-radius: 24px;
+    margin-bottom:20px;
 }
 
 .wrap-info-user #uplaod{

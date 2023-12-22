@@ -73,7 +73,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Nhớ mật khẩu?")]
             public bool RememberMe { get; set; }
         }
 
