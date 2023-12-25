@@ -10,6 +10,7 @@ using FlyBugClub_WebApp.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using System.Globalization;
 using MessagePack.Formatters;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FlyBugClub_WebApp.Controllers
 {
@@ -340,8 +341,29 @@ namespace FlyBugClub_WebApp.Controllers
             }
         }
 
+        // Hàm để kiểm tra xem đã sang ngày mới chưa
+        private bool IsNewDay(DateTime lastCheckDate)
+        {
+            return DateTime.Now.Date > lastCheckDate.Date;
+        }
+
+        private int nextBillNumber = 0;
+
+        // Lưu trữ ngày lần cuối cùng kiểm tra
+        private DateTime lastCheckDate = DateTime.Now;
+
+        public void ResetNextBillNumberIfNeeded()
+        {
+            if (IsNewDay(lastCheckDate))
+            {
+                // Nếu đã sang ngày mới, reset nextBillNumber về 0
+                nextBillNumber = 0;
+                lastCheckDate = DateTime.Now; // Cập nhật lại ngày lần cuối cùng kiểm tra
+            }
+        }
+
         [HttpPost]
-        public IActionResult CheckOut()
+        public async Task<IActionResult> CheckOut()
         {
             //doc session va luu database
             List<Item>? items = HttpContext.Session.Get<List<Item>>("store");
@@ -371,10 +393,15 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 int lastTwoDigitsOfYear = DateTime.Now.Year % 100;
                 int currentMonth = DateTime.Now.Month;
-                int nextBillNumber = 0;
 
-                var maxId = _orderProcessingRepository.GetMaxBillId();
-                if(maxId.Bid != null)
+                var currentUser = await _userManager.GetUserAsync(User);
+                string positionId = currentUser.PositionID;
+
+                var maxId = _orderProcessingRepository.GetMaxBillId(positionId);
+
+                ResetNextBillNumberIfNeeded();
+
+                if (maxId.Bid != null)
                 {
                     if (int.TryParse(maxId.Bid.Substring(maxId.Bid.Length - 3), out int lastTwoDigits))
                     {
@@ -383,6 +410,7 @@ namespace FlyBugClub_WebApp.Controllers
                 }
 
                 bill.Bid = $"{u.PositionId}{lastTwoDigitsOfYear:00}{currentMonth:00}{nextBillNumber:000}";
+                nextBillNumber++;
                 bill.Sid = u.StudentId;
                 bill.Phone = phone;
                 if (int.TryParse(selectedFacilityId, out int facilityId))

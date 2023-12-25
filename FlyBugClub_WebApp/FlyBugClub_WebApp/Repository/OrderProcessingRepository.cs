@@ -27,6 +27,7 @@ namespace FlyBugClub_WebApp.Repository
         public BorrowDetail findBillDetailById(string billId, string detailId);
         public List<BillBorrow> findBillByStatus(int statusId);
         public string GetFacilityNameById(int facilityId);
+        public BillBorrow GetMaxBillId(string userType);
     }
     public class OrderProcessingRepository : IOrderProcessingRepository
     {
@@ -167,7 +168,7 @@ namespace FlyBugClub_WebApp.Repository
         public bool AddHistory(HistoryUpdate history)
         {
             
-            
+        
                 _ctx.HistoryUpdates.Add(history);
                 _ctx.SaveChanges();
             
@@ -208,6 +209,32 @@ namespace FlyBugClub_WebApp.Repository
         public List<BillBorrow> findBillByStatus(int statusId)
         {
             return _ctx.BillBorrows.Where(x => x.Status == statusId).ToList();
+        }
+
+        public BillBorrow GetMaxBillId(string userType)
+        {
+            // Lấy mã bắt đầu bằng userType
+            var userBills = _ctx.BillBorrows
+                .Where(x => x.Bid.StartsWith(userType))
+                .ToList();
+
+            // Nếu không có mã bắt đầu bằng userType, trả về null hoặc thực hiện xử lý phù hợp
+            if (userBills.Count == 0)
+            {
+                // Trả về null hoặc xử lý phù hợp tùy thuộc vào yêu cầu của bạn
+                return null;
+            }
+
+            // Lấy 3 số cuối lớn nhất
+            var maxThreeDigit = userBills
+                .Select(x => int.Parse(x.Bid.Substring(3)))  // Lấy phần số cuối và chuyển thành số nguyên
+                .Max();
+
+            // Tìm mã có 3 số cuối lớn nhất
+            var maxBill = userBills
+                .FirstOrDefault(x => x.Bid.EndsWith(maxThreeDigit.ToString()));
+
+            return maxBill;
         }
     }
 }
