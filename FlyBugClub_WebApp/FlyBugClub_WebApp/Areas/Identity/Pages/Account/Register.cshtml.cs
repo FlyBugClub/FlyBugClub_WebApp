@@ -159,7 +159,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
-                var existingEmail = _ctx.Users.FirstOrDefaultAsync(u => u.Email == Input.Email);
+                var existingEmail = await _ctx.Users.FirstOrDefaultAsync(u => u.Email == Input.Email);
                 if (existingEmail == null) {
                     string otp = GenerateOTP();
                     SendEmail(otp, Input.Email);
