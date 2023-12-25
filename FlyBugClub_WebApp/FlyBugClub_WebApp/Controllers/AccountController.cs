@@ -151,6 +151,7 @@ namespace FlyBugClub_WebApp.Controllers
                     user.UID = Data_User[1];
                     user.PhoneNumber = Data_User[3];
                     user.Address = Data_User[4];
+                    user.PositionID = Data_User[2];
                     user.ImgUser = "default_avatar.png";
 
                     var result = await _userManager.CreateAsync(user, Data_User[6]);
