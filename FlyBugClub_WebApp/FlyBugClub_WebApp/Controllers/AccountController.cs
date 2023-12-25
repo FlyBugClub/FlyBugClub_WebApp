@@ -67,6 +67,18 @@ namespace FlyBugClub_WebApp.Controllers
 
                     currentUser.ImgUser = filename;
                     await _userManager.UpdateAsync(currentUser);
+
+                    var userImg = await _ctx.Users
+                    .Where(b => b.StudentId == currentUser.UID)
+                    .FirstOrDefaultAsync();
+
+                    if (userImg != null)
+                    {
+                        userImg.ImgUser = currentUser.ImgUser;
+
+                        await _ctx.SaveChangesAsync();
+                    }
+
                 }
                 /*return Json(new { Message = "OK" });*/
                 return RedirectToAction("ChangeInfoUser", "Account");
