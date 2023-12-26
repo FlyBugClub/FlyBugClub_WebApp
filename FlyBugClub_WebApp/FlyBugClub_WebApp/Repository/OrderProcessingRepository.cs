@@ -221,8 +221,8 @@ namespace FlyBugClub_WebApp.Repository
             // Nếu không có mã bắt đầu bằng userType, trả về null hoặc thực hiện xử lý phù hợp
             if (userBills.Count == 0)
             {
-                // Trả về null hoặc xử lý phù hợp tùy thuộc vào yêu cầu của bạn
-                return null;
+                // Trả về giá trị mặc định hoặc xử lý phù hợp tùy thuộc vào yêu cầu của bạn
+                return new BillBorrow { Bid = "000", /* Các thuộc tính khác */ };
             }
 
             // Lấy 3 số cuối lớn nhất

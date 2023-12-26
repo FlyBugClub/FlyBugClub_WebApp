@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Globalization;
 using MessagePack.Formatters;
 using Microsoft.Extensions.DependencyInjection;
+using SixLabors.ImageSharp;
 
 namespace FlyBugClub_WebApp.Controllers
 {
@@ -447,6 +448,8 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 var device = _ctx.Devices.FirstOrDefault(x => x.DeviceId == item.Id);
 
+
+
                 string newBorrowDetailId = GenerateUniqueBorrowDetailId(existingIds);
                 /*int nextBillNumber = _ctx.BillBorrows.Count() + 1;*/
                 BorrowDetail bd= new BorrowDetail();
@@ -500,15 +503,36 @@ namespace FlyBugClub_WebApp.Controllers
             return RedirectToAction("Payment", "store");
         }  //Xử lý đơn hàng
 
+
+        private DateTime lastGeneratedDate = DateTime.MinValue;
+        private int number = 0;
         string GenerateUniqueBorrowDetailId(List<string> existingBorrowDetailIds)
         {
-            int number = 1;
+            DateTime currentDate = DateTime.Now.Date;
+
+            // Kiểm tra xem ngày hiện tại có khác với ngày lần cuối cùng đã tạo BorrowDetail không
+            if (currentDate > lastGeneratedDate)
+            {
+                // Reset number về 0 và cập nhật lastGeneratedDate
+                number = 0;
+                lastGeneratedDate = currentDate;
+            }
+
             string newId;
+
+            // Lấy 3 số cuối của id cao nhất trong bảng borrowDetail và +1
+            int highestNumber = existingBorrowDetailIds
+                .Where(id => id.StartsWith("BD" + lastGeneratedDate.ToString("ddMMyy")))
+                .Select(id => int.Parse(id.Substring(10))) // Lấy phần số cuối cùng sau "BDddMMyy"
+                .DefaultIfEmpty(0) // Nếu không có mã nào thì trả về 0
+                .Max(); // Lấy số lớn nhất
+
+            number = highestNumber + 1;
 
             // Tạo mã mới cho đến khi nó không tồn tại trong danh sách hiện có
             do
             {
-                newId = "BD" + number.ToString("0000"); // Ví dụ: BD0001
+                newId = $"BD{lastGeneratedDate.ToString("yyMMdd")}{number.ToString("000")}"; // Ví dụ: BD231225001
                 number++;
             } while (existingBorrowDetailIds.Contains(newId));
 
