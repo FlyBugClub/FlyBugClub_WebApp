@@ -307,6 +307,8 @@ namespace FlyBugClub_WebApp.Controllers
 
         public async Task<IActionResult> Payment(string note)  //Xử lý giỏ hàng
         {
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
             if (!_signInManager.IsSignedIn(User))
             {
                 return LocalRedirect("/identity/account/logincustomer");
@@ -330,21 +332,23 @@ namespace FlyBugClub_WebApp.Controllers
                 var facilityList = _facilityRepository.GetAll();
                 ViewBag.FacilityId = new SelectList(facilityList, "Id", "Name");
 
-                /*noteBill = note;*/
+                if (userId != null)
+                {
+                    var currentUser = await _userManager.FindByIdAsync(userId);
+                    List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                    m.borrowRate = GetBorrowRate;
+                }
 
                 m.Card = cartModel;
 
-                /*cartModel.NoteBill = ViewBag.Note;
-                StoreController.note = _note;
-*/
                 return View(m);
             }
         }
 
         // Hàm để kiểm tra xem đã sang ngày mới chưa
-        private bool IsNewDay(DateTime lastCheckDate)
+        private bool IsNewMonth(DateTime lastCheckDate)
         {
-            return DateTime.Now.Date > lastCheckDate.Date;
+            return DateTime.Now.Month != lastCheckDate.Month || DateTime.Now.Year != lastCheckDate.Year;
         }
 
         private int nextBillNumber = 0;
@@ -354,9 +358,9 @@ namespace FlyBugClub_WebApp.Controllers
 
         public void ResetNextBillNumberIfNeeded()
         {
-            if (IsNewDay(lastCheckDate))
+            if (IsNewMonth(lastCheckDate))
             {
-                // Nếu đã sang ngày mới, reset nextBillNumber về 0
+                // Nếu đã sang tháng mới, reset nextBillNumber về 0
                 nextBillNumber = 0;
                 lastCheckDate = DateTime.Now; // Cập nhật lại ngày lần cuối cùng kiểm tra
             }
@@ -614,10 +618,12 @@ namespace FlyBugClub_WebApp.Controllers
             return RedirectToAction("Payment", "store");
         }
 
-        public IActionResult DetailCard(string Id)
+        public async Task<IActionResult> DetailCard(string Id)
         {
             //1. Find product by id
             var device = _productRepository.findById(Id);
+
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if (device == null)
             {
@@ -625,7 +631,16 @@ namespace FlyBugClub_WebApp.Controllers
                 return NotFound(); // Trong trường hợp không tìm thấy thiết bị
             }
 
-            return View(device);
+            MenuCard m = new MenuCard();
+            if (userId != null)
+            {
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                List<BorrowRate> GetBorrowRate = _productRepository.GetBorrowRate(currentUser.UID);
+                m.borrowRate = GetBorrowRate;
+            }
+            m.device = device;
+
+            return View("DetailCard", m);
         } // Vào chi tiết của sản phẩm
     }
 }

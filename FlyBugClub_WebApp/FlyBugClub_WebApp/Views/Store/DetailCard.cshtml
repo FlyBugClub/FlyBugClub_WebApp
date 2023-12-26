@@ -1,10 +1,14 @@
-﻿@model FlyBugClub_WebApp.Models.Device
+﻿@* @model FlyBugClub_WebApp.Models.Device *@
+@model MenuCard
 @inject IProductRepository ProductRepository
+
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Identity;
 
 <div class="wraper-card">
     <div class="row row-wrap-card">
         <div class="col col-md-4">
-            <img src="~/img/img_products/@Model.ImagePath" alt="Item">
+            <img src="~/img/img_products/@Model.device.ImagePath" alt="Item">
         </div>
         <div class="col col-md-8">
             @{
@@ -12,35 +16,35 @@
 
                 //decimal oldPrice = Model.Price + (Model.Price * 0.09m);
 
-                decimal RentPrice = Model.Price - (Model.Price * 0.6m);
+                decimal RentPrice = Model.device.Price - (Model.device.Price * 0.6m);
                 int rentPrice = (int)Math.Round(RentPrice);
 
-                decimal OldPrice = Model.Price + (Model.Price * 0.09m);
+                decimal OldPrice = Model.device.Price + (Model.device.Price * 0.09m);
                 int oldPrice = (int)Math.Round(OldPrice);
             }
-            <h2>@Model.Name</h2>
-            <p class="discription">@Model.Describe</p>
+            <h2>@Model.device.Name</h2>
+            <p class="discription">@Model.device.Describe</p>
             <label>Giá thuê:</label>
             <p class="price">@rentPrice.ToString("0.000")đ</p>
             <label>Giá cọc:</label>
-            @if (@Model.Price != @oldPrice)
+            @if (@Model.device.Price != @oldPrice)
             {
-                <p class="price"> @Model.Price.ToString("0.000")đ<del>@oldPrice.ToString("0.000")đ</del></p>
+                <p class="price"> @Model.device.Price.ToString("0.000")đ<del>@oldPrice.ToString("0.000")đ</del></p>
             }
             else
             {
-                <p class="price"> @Model.Price.ToString("0.000")đ</p>
+                <p class="price"> @Model.device.Price.ToString("0.000")đ</p>
             }
-            <p class="qty">Sản phẩm còn lại: @Model.Quantity</p>
+            <p class="qty">Sản phẩm còn lại: @Model.device.Quantity</p>
             <p class="discription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
                 printer took a galley of type and scrambled it to make a type specimen book. It has survived 
                 not only five centuries, but also the leap into</p>
-            @if (@Model.Quantity > 0 && @Model.Status == 1)
+            @if (@Model.device.Quantity > 0 && @Model.device.Status == 1)
             {
-                <button class="btn-active"><a asp-controller="Store" asp-action="AddToCard" asp-route-id="@Model.DeviceId">Đặt ngay</a></button>
+                <button class="btn-active"><a asp-controller="Store" asp-action="AddToCard" asp-route-id="@Model.device.DeviceId">Đặt ngay</a></button>
             }
-            else if (@Model.Quantity <= 0 && @Model.Status == 0)
+            else if (@Model.device.Quantity <= 0 && @Model.device.Status == 0)
             {
                 <button class="btn-disable"><a>Đặt ngay</a></button>
             }
@@ -55,8 +59,35 @@
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
+                @{
+                    string userId = "";
+
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    }
+
+                    var BorrowRates = Model.borrowRate;
+                }
+
                 @foreach (var top in ProductRepository.Top10BestSeller())
                 {
+                    bool? Status = false;
+                    
+                    if (BorrowRates != null)
+                    {
+                        foreach (var BorrowRate in BorrowRates)
+                        {
+                            if (BorrowRate.DeviceId == top.DeviceId)
+                            {
+                                Status = BorrowRate.Status;
+                                break;
+                            }
+                        }
+                    }
+
+                    string loveStatus = Status == true ? "fa-solid" : "fa-regular";
+
                     <div class="item-card swiper-slide">
                         <div>
                             <img src="~/img/img_products/@top.ImagePath" alt="Photo item store">
@@ -64,9 +95,9 @@
                             <p>Lorem ipsum dolor sit amet consectetur praesentium?</p>
                         </div>
                         <div class="center icon-card">
-                            <button class="icon icon-love">
-                                <a href="#">
-                                    <i class="fa-regular fa-heart"></i>
+                            <button class="icon icon-love" data-index="@top.DeviceId" asp-route-id="@top.DeviceId" onclick="handleButtonClick(this)">
+                                <a href="#" title="Yêu thích">
+                                    <i class="fa-heart @loveStatus"></i>
                                 </a>
                             </button>
                             <button class="icon icon-share">
@@ -87,3 +118,54 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
+
+<script>
+    function handleButtonClick(button) {
+        event.preventDefault();
+        var status;
+        var heartIcon_regular = button.querySelector('i.fa-heart.fa-regular');
+        var heartIcon_solid = button.querySelector('i.fa-heart.fa-solid');
+        // tim rong
+        if (heartIcon_regular != null) {
+            status = "true";
+        }
+        // tim dac
+        else if (heartIcon_solid != null) {
+            status = "false";
+
+        }
+
+        var deviceId = button.getAttribute("data-index");
+        var userId = "@userId";
+        if (userId !== "") {
+
+            fetchData(userId, deviceId, status);
+
+            if (status === "true") {
+                heartIcon_regular.classList.remove('fa-regular');
+                heartIcon_regular.classList.add('fa-solid');
+            }
+            else {
+                heartIcon_solid.classList.remove('fa-solid');
+                heartIcon_solid.classList.add('fa-regular');
+            }
+        }
+
+        async function fetchData(userId, deviceId, status) {
+            const response = await fetch(`/api/users/getuserbyuid?uid=${userId}&deviceid=${deviceId}&status=${status}`);
+
+            if (response.ok) {
+
+
+                if (status === "true") {
+                    heartIcon_regular.classList.remove('fa-regular');
+                    heartIcon_regular.classList.add('fa-solid');
+                }
+                else {
+                    heartIcon_solid.classList.remove('fa-solid');
+                    heartIcon_solid.classList.add('fa-regular');
+                }
+            }
+        }
+    }
+</script>

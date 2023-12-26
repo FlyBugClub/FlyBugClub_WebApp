@@ -209,7 +209,6 @@ namespace FlyBugClub_WebApp.Controllers
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
-                //client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
                 client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
 
                 string cshtmlContent = GetCshtmlContent("Views/Email/EmailOTP.cshtml");

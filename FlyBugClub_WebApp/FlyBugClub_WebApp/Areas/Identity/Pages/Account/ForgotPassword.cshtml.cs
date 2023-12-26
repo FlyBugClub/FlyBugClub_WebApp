@@ -116,21 +116,21 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
-                //client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
-                client.Authenticate("cuong.dq12897@sinhvien.hoasen.edu.vn", "75R22UYT");
+                client.Authenticate("flybug@hoasen.edu.vn", "#FlyBugClub@hoasen.edu.vn");
+                //client.Authenticate("cuong.dq12897@sinhvien.hoasen.edu.vn", "75R22UYT");
                 var bodyBuilder = new BodyBuilder
                 {
-                    HtmlBody = $"<p>hello anh, otp: {otp}</p>",
+                    HtmlBody = $"<p>Mã xác thực của bạn là: <b>{otp}</b></p>",
                     TextBody = "Xin chao"
                 };
                 var message = new MimeMessage
                 {
                     Body = bodyBuilder.ToMessageBody()
                 };
-                //message.From.Add(new MailboxAddress("FlyBug thông báo", "flybug@hoasen.edu.vn"));
-                message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
+                message.From.Add(new MailboxAddress("FlyBug CLub", "flybug@hoasen.edu.vn"));
+                //message.From.Add(new MailboxAddress("FlyBug thông báo", "cuong.dq12897@sinhvien.hoasen.edu.vn"));
                 message.To.Add(new MailboxAddress("Test", email));
-                message.Subject = "FlyBug thông báo nhẹ";
+                message.Subject = "Xác nhận mã xác thực";
                 client.Send(message);
                 client.Disconnect(true);
 
