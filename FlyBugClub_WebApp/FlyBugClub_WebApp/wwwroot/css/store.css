@@ -19,7 +19,8 @@ section.body .left {
 }
 
 section.body .search {
-    width: 330px;
+    /*width: 330px;*/
+    width: 96%;
     background-color: #565656;
     border-radius: 20px 20px 20px 20px;
     position: relative;
@@ -128,7 +129,8 @@ section.body .search {
     }
 
 .body .search .shopping-function input.text-input {
-    width: 270px;
+    /*width: 270px;*/
+    width: 100%;
     padding: 10px 15px;
     margin-left: 32px;
     border-radius: 20px;
@@ -169,10 +171,11 @@ section.body .search {
 .body .right .store .fill-function  {
     display: flex;
     justify-content:space-between;
+    flex-wrap: wrap;
 }
 
 .body .right .store .fill-function span {
-    margin: 5px 0 0 20px;
+    margin: 5px 0 2px 20px;
     color: white;
     font-size: 22px;
 }
@@ -194,7 +197,7 @@ section.body .search {
 .body .right .store .fill-function .fill button {
     background-color: transparent;
     color: #fff;
-    margin: 0 2px;
+    margin: 5px 2px;
     padding: 3px 10px;
     border-radius: 20px;
     border: 2px #d8d8d8 dashed;
@@ -205,13 +208,13 @@ section.body .search {
     color: #012A4A;
 }
 
-@media only screen and (max-width: 1043px) {
+/*@media only screen and (max-width: 1043px) {
     .body .right .store .fill-function .fill {
         margin: 10px 0;
     }
-}
+}*/
 
-@media only screen and (max-width: 856px) {
+/*@media only screen and (max-width: 856px) {
     .body .right .store .fill-function .fill button:last-child {
         margin-top: 12px;
     }
@@ -221,7 +224,7 @@ section.body .search {
     .body .right .store .fill-function .fill {
         float: none;
     }
-}
+}*/
 
 .body .right .store .item-card {
     background-color: #565656;

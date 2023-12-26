@@ -254,7 +254,8 @@ span,i{
 nav.left-side {
     position: relative;
     height: 500px;
-    width: 290px;
+    max-width: 290px;
+    width: 100%;
     padding: 8px;
     margin-left: 20px;
     margin-bottom: 20px;

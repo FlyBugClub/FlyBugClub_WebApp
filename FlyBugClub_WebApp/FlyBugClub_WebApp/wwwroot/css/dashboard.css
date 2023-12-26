@@ -165,13 +165,14 @@ section.dashboard{
 
 .dashboard .income-form .table-container::-webkit-scrollbar {
     width: 8px; 
+    height: 8px;
 }
 
-.dashboard .income-form .table-container::-webkit-scrollbar-thumb {
-    background-color: #888; /* Màu nền cho thanh cuộn */
-    border-radius: 6px; /* Độ cong góc của thanh cuộn */
-    margin: 0 20px;
-}
+/*.dashboard .income-form .table-container::-webkit-scrollbar-thumb {
+    background-color: #888;*/ /* Màu nền cho thanh cuộn */
+    /*border-radius: 6px;*/ /* Độ cong góc của thanh cuộn */
+    /*margin: 0 20px;
+}*/
 
 .dashboard .income-form table{
     width: 96%;

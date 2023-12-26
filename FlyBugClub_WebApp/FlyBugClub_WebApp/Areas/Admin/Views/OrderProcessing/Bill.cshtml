@@ -25,138 +25,143 @@
                             </select>
                         </form>
                     </div>
-                    
                 </div>
-                <table border="1" class="bill-table">
-                    <thead>
-                        <tr>
-                            <th class="bid">BID</th>
-                            <th>User name</th>
-                            <th>UID</th>
-                            <th class="date">Borrow date</th>
-                            <th class="status">Status</th>
-                            <th class="money">Money</th>
-                            <th>#</th>
-                        </tr>
-                    </thead>
-                    <tbody class="parent-body">
-                        @foreach (var item in Model.getBills)
-                        {
-                            <tr class="parent-tr" onclick="toggleRow('expandable-row-@item.Bid')">
-                                <td class="outsite-info bid">@item.Bid</td>
-                                <td class="outsite-info name word-left">@item.SidNavigation.Name</td>
-                                <td class="outsite-info word-right sid">@item.Sid</td>
-                                <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
-                                @if(item.Status == 0)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status yellow">Waiting</span></td>
-                                }
-                                else if (item.Status == 1)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status purple">Borrowing</span></td>
-                                }
-                                else if (item.Status == 2)
-                                {
-                                    <td class="waiting outsite-info word-left status-bill"><span class="wrap-status green">Done</span></td>
-                                }
-                                
-                                <td class="outsite-info word-right">
-                                    @if (@item.Total != null)
+                <div class="bills">
+                    <table border="1" class="bill-table">
+                        <thead>
+                            <tr>
+                                <th class="bid">BID</th>
+                                <th>User name</th>
+                                <th>UID</th>
+                                <th class="date">Borrow date</th>
+                                <th class="status">Status</th>
+                                <th class="money">Money</th>
+                                <th class="event">#</th>
+                            </tr>
+                        </thead>
+                        <tbody class="parent-body">
+                            @foreach (var item in Model.getBills)
+                            {
+                                <tr class="parent-tr" onclick="toggleRow('expandable-row-@item.Bid')">
+                                    <td class="outsite-info bid">@item.Bid</td>
+                                    <td class="outsite-info name word-left">@item.SidNavigation.Name</td>
+                                    <td class="outsite-info word-right sid">@item.Sid</td>
+                                    <td class="outsite-info">@item.BorrowDate.ToString("dd/MM/yyyy")</td>
+                                    @if (item.Status == 0)
                                     {
-                                        // Biến kiểu Nullable có giá trị, bạn có thể truy cập giá trị bằng .Value
-                                        @item.Total.Value.ToString("0.00");
+                                        <td class="waiting outsite-info word-left status-bill"><span class="wrap-status yellow">Waiting</span></td>
                                     }
-                                </td>
-                                @if (item.Status == 0)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
-                                        <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
+                                    else if (item.Status == 1)
+                                    {
+                                        <td class="waiting outsite-info word-left status-bill"><span class="wrap-status purple">Borrowing</span></td>
+                                    }
+                                    else if (item.Status == 2)
+                                    {
+                                        <td class="waiting outsite-info word-left status-bill"><span class="wrap-status green">Done</span></td>
+                                    }
+
+                                    <td class="outsite-info word-right">
+                                        @if (@item.Total != null)
+                                        {
+                                            // Biến kiểu Nullable có giá trị, bạn có thể truy cập giá trị bằng .Value
+                                            @item.Total.Value.ToString("0.00")
+                                            ;
+                                        }
                                     </td>
-                                }
-                                else if (item.Status == 1)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    </td>
-                                }
-                                else if (item.Status == 2)
-                                {
-                                    <td class="outsite-info active-function">
-                                        <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-eye"></i></a>
-                                    </td>
-                                }
-                            </tr>
-                            <tr class="expandable-row detail-info detail" id="expandable-row-@item.Bid">
-                                <td colspan="9" class="child">
-                                    <table class="child-table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">Device</th>
-                                                <th >Quantity</th>
-                                                <th>Re-Qty</th>
-                                                <th>Price</th>
-                                                <th>Sub total</th>
-                                                <th>Status</th>
-                                                <th>Qty damage</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var detail in item.BorrowDetails)
-                                            {
+                                    @if (item.Status == 0)
+                                    {
+                                        <td class="outsite-info active-function">
+                                            <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a> <span>||</span>
+                                            <a asp-action="DeleteBill" asp-route-id="@item.Bid"><i class="fa-solid fa-trash"></i></a>
+                                        </td>
+                                    }
+                                    else if (item.Status == 1)
+                                    {
+                                        <td class="outsite-info active-function">
+                                            <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
+                                    }
+                                    else if (item.Status == 2)
+                                    {
+                                        <td class="outsite-info active-function">
+                                            <a asp-action="EditBill" asp-route-id="@item.Bid"><i class="fa-solid fa-eye"></i></a>
+                                        </td>
+                                    }
+                                </tr>
+                                <tr class="expandable-row detail-info detail" id="expandable-row-@item.Bid">
+                                    <td colspan="9" class="child">
+                                        <table class="child-table">
+                                            <thead>
                                                 <tr>
-                                                    <td class="word-left" colspan="2">@detail.DeviceId</td>
-                                                    <td>@detail.Quantity</td>
-                                                    <td>@detail.ReturnQuantity</td>
-                                                    <td class="word-right">
-                                                        @if(@detail.Price != null){
-                                                            @detail.Price.ToString("0.00");
-                                                        }
-                                                    </td>
-                                                    <td class="word-right">@detail.SubTotal.ToString("0.00")</td>
-                                                    <td>//</td>
-                                                    <td>//</td>
+                                                    <th colspan="2">Device</th>
+                                                    <th>Quantity</th>
+                                                    <th>Re-Qty</th>
+                                                    <th>Price</th>
+                                                    <th>Sub total</th>
+                                                    <th>Status</th>
+                                                    <th>Qty damage</th>
                                                 </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var detail in item.BorrowDetails)
+                                                {
+                                                    <tr>
+                                                        <td class="word-left" colspan="2">@detail.DeviceId</td>
+                                                        <td>@detail.Quantity</td>
+                                                        <td>@detail.ReturnQuantity</td>
+                                                        <td class="word-right">
+                                                            @if (@detail.Price != null)
+                                                            {
+                                                                @detail.Price.ToString("0.00");
+                                                            }
+                                                        </td>
+                                                        <td class="word-right">@detail.SubTotal.ToString("0.00")</td>
+                                                        <td>//</td>
+                                                        <td>//</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="col-4">
             <div class="function function-bill">
                 <h5>History Update</h5>
-                @foreach (var item in Model.getAllHistory)
-                {
-                    @if (item.BorrowDetailId == null)
+                <div class="history-info">
+                    @foreach (var item in Model.getAllHistory)
                     {
-                        <div class="wrap-histoty">
-                            <div class="top-box">
-                                <i class="fa-regular fa-clock"></i>
-                                <div class="time-update">@item.UpdateDate.Value.ToString("dd/MM/yyyy HH:mm")</div>
+                        @if (item.BorrowDetailId == null)
+                        {
+                            <div class="wrap-histoty">
+                                <div class="top-box">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class="time-update">@item.UpdateDate.Value.ToString("dd/MM/yyyy HH:mm")</div>
+                                </div>
+                                <div class="content-update">
+                                    <b>@item.Uid</b> đã thay đổi trang thái hóa đơn số <b>@item.Bid</b>
+                                </div>
                             </div>
-                            <div class="content-update">
-                                <b>@item.Uid</b> đã thay đổi trang thái hóa đơn số <b>@item.Bid</b>
+                        }
+                        else if (item.BorrowDetailId != null)
+                        {
+                            <div class="wrap-histoty">
+                                <div class="top-box">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <div class="time-update">@item.UpdateDate.Value.ToString("dd/MM/yyyy HH:mm")</div>
+                                </div>
+                                <div class="content-update">
+                                    <b>@item.Uid</b> đã thay đổi chi tiết hóa đơn số <b>@item.BorrowDetailId</b> trong đơn hàng số <b>@item.Bid</b>
+                                </div>
                             </div>
-                        </div>
+                        }
                     }
-                    else if (item.BorrowDetailId != null)
-                    {
-                        <div class="wrap-histoty">
-                            <div class="top-box">
-                                <i class="fa-regular fa-clock"></i>
-                                <div class="time-update">@item.UpdateDate.Value.ToString("dd/MM/yyyy HH:mm")</div>
-                            </div>
-                            <div class="content-update">
-                                <b>@item.Uid</b> đã thay đổi chi tiết hóa đơn số <b>@item.BorrowDetailId</b> trong đơn hàng số <b>@item.Bid</b>
-                            </div>
-                        </div>
-                    }
-                }
+                </div>
             </div>
         </div>
     </div>

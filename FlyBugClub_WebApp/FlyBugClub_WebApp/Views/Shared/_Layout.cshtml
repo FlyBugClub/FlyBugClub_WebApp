@@ -79,7 +79,14 @@
                 <li><a href="#">Cửa hàng</a></li>
                 <li><a href="#">Hình ảnh</a></li>
                 <li><a href="#">Chiêu mộ</a></li>
-                <li><a href="/store/Logout">Đăng xuât</a></li>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li><a href="/store/Logout">Đăng xuât</a></li>
+                }
+                else
+                {
+                    
+                }
             </ul>
 
             <ul class="nav">

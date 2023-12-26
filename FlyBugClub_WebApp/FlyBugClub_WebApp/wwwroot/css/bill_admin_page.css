@@ -2,6 +2,21 @@
 /* ========= BILL BORROW ========= */
 /* =============================== */
 
+/* ============= Custom ScrollBar ============= */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #ccc !important;
+}
+
 .w93 {
     width: 93% !important;
 }
@@ -38,15 +53,23 @@
     margin-bottom: 12px;
 }
 
-.function-bill .top-box{
+.history-info {
+    max-height: 469px;
+    height: fit-content;
+    overflow-y: auto;
+}
+
+.function-bill .top-box {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .function-bill .count {
     width: fit-content;
     background: #012a4a;
     margin-bottom: 20px;
+    margin: 0 10px;
     padding: 2px 10px;
     border: 3px solid ; 
     border-radius: 12px;
@@ -74,9 +97,22 @@
     border-radius: 4px;
 }
 
+.function-bill .bills {
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: auto;
+    position:relative;
+}
 
 .bill-table {
     width: 100%;
+}
+
+.bill-table thead {
+    position: sticky;
+    top: 0;
+    background-color: rgb(252,252,253);
+    z-index: 10;
 }
 
 .bill-table th,td{
@@ -89,6 +125,10 @@
 
 .bill-table th{
     padding-bottom: 5px;
+}
+
+.bill-table th.event{
+    width: 50px;
 }
 
 .bill-table td{
@@ -147,7 +187,8 @@ span.green{
     text-align:right;
 }
 
-.bill-table tbody.parent-body td.active-function{
+.bill-table tbody.parent-body td.active-function{   
+    width: 100px;
     padding: 0 5px;
 }
 
