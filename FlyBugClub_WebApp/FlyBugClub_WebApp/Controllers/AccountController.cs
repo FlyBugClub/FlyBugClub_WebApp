@@ -566,7 +566,7 @@ namespace FlyBugClub_WebApp.Controllers
                 HttpContext.Session.SetString("email", email);
                 ViewBag.Name = currentUser.FullName;
                 ViewBag.Gender = currentUser.Gender;
-                ViewBag.Phone = currentUser.Phone;
+                ViewBag.Phone = currentUser.PhoneNumber;
                 ViewBag.Major = currentUser.Major;
                 ViewBag.Faculty = currentUser.Faculty;
                 ViewBag.Address = currentUser.Address;
@@ -594,7 +594,7 @@ namespace FlyBugClub_WebApp.Controllers
 
                 aspuser.FullName = Name;
                 aspuser.Gender = Gender;
-                aspuser.Phone = Phone;
+                aspuser.PhoneNumber = Phone;
                 aspuser.Address = Address;
                 aspuser.Major = Major;
                 aspuser.Faculty = Faculty;
