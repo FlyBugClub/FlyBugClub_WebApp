@@ -434,7 +434,8 @@ namespace FlyBugClub_WebApp.Controllers
             }
 
             //2
-            var BillId = _ctx.BillBorrows.OrderByDescending(x => x.Bid).Take(1).SingleOrDefault().Bid;
+            //var BillStuId = _ctx.BillBorrows.OrderByDescending(x => x.Bid).Take(1).SingleOrDefault().Bid;
+
             var TC = _ctx.Users.Where(x => x.PositionId == "TC").ToList();
             var MB = _ctx.Users.Where(x => x.PositionId == "MB").ToList();
             var STU = _ctx.Users.Where(x => x.PositionId == "STU").ToList();
@@ -448,13 +449,11 @@ namespace FlyBugClub_WebApp.Controllers
             {
                 var device = _ctx.Devices.FirstOrDefault(x => x.DeviceId == item.Id);
 
-
-
                 string newBorrowDetailId = GenerateUniqueBorrowDetailId(existingIds);
                 /*int nextBillNumber = _ctx.BillBorrows.Count() + 1;*/
                 BorrowDetail bd= new BorrowDetail();
                 bd.BorrowDetailId = newBorrowDetailId;
-                bd.Bid = BillId;
+                bd.Bid = bill.Bid;
                 bd.DeviceId= item.Id;
                 bd.Price = item.Price;
                 bd.Quantity= item.Quantity;

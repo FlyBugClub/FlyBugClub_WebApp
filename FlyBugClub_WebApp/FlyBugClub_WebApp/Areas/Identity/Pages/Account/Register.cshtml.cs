@@ -159,6 +159,7 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);*/
+
                 var existingEmail = await _ctx.Users.FirstOrDefaultAsync(u => u.Email == Input.Email);
                 if (existingEmail == null) {
                     string otp = GenerateOTP();
@@ -304,7 +305,16 @@ namespace FlyBugClub_WebApp.Areas.Identity.Pages.Account
                 if (uid.Length >= 6)
                 {
                     string emailValue;
-                    string lastFiveDigits = uid.Substring(uid.Length - 5);
+                    string lastFiveDigits = null;
+                    if(uid.Length == 7)
+                    {
+                        lastFiveDigits = uid.Substring(uid.Length - 4);
+                    }
+                    else if (uid.Length >= 8)
+                    {
+                        lastFiveDigits = uid.Substring(uid.Length - 5);
+                    }
+                        
                     PropertyInfo emailProperty = validationContext.ObjectType.GetProperty("Email");
                     if (emailProperty != null)
                     {
