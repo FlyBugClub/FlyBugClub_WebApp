@@ -56,7 +56,13 @@
                 <i class="fa-solid fa-envelope"></i>
                 <i class="fa-solid fa-bell"></i>
                 <h6>@UserManager.GetUserName(User)</h6>
-                <img src="~/img/img_icon/avatar.png" alt="">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var user = await UserManager.GetUserAsync(User);
+                    var ImgUser = user.ImgUser;
+                    <img src="~/img/img_icon/@ImgUser" alt="">
+                }
+                
             </div>
         </div>
     </header>
