@@ -630,11 +630,11 @@ namespace FlyBugClub_WebApp.Controllers
                 var billsByUID = _ctx.BillBorrows
                     .Where(b => b.Sid == currentUser.UID)
                     .Include(b => b.BorrowDetails)
+                    .OrderBy(b => b.Status)
                     .OrderByDescending(b => b.BorrowDate)
                     .ThenByDescending(b => b.BorrowDate.Hour)
                     .ThenByDescending(b => b.BorrowDate.Minute)
                     .ThenByDescending(b => b.BorrowDate.Second)
-                    .OrderBy(b => b.Status)
                     .ToList();
 
                 foreach (var bill in billsByUID)
