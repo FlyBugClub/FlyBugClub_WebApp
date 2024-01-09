@@ -85,7 +85,7 @@ namespace FlyBugClub_WebApp.Controllers
             DateTime startDate = DateTime.ParseExact(two_date[0], "yyyy-MM-dd", CultureInfo.InvariantCulture); // Chỉnh lại định dạng ngày nếu cần
             DateTime endDate = DateTime.ParseExact(two_date[1], "yyyy-MM-dd", CultureInfo.InvariantCulture).AddHours(23); // Chỉnh lại định dạng ngày nếu cần
 
-            var result = _ctx.BillBorrows.Where(u => u.BorrowDate >= startDate && u.BorrowDate <= endDate).ToList();
+            var result = _ctx.BillBorrows.Where(u => u.ReceiveDay >= startDate && u.ReceiveDay <= endDate).ToList();
             result.Reverse();
 
             

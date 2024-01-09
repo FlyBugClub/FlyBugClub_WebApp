@@ -101,21 +101,16 @@
                                 </div>
                             </form>
                             <div class="info-sales">
-                        @*<div class="head-income">
-                            <h5>Fanacial</h5>
-                            <form>
-                                <div class="datepicker">
-                                    <i class="fa-solid fa-calendar"></i>
-                                    <input type="text" name="daterange" value="" class="" id="cuong" readonly />
-                                </div>
-                            </form>
+                        <div class="head-income">
+                           
+                            
                             <div class="total-income">
                                 <div class="total">
                                     <div><b>Total income</b></div>
                                     <div><b id="TotalIncome" class="amount"></b></div>
                                 </div>
                             </div>
-                        </div>*@
+                        </div>
                     </div>
                         </div>
                     </div>
@@ -229,7 +224,7 @@
         var Sum = 0;
 
         data.forEach((item, i) => {
-            const receiveDay = new Date(item.receiveDay);
+            const receiveDay = new Date(item.borrowDate);
             const status = item.status;
             const convertedValue = parseFloat(item.total) * 1000;
             Sum = Sum + convertedValue;
@@ -278,7 +273,7 @@
         var Sum = 0;
 
         data.forEach((item, i) => {
-            const receiveDay = new Date(item.receiveDay);
+            const receiveDay = new Date(item.borrowDate);
             const status = item.status;
             const convertedValue = parseFloat(item.total) * 1000;
             Sum = Sum + convertedValue;
@@ -408,17 +403,27 @@
     updateMonthYearDisplay();
     
     async function GetBillEvent(currentMonth,  currentYear,  daysInCurrentMonth) {
-        var DateStart = currentYear + "-" + (parseInt(currentMonth) + 1) + "-01";
-        var DateEnd = currentYear + "-" + (parseInt(currentMonth) + 1) + "-" + daysInCurrentMonth;
+        if ((parseInt(currentMonth) + 1) < 10) {
+            var DateStart = currentYear + "-0" + (parseInt(currentMonth) + 1) + "-01";
+            var DateEnd = currentYear + "-0" + (parseInt(currentMonth) + 1) + "-" + daysInCurrentMonth;
+        }
+        else
+        {
+            var DateStart = currentYear + "-" + (parseInt(currentMonth) + 1) + "-01";
+            var DateEnd = currentYear + "-" + (parseInt(currentMonth) + 1) + "-" + daysInCurrentMonth;
+        }
 
+        
         let Final = DateStart + "@@" + "@@" + DateEnd;
+
         const response = await fetch(`/api/users/getbillbydate?date=${Final}`);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json(); // Chuyển đổi response thành JSON
-        var borrowDates = data.map(item => item.borrowDate);
+        console.log(data);
+        var borrowDates = data.map(item => item.receiveDay);
         borrowDates.forEach(function (dateString) {
             var borrowDate = new Date(dateString);
             var day = borrowDate.getDate();
@@ -436,12 +441,12 @@
                 var elementWithschedules = document.getElementById("id_schedules");
                 elementWithschedules.innerHTML = '';
                 data.forEach(function (item) {
-                    var borrowDate = new Date(item.borrowDate);
+                    var borrowDate = new Date(item.receiveDay);
                     var day = borrowDate.getDate();
 
                     if (day == dayItem.className) {
                         console.log(item); // Nếu ngày trùng khớp, in ra thông tin của phần tử
-                        var dateTime = new Date(item.borrowDate);
+                        var dateTime = new Date(item.receiveDay);
 
                   
                         function formatNumber(number) {
